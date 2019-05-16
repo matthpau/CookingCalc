@@ -6,6 +6,13 @@
 </head>
 <body>
 <h1>Welcome to the cooking time calculator</h1>
-<a href="/User">User Page</a>
+<a href="/MealPlanner">Meal Planner</a>
+{% for x in cooking_info %}
+    <div>
+        <h1>Meat type: {{ x.MeatType }}</h1>
+        <h2>CookingLevel: {{ x.CookingLevel }}</h2>
+        <p>Internal temp: {{ x.InternalTempC }}</p>
+    </div>
+{% endfor %}
 </body>
 </html>

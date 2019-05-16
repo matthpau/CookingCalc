@@ -6,6 +6,7 @@ from django.db import models
 #https://docs.djangoproject.com/en/2.2/ref/models/relations/
 #https://docs.djangoproject.com/en/2.2/topics/db/queries/#lookups-that-span-relationships
 
+
 class MeatType(models.Model):
     MeatTypeName = models.CharField(max_length=60)
     PortionKGPerAdult = models.FloatField(default=0)
