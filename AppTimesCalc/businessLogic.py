@@ -13,8 +13,6 @@ def CookCalc(context):
 
     minsPerKg = int(c['MinsPerKg'])
 
-    print(minsPerKg, givenweight)
-
     results = dict()
     results['Cooking Time'] =  int(minsPerKg * givenweight)
 
