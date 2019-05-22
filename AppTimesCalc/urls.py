@@ -5,6 +5,6 @@ from . import views
 
 urlpatterns = [
     path('', views.Calculator, name='Calculator'),
-    path('calc-result', views.CalcResult, name='CalcResult'),
+    path('CalcResult', views.CalcResult, name='CalcResult'),
     path('MealPlanner', views.MealPlanner, name='MealPlanner'),
 ]

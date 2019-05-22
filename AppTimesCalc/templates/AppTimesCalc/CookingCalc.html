@@ -13,24 +13,10 @@
 <body>
 <h1>Welcome to the cooking time calculator</h1>
 <a href="/MealPlanner">Meal Planner</a>
-{% for x in cooking_info %}
-    <div>
-        <h1>Meat type: {{ x.MeatType }}</h1>
-        <h2>Cooking Level: {{ x.CookingLevel }}</h2>
-        <p>Internal temp: {{ x.InternalTempC }}</p>
-    </div>
-{% endfor %}
-<form action="/calc-result" method="get">
-    <label for="weight">Enter weight of meat cut (kg): </label>
-    <input id="weight" type="text" name="weight">
-
-    <label for="meat-type">Select meat type: </label>
-    <input id="meat-type" type="text" name="meat-type">
-
-    <label for="cooking-level">Select cooking level: </label>
-    <input id="cooking-level" type="text" name="cooking-level">
-
-    <input type="submit" value="OK">
-</form>
+<form action = "/CalcResult" method = 'get'>
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+<form>
 </body>
 </html>
