@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This is the cooking calc results page</title>
+</head>
+<body>
+<h1>This is the cooking calc results page</h1>
+
+{% for key, value in calc_inputs.items %}
+    {{key}}
+    {{value}}
+{% endfor %}
+
+{{calc_inputs.weight}}
+</body>
+</html>

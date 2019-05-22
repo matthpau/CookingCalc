@@ -1,6 +1,12 @@
+
 <!DOCTYPE html>
+
+<!-- https://docs.djangoproject.com/en/2.2/topics/forms/ -->
+
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <meta charset="UTF-8">
     <title>Cooking Time Calculator</title>
 </head>
@@ -10,9 +16,21 @@
 {% for x in cooking_info %}
     <div>
         <h1>Meat type: {{ x.MeatType }}</h1>
-        <h2>CookingLevel: {{ x.CookingLevel }}</h2>
+        <h2>Cooking Level: {{ x.CookingLevel }}</h2>
         <p>Internal temp: {{ x.InternalTempC }}</p>
     </div>
 {% endfor %}
+<form action="/calc-result" method="get">
+    <label for="weight">Enter weight of meat cut (kg): </label>
+    <input id="weight" type="text" name="weight">
+
+    <label for="meat-type">Select meat type: </label>
+    <input id="meat-type" type="text" name="meat-type">
+
+    <label for="cooking-level">Select cooking level: </label>
+    <input id="cooking-level" type="text" name="cooking-level">
+
+    <input type="submit" value="OK">
+</form>
 </body>
 </html>
