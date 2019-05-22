@@ -1,5 +1,3 @@
-
-
 from .models import CookingInfo
 
 def CookCalc(context):
@@ -8,12 +6,17 @@ def CookCalc(context):
     #Returns dictionary with weight, meat type, cooking level, recommended cooking time and oven temps
     #Input Vars Weight / MeatType Key / Cooking Level Key
 
-    c = Cookinfo.objects.all()
+    givenweight = float(context['Weight'])
 
-    for a, b in enumerate(context):
-        print(a,b)
+    c = CookingInfo.objects.filter(MeatType = int(context['MeatType'][0])).\
+        filter(CookingLevel = int(context['CookingLevel'][0])).values()[0]
 
-    print(c)
+    minsPerKg = int(c['MinsPerKg'])
 
-    pass
+    print(minsPerKg, givenweight)
+
+    results = dict()
+    results['Cooking Time'] =  int(minsPerKg * givenweight)
+
+    return results
 

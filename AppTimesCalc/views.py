@@ -10,8 +10,10 @@ def Calculator(request):
     return render(request, 'AppTimesCalc/CookingCalc.html', context)
 
 def CalcResult(request):
-    context = {'calc_inputs': request.GET}
-    print (context)
+    inputs = request.GET
+    outputs = CookCalc(inputs)
+    context = {'calc_inputs': inputs, 'calc_outputs': outputs}
+
     return render(request, 'AppTimesCalc/CookingCalcRes.html', context)
 
 def MealPlanner(request):

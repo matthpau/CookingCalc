@@ -6,12 +6,18 @@
 </head>
 <body>
 <h1>This is the cooking calc results page</h1>
-
+<p>
 {% for key, value in calc_inputs.items %}
     {{key}}
     {{value}}
 {% endfor %}
+</p>
 
-{{calc_inputs.weight}}
+<p>
+{% for key, value in calc_outputs.items %}
+    {{key}}
+    {{value}}
+{% endfor %}
+</p>
 </body>
 </html>
