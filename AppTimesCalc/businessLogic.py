@@ -8,13 +8,17 @@ def CookCalc(context):
 
     givenweight = float(context['Weight'])
 
-    c = CookingInfo.objects.filter(MeatType = int(context['MeatType'][0])).\
-        filter(CookingLevel = int(context['CookingLevel'][0])).values()[0]
-
-    minsPerKg = int(c['MinsPerKg'])
-
     results = dict()
-    results['Cooking Time'] =  int(minsPerKg * givenweight)
+
+    try:
+        c = CookingInfo.objects.filter(MeatType = int(context['MeatType'][0])).\
+            filter(CookingLevel = int(context['CookingLevel'][0])).values()[0]
+
+    except:
+        results['Cooking Time'] = 0
+    else:
+        minsPerKg = int(c['MinsPerKg'])
+        results['Cooking Time'] =  int(minsPerKg * givenweight)
 
     return results
 

@@ -1,22 +1,10 @@
+{% extends 'AppTimesCalc/base.html' %}
 
-<!DOCTYPE html>
-
-<!-- https://docs.djangoproject.com/en/2.2/topics/forms/ -->
-
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <meta charset="UTF-8">
-    <title>Cooking Time Calculator</title>
-</head>
-<body>
-<h1>Welcome to the cooking time calculator</h1>
-<a href="/MealPlanner">Meal Planner</a>
-<form action = "/CalcResult" method = 'get'>
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit" />
-<form>
-</body>
-</html>
+{% block content %}
+    <h3>Use this simple calculator to find the cooking time based on the weight of your cut:</h3>
+    <form action = "/CalcResult" method = 'get'>
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit" />
+    </form>
+{% endblock %}
