@@ -7,7 +7,7 @@ from .models import *
 class CalcForm1(forms.Form):
     MeatType = forms.ModelChoiceField(MeatType.objects.all(), label="Meat Type ", required=True)
     CookingLevel = forms.ModelChoiceField(CookingLevel.objects.all(), label="Cooking Level ", required = True)
-    EatingTime = forms.TimeField(label="When do you want to eat? (optional)", required = False)
+    EatingTime = forms.TimeField(label="When do you want to eat? HH:MM  (optional)", required = False, initial="00:00")
     Weight_kg = forms.DecimalField(label="Weight of meat (kilograms) ", initial=0, required = False)
     Weight_lb = forms.DecimalField(label="or, weight of meat (pounds) ", initial=0, required = False)
     Weight_gr = forms.DecimalField(label="or, Weight of meat (grams) ", initial=0, required = False)
