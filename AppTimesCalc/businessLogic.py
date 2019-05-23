@@ -6,8 +6,9 @@ def CookCalc(context):
     #Returns dictionary with weight, meat type, cooking level, recommended cooking time and oven temps
     #Input Vars Weight / MeatType Key / Cooking Level Key
 
-    givenweight = float(context['Weight'])
-
+    givenweight = float(context['Weight_kg'])
+    #print(context)
+    #givenweight = 1
     results = dict()
 
     try:
