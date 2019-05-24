@@ -27,6 +27,7 @@ def Calculator(request):
                 return render(request, 'AppTimesCalc/CookingCalcRes1.html', context)
 
         elif 'Calculator2' in request.POST:
+            #TODO need to put this in here
             return HttpResponse('You hit the second button')
 
     else:
