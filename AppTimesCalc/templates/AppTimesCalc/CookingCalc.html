@@ -2,17 +2,19 @@
 
 {% block content %}
     <h3>Use this simple calculator to find the cooking time based on the weight of your cut:</h3>
-    <form action = "/CalcResult" method="POST" >
+    <form action = "" method="POST" >
         {% csrf_token %}
         <table>
-            {{ form.as_table }}
+            {{ form1.as_p }}
         </table>
-        <input type="submit" value="Submit" />
+        <input type="submit" name= "Calculator1" value="Submit" />
     </form>
     <h3>If you know how many people are coming, I'll calculate how much meat you need and how to cook it!</h3>
-    <form action = "/CalcResult1" method="POST" >
+    <form action = "" method="POST" >
         {% csrf_token %}
-        {{ form2.as_p }}
-        <input type="submit" value="Submit" />
+        <table>
+            {{ form2.as_p }}
+        </table>
+        <input type="submit" name= "Calculator2" value="Submit" />
     </form>
 {% endblock %}

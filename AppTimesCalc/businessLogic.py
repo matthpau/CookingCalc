@@ -1,25 +1,44 @@
 from .models import CookingInfo
 
-def CookCalc(context):
-    #Expects context dictionary from the CookingCalc.html form document
-    #Weightin Kilos and keys for meat type and cooking level
-    #Returns dictionary with weight, meat type, cooking level, recommended cooking time and oven temps
-    #Input Vars Weight / MeatType Key / Cooking Level Key
+def allToKg(w_kg, w_gr, w_lb):
 
-    givenweight = float(context['Weight_kg'])
-    #print(context)
-    #givenweight = 1
+    w_kg = float(w_kg)
+    w_lb = float(w_lb)
+    w_gr = float(w_gr)
+
+    if w_kg:
+        return w_kg
+
+    elif w_g:
+        return w_g / 1000
+
+    elif w_lb:
+        return w_lb * 0.453592
+
+    else:
+        return 0
+
+
+def CookCalc(context):
+    """
+    Expects context dictionary from the CookingCalc.html form document
+    Weightin Kilos and keys for meat type and cooking level
+    Returns dictionary with weight, meat type, cooking level, recommended cooking time and oven temps
+    Input Vars Weight / MeatType Key / Cooking Level Key
+    """
     results = dict()
 
     try:
-        c = CookingInfo.objects.filter(MeatType = int(context['MeatType'][0])).\
-            filter(CookingLevel = int(context['CookingLevel'][0])).values()[0]
+        c = CookingInfo.objects.filter(MeatType = context['MeatType']).\
+            filter(CookingLevel = context['CookingLevel']).values()
 
+        givenWeight = allToKg(context['Weight_kg'], context['Weight_g'], context['Weight_lb'])
+
+        minsPerKg = c[0]['MinsPerKg']
+        results['Cooking Time'] =  int(minsPerKg * givenWeight)
+        print(c)
     except:
-        results['Cooking Time'] = 0
-    else:
-        minsPerKg = int(c['MinsPerKg'])
-        results['Cooking Time'] =  int(minsPerKg * givenweight)
+        results['Cooking Time'] = 'Invalid combination'
 
     return results
 
