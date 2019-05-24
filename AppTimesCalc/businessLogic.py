@@ -7,16 +7,13 @@ def allToKg(w_kg, w_gr, w_lb):
     w_gr = float(w_gr)
 
     if w_kg:
-        return w_kg
-
+        return w_kg, 1
     elif w_g:
-        return w_g / 1000
-
+        return w_g / 1000, 2
     elif w_lb:
-        return w_lb * 0.453592
-
+        return w_lb * 0.453592, 3
     else:
-        return 0
+        return 0, 0
 
 
 def CookCalc(context):
@@ -30,15 +27,18 @@ def CookCalc(context):
 
     try:
         c = CookingInfo.objects.filter(MeatType = context['MeatType']).\
-            filter(CookingLevel = context['CookingLevel']).values()
+            filter(CookingLevel = context['CookingLevel']).values()[0]
 
-        givenWeight = allToKg(context['Weight_kg'], context['Weight_g'], context['Weight_lb'])
+        weightResult = allToKg(context['Weight_kg'], context['Weight_g'], context['Weight_lb'])
+        givenWeight = weightResult[0]
 
-        minsPerKg = c[0]['MinsPerKg']
+        minsPerKg = c['MinsPerKg']
         results['Cooking Time'] =  int(minsPerKg * givenWeight)
+        results['Oven Temperature'] = c['OvenTempC']
+        results['Final Internal Temperature'] = c['InternalTempC']
         print(c)
     except:
-        results['Cooking Time'] = 'Invalid combination'
+        results['Notice:'] = 'Invalid combination'
 
     return results
 

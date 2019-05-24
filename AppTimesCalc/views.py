@@ -24,7 +24,7 @@ def Calculator(request):
                 inputs = form1.cleaned_data
                 outputs = CookCalc(inputs)
                 context = {'calc_inputs': inputs, 'calc_outputs': outputs}
-                return render(request, 'AppTimesCalc/CookingCalcRes.html', context)
+                return render(request, 'AppTimesCalc/CookingCalcRes1.html', context)
 
         elif 'Calculator2' in request.POST:
             return HttpResponse('You hit the second button')
@@ -33,6 +33,8 @@ def Calculator(request):
         form1 = CalcForm1()
         form2 = CalcForm2()
 
+    meats = MeatType.objects.all()
+    cooking_info = CookingInfo.objects.all()
     context = {'meats': meats,
                'cooking_info': cooking_info,
                'form1': form1,
