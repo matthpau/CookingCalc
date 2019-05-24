@@ -1,0 +1,16 @@
+{% extends 'AppTimesCalc/base.html' %}
+
+
+{% block content %}
+<h3>Your inputs were:</h3>
+    {% for key, value in calc_inputs.items %}
+        <p>{{key}} {{value}} </p>
+        </p>
+    {% endfor %}
+
+<h3>Here's how to cook it:</h3>
+    {% for key, value in calc_outputs.items %}
+        <p>{{key}} {{value}} </p>
+    {% endfor %}
+
+{% endblock %}
