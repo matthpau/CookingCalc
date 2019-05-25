@@ -7,7 +7,7 @@ from .models import *
 class CalcForm1(forms.Form):
     MeatType = forms.ModelChoiceField(MeatType.objects.all(), label="Meat Type ", required=True)
     CookingLevel = forms.ModelChoiceField(CookingLevel.objects.all(), label="Cooking Level ", required = True)
-    #EatingTime = forms.TimeField(label="When do you want to eat? HH:MM  (optional)", required = False, initial="00:00")
+    EatingTime = forms.TimeField(label="When do you want to eat? HH:MM  (optional)", required = False, initial="00:00")
     Weight_kg = forms.DecimalField(label="Weight of meat (kilograms) ", initial=0, required = False)
     Weight_lb = forms.DecimalField(label="or, weight of meat (pounds) ", initial=0, required = False)
     Weight_g = forms.DecimalField(label="or, weight of meat (grams) ", initial=0, required = False)
@@ -19,8 +19,8 @@ class CalcForm1(forms.Form):
             self.cleaned_data.get("Weight_lb"),
             self.cleaned_data.get("Weight_g")
             ]
-        only_pos = len([num for num in weights if int(num or 0) >0])
-        if only_pos != 1:
+
+        if len([num for num in weights if int(num or 0) >0]) != 1:
             print('Error')
             raise forms.ValidationError("Please put a weight in one and only one box")
 
@@ -38,8 +38,8 @@ class CalcForm2(forms.Form):
             self.cleaned_data.get("Weight_lb"),
             self.cleaned_data.get("Weight_gr")
         ]
-        only_pos = len([num for num in weights if int(num or 0) >0])
-        if only_pos != 1:
+
+        if len([num for num in weights if int(num or 0) >0]) != 1:
             raise forms.ValidationError("Please put a weight in one and only one box", code='invalid')
 
 

@@ -1,17 +1,19 @@
 {% extends 'AppTimesCalc/base.html' %}
 
-
 {% block content %}
-<h3>Your inputs were:</h3>
-    {% for key, value in calc_inputs.items %}
-        <p>{{key}} {{value}} </p>
-        </p>
-    {% endfor %}
 
-<h3>Here's how to cook it:</h3>
-    {% for key, value in calc_outputs.items %}
-        <p>{{key}} {{value}} </p>
-    {% endfor %}
+{% for key, value in calc_inputs.items %}
+    <p>{{key}} {{value}} </p>
+{% endfor %}
 
-    Your cooking time is  {{calc_outputs.Cooking_Time}}
+<h3>For your {{calc_outputs.InputWeight}} of
+{{calc_inputs.MeatType|lower}} done
+{{calc_inputs.CookingLevel|lower}}, here's how to cook it:</h3>
+
+{% for key, value in calc_outputs.items %}
+    <p>{{key}} {{value}} </p>
+{% endfor %}
+<p>The oven temperature needs to be {{calc_outputs.OvenTemp}}</p>
+<p>Your cooking time is  {{calc_outputs.CookingTime}}</p>
+<p>The target internal temperature of the meat is {{calc_outputs.InternalTemp}}</p>
 {% endblock %}

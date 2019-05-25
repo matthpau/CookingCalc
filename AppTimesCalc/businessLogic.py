@@ -1,36 +1,7 @@
 from .models import CookingInfo
+from .businessLogicConverters import *
 
-def kgToLb():
-    return 0.453592
-
-def allToKg(w_kg, w_g, w_lb):
-
-    w_kg = float(w_kg or 0)
-    w_lb = float(w_lb or 0)
-    w_g = float(w_g or 0)
-
-    if w_kg:
-        return w_kg, w_kg, 'kg'
-    elif w_g:
-        return w_g / 1000, w_kg, 'g'
-    elif w_lb:
-        return w_lb * kgToLb(), w_kg, 'lb'
-    else:
-        return 0, 0, 0
-
-def kgTo(w_kg, toValue):
-    if toValue == 1:
-        return str(w_kg) + 'kg'
-    elif toValue == 2:
-        return str(w_kg*1000) + 'g'
-    elif toValue == 3:
-        return str(w_kg/kgToLb()) + 'lb'
-
-def CtoF(CValue):
-    return int((CValue * 9 / 5) + 32)
-
-
-def CookCalc(context):
+def CookCalc(inputVals):
     """
     Expects context dictionary from the CookingCalc.html form document
     Weightin Kilos and keys for meat type and cooking level
@@ -39,33 +10,31 @@ def CookCalc(context):
     """
     results = dict()
 
-    c = CookingInfo.objects.filter(MeatType = context['MeatType']).\
-            filter(CookingLevel = context['CookingLevel'])
+    c = CookingInfo.objects.filter(MeatType = inputVals['MeatType']).\
+            filter(CookingLevel = inputVals['CookingLevel'])
     #TODO this section is not finished
 
     #https://docs.djangoproject.com/en/2.2/ref/models/querysets/#exists
 
-    c = CookingInfo.objects.filter(MeatType=context['MeatType']). \
-        filter(CookingLevel=context['CookingLevel'])
+    c = CookingInfo.objects.filter(MeatType=inputVals['MeatType']). \
+        filter(CookingLevel=inputVals['CookingLevel'])
 
     if c.exists():
         c = c.values()[0]
+        print(inputVals)
         print(c)
 
-        weightResult = allToKg(context['Weight_kg'], context['Weight_g'], context['Weight_lb'])
-        givenWeight = weightResult[0]
+        weightResult = allToKg(inputVals['Weight_kg'], inputVals['Weight_g'], inputVals['Weight_lb'])
+        givenWeightKg = weightResult[0]
 
-        if weightResult[2] == 'kg':
-            results['Input weight'] = str(context['Weight_kg']) + ' kg'
-        elif weightResult[2] == 'g':
-            results['Input weight'] = str(context['Weight_g']) + ' g'
-        elif weightResult[2] == 'lb':
-            results['Input weight'] = str(context['Weight_lb']) + ' lb'
+        cookingMins = int(c['MinsPerKg'] * givenWeightKg + c['MinsFixed'])
+        cookingHrs = str(cookingMins // 60) + ' h ' + str(cookingMins % 60) + ' mins'
 
-        results['Weight Standard kg'] = str(round(givenWeight, 1)) + ' kg'
-        results['Cooking_Time'] =  str(int(c['MinsPerKg'] * givenWeight + c['MinsFixed'])) + ' mins'
-        results['Oven Temperature'] = str(c['OvenTempC']) + '° C or ' + str(CtoF(c['OvenTempC'])) + '° F'
-        results['Internal Temperature'] = str(c['InternalTempC']) + '° C or ' + str(CtoF(c['InternalTempC'])) + '° F'
+        results['InputWeight'] = allToKgRev(weightResult)
+        results['WeightStandardkg'] = str(round(givenWeightKg, 1)) + ' kg'
+        results['CookingTime'] =  str(cookingMins) + ' mins or ' + cookingHrs
+        results['OvenTemp'] = str(c['OvenTempC']) + '° C or ' + str(CtoF(c['OvenTempC'])) + '° F'
+        results['InternalTemp'] = str(c['InternalTempC']) + '° C or ' + str(CtoF(c['InternalTempC'])) + '° F'
 
     else:
         results['Notice:'] = 'uppsala'
