@@ -39,6 +39,7 @@ class CookingInfo(models.Model):
     InitialOvenTimeMins = models.IntegerField(default=0)
     MinsPerKg = models.IntegerField(default=0)
     MinsFixed = models.IntegerField(default=0)
+    RestTimeMins =models.IntegerField(default=0)
 
     def __str__(self):
         return str(self.MeatType) + ' ' + str(self.CookingLevel)

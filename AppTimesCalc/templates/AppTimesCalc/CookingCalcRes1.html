@@ -2,18 +2,22 @@
 
 {% block content %}
 
-{% for key, value in calc_inputs.items %}
-    <p>{{key}} {{value}} </p>
-{% endfor %}
-
 <h3>For your {{calc_outputs.InputWeight}} of
 {{calc_inputs.MeatType|lower}} done
 {{calc_inputs.CookingLevel|lower}}, here's how to cook it:</h3>
 
-{% for key, value in calc_outputs.items %}
-    <p>{{key}} {{value}} </p>
-{% endfor %}
-<p>The oven temperature needs to be {{calc_outputs.OvenTemp}}</p>
-<p>Your cooking time is  {{calc_outputs.CookingTime}}</p>
-<p>The target internal temperature of the meat is {{calc_outputs.InternalTemp}}</p>
+{% comment "Optional note" %}
+    {% for key, value in calc_outputs.items %}
+        <p>{{key}} {{value}} </p>
+    {% endfor %}
+{% endcomment %}
+
+<p>Turn the oven on to {{calc_outputs.OvenTemp}} at {{calc_outputs.StartTime}} and let it warm up
+for about {{calc_outputs.WarmupTime}}.</p>
+<p>Put the meat in at {{calc_outputs.MeatInTime}} and let it cook for {{calc_outputs.CookingTime}}.</p>
+<p>Take it out of the oven at {{calc_outputs.RemoveTime}}. The internal temperature should be about {{calc_outputs.InternalTemp}}.</p>
+<p>The meat will continue to cook during resting, but if you need to put it in a little longer.</p>
+<p>Let it rest for {{calc_outputs.RestTime}}, then carve the meat and serve to your guests at {{calc_outputs.EatingTime}}.</p>
+<a href="javascript:history.back()">Go Back</a> |  <a href="/Calculator"> Do another calculation | </a>
+<a href="">Save this information</a>
 {% endblock %}

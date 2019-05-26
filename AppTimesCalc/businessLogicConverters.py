@@ -1,6 +1,16 @@
 def kgToLb():
     return 0.453592
 
+def ovenWarmupTime():
+    #how many minutes should you let your oven warm up
+    return 15
+
+def niceTime(totalmins):
+    if totalmins < 60:
+        return str(totalmins) + ' mins'
+    else:
+        return str(totalmins // 60) + ' h ' + str(totalmins % 60) + ' mins'
+
 def allToKg(w_kg, w_g, w_lb):
     """
     Used to convert three input weights to a KG standard, includes original and unit of original
@@ -18,21 +28,6 @@ def allToKg(w_kg, w_g, w_lb):
         return w_lb * kgToLb(), w_lb, 'lb'
     else:
         return 0, 0, 0
-
-def allToKgRev(allTokg):
-    """
-    Used to reverse allToKg
-    """
-    outputWeight = str(allTokg[1])
-
-    if allTokg[2] == 'kg':
-        suffix = ' kg'
-    elif allTokg[2] == 'g':
-        suffix = ' g'
-    elif allTokg[2] == 'lb':
-        suffix = ' lb'
-
-    return outputWeight + suffix
 
 def kgTo(w_kg, toValue):
     if toValue == 1:

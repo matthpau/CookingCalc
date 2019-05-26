@@ -11,7 +11,7 @@ class CookingLevelAdmin(admin.ModelAdmin):
 
 class CookingInfoAdmin(admin.ModelAdmin):
     list_display = ('MeatType', 'CookingLevel', 'NotRecommended', 'OvenTempC', 'InternalTempC',
-                    'MinsPerKg', 'MinsFixed', 'InitialOvenTempC', 'InitialOvenTimeMins')
+                    'MinsPerKg', 'MinsFixed', 'InitialOvenTempC', 'InitialOvenTimeMins', 'RestTimeMins')
 
 admin.site.register(MeatType, MeatTypeAdmin)
 admin.site.register(CookingLevel, CookingLevelAdmin)
