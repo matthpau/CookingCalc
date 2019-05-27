@@ -1,5 +1,5 @@
 def kgToLb():
-    return 0.453592
+    return 1/0.453592
 
 def ovenWarmupTime():
     #how many minutes should you let your oven warm up
@@ -21,11 +21,11 @@ def allToKg(w_kg, w_g, w_lb):
     w_g = float(w_g or 0)
 
     if w_kg:
-        return w_kg, w_kg, 'kg'
+        return w_kg, w_kg, ' kg'
     elif w_g:
-        return w_g / 1000, int(w_g), 'g'
+        return w_g / 1000, int(w_g), ' g'
     elif w_lb:
-        return w_lb * kgToLb(), w_lb, 'lb'
+        return w_lb * kgToLb(), w_lb, ' lb'
     else:
         return 0, 0, 0
 

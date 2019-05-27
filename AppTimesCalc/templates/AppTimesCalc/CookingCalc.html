@@ -4,25 +4,42 @@
 
 <!--https://getbootstrap.com/docs/4.3/layout/grid/-->
 
+    {% for k, v in calc_inputs.items %}
+        <p> {{k}} : {{v}} </p>
+    {% endfor %}
+
+
+<form action = "" method="POST" >
 <div class = "container">
     <div class="row">
         <div class="col">
-            <h4>If you know the weight of your cut already:</h4>
+            <h4>What do you want to cook for when?</h4>
             <form action = "" method="POST" >
                 {% csrf_token %}
-                {{ form1.as_p }}
-                <input type="submit" name= "Calculator1" value="Calculate" />
-            </form>
+                {{form1.MeatType.label_tag }}
+                {{form1.MeatType}}&nbsp;&nbsp;
+                {{form1.CookingLevel.label_tag}} {{form1.CookingLevel}}&nbsp;&nbsp;
+                {{form1.EatingTime.label_tag}} {{form1.EatingTime}}
+                {{ form1.non_field_errors }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <br>
+            <h4>If you know the weight already:</h4>
+            <p>{{form1.Weight_kg.label_tag }} {{form1.Weight_kg}}</p>
+            <p>{{form1.Weight_lb.label_tag}} <span class="fromRight">{{form1.Weight_lb}}</span></p>
+            <p>{{form1.Weight_g.label_tag}} <span class="fromRight">{{form1.Weight_g}}</span></p>
+            <input type="submit" name= "Calculator1" value="Calculate" />
         </div>
         <div class="col">
-            <h4>If you have to calculate how much to buy:</h4>
-            <form action = "" method="POST" >
-                {% csrf_token %}
-                {{ form2.as_p }}
-                <input type="submit" name= "Calculator2" value="Calculate" />
-            </form>
+            <br>
+            <h4>If you want to calculate by number of guests:</h4>
+            <p>{{form1.CountAdults.label_tag }} <span class="fromRight">{{form1.CountAdults}}</span></p>
+            <p>{{form1.CountChildren.label_tag}} <span class="fromRight">{{form1.CountChildren}}</span></p>
+            <input type="submit" name= "Calculator2" value="Calculate" />
         </div>
     </div>
 </div>
-
+</form>
 {% endblock %}

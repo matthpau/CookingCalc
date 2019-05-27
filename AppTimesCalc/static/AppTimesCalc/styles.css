@@ -7,3 +7,12 @@ body {
     padding-left: 15px;
 }
 
+.fromRight {
+    width: 10%;
+}
+
+input[type=number] {
+  text-align: right;
+  width: 20%;
+}
+

@@ -1,45 +1,46 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
-from .forms import CalcForm1, CalcForm2
+from .forms import CalcForm1
 from .businessLogic import CookCalc
 
 def Home(request):
     return render(request, 'AppTimesCalc/Home.html')
 
 def Calculator(request):
-    meats = MeatType.objects.all()
-    cooking_info = CookingInfo.objects.all()
 
     if request.method == "POST":
         #POST, user has triggered a button
 
         form1 = CalcForm1(request.POST)
-        form2 = CalcForm2(request.POST)
 
+        #What kind of calculation type? By weight or by person?
         if 'Calculator1' in request.POST:
-        #user triggered the first form
+            CalcType = 'byWeight'
+        else:
+            CalcType = 'byPerson'
 
-            if form1.is_valid():
-                inputs = form1.cleaned_data
-                outputs = CookCalc(inputs)
-                context = {'calc_inputs': inputs, 'calc_outputs': outputs}
+        if form1.is_valid():
+        #this triggers the validations
+            inputs = form1.cleaned_data
+            inputs['CalcType'] = CalcType
+            outputs = CookCalc(inputs)
+            context = {'calc_inputs': inputs, 'calc_outputs': outputs}
+
+            if outputs['givenWeightKg'] > 0:
                 return render(request, 'AppTimesCalc/CookingCalcRes1.html', context)
-
-        elif 'Calculator2' in request.POST:
-            #TODO need to put this in here
-            return HttpResponse('You hit the second button')
+            else:
+                return render(request, 'AppTimesCalc/CookingCalcRes1Error.html')
 
     else:
         form1 = CalcForm1()
-        form2 = CalcForm2()
+        #this is the GET for initial display
 
     meats = MeatType.objects.all()
     cooking_info = CookingInfo.objects.all()
     context = {'meats': meats,
                'cooking_info': cooking_info,
                'form1': form1,
-               'form2': form2
                }
 
     return render(request, 'AppTimesCalc/CookingCalc.html', context)
@@ -55,3 +56,9 @@ def CalcResult(request):
 
 def MealPlanner(request):
     return render(request, 'AppTimesCalc/MealPlanner.html')
+
+def Signup(request):
+    return render(request, 'AppTimesCalc/Signup.html')
+
+def Login(request):
+    return render(request, 'AppTimesCalc/Login.html')
