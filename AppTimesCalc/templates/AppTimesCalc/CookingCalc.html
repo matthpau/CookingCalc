@@ -1,20 +1,28 @@
 {% extends 'AppTimesCalc/base.html' %}
 
 {% block content %}
-    <h3>Use this simple calculator to find the cooking time based on the weight of your cut:</h3>
-    <form action = "" method="POST" >
-        {% csrf_token %}
-        <table>
-            {{ form1.as_p }}
-        </table>
-        <input type="submit" name= "Calculator1" value="Calculate" />
-    </form>
-    <h3>If you know how many people are coming, I'll calculate how much meat you need and how to cook it!</h3>
-    <form action = "" method="POST" >
-        {% csrf_token %}
-        <table>
-            {{ form2.as_p }}
-        </table>
-        <input type="submit" name= "Calculator2" value="Calculate" />
-    </form>
+
+<!--https://getbootstrap.com/docs/4.3/layout/grid/-->
+
+<div class = "container">
+    <div class="row">
+        <div class="col">
+            <h4>If you know the weight of your cut already:</h4>
+            <form action = "" method="POST" >
+                {% csrf_token %}
+                {{ form1.as_p }}
+                <input type="submit" name= "Calculator1" value="Calculate" />
+            </form>
+        </div>
+        <div class="col">
+            <h4>If you have to calculate how much to buy:</h4>
+            <form action = "" method="POST" >
+                {% csrf_token %}
+                {{ form2.as_p }}
+                <input type="submit" name= "Calculator2" value="Calculate" />
+            </form>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

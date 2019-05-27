@@ -40,7 +40,8 @@ def CookCalc(inputVals):
             results['StartTime'] = results['StartTime'].time()
             results['MeatInTime'] =results['MeatInTime'].time()
 
-
+        results['Valid'] = True
+        results['NotRecommended'] = c['NotRecommended']
         results['WarmupTime'] = niceTime(ovenWarmupTime())
         results['CookingTime'] = niceTime(cookingMins)
         results['RestTime'] = niceTime(c['RestTimeMins'])
