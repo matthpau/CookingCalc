@@ -10,7 +10,7 @@
 
 {%if calc_outputs.NotRecommended %}
     <p>It's not recommended to cook {{calc_inputs.MeatType|lower}} {{calc_inputs.CookingLevel|lower}}.</p>
-    <p>Please try selecting another cut, or changing cooking level to Well done.</p>
+<p>Please try selecting another cut, or changing cooking level to <strong>well done.</strong></p>
     <a href="javascript:history.back()">Go Back</a>
 {% else %}
     <h3>For your {{calc_outputs.InputWeight}} of {{calc_inputs.MeatType|lower}} done {{calc_inputs.CookingLevel|lower}}, here's how to cook it:</h3>
