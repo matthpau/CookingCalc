@@ -22,11 +22,11 @@
     {% else %}
             <h3>Your {{calc_outputs.InputWeight}} of {{calc_inputs.MeatType|lower}} should feed about
                 {{calc_outputs.calcAdults}} adults.</h3>
-        <p>This is based on portion sizes of around {{calc_outputs.Portion_gPerAdult}}.</p>
+        <p>This is based on portion sizes of around {{calc_outputs.Portion_gPerAdult}} per adult.</p>
 
     {% endif %}
 
-<h3>For your {{calc_inputs.MeatType|lower}} done
+<h3>For your {{calc_inputs.MeatType|lower}} cooked
     {{calc_inputs.CookingLevel|lower}}, here's how to cook it:</h3>
     <p><strong>You will need a total of {{calc_outputs.TotalTime}} to fully cook and serve your meat.</strong></p>
     <p>Make sure you let the meat come to room temperature before starting.</p>
@@ -43,4 +43,7 @@
     <a href="/MealPlanner">Save this meal</a>
 {% endif %}
 
+{% include 'AppTimesCalc/login_msg.html' %}
+
 {% endblock %}
+

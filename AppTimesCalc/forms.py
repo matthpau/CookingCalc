@@ -14,6 +14,7 @@ class CalcForm1(forms.Form):
     CountAdults = forms.IntegerField(label='Number of Adults', initial=1, required = False, min_value=0)
     CountChildren = forms.IntegerField(label='Number of Children', initial=0, required = False, min_value=0)
 
+
     def clean(self):
         #Only one weight should be filled
         weights =  [
@@ -22,9 +23,12 @@ class CalcForm1(forms.Form):
             self.cleaned_data.get("Weight_g")
             ]
 
-        if len([num for num in weights if int(num or 0) >0]) != 1:
-            print('Error')
+        a = len([num for num in weights if int(num or 0) >0])
+        print(a)
+        if a >= 2:
             raise forms.ValidationError("Please put a weight in one and only one box")
+
+
 
 
 

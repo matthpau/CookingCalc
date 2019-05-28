@@ -4,6 +4,10 @@ from .models import *
 from .forms import CalcForm1
 from .businessLogic import CookCalc
 
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
+from django.views import generic
+
 def Home(request):
     return render(request, 'AppTimesCalc/Home.html')
 
@@ -57,8 +61,7 @@ def CalcResult(request):
 def MealPlanner(request):
     return render(request, 'AppTimesCalc/MealPlanner.html')
 
-def Signup(request):
-    return render(request, 'AppTimesCalc/Signup.html')
-
-def Login(request):
-    return render(request, 'AppTimesCalc/Login.html')
+class SignUp(generic.CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy('login')
+    template_name = 'registration/signup.html'

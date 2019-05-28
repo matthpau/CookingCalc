@@ -1,5 +1,5 @@
 def kgToLb():
-    return 1/0.453592
+    return 2.20462
 
 def ovenWarmupTime():
     #how many minutes should you let your oven warm up

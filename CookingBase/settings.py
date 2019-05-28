@@ -28,6 +28,16 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
 INSTALLED_APPS = [
     'AppTimesCalc.apps.ApptimesCalcConfig',
     'django.contrib.admin',
@@ -36,6 +46,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
+
+    #https://django-allauth.readthedocs.io/en/latest/installation.html
+    # 3rd party
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    #Local
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -53,7 +74,7 @@ ROOT_URLCONF = 'CookingBase.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -61,13 +82,13 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request', #Allauth
             ],
         },
     },
 ]
 
 WSGI_APPLICATION = 'CookingBase.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -129,3 +150,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+AUTH_USER_MODEL = 'users.CustomUser'
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/' #could also be 'Home'
+LOGOUT_REDIRECT_URL = '/' #Original Django
+ACCOUNT_LOGOUT_REDIRECT_URL = '/' #Allauth
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_UNIQUE_EMAIL = True
