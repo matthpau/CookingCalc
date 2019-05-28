@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/login_msg.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppTimesCalc/templates/account/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppTimesCalc/templates/account/logout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppTimesCalc/templates/account/signup.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppTimesCalc/static/AppTimesCalc/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/static/AppTimesCalc/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalcRes1Error.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalcRes1Error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CookingBase/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CookingBase/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,18 +22,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
+            <state relative-caret-position="270">
+              <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/signup.html">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AppTimesCalc/static/AppTimesCalc/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -55,8 +50,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/login.html">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="153" column="79" selection-start-line="153" selection-start-column="15" selection-end-line="153" selection-end-column="79" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -107,8 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalcRes1Error.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+            <state relative-caret-position="75">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -136,6 +135,7 @@
       <find>STATIC_DIR</find>
       <find>/favicon.ico</find>
       <find>BACKEND</find>
+      <find>static</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/AppTimesCalc</dir>
@@ -159,7 +159,6 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/Login.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/Signup.html" />
-        <option value="$PROJECT_DIR$/AppTimesCalc/static/AppTimesCalc/styles.css" />
         <option value="$PROJECT_DIR$/AppTimesCalc/businessLogic.py" />
         <option value="$PROJECT_DIR$/AppTimesCalc/businessLogicConverters.py" />
         <option value="$PROJECT_DIR$/AppTimesCalc/forms.py" />
@@ -171,25 +170,26 @@
         <option value="$PROJECT_DIR$/users/forms.py" />
         <option value="$PROJECT_DIR$/users/admin.py" />
         <option value="$PROJECT_DIR$/users/models.py" />
-        <option value="$PROJECT_DIR$/CookingBase/settings.py" />
         <option value="$PROJECT_DIR$/CookingBase/urls.py" />
         <option value="$PROJECT_DIR$/AppTimesCalc/urls.py" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/account/logout.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalc.html" />
-        <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalcRes1Error.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/Home.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/MealPlanner.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/login_msg.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalcRes1.html" />
+        <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalcRes1Error.html" />
+        <option value="$PROJECT_DIR$/CookingBase/settings.py" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html" />
+        <option value="$PROJECT_DIR$/AppTimesCalc/static/AppTimesCalc/styles.css" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="45" />
-    <option name="y" value="30" />
-    <option name="width" value="1376" />
-    <option name="height" value="877" />
+    <option name="x" value="44" />
+    <option name="y" value="23" />
+    <option name="width" value="1327" />
+    <option name="height" value="813" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -216,13 +216,14 @@
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
               <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
               <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
               <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
               <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
@@ -243,16 +244,6 @@
               <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
-              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -481,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559041957395</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="∆">
+      <created>1559052124952</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1559052124952</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TodoView">
@@ -494,9 +492,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="45" y="30" width="1376" height="877" extended-state="0" />
+    <frame x="44" y="23" width="1327" height="813" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4888889" visible="true" weight="0.27675277" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4888889" visible="true" weight="0.2871363" />
       <window_info id="Structure" order="1" sideWeight="0.51111114" side_tool="true" weight="0.27675277" />
       <window_info id="Favorites" order="2" sideWeight="0.5029354" side_tool="true" weight="0.24947146" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -507,7 +506,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939634" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49964765" weight="0.47637796" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49964765" visible="true" weight="0.2913386" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49964765" weight="0.31805158" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5003524" side_tool="true" weight="0.328084" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32939634" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -643,13 +642,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/registration/Signup.html" />
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/static/AppTimesCalc/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AppTimesCalc/businessLogicConverters.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -730,13 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="156" column="42" selection-start-line="156" selection-start-column="42" selection-end-line="156" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CookingBase/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -756,14 +741,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/signup.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/login.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalc.html">
@@ -772,9 +753,6 @@
           <caret line="45" selection-start-line="45" selection-end-line="45" selection-end-column="43" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/login.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalcRes1.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -813,8 +791,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalcRes1Error.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+        <state relative-caret-position="75">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="153" column="79" selection-start-line="153" selection-start-column="15" selection-end-line="153" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/static/AppTimesCalc/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
         </state>
       </provider>
     </entry>

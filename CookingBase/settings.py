@@ -24,7 +24,7 @@ SECRET_KEY = 'id6@3=!641uy35qbz#@r#b^5nr4y_igzj4*m__=a6kl4fmf=w7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS=['*']
 
 # Application definition
 
@@ -149,6 +149,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#for Python Anywhere collection
+STATIC_ROOT = "/home/matthpau/matthpau.pythonanywhere.com/CookingCalc/pa_static"
 
 AUTH_USER_MODEL = 'users.CustomUser'
 SITE_ID = 1
