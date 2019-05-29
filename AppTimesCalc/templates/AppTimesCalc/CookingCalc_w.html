@@ -1,0 +1,35 @@
+{% extends 'AppTimesCalc/base.html' %}
+
+{% block content %}
+
+<!--https://getbootstrap.com/docs/4.3/layout/grid/-->
+
+<form action = "" method="POST" >
+<div class = "container-fluid">
+    <div class="row">
+        <div class="col">
+            <h5>What do you want to cook for when?</h5>
+            <form action = "" method="POST" >
+                {% csrf_token %}
+                <p>{{form1.MeatType.label_tag }} {{form1.MeatType}}</p>
+                <p>{{form1.CookingLevel.label_tag}} {{form1.CookingLevel}}</p>
+                <p>{{form1.EatingTime.label_tag}} {{form1.EatingTime}}</p>
+                {{ form1.non_field_errors }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h5>Enter the weight of your cut:</h5>
+            <p>{{form1.Weight_kg.label_tag }} {{form1.Weight_kg}}</p>
+            <p>{{form1.Weight_lb.label_tag}} <span class="fromRight">{{form1.Weight_lb}}</span></p>
+            <p>{{form1.Weight_g.label_tag}} <span class="fromRight">{{form1.Weight_g}}</span></p>
+            <input type="submit" name= "Calculator1" value="Calculate" />
+        </div>
+    </div>
+</div>
+</form>
+
+{% include 'AppTimesCalc/login_msg.html' %}
+
+{% endblock %}
+

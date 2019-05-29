@@ -28,7 +28,26 @@ class CalcForm1(forms.Form):
         if a >= 2:
             raise forms.ValidationError("Please put a weight in one and only one box")
 
+class CalcFormp(forms.Form):
+    MeatType = forms.ModelChoiceField(MeatType.objects.all(), label="Meat Type ", required=True)
+    CookingLevel = forms.ModelChoiceField(CookingLevel.objects.all(), label="Cooking Level ", required = True)
+    EatingTime = forms.TimeField(label="When do you want to eat? HH:MM (24hr clock)", required = True, initial="00:00")
+    CountAdults = forms.IntegerField(label='Number of Adults', initial=1, required = False, min_value=0)
+    CountChildren = forms.IntegerField(label='Number of Children', initial=0, required = False, min_value=0)
 
+
+    def clean(self):
+        #Only one weight should be filled
+        weights =  [
+            self.cleaned_data.get("Weight_kg"),
+            self.cleaned_data.get("Weight_lb"),
+            self.cleaned_data.get("Weight_g")
+            ]
+
+        a = len([num for num in weights if int(num or 0) >0])
+        print(a)
+        if a >= 2:
+            raise forms.ValidationError("Please put a weight in one and only one box")
 
 
 

@@ -2,12 +2,16 @@ h1, h2, h3, h4 {
     color: #1AB31F;
 }
 
+h5 {
+    color: #1AB31F;
+}
+
 body {
     font-family: 'Quicksand', Sans-Serif ;
 }
 
 .fromRight {
-    width: 10%;
+    width: 20%;
 }
 
 input[type=number] {

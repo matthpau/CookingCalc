@@ -14,6 +14,9 @@ def niceTime(totalmins):
 def allToKg(w_kg, w_g, w_lb):
     """
     Used to convert three input weights to a KG standard, includes original and unit of original
+    #output0 weight converted to KGs
+    #output1 weight original
+    #output3 units in string
     """
 
     w_kg = float(w_kg or 0)

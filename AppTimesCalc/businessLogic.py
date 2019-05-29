@@ -4,10 +4,11 @@ import datetime as dt
 
 def CookCalc(inputVals):
     """
-    Expects context dictionary from the CookingCalc.html form document
+    Expects context dictionary from the CookingCalc_w.html form document
     Weightin Kilos and keys for meat type and cooking level
     Returns dictionary with weight, meat type, cooking level, recommended cooking time and oven temps
     Input Vars Weight_kg / Weight_lb / Weight_g / EatingTime / MeatType Key / CookingLevel Key
+    CalcType: byWeight/byPerson depends on which form triggered this routine
     """
     results = dict()
 
@@ -24,7 +25,6 @@ def CookCalc(inputVals):
             weightResult = allToKg(inputVals['Weight_kg'], inputVals['Weight_g'], inputVals['Weight_lb'])
 
         else:
-
             calcWeight = (inputVals['CountAdults'] or 0) * d['PortionKGPerAdult']
             calcWeight += (inputVals['CountChildren'] or 0) * d['PortionKGPerChild']
             weightResult = allToKg(calcWeight, 0, 0)
@@ -56,7 +56,7 @@ def CookCalc(inputVals):
         results['CookingTime'] = niceTime(cookingMins)
         results['RestTime'] = niceTime(c['RestTimeMins'])
         results['TotalTime'] = niceTime(totalMins)
-        results['InputWeight'] = str(weightResult[1]) + ' ' + str(weightResult[2])
+        results['InputWeight'] = str(round(weightResult[1],3)) + ' ' + str(weightResult[2])
         results['givenWeightKg'] = givenWeightKg
         results['WeightStandardkg'] = str(round(givenWeightKg, 1)) + ' kg'
         results['WeightStandardlb'] = str(round(givenWeightKg*kgToLb(), 1)) + ' lb'
@@ -68,6 +68,7 @@ def CookCalc(inputVals):
         results['calcAdults'] = calcAdults
         results['Portion_gPerChild'] = str(round(d['PortionKGPerChild']*1000)) + ' g'
         results['CalcType'] = inputVals['CalcType']
+
 
     else:
         results['Notice:'] = 'uppsala'
