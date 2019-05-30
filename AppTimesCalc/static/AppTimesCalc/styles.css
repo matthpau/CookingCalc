@@ -10,12 +10,7 @@ body {
     font-family: 'Quicksand', Sans-Serif ;
 }
 
-.fromRight {
-    width: 20%;
-}
-
 input[type=number] {
   text-align: right;
   width: 20%;
 }
-

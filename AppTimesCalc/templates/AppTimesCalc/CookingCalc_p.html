@@ -1,5 +1,9 @@
 {% extends 'AppTimesCalc/base.html' %}
 
+{% block extrahead %}
+{{ form1.media }}
+{% endblock %}
+
 {% block content %}
 
 <!--https://getbootstrap.com/docs/4.3/layout/grid/-->
@@ -10,16 +14,14 @@
         <div class="col">
             <h5>What do you want to cook for when?</h5>
             <form action = "" method="POST" >
+
                 {% csrf_token %}
-                <p>{{form1.MeatType.label_tag }} {{form1.MeatType}}&nbsp;</p>
-                <p>{{form1.CookingLevel.label_tag}} {{form1.CookingLevel}}</p>
-                <p>{{form1.EatingTime.label_tag}} {{form1.EatingTime}}</p>
-                {{ form1.non_field_errors }}
+                {% include 'AppTimesCalc/Calc_header.html' %}
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <h5>If you want to calculate by number of guests:</h5>
+            <h5>How many people are you cooking fo?</h5>
             <p>{{form1.CountAdults.label_tag }} <span class="fromRight">{{form1.CountAdults}}</span></p>
             <p>{{form1.CountChildren.label_tag}} <span class="fromRight">{{form1.CountChildren}}</span></p>
             <p><input type="submit" name= "Calculator2" value="Calculate" /></p>

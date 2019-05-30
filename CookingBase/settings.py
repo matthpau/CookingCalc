@@ -48,15 +48,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
-
     #https://django-allauth.readthedocs.io/en/latest/installation.html
     # 3rd party
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
 
-    #Local
+    #Local - custom user model
     'users.apps.UsersConfig',
+
+    #Datepicker https://github.com/monim67/django-bootstrap-datepicker-plus
+    "bootstrap_datepicker_plus",
 ]
 
 MIDDLEWARE = [
