@@ -11,8 +11,8 @@ class CalcForm1(forms.Form):
     CookingLevel = forms.ModelChoiceField(CookingLevel.objects.all(), label="Cooking Level ", required = True)
     EatingTime = forms.TimeField(label="When do you want to eat? HH:MM (24hr clock, optional)",
                                  required = True, initial="00:00",
-                                 widget=TimePickerInput(format='%H:%M')
-                                 )
+                                 widget=TimePickerInput(format='%H:%M',attrs={"class": "w-10"}))
+                                #w-10 needed to get the clock widget showing at 10% of width
     Weight_kg = forms.DecimalField(label="Weight of meat (kilograms) ", initial=0, required = False)
     Weight_lb = forms.DecimalField(label="or, weight of meat (pounds) ", initial=0, required = False)
     Weight_g = forms.DecimalField(label="or, weight of meat (grams) ", initial=0, required = False)
@@ -28,6 +28,5 @@ class CalcForm1(forms.Form):
             ]
 
         a = len([num for num in weights if int(num or 0) >0])
-        print(a)
-        if a >= 2:
+        if a != 1:
             raise forms.ValidationError("Please put a weight in one and only one box")

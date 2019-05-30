@@ -14,14 +14,13 @@
         <div class="col">
             <h5>What do you want to cook for when?</h5>
             <form action = "" method="POST" >
-
                 {% csrf_token %}
                 {% include 'AppTimesCalc/Calc_header.html' %}
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <h5>How many people are you cooking fo?</h5>
+            <h5>How many people are you cooking for?</h5>
             <p>{{form1.CountAdults.label_tag }} <span class="fromRight">{{form1.CountAdults}}</span></p>
             <p>{{form1.CountChildren.label_tag}} <span class="fromRight">{{form1.CountChildren}}</span></p>
             <p><input type="submit" name= "Calculator2" value="Calculate" /></p>

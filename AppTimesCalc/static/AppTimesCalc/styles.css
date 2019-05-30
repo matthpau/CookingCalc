@@ -10,7 +10,13 @@ body {
     font-family: 'Quicksand', Sans-Serif ;
 }
 
-input[type=number] {
-  text-align: right;
-  width: 20%;
+input {
+  text-align: left;
+  width: 10%;
+}
+
+#paulstestid {
+  size: 25;
+  color: blue;
+  background-color: yellow;
 }
