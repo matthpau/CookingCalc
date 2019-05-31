@@ -8,7 +8,8 @@ urlpatterns = [
     path('Calculator_w', views.Calculator_w, name='Calculator_w'),
     path('Calculator_p', views.Calculator_p, name='Calculator_p'),
     path('CalcResult', views.CalcResult, name='CalcResult'),
-    path('MealPlanner', views.MealPlanDetail.as_view(), name='MealPlanner'),
+    path('MealPlannerSaved', views.MealPlannerSaved, name='MealPlannerSaved'),
+    path('MealPlannerDetail', views.MealPlanDetail.as_view(), name='MealPlanner'),
     path('accounts/', include('allauth.urls')),
     path('About', views.About, name='About'),
 ]

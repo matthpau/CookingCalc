@@ -89,9 +89,12 @@ def CalcResult(request):
     #return HttpResponse("You made it to the CalcResult")
 
 
-def MealPlanner(request):
+def MealPlannerView(request):
     return render(request, 'AppTimesCalc/MealPlanner.html')
 
+
+def MealPlannerSaved(request):
+    return render(request, 'AppTimesCalc/MealPlannerSaved.html')
 
 class SignUp(generic.CreateView):
     form_class = UserCreationForm
@@ -101,8 +104,7 @@ class SignUp(generic.CreateView):
 def About(request):
     return render(request, 'AppTimesCalc/about.html')
 
-
 class MealPlanDetail(generic.ListView):
     model = MealPlan
-    # https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/
+    #https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/
     #Template name is inferred from generic view: AppTimesCalc/mealplan_list.html

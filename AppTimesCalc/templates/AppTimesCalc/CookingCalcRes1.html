@@ -2,12 +2,6 @@
 
 {% block content %}
 
-{% comment "Optional note" %}
-    {% for key, value in calc_outputs.items %}
-        <p>{{key}} {{value}} </p>
-    {% endfor %}
-{% endcomment %}
-
 {%if calc_outputs.NotRecommended %}
     <p>It's not recommended to cook {{calc_inputs.MeatType|lower}} {{calc_inputs.CookingLevel|lower}}.</p>
 <p>Please try selecting another cut, or changing cooking level to <strong>well done.</strong></p>
@@ -40,7 +34,7 @@
         Please be sure to save this meal and rate it afterwards so we can improve our suggestions.
     </div>
     <a class="btn btn-primary" href="javascript:history.back()">Go back</a>
-    <a class="btn btn-info" href="/MealPlanner">Save this meal</a>
+    <a class="btn btn-info" href="/MealPlannerSaved">Save this meal</a>
 {% endif %}
 
 {% include 'AppTimesCalc/login_msg.html' %}

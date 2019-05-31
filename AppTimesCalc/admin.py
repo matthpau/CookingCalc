@@ -10,11 +10,14 @@ class CookingLevelAdmin(admin.ModelAdmin):
     list_display = ('CookingLevelSort', 'CookingLevel')
 
 class CookingInfoAdmin(admin.ModelAdmin):
-    list_display = ('MeatType', 'CookingLevel', 'NotRecommended', 'OvenTempC', 'InternalTempC',
-                    'MinsPerKg', 'MinsFixed', 'InitialOvenTempC', 'InitialOvenTimeMins', 'RestTimeMins')
+    list_display = ('MeatType', 'CookingLevel', 'NotRecommended', 'InitialOvenTimeMins', 'OvenTempC', 'InternalTempC',
+                    'MinsPerKg', 'MinsFixed', 'InitialOvenTempC', 'RestTimeMins')
+
+class MealPlanAdmin(admin.ModelAdmin):
+    list_display = ('UserId','PlanName', 'MeatType', 'InitialOvenTempC', 'OvenTempC')
 
 admin.site.register(MeatType, MeatTypeAdmin)
 admin.site.register(CookingLevel, CookingLevelAdmin)
 admin.site.register(CookingInfo, CookingInfoAdmin)
-admin.site.register(CookingPlan)
+admin.site.register(MealPlan, MealPlanAdmin)
 

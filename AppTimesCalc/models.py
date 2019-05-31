@@ -53,11 +53,8 @@ class CookingInfo(models.Model):
         ]
 
 class MealPlan(models.Model):
-    #UserId = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-
+    UserId = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     PlanName = models.CharField(max_length=300, blank=True)
-
-    """
     MeatType = models.ForeignKey(MeatType, on_delete=models.CASCADE)
     CookingLevel = models.ForeignKey(CookingLevel, on_delete=models.CASCADE)
     InitialOvenTempC = models.IntegerField(default=0)
@@ -69,11 +66,11 @@ class MealPlan(models.Model):
     AdultsCount = models.IntegerField(default=0)
     ChildrenCount = models.IntegerField(default=0)
     MealSizeScaling = models.IntegerField(default=1)
-    EatingTime = models.TimeField(blank=True)
-    CookingTime = models.TimeField(blank=True)
-    CookingStart = models.TimeField(blank=True)
+    EatingTime = models.TimeField(default="00:00")
+    CookingTime = models.TimeField(default="00:00")
+    CookingStart = models.TimeField(default="00:00")
     RecordCreated = models.DateTimeField(auto_now_add=True)
-    RecordModified = models.DateTimeField(auto_now=True)
-    """
+    RecordModified = models.DateTimeField(auto_now_add=True)
+
     def __str__(self):
-        return str(self.ID) + ' ' + str(self.PlanName)
+        return str(self.UserId) + ' ' + str(self.PlanName)
