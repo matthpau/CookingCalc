@@ -5,7 +5,7 @@
     <form method="post">
       {% csrf_token %}
       {{ form.as_p }}
-      <button type="submit">Confirm Logout</button>
+      <button class="btn btn-primary" type="submit">Confirm Logout</button>
     </form>
 
 {% endblock %}

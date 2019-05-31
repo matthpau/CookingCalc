@@ -98,6 +98,11 @@ class SignUp(generic.CreateView):
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
 
-
 def About(request):
     return render(request, 'AppTimesCalc/about.html')
+
+
+class MealPlanDetail(generic.ListView):
+    model = MealPlan
+    # https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/
+    #Template name is inferred from generic view: AppTimesCalc/mealplan_list.html

@@ -3,6 +3,7 @@
 #https://github.com/monim67/django-bootstrap-datepicker-plus
 
 from django import forms
+from django.forms import ModelForm
 from .models import *
 from bootstrap_datepicker_plus import TimePickerInput
 
@@ -28,5 +29,13 @@ class CalcForm1(forms.Form):
             ]
 
         a = len([num for num in weights if int(num or 0) >0])
-        if a != 1:
+        if a > 1:
             raise forms.ValidationError("Please put a weight in one and only one box")
+
+#https://docs.djangoproject.com/en/2.2/topics/forms/modelforms/
+"""
+class MealPlanForm(ModelForm):
+    class Meta:
+        model = CookingPlan
+        fields = '__all__'
+"""

@@ -1,0 +1,13 @@
+{% extends 'AppTimesCalc/base.html' %}
+
+{% block content %}
+    <h2>Meal PLans</h2>
+        <ul>
+            {% for MealPlan in object_list %}
+                <li>{{MealPlan.UserID}}</li>
+                <li>{{MealPlan.PlanName}}</li>
+            {% endfor % }
+        </ul>
+
+{% include 'AppTimesCalc/login_msg.html' %}
+{% endblock %}

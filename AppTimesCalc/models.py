@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
 #https://docs.djangoproject.com/en/2.2/ref/models/options/
 #https://docs.djangoproject.com/en/2.2/ref/models/fields/
@@ -51,9 +52,12 @@ class CookingInfo(models.Model):
             models.UniqueConstraint(fields= ['MeatType','CookingLevel'], name='UniquePerMeat'),
         ]
 
-class CookingPlan(models.Model):
-    UserId = models.IntegerField(default=0)
+class MealPlan(models.Model):
+    #UserId = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+
     PlanName = models.CharField(max_length=300, blank=True)
+
+    """
     MeatType = models.ForeignKey(MeatType, on_delete=models.CASCADE)
     CookingLevel = models.ForeignKey(CookingLevel, on_delete=models.CASCADE)
     InitialOvenTempC = models.IntegerField(default=0)
@@ -70,6 +74,6 @@ class CookingPlan(models.Model):
     CookingStart = models.TimeField(blank=True)
     RecordCreated = models.DateTimeField(auto_now_add=True)
     RecordModified = models.DateTimeField(auto_now=True)
-
+    """
     def __str__(self):
         return str(self.ID) + ' ' + str(self.PlanName)
