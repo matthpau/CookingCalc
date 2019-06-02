@@ -13,13 +13,11 @@ def CookCalc(inputVals):
     results = dict()
 
     #Get the meat and cooking info
-    c = CookingInfo.objects.filter(MeatType = inputVals['MeatType']).\
-            filter(CookingLevel = inputVals['CookingLevel'])
+    c = CookingInfo.objects.filter(MeatType = inputVals['MeatType']).filter(CookingLevel = inputVals['CookingLevel'])
     d = MeatType.objects.filter(MeatTypeName = inputVals['MeatType']).values()[0]
 
     if c.exists():
         c = c.values()[0]
-        #print(c)
 
         if inputVals['CalcType'] == 'byWeight':
             weightResult = allToKg(inputVals['Weight_kg'], inputVals['Weight_g'], inputVals['Weight_lb'])
@@ -35,33 +33,44 @@ def CookCalc(inputVals):
         cookingMins = int(c['MinsPerKg'] * givenWeightKg + c['MinsFixed'])
         totalMins = cookingMins + c['RestTimeMins'] + ovenWarmupTime()
 
-        if inputVals['EatingTime']:
-            DTeatingtime = dt.datetime.combine(dt.date.today(), inputVals['EatingTime'])
-            DTcookingMins = dt.timedelta(minutes=cookingMins)
-            DTtotalMins = dt.timedelta(minutes=totalMins)
-            DTwarmupMins = dt.timedelta(minutes=ovenWarmupTime())
-            DTrestMins = dt.timedelta(minutes=c['RestTimeMins'])
+        DTeatingtime = dt.datetime.combine(dt.date.today(), inputVals['EatingTime'])
+        DTcookingMins = dt.timedelta(minutes=cookingMins)
+        DTtotalMins = dt.timedelta(minutes=totalMins)
+        DTwarmupMins = dt.timedelta(minutes=ovenWarmupTime())
+        DTrestMins = dt.timedelta(minutes=c['RestTimeMins'])
 
-            results['StartTime'] = (DTeatingtime - DTrestMins - DTcookingMins -  DTwarmupMins)
-            results['MeatInTime'] = (results['StartTime'] + DTwarmupMins)
-            results['RemoveTime'] = (results['MeatInTime'] + DTcookingMins).time()
-            results['EatingTime'] = inputVals['EatingTime']
+        DTBrowningMins = dt.timedelta(minutes=c['BrowningMins'])
 
-            results['StartTime'] = results['StartTime'].time()
-            results['MeatInTime'] = results['MeatInTime'].time()
 
+        results['MeatType'] = inputVals['MeatType']
+        results['CookingLevel'] = inputVals['CookingLevel']
+        results['StartTime'] = (DTeatingtime - DTrestMins - DTcookingMins -  DTwarmupMins)
+        results['MeatInTime'] = (results['StartTime'] + DTwarmupMins)
+        results['RemoveTime'] = (results['MeatInTime'] + DTcookingMins).time()
+        results['EatingTime'] = inputVals['EatingTime']
+        results['StartTime'] = results['StartTime'].time()
+        results['MeatInTime'] = results['MeatInTime'].time()
         results['Valid'] = True
         results['NotRecommended'] = c['NotRecommended']
         results['WarmupTime'] = niceTime(ovenWarmupTime())
+        results['WarmupTimeDT'] = DTwarmupMins
+        results['BrowningMins'] = DTBrowningMins
         results['CookingTime'] = niceTime(cookingMins)
+        results['CookingTimeDT'] = DTcookingMins
         results['RestTime'] = niceTime(c['RestTimeMins'])
+        results['RestTimeDT'] = DTrestMins
         results['TotalTime'] = niceTime(totalMins)
+        results['TotalTimeDT'] = DTtotalMins
         results['InputWeight'] = str(round(weightResult[1],3)) + ' ' + str(weightResult[2])
-        results['givenWeightKg'] = givenWeightKg
+        results['GivenWeightKg'] = givenWeightKg
         results['WeightStandardkg'] = str(round(givenWeightKg, 1)) + ' kg'
         results['WeightStandardlb'] = str(round(givenWeightKg*kgToLb(), 1)) + ' lb'
-        results['OvenTemp'] = str(c['OvenTempC']) + '° C or ' + str(CtoF(c['OvenTempC'])) + '° F'
-        results['InternalTemp'] = str(c['InternalTempC']) + '° C or ' + str(CtoF(c['InternalTempC'])) + '° F'
+        results['BrowningTempStandardC']  = c['BrowningTempC']
+        results['BrowningTemp'] = OvenTempPretty(c['BrowningTempC'])
+        results['OvenTempStandardC'] = c['OvenTempC']
+        results['OvenTemp'] = OvenTempPretty(c['OvenTempC'])
+        results['InternalTempStandardC'] = c['InternalTempC']
+        results['InternalTemp'] = OvenTempPretty(c['InternalTempC'])
         results['CountAdults'] = inputVals['CountAdults']
         results['CountChildren'] = inputVals['CountChildren']
         results['Portion_gPerAdult'] = str(round(d['PortionKGPerAdult']*1000)) + ' g'
@@ -69,8 +78,18 @@ def CookCalc(inputVals):
         results['Portion_gPerChild'] = str(round(d['PortionKGPerChild']*1000)) + ' g'
         results['CalcType'] = inputVals['CalcType']
 
-
     else:
         results['Notice:'] = 'uppsala'
 
     return results
+
+def AddMeal(saveData):
+
+    #print(type(saveData), saveData)
+
+    for i, (k, v) in enumerate(saveData.items()):
+        print (i, k, v, type(v))
+
+
+
+

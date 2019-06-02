@@ -163,3 +163,6 @@ ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_UNIQUE_EMAIL = True
+
+#used because I want to serialize time data and JSON doesn't like this
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
