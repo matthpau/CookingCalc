@@ -1,12 +1,7 @@
 {% extends 'AppTimesCalc/base.html' %}
 
 {% block content %}
-<h1>Here I will confirm the meal plan has been saved</h1>
-    <p>Then the saved meal plans will be listed here</p>
-
-{% for key, value in saveData.items %}
-    <ul>{{key}} : {{value}}</ul>
-{% endfor %}
-
+<h1>Thankyou, your meal plan has been saved</h1>
+    <a class="btn btn-primary" href="#" role="button">See your meal plans</a>
 {% include 'AppTimesCalc/login_msg.html' %}
 {% endblock %}

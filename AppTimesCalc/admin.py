@@ -14,7 +14,8 @@ class CookingInfoAdmin(admin.ModelAdmin):
                     'MinsPerKg', 'MinsFixed', 'BrowningTempC', 'RestTimeMins')
 
 class MealPlanAdmin(admin.ModelAdmin):
-    list_display = ('UserId','PlanName', 'MeatType', 'CookingLevel')
+    list_display = ('User','PlanName', 'MeatType', 'CookingLevel')
+    readonly_fields = ('created_at','updated_at',)
 
 admin.site.register(MeatType, MeatTypeAdmin)
 admin.site.register(CookingLevel, CookingLevelAdmin)

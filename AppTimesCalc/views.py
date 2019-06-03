@@ -73,7 +73,8 @@ def MealPlannerView(request):
 @login_required()
 def MealPlannerSaved(request):
     saveData = request.session['tempCalcOutputs']
-    AddMeal(saveData)
+    #Perform the save of the data to the MealPlans table
+    AddMeal(request, saveData)
 
     context = {"saveData": saveData}
     return render(request, 'AppTimesCalc/MealPlannerSaved.html', context)

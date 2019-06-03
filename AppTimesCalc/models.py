@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+import datetime as dt
 
 #https://docs.djangoproject.com/en/2.2/ref/models/options/
 #https://docs.djangoproject.com/en/2.2/ref/models/fields/
@@ -51,23 +52,26 @@ class CookingInfo(models.Model):
         constraints = [
             models.UniqueConstraint(fields= ['MeatType','CookingLevel'], name='UniquePerMeat'),
         ]
-
+#https://wsvincent.com/django-referencing-the-user-model/
 
 class MealPlan(models.Model):
-    UserId = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    User = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     PlanName = models.CharField(max_length=100)
+    PlanDesc = models.TextField(blank=True)
     MeatType = models.ForeignKey(MeatType, on_delete=models.CASCADE) #MeatType
     CookingLevel = models.ForeignKey(CookingLevel, on_delete=models.CASCADE) #CookingLevel
 
-    StartTime = models.TimeField(default="00:00")  # StartTime
-    MeatInTime = models.TimeField(default="00:00")  # MeatInTime
-    RemoveTime = models.TimeField(default="00:00")   # RemoveTime
-    EatingTime = models.TimeField(default="00:00") # EatingTime
-    WarmupTime = models.DurationField(default=0)  # WarmupTimeDT
-    CookingTime = models.DurationField(default=0)  # CookingTimeDT
-    RestTime = models.DurationField(default=0)  # RestTimeDT
-    TotalTime = models.DurationField(default=0)   # TotalTimeDT
-    GivenWeightKG = models.FloatField(default=0.0) # GivenWeightKg
+    StartTime = models.TimeField(default=dt.time(0,0))  # StartTime
+    MeatInTime = models.TimeField(default=dt.time(0,0))  # MeatInTime
+    RemoveTime = models.TimeField(default=dt.time(0,0))   # RemoveTime
+    EatingTime = models.TimeField(default=dt.time(0,0)) # EatingTime
+
+    WarmupTime = models.DurationField(default=dt.timedelta(0))  # WarmupTimeDT
+    CookingTime = models.DurationField(default=dt.timedelta(0))  # CookingTimeDT
+    RestTime = models.DurationField(default=dt.timedelta(0))  # RestTimeDT
+    TotalTime = models.DurationField(default=dt.timedelta(0))   # TotalTimeDT
+
+    GivenWeightKg = models.FloatField(default=0.0) # GivenWeightKg
     OvenTempStandardC = models.IntegerField(default=0)  # OvenTempStandardC
     InternalTempStandardC = models.IntegerField(default=0)  # InternalTempStandardC
     CountAdults = models.IntegerField(default=0)  # CountAdults
@@ -78,38 +82,4 @@ class MealPlan(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return str(self.UserId) + ' ' + str(self.PlanName)
-"""
-Output from a calculation
-0 MeatType Beef <class 'AppTimesCalc.models.MeatType'>
-1 CookingLevel Rare <class 'AppTimesCalc.models.CookingLevel'>
-2 StartTime 12:17:00 <class 'datetime.time'>
-3 MeatInTime 12:32:00 <class 'datetime.time'>
-4 RemoveTime 13:50:00 <class 'datetime.time'>
-5 EatingTime 14:00:00 <class 'datetime.time'>
-6 Valid True <class 'bool'>
-7 NotRecommended False <class 'bool'>
-8 WarmupTime 15 mins <class 'str'>
-9 WarmupTimeDT 0:15:00 <class 'datetime.timedelta'>
-10 CookingTime 1 h 18 mins <class 'str'>
-11 CookingTimeDT 1:18:00 <class 'datetime.timedelta'>
-12 RestTime 10 mins <class 'str'>
-13 RestTimeDT 0:10:00 <class 'datetime.timedelta'>
-14 TotalTime 1 h 43 mins <class 'str'>
-15 TotalTimeDT 1:43:00 <class 'datetime.timedelta'>
-16 InputWeight 3.14  kg <class 'str'>
-17 GivenWeightKg 3.14 <class 'float'>
-18 WeightStandardkg 3.1 kg <class 'str'>
-19 WeightStandardlb 6.9 lb <class 'str'>
-20 OvenTempStandardC 180 <class 'int'>
-21 OvenTemp 180° C or 356° F <class 'str'>
-22 InternalTempStandardC 55 <class 'int'>
-23 InternalTemp 55° C or 131° F <class 'str'>
-24 CountAdults None <class 'NoneType'>
-25 CountChildren None <class 'NoneType'>
-26 Portion_gPerAdult 400 g <class 'str'>
-27 calcAdults 7 <class 'int'>
-28 Portion_gPerChild 200 g <class 'str'>
-29 CalcType byWeight <class 'str'>
-
-"""
+        return str(self.User) + ' ' + str(self.PlanName) + ' ' + str(self.updated_at)

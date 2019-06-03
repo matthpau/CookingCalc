@@ -1,6 +1,10 @@
-from .models import CookingInfo, MeatType
+from .models import *
 from .businessLogicConverters import *
 import datetime as dt
+from users.models import CustomUser
+
+from django.contrib.auth import get_user_model
+
 
 def CookCalc(inputVals):
     """
@@ -62,7 +66,7 @@ def CookCalc(inputVals):
         results['TotalTime'] = niceTime(totalMins)
         results['TotalTimeDT'] = DTtotalMins
         results['InputWeight'] = str(round(weightResult[1],3)) + ' ' + str(weightResult[2])
-        results['GivenWeightKg'] = givenWeightKg
+        results['GivenWeightKg'] = round(givenWeightKg,3)
         results['WeightStandardkg'] = str(round(givenWeightKg, 1)) + ' kg'
         results['WeightStandardlb'] = str(round(givenWeightKg*kgToLb(), 1)) + ' lb'
         results['BrowningTempStandardC']  = c['BrowningTempC']
@@ -71,8 +75,8 @@ def CookCalc(inputVals):
         results['OvenTemp'] = OvenTempPretty(c['OvenTempC'])
         results['InternalTempStandardC'] = c['InternalTempC']
         results['InternalTemp'] = OvenTempPretty(c['InternalTempC'])
-        results['CountAdults'] = inputVals['CountAdults']
-        results['CountChildren'] = inputVals['CountChildren']
+        results['CountAdults'] = inputVals['CountAdults'] or 0
+        results['CountChildren'] = inputVals['CountChildren'] or 0
         results['Portion_gPerAdult'] = str(round(d['PortionKGPerAdult']*1000)) + ' g'
         results['calcAdults'] = calcAdults
         results['Portion_gPerChild'] = str(round(d['PortionKGPerChild']*1000)) + ' g'
@@ -83,13 +87,39 @@ def CookCalc(inputVals):
 
     return results
 
-def AddMeal(saveData):
+def AddMeal(request, saveData):
 
     #print(type(saveData), saveData)
 
-    for i, (k, v) in enumerate(saveData.items()):
-        print (i, k, v, type(v))
+    #for i, (k, v) in enumerate(saveData.items()):
+    #    print (i, k, v, type(v))
 
+    #print(get_user_model())
+    #print(CustomUser.objects.all())
+    #print(request.user.get_username())
+    #print(request.user)
 
+    m = MealPlan(User = request.user,
+                PlanName = '(Put your own plan name in here)',
+                PlanDesc = '(Add any comments here...)',
+                MeatType = MeatType.objects.get(MeatTypeName = 'Beef'),
+                CookingLevel = CookingLevel.objects.get(CookingLevel = 'Rare'),
+                StartTime = saveData['StartTime'],
+                MeatInTime = saveData['MeatInTime'],
+                RemoveTime = saveData['RemoveTime'],
+                EatingTime = saveData['EatingTime'],
+                WarmupTime = saveData['WarmupTimeDT'],
+                CookingTime = saveData['CookingTimeDT'],
+                RestTime = saveData['RestTimeDT'],
+                TotalTime = saveData['TotalTimeDT'],
+                GivenWeightKg = saveData['GivenWeightKg'],
+                OvenTempStandardC = saveData['OvenTempStandardC'],  # OvenTempStandardC
+                InternalTempStandardC = saveData['InternalTempStandardC'],  # InternalTempStandardC
+                CountAdults = saveData['CountAdults'],  # CountAdults
+                CountChildren = saveData['CountChildren'],  # CountChildren
+                CalcType=saveData['CalcType'],
+                )
+    m.save()
+    print(m.pk)
 
 

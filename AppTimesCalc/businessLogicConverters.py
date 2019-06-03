@@ -44,6 +44,4 @@ def CtoF(CValue):
     return int((CValue * 9 / 5) + 32)
 
 def OvenTempPretty(TempC):
-    #TODO need to fix this
-    print(TempC, type(TempC))
     return str(TempC) + '° C or ' + str(CtoF(TempC)) + '° F'

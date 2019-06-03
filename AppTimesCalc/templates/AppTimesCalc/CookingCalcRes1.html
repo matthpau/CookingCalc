@@ -9,7 +9,7 @@
 {% else %}
 
     {%if calc_outputs.CalcType == 'byPerson' %}
-        <h3>Your {{calc_inputs.MeatType|lower}} should weigh about {{calc_outputs.InputWeight}} or
+        <h3>Your {{calc_inputs.MeatType|lower}} needs to weigh about {{calc_outputs.InputWeight}} or
             {{calc_outputs.WeightStandardlb}}</h3>
         <p>This is based on portion sizes of around {{calc_outputs.Portion_gPerAdult}} per adult and
             {{calc_outputs.Portion_gPerChild}} per child.</p>
