@@ -91,8 +91,8 @@ def AddMeal(request, saveData):
 
     #print(type(saveData), saveData)
 
-    for i, (k, v) in enumerate(saveData.items()):
-        print (i, k, v, type(v))
+    #for i, (k, v) in enumerate(saveData.items()):
+    #    print (i, k, v, type(v))
 
     #print(get_user_model())
     #print(CustomUser.objects.all())
@@ -120,6 +120,6 @@ def AddMeal(request, saveData):
                 CalcType=saveData['CalcType'],
                 )
     m.save()
-    print(m.pk)
+    #print(m.pk)
 
 
