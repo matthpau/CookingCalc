@@ -2,6 +2,6 @@
 
 {% block content %}
 <h1>Thankyou, your meal plan has been saved</h1>
-    <a class="btn btn-primary" href="/MealPlanList" role="button">See your meal plans</a>
+    <a class="btn btn-primary" href="{% url 'MealPlanner' %}" role="button">See your meal plans</a>
 {% include 'AppTimesCalc/login_msg.html' %}
 {% endblock %}
