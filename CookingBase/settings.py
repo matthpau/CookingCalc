@@ -153,8 +153,8 @@ STATIC_ROOT = "/home/matthpau/matthpau.pythonanywhere.com/CookingCalc/pa_static"
 AUTH_USER_MODEL = 'users.CustomUser'
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/' #could also be 'Home'
-LOGOUT_REDIRECT_URL = '/' #Original Django
+LOGIN_REDIRECT_URL = 'Home' #could also be 'Home'
+LOGOUT_REDIRECT_URL = 'Home' #Original Django
 ACCOUNT_LOGOUT_REDIRECT_URL = '/' #Allauth
 
 ACCOUNT_EMAIL_REQUIRED = True

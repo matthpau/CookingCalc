@@ -6,8 +6,10 @@ from .businessLogic import CookCalc,AddMeal
 
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
-from django.views import generic
+from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 #https://docs.djangoproject.com/en/2.2/topics/auth/default/#limiting-access-to-logged-in-users
 
@@ -70,7 +72,7 @@ def Calculator_p(request):
 def MealPlannerView(request):
     return render(request, 'AppTimesCalc/MealPlanner.html')
 
-@login_required()
+@login_required() #this is how you decorate a function
 def MealPlannerSaved(request):
     saveData = request.session['tempCalcOutputs']
     #Perform the save of the data to the MealPlans table
@@ -79,19 +81,19 @@ def MealPlannerSaved(request):
     context = {"saveData": saveData}
     return render(request, 'AppTimesCalc/MealPlannerSaved.html', context)
 
-"""
-class SignUp(generic.CreateView):
-    form_class = UserCreationForm
-    success_url = reverse_lazy('login')
-    template_name = 'registration/signup.html'
-"""
+
+class MealPlanList(LoginRequiredMixin, ListView):
+    #https://docs.djangoproject.com/en/2.2/topics/auth/default/#the-loginrequired-mixin
+    #Context name information https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#making-friendly-template-contexts
+    #template name can be used but in this case is automatically derived mealplan_list from model and view
+
+    #context variable name is object_list OR mealplan_list, both work. Or you can set your own
+    #model = MealPlan use this to show ALL meal plans
+
+    def get_queryset(self): #this is how you return only records for the current user https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#dynamic-filtering
+        return MealPlan.objects.filter(User=self.request.user).order_by('-created_at')[:5]
+
 
 def About(request):
     return render(request, 'AppTimesCalc/about.html')
 
-"""
-class MealPlanDetail(generic.ListView):
-    model = MealPlan
-    #https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/
-    #Template name is inferred from generic view: AppTimesCalc/mealplan_list.html
-"""

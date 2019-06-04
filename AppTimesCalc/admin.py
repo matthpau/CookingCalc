@@ -1,7 +1,7 @@
 #https://docs.djangoproject.com/en/2.2/ref/contrib/admin/#adminsite-objects
 
-from django.contrib import admin
 from .models import *
+from django.contrib import admin
 
 class MeatTypeAdmin(admin.ModelAdmin):
     list_display = ('MeatTypeName', 'PortionKGPerAdult', 'PortionKGPerChild')

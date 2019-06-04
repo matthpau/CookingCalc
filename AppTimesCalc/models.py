@@ -10,7 +10,7 @@ import datetime as dt
 
 
 class MeatType(models.Model):
-    MeatTypeName = models.CharField(max_length=60)
+    MeatTypeName = models.CharField(max_length=60, unique=True)
     PortionKGPerAdult = models.FloatField(default=0)
     PortionKGPerChild = models.FloatField(default=0)
 
@@ -21,7 +21,7 @@ class MeatType(models.Model):
         ordering = ['MeatTypeName']
 
 class CookingLevel(models.Model):
-    CookingLevel = models.CharField(max_length = 30)
+    CookingLevel = models.CharField(max_length = 30, unique=True)
     CookingLevelSort = models.IntegerField()
     CookingInfo = models.ManyToManyField(MeatType, through='CookingInfo')
 
@@ -56,6 +56,7 @@ class CookingInfo(models.Model):
 
 class MealPlan(models.Model):
     User = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+
     PlanName = models.CharField(max_length=100)
     PlanDesc = models.TextField(blank=True)
     MeatType = models.ForeignKey(MeatType, on_delete=models.CASCADE) #MeatType

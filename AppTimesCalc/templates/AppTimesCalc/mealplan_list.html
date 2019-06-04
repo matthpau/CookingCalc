@@ -3,7 +3,12 @@
 {% block content %}
 
     <h2>Meal Plans</h2>
-    <p>Here you will see your meal plans</p>
+    <p>Your most recent meal plans:</p>
+
+    {% for x in mealplan_list%}
+    <p>{{x.id}} {{x.User}}  {{x.PlanName}} {{x.created_at}}</p>
+    {% endfor%}
+
 {% include 'AppTimesCalc/login_msg.html' %}
 
 {% endblock %}

@@ -91,8 +91,8 @@ def AddMeal(request, saveData):
 
     #print(type(saveData), saveData)
 
-    #for i, (k, v) in enumerate(saveData.items()):
-    #    print (i, k, v, type(v))
+    for i, (k, v) in enumerate(saveData.items()):
+        print (i, k, v, type(v))
 
     #print(get_user_model())
     #print(CustomUser.objects.all())
@@ -102,8 +102,8 @@ def AddMeal(request, saveData):
     m = MealPlan(User = request.user,
                 PlanName = '(Put your own plan name in here)',
                 PlanDesc = '(Add any comments here...)',
-                MeatType = MeatType.objects.get(MeatTypeName = 'Beef'),
-                CookingLevel = CookingLevel.objects.get(CookingLevel = 'Rare'),
+                MeatType = MeatType.objects.get(MeatTypeName = saveData['MeatType']),
+                CookingLevel = CookingLevel.objects.get(CookingLevel = saveData['CookingLevel']),
                 StartTime = saveData['StartTime'],
                 MeatInTime = saveData['MeatInTime'],
                 RemoveTime = saveData['RemoveTime'],
