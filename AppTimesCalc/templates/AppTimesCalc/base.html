@@ -46,20 +46,19 @@
                 <a class="dropdown-item" href="/Calculator_p">By number of people</a>
             </div>
             </li>
-
             <li>
-                <a class="nav-link" href="/MealPlanList">Meal Planner</a>
-            </li>
-            <li>
-                 <a class="nav-link" href="/accounts/signup">Sign Up</a>
-            </li>
-            <li>
-                <a class="nav-link" href="/accounts/login">Log In</a>
-            </li>
-            <li>
-                <a class="nav-link" href="/About">About</a>
+                <a class="nav-link" href="{% url 'MealPlanner' %}">Meal Planner</a>
             </li>
 
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Account</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'account_signup' %}">Signup</a>
+                <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+                <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+            </div>
+            </li>
 
         </ul>
     </div>

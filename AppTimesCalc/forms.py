@@ -7,6 +7,9 @@ from django.forms import ModelForm
 from .models import *
 from bootstrap_datepicker_plus import TimePickerInput
 
+from allauth.account.forms import SignupForm, LoginForm
+
+
 class CalcForm1(forms.Form):
     MeatType = forms.ModelChoiceField(MeatType.objects.all(), label="Meat Type ", required=True, initial = "Beef")
     CookingLevel = forms.ModelChoiceField(CookingLevel.objects.all(), label="Cooking Level ", required = True, initial = "Rare")
@@ -39,3 +42,27 @@ class MealPlanForm(ModelForm):
         model = CookingPlan
         fields = '__all__'
 """
+
+#TODO check this
+"""
+class MyCustomSignupForm(SignupForm):
+
+    def save(self, request):
+
+        # Ensure you call the parent class's save.
+        # .save() returns a User object.
+        user = super(MyCustomSignupForm, self).save(request)
+
+        # Add your own processing here.
+
+        # You must return the original result.
+        return user
+"""
+
+class MyCustomLoginForm(LoginForm):
+    def login(self, *args, **kwargs):
+
+        # Add your own processing here.
+
+        # You must return the original result.
+        return super(MyCustomLoginForm, self).login(*args, **kwargs)

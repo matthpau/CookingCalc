@@ -59,6 +59,10 @@ INSTALLED_APPS = [
 
     #Datepicker https://github.com/monim67/django-bootstrap-datepicker-plus
     "bootstrap_datepicker_plus",
+
+    #https://django-crispy-forms.readthedocs.io/en/latest/index.html
+    'crispy_forms',
+
 ]
 
 MIDDLEWARE = [
@@ -166,3 +170,5 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 #used because I want to serialize time data and JSON doesn't like this
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
