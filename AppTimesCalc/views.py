@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
-from .forms import CalcForm1
+from .forms import CalcFormPerson, CalcFormWeight
 from .businessLogic import CookCalc,AddMeal
 
 from django.contrib.auth.forms import UserCreationForm
@@ -17,7 +17,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 def Home(request):
     return render(request, 'AppTimesCalc/Home.html')
 
-def CalculatorGen(request, CalcType, ViewType):
+def CalculatorGen(request, CalcType):
     """
     Shows the appropriate form whether the user has selected by weight or by person
     :param request:
@@ -26,15 +26,27 @@ def CalculatorGen(request, CalcType, ViewType):
     :return:
     """
 
+    if CalcType == 'byWeight':
+        MyForm = CalcFormWeight
+    elif CalcType == 'byPerson':
+        MyForm = CalcFormPerson
+    else:
+        pass
+
+
     if request.method == "POST":
         #POST, user has triggered a button
 
-        form1 = CalcForm1(request.POST)
+        form1 = MyForm(request.POST)
 
         if form1.is_valid():
         #this triggers the validations
             inputs = form1.cleaned_data
             inputs['CalcType'] = CalcType
+
+            print(inputs)
+        
+
             outputs = CookCalc(inputs)
             context = {'calc_inputs': inputs, 'calc_outputs': outputs}
 
@@ -42,12 +54,12 @@ def CalculatorGen(request, CalcType, ViewType):
             request.session['tempCalcOutputs'] = outputs
 
             if outputs['GivenWeightKg'] > 0:
-                return render(request, 'AppTimesCalc/CookingCalcRes1.html', context)
+                return render(request, 'AppTimesCalc/CookingCalcRes.html', context)
             else:
-                return render(request, 'AppTimesCalc/CookingCalcRes1Error.html')
+                return render(request, 'AppTimesCalc/CookingCalcResError.html')
 
     else:
-        form1 = CalcForm1()
+        form1 = MyForm()
         #this is the GET for initial display
 
     meats = MeatType.objects.all()
@@ -57,20 +69,15 @@ def CalculatorGen(request, CalcType, ViewType):
                'form1': form1,
                }
 
-    return render(request, 'AppTimesCalc/' + ViewType, context)
+    return render(request, 'AppTimesCalc/CookingCalc.html', context)
 
 def Calculator_w(request):
     CalcType = 'byWeight'
-    ViewType = "CookingCalc_w.html"
-    return CalculatorGen(request, CalcType, ViewType)
+    return CalculatorGen(request, CalcType)
 
 def Calculator_p(request):
     CalcType = 'byPerson'
-    ViewType = "CookingCalc_p.html"
-    return CalculatorGen(request, CalcType, ViewType)
-
-def MealPlannerView(request):
-    return render(request, 'AppTimesCalc/MealPlanner.html')
+    return CalculatorGen(request, CalcType)
 
 @login_required() #this is how you decorate a function
 def MealPlannerSaved(request):
@@ -83,6 +90,7 @@ def MealPlannerSaved(request):
 
 
 class MealPlanList(LoginRequiredMixin, ListView):
+    #requires login, use LoginRequiredMixin to do this
     #https://docs.djangoproject.com/en/2.2/topics/auth/default/#the-loginrequired-mixin
     #Context name information https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#making-friendly-template-contexts
     #template name can be used but in this case is automatically derived mealplan_list from model and view

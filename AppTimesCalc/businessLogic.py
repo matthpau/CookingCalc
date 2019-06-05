@@ -16,6 +16,8 @@ def CookCalc(inputVals):
     """
     results = dict()
 
+    print(inputVals)
+
     #Get the meat and cooking info
     c = CookingInfo.objects.filter(MeatType = inputVals['MeatType']).filter(CookingLevel = inputVals['CookingLevel'])
     d = MeatType.objects.filter(MeatTypeName = inputVals['MeatType']).values()[0]
@@ -24,9 +26,15 @@ def CookCalc(inputVals):
         c = c.values()[0]
 
         if inputVals['CalcType'] == 'byWeight':
+            #When by Weight, CountAdults and CountChildren are missing from the inputs, need to be added in
+            inputVals['CountAdults'] = 0
+            inputVals['CountChildren'] = 0
+
             weightResult = allToKg(inputVals['Weight_kg'], inputVals['Weight_g'], inputVals['Weight_lb'])
 
+
         else:
+
             calcWeight = (inputVals['CountAdults'] or 0) * d['PortionKGPerAdult']
             calcWeight += (inputVals['CountChildren'] or 0) * d['PortionKGPerChild']
             weightResult = allToKg(calcWeight, 0, 0)

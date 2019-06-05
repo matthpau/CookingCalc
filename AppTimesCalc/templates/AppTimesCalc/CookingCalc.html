@@ -1,0 +1,22 @@
+{% extends 'AppTimesCalc/base.html' %}
+{% load crispy_forms_tags %}
+{% block extrahead %}
+{{ form1.media }}
+{% endblock %}
+
+{% block content %}
+
+<!--https://getbootstrap.com/docs/4.3/layout/grid/-->
+
+<form action = "" method="POST" >
+    {% csrf_token %}
+    <h5>Tell me about your meal</h5>
+            {{form1|crispy}}
+    <p><input type="submit" class="btn btn-primary" name= "Calculator2" value="Calculate" /></p>
+
+</form>
+
+{% include 'AppTimesCalc/login_msg.html' %}
+
+{% endblock %}
+
