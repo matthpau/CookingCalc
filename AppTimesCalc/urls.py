@@ -11,4 +11,5 @@ urlpatterns = [
     path('MealPlanner', views.MealPlanList.as_view(), name='MealPlanner'),
     path('accounts/', include('allauth.urls')),
     path('About', views.About, name='About'),
+    path('CalcResult', views.CalcResult, name='CalcResult')
     ]

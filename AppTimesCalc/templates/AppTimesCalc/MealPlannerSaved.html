@@ -1,7 +1,9 @@
 {% extends 'AppTimesCalc/base.html' %}
 
 {% block content %}
-<h1>Thankyou, your meal plan has been saved</h1>
-    <a class="btn btn-primary" href="{% url 'MealPlanner' %}" role="button">See your meal plans</a>
+<h3>Thankyou, your meal plan has been saved</h3>
+<p>Newly saved key is {{ savePK }}</p>
+<a class="btn btn-primary" href="{% url 'MealPlanner' %}" role="button">See your meal plans</a>
+
 {% include 'AppTimesCalc/login_msg.html' %}
 {% endblock %}

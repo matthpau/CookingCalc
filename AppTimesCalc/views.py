@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse
 from .models import *
-from .forms import CalcFormPerson, CalcFormWeight
+from .forms import CalcFormPerson, CalcFormWeight, mealPlanComment
 from .businessLogic import CookCalc,AddMeal
 
 from django.contrib.auth.forms import UserCreationForm
@@ -33,27 +33,24 @@ def CalculatorGen(request, CalcType):
     else:
         pass
 
-
     if request.method == "POST":
-        #POST, user has triggered a button
+        # POST, user has triggered a button
 
         form1 = MyForm(request.POST)
 
         if form1.is_valid():
-        #this triggers the validations
+        # this triggers the validations
             inputs = form1.cleaned_data
             inputs['CalcType'] = CalcType
 
-            print(inputs)
-        
-
             outputs = CookCalc(inputs)
-            context = {'calc_inputs': inputs, 'calc_outputs': outputs}
 
-            #Store outputs for use if the user saves later
-            request.session['tempCalcOutputs'] = outputs
+            context = {'calc_inputs': inputs,
+                       'calc_outputs': outputs,
+                       'form': mealPlanComment()}
 
             if outputs['GivenWeightKg'] > 0:
+                request.session['tempCalcOutputs'] = outputs # Store outputs for use if the user saves later
                 return render(request, 'AppTimesCalc/CookingCalcRes.html', context)
             else:
                 return render(request, 'AppTimesCalc/CookingCalcResError.html')
@@ -79,13 +76,21 @@ def Calculator_p(request):
     CalcType = 'byPerson'
     return CalculatorGen(request, CalcType)
 
+def CalcResult(request, context):
+    return render(request, 'AppTimesCalc/CookingCalcRes.html', context)
+
 @login_required() #this is how you decorate a function
 def MealPlannerSaved(request):
-    saveData = request.session['tempCalcOutputs']
-    #Perform the save of the data to the MealPlans table
-    AddMeal(request, saveData)
 
-    context = {"saveData": saveData}
+
+    saveData = request.session['tempCalcOutputs'] # Get the save data from the session
+    saveData['planName'] = request.POST['MealComment'] # Get the (optional) plan name given
+    print(saveData)
+
+    #Perform the save of the data to the MealPlans table
+    x = AddMeal(request, saveData) # returns PK of the newly saved record
+
+    context = {"saveData": saveData, "savePK": x}
     return render(request, 'AppTimesCalc/MealPlannerSaved.html', context)
 
 

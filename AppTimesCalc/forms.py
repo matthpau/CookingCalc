@@ -17,8 +17,9 @@ class CalcFormGen(forms.Form):
     CookingLevel = forms.ModelChoiceField(CookingLevel.objects.all(), label="Cooking Level ", required = True, initial = "Rare")
     EatingTime = forms.TimeField(label="When do you want to eat? HH:MM (24hr clock, optional)",
                                  required = True, initial="14:00",
-                                 widget=TimePickerInput(format='%H:%M',attrs={"class": "w-40"}))
-                                #w-10 needed to get the clock widget showing at 10% of width
+                                 widget=TimePickerInput(format='%H:%M',attrs={"class": "w-40"})
+                                 )
+                                #w-10 needed to get the clock widget showing at 40% of width
     Weight_kg = forms.DecimalField(label="Weight of meat (kilograms) ", initial=3.14, required = False)
     Weight_lb = forms.DecimalField(label="or, weight of meat (pounds) ", initial=0, required = False)
     Weight_g = forms.DecimalField(label="or, weight of meat (grams) ", initial=0, required = False)
@@ -65,4 +66,12 @@ class CalcFormWeight(CalcFormGen):
     CountAdults = None
     CountChildren = None
 
-#https://docs.djangoproject.com/en/2.2/topics/forms/modelforms/
+# https://docs.djangoproject.com/en/2.2/topics/forms/modelforms/
+
+class mealPlanComment(forms.Form):
+    MealComment = forms.CharField(max_length=200,
+                                  required=False,
+                                  widget=forms.TextInput(attrs={'placeholder': 'My plan name (optional)',
+                                                                "class": "w-100",}
+                                                         )
+                                  )

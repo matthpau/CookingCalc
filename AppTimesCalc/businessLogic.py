@@ -16,8 +16,6 @@ def CookCalc(inputVals):
     """
     results = dict()
 
-    print(inputVals)
-
     #Get the meat and cooking info
     c = CookingInfo.objects.filter(MeatType = inputVals['MeatType']).filter(CookingLevel = inputVals['CookingLevel'])
     d = MeatType.objects.filter(MeatTypeName = inputVals['MeatType']).values()[0]
@@ -96,7 +94,12 @@ def CookCalc(inputVals):
     return results
 
 def AddMeal(request, saveData):
-
+    """
+    saves the calculation
+    :param request:
+    :param saveData:
+    :return: the PK of the newly saved record
+    """
     #print(type(saveData), saveData)
 
     #for i, (k, v) in enumerate(saveData.items()):
@@ -107,8 +110,14 @@ def AddMeal(request, saveData):
     #print(request.user.get_username())
     #print(request.user)
 
+
+    if saveData['planName']:
+        planName = saveData['planName']
+    else:
+        planName = 'Add your own name here'
+
     m = MealPlan(User = request.user,
-                PlanName = '(Put your own plan name in here)',
+                PlanName = planName,
                 PlanDesc = '(Add any comments here...)',
                 MeatType = MeatType.objects.get(MeatTypeName = saveData['MeatType']),
                 CookingLevel = CookingLevel.objects.get(CookingLevel = saveData['CookingLevel']),
@@ -128,6 +137,7 @@ def AddMeal(request, saveData):
                 CalcType=saveData['CalcType'],
                 )
     m.save()
-    #print(m.pk)
+    return m.pk
+
 
 

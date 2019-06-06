@@ -1,4 +1,5 @@
 {% extends 'AppTimesCalc/base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -8,34 +9,52 @@
     <a href="javascript:history.back()">Go Back</a>
 {% else %}
 
-    {%if calc_outputs.CalcType == 'byPerson' %}
-        <h3>Your {{calc_inputs.MeatType|lower}} needs to weigh about {{calc_outputs.InputWeight}} or
-            {{calc_outputs.WeightStandardlb}}</h3>
-        <p>For {{calc_inputs.CountAdults}} adults and {{calc_inputs.CountChildren}} children,
-            based on portion sizes of {{calc_outputs.Portion_gPerAdult}} per adult and
-            {{calc_outputs.Portion_gPerChild}} per child.</p>
-    {% else %}
-            <h3>Your {{calc_outputs.InputWeight}} of {{calc_inputs.MeatType|lower}} should feed about
-                {{calc_outputs.calcAdults}} adults.</h3>
-        <p>This is based on portion sizes of around {{calc_outputs.Portion_gPerAdult}} per adult.</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-7">
 
-    {% endif %}
+                {%if calc_outputs.CalcType == 'byPerson' %}
+                    <h5>Your {{calc_inputs.MeatType|lower}} needs to weigh about {{calc_outputs.InputWeight}} or
+                        {{calc_outputs.WeightStandardlb}}</h5>
+                    <p>For {{calc_inputs.CountAdults}} adults and {{calc_inputs.CountChildren}} children,
+                        based on portion sizes of {{calc_outputs.Portion_gPerAdult}} per adult and
+                        {{calc_outputs.Portion_gPerChild}} per child.</p>
+                {% else %}
+                        <h5>Your {{calc_outputs.InputWeight}} of {{calc_inputs.MeatType|lower}} should feed about
+                            {{calc_outputs.calcAdults}} adults.</h5>
+                    <p>This is based on portion sizes of around {{calc_outputs.Portion_gPerAdult}} per adult.</p>
 
-<h3>For your {{calc_inputs.MeatType|lower}} done
-    {{calc_inputs.CookingLevel|lower}}, here's how to cook it:</h3>
-    <p><strong>You will need a total of {{calc_outputs.TotalTime}} to fully cook and serve your meat.</strong></p>
-    <p>Make sure you let the meat come to room temperature before starting.</p>
-    <p>Turn the oven on to {{calc_outputs.OvenTemp}} at {{calc_outputs.StartTime}} and let it warm up
-    for about {{calc_outputs.WarmupTime}}.</p>
-    <p>Then, put the meat in at {{calc_outputs.MeatInTime}} and let it cook for {{calc_outputs.CookingTime}}.</p>
-    <p>Take it out of the oven at {{calc_outputs.RemoveTime}}. The internal temperature should be about {{calc_outputs.InternalTemp}}.</p>
-    <p>The meat will continue to cook during resting, but if you need to, put it in a little longer.</p>
-    <p>Let it rest for {{calc_outputs.RestTime}}, then carve the meat and serve to your guests at {{calc_outputs.EatingTime}}.</p>
-    <div class="alert alert-primary" role="alert">
-        Please be sure to save this meal and rate it afterwards so we can improve our suggestions.
+                {% endif %}
+
+                 <h5>For your {{calc_inputs.MeatType|lower}} done
+                {{calc_inputs.CookingLevel|lower}}, here's how to cook it:</h5>
+                <p><strong>You will need a total of {{calc_outputs.TotalTime}} to fully cook and serve your meat.</strong></p>
+                <p>Make sure you let the meat come to room temperature before starting. Turn the oven on to {{calc_outputs.OvenTemp}}
+                    at {{calc_outputs.StartTime}} and let it warm up for about {{calc_outputs.WarmupTime}}.</p>
+                <p>Then, put the meat in at {{calc_outputs.MeatInTime}} and let it cook for {{calc_outputs.CookingTime}}.
+                    Take it out of the oven at {{calc_outputs.RemoveTime}}. The internal temperature should be about {{calc_outputs.InternalTemp}}.</p>
+                <p>The meat will continue to cook during resting, but if you need to, put it in a little longer.
+                    Let it rest for {{calc_outputs.RestTime}}, then carve the meat and serve to your guests at {{calc_outputs.EatingTime}}.</p>
+            </div>
+
+            <div class="col">
+
+                <div class="alert alert-primary" role="alert">
+                    Please be sure to save this meal and rate it afterwards so we can improve our suggestions.
+                </div>
+
+                    <form method="POST" action = "/MealPlannerSaved">
+                    {% csrf_token %}
+                        <p>{{form.MealComment}}</p>
+                    <a class="btn btn-primary" href="javascript:history.back()">Go back</a>
+                    <button type="submit" class="btn btn-success">Save</button>
+                    </form>
+            </div>
+
+        </div>
     </div>
-    <a class="btn btn-primary" href="javascript:history.back()">Go back</a>
-    <a class="btn btn-info" href="/MealPlannerSaved">Save this meal</a>
+
+
 {% endif %}
 
 {% include 'AppTimesCalc/login_msg.html' %}
