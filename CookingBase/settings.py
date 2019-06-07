@@ -157,6 +157,10 @@ STATIC_ROOT = "/home/matthpau/matthpau.pythonanywhere.com/CookingCalc/pa_static"
 AUTH_USER_MODEL = 'users.CustomUser'
 SITE_ID = 1
 
+
+# AllAuth reuirements
+# https://django-allauth.readthedocs.io/en/latest/index.html
+
 LOGIN_REDIRECT_URL = 'Home' #could also be 'Home'
 LOGOUT_REDIRECT_URL = 'Home' #Original Django
 ACCOUNT_LOGOUT_REDIRECT_URL = '/' #Allauth
@@ -167,6 +171,7 @@ ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_UNIQUE_EMAIL = True
+
 
 #used because I want to serialize time data and JSON doesn't like this
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'

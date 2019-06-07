@@ -114,7 +114,7 @@ def AddMeal(request, saveData):
     if saveData['planName']:
         planName = saveData['planName']
     else:
-        planName = 'Add your own name here'
+        planName = '(Add your description here)'
 
     m = MealPlan(User = request.user,
                 PlanName = planName,

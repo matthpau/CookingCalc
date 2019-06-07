@@ -27,8 +27,8 @@ class CalcFormGen(forms.Form):
     CountChildren = forms.IntegerField(label='Number of Children', initial=0, required = False, min_value=0)
 
     """
-    #This is the crispy forms helper
-    #https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_forms.html#crispy-tag-forms
+    # This is the crispy forms helper
+    # https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_forms.html#crispy-tag-forms
     def __init__(self, *args, **kwargs):
         super(CalcForm1, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
@@ -54,19 +54,20 @@ class CalcFormGen(forms.Form):
 
 
 class CalcFormPerson(CalcFormGen):
-    #this is used when calculating by person, we therefore don't need the weights
-    #https://docs.djangoproject.com/en/2.2/ref/forms/api/#subclassing-forms
+    # this is used when calculating by person, we therefore don't need the weights
+    # https://docs.djangoproject.com/en/2.2/ref/forms/api/#subclassing-forms
     Weight_kg = None
     Weight_lb = None
     Weight_g = None
 
 
 class CalcFormWeight(CalcFormGen):
-    #this is used when calculating by weight, we therefore don't need the people
+    # this is used when calculating by weight, we therefore don't need the people
     CountAdults = None
     CountChildren = None
 
 # https://docs.djangoproject.com/en/2.2/topics/forms/modelforms/
+
 
 class mealPlanComment(forms.Form):
     MealComment = forms.CharField(max_length=200,

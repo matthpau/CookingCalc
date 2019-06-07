@@ -82,12 +82,13 @@ def CalcResult(request, context):
 @login_required() #this is how you decorate a function
 def MealPlannerSaved(request):
 
-
     saveData = request.session['tempCalcOutputs'] # Get the save data from the session
-    saveData['planName'] = request.POST['MealComment'] # Get the (optional) plan name given
-    print(saveData)
 
-    #Perform the save of the data to the MealPlans table
+    # TODO this fails if the user was not logged in and it redirects to the loginscreen first.
+    #  In that case the key is lost
+    saveData['planName'] = request.POST['MealComment'] # Get the (optional) plan name given
+
+    # Perform the save of the data to the MealPlans table
     x = AddMeal(request, saveData) # returns PK of the newly saved record
 
     context = {"saveData": saveData, "savePK": x}
@@ -95,13 +96,13 @@ def MealPlannerSaved(request):
 
 
 class MealPlanList(LoginRequiredMixin, ListView):
-    #requires login, use LoginRequiredMixin to do this
-    #https://docs.djangoproject.com/en/2.2/topics/auth/default/#the-loginrequired-mixin
-    #Context name information https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#making-friendly-template-contexts
-    #template name can be used but in this case is automatically derived mealplan_list from model and view
+    # requires login, use LoginRequiredMixin to do this
+    # https://docs.djangoproject.com/en/2.2/topics/auth/default/#the-loginrequired-mixin
+    # Context name information https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#making-friendly-template-contexts
+    # template name can be used but in this case is automatically derived mealplan_list from model and view
 
-    #context variable name is object_list OR mealplan_list, both work. Or you can set your own
-    #model = MealPlan use this to show ALL meal plans
+    # context variable name is object_list OR mealplan_list, both work. Or you can set your own
+    # model = MealPlan use this to show ALL meal plans
 
     def get_queryset(self): #this is how you return only records for the current user https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#dynamic-filtering
         return MealPlan.objects.filter(User=self.request.user).order_by('-created_at')[:5]
