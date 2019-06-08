@@ -93,7 +93,7 @@ def CookCalc(inputVals):
 
     return results
 
-def AddMeal(request, saveData):
+def AddMeal(saveData):
     """
     saves the calculation
     :param request:
@@ -116,25 +116,25 @@ def AddMeal(request, saveData):
     else:
         planName = '(Add your description here)'
 
-    m = MealPlan(User = request.user,
-                PlanName = planName,
-                PlanDesc = '(Add any comments here...)',
-                MeatType = MeatType.objects.get(MeatTypeName = saveData['MeatType']),
-                CookingLevel = CookingLevel.objects.get(CookingLevel = saveData['CookingLevel']),
-                StartTime = saveData['StartTime'],
-                MeatInTime = saveData['MeatInTime'],
-                RemoveTime = saveData['RemoveTime'],
-                EatingTime = saveData['EatingTime'],
-                WarmupTime = saveData['WarmupTimeDT'],
-                CookingTime = saveData['CookingTimeDT'],
-                RestTime = saveData['RestTimeDT'],
-                TotalTime = saveData['TotalTimeDT'],
-                GivenWeightKg = saveData['GivenWeightKg'],
-                OvenTempStandardC = saveData['OvenTempStandardC'],  # OvenTempStandardC
-                InternalTempStandardC = saveData['InternalTempStandardC'],  # InternalTempStandardC
-                CountAdults = saveData['CountAdults'],  # CountAdults
-                CountChildren = saveData['CountChildren'],  # CountChildren
-                CalcType=saveData['CalcType'],
+    m = MealPlan(User = saveData['User'],
+                 PlanName = planName,
+                 PlanDesc='(Add any comments here...)',
+                 MeatType=MeatType.objects.get(MeatTypeName=saveData['MeatType']),
+                 CookingLevel=CookingLevel.objects.get(CookingLevel=saveData['CookingLevel']),
+                 StartTime=saveData['StartTime'],
+                 MeatInTime=saveData['MeatInTime'],
+                 RemoveTime=saveData['RemoveTime'],
+                 EatingTime=saveData['EatingTime'],
+                 WarmupTime=saveData['WarmupTimeDT'],
+                 CookingTime=saveData['CookingTimeDT'],
+                 RestTime=saveData['RestTimeDT'],
+                 TotalTime=saveData['TotalTimeDT'],
+                 GivenWeightKg=saveData['GivenWeightKg'],
+                 OvenTempStandardC=saveData['OvenTempStandardC'],  # OvenTempStandardC
+                 InternalTempStandardC=saveData['InternalTempStandardC'],  # InternalTempStandardC
+                 CountAdults=saveData['CountAdults'],  # CountAdults
+                 CountChildren=saveData['CountChildren'],  # CountChildren
+                 CalcType=saveData['CalcType'],
                 )
     m.save()
     return m.pk

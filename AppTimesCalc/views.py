@@ -17,6 +17,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 def Home(request):
     return render(request, 'AppTimesCalc/Home.html')
 
+
 def CalculatorGen(request, CalcType):
     """
     Shows the appropriate form whether the user has selected by weight or by person
@@ -68,6 +69,7 @@ def CalculatorGen(request, CalcType):
 
     return render(request, 'AppTimesCalc/CookingCalc.html', context)
 
+
 def Calculator_w(request):
     CalcType = 'byWeight'
     return CalculatorGen(request, CalcType)
@@ -87,19 +89,28 @@ def CalcResult(request, context):
 def MealPlannerSaved(request):
 
     # Grab the comment
-    request.session['comment'] = request.POST['MealComment']
 
     if not request.user.is_authenticated:
-        return redirect('accounts/login' "/?next=/MealPlannerSaved")
+        request.session['planName'] = request.POST['MealComment']
+        request.session['redirected'] = True
+        # print('Need to login')
+        return redirect('accounts/login' '/?next=/MealPlannerSaved')
 
     else:
-        saveData = request.session['tempCalcOutputs'] # Get the save data from the session
-        # add back the comment name. This was only saved in a session in case the user had to log in
-        # in that case the request.POST and the data was lost
-        saveData['planName'] = request.session['comment']  # Get the (optional) plan name given
+        # User was already authenticated
+        saveData = request.session['tempCalcOutputs']  # Get the save data from the session
+        saveData['User'] = request.user
+
+        if request.session.get('redirected', False): # the comment was already captured before redirecting to the login
+            saveData['planName'] = request.session['planName']  # get it from the session
+        else:
+            saveData['planName'] = request.POST['MealComment']  # get it from the form
+
+        request.session['redirected'] = False  # reset the redirect flag
+
 
         # Perform the save of the data to the MealPlans table
-        x = AddMeal(request, saveData) # returns PK of the newly saved record
+        x = AddMeal(saveData)  # returns PK of the newly saved record
 
         context = {"saveData": saveData, "savePK": x}
         return render(request, 'AppTimesCalc/MealPlannerSaved.html', context)
