@@ -1,41 +1,42 @@
-#this is run to provide some initial values for which the database works
+# this is run to provide some initial values for which the database works
 
 from django.core.management.base import BaseCommand, CommandError
 from AppTimesCalc.models import MeatType, CookingLevel, CookingInfo
 
-#https://docs.djangoproject.com/en/2.2/howto/custom-management-commands/
+# https://docs.djangoproject.com/en/2.2/howto/custom-management-commands/
+
 
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
         m1 = MeatType(MeatTypeName = "Beef",
-                      PortionKGPerAdult = 0.4,
-                      PortionKGPerChild = 0.2,
+                      PortionKGPerAdult=0.4,
+                      PortionKGPerChild=0.2,
                       )
         m1.save()
 
-        m2 = MeatType(MeatTypeName = "Pork",
-                      PortionKGPerAdult = 0.4,
-                      PortionKGPerChild = 0.2,
+        m2 = MeatType(MeatTypeName="Pork",
+                      PortionKGPerAdult=0.4,
+                      PortionKGPerChild=0.2,
                       )
         m2.save()
 
-        l1 = CookingLevel(CookingLevel = "Rare",
-                          CookingLevelSort = 10,
+        l1 = CookingLevel(CookingLevel="Rare",
+                          CookingLevelSort=10,
                           )
         l1.save()
 
-        l1 = CookingLevel(CookingLevel = "Well done",
-                          CookingLevelSort = 20,
+        l1 = CookingLevel(CookingLevel="Well done",
+                          CookingLevelSort=20,
                           )
         l1.save()
 
         c1 = CookingInfo(MeatType = MeatType.objects.filter(MeatTypeName = "Beef")[0],
-                         CookingLevel = CookingLevel.objects.filter(CookingLevel="Rare")[0],
-                         OvenTempC = 180,
-                         InternalTempC = 55,
-                         MinsPerKg = 25,
-                         RestTimeMins = 10,
+                         CookingLevel=CookingLevel.objects.filter(CookingLevel="Rare")[0],
+                         OvenTempC=180,
+                         InternalTempC=55,
+                         MinsPerKg=25,
+                         RestTimeMins=10,
                          )
         c1.save()
 

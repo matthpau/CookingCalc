@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-#https://docs.djangoproject.com/en/2.2/topics/auth/default/#limiting-access-to-logged-in-users
+# https://docs.djangoproject.com/en/2.2/topics/auth/default/#limiting-access-to-logged-in-users
 
 
 def Home(request):
@@ -72,39 +72,50 @@ def Calculator_w(request):
     CalcType = 'byWeight'
     return CalculatorGen(request, CalcType)
 
+
 def Calculator_p(request):
     CalcType = 'byPerson'
     return CalculatorGen(request, CalcType)
 
+
 def CalcResult(request, context):
     return render(request, 'AppTimesCalc/CookingCalcRes.html', context)
 
-@login_required() #this is how you decorate a function
+
+#@login_required()
+# this is how you decorate a function. Would have used this but then the request.POST['MealComment'] disappears
 def MealPlannerSaved(request):
 
-    saveData = request.session['tempCalcOutputs'] # Get the save data from the session
+    # Grab the comment
+    request.session['comment'] = request.POST['MealComment']
 
-    # TODO this fails if the user was not logged in and it redirects to the loginscreen first.
-    #  In that case the key is lost
-    saveData['planName'] = request.POST['MealComment'] # Get the (optional) plan name given
+    if not request.user.is_authenticated:
+        return redirect('accounts/login' "/?next=/MealPlannerSaved")
 
-    # Perform the save of the data to the MealPlans table
-    x = AddMeal(request, saveData) # returns PK of the newly saved record
+    else:
+        saveData = request.session['tempCalcOutputs'] # Get the save data from the session
+        # add back the comment name. This was only saved in a session in case the user had to log in
+        # in that case the request.POST and the data was lost
+        saveData['planName'] = request.session['comment']  # Get the (optional) plan name given
 
-    context = {"saveData": saveData, "savePK": x}
-    return render(request, 'AppTimesCalc/MealPlannerSaved.html', context)
+        # Perform the save of the data to the MealPlans table
+        x = AddMeal(request, saveData) # returns PK of the newly saved record
+
+        context = {"saveData": saveData, "savePK": x}
+        return render(request, 'AppTimesCalc/MealPlannerSaved.html', context)
 
 
 class MealPlanList(LoginRequiredMixin, ListView):
-    # requires login, use LoginRequiredMixin to do this
-    # https://docs.djangoproject.com/en/2.2/topics/auth/default/#the-loginrequired-mixin
-    # Context name information https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#making-friendly-template-contexts
-    # template name can be used but in this case is automatically derived mealplan_list from model and view
+    """
+    requires login, use LoginRequiredMixin to do this
+    https://docs.djangoproject.com/en/2.2/topics/auth/default/#the-loginrequired-mixin
+    Context name information https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#making-friendly-template-contexts
+    template name can be used but in this case is automatically derived mealplan_list from model and view
 
-    # context variable name is object_list OR mealplan_list, both work. Or you can set your own
-    # model = MealPlan use this to show ALL meal plans
-
-    def get_queryset(self): #this is how you return only records for the current user https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#dynamic-filtering
+    context variable name is object_list OR mealplan_list, both work. Or you can set your own
+     model = MealPlan use this to show ALL meal plans
+    """
+    def get_queryset(self): # this is how you return only records for the current user https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#dynamic-filtering
         return MealPlan.objects.filter(User=self.request.user).order_by('-created_at')[:5]
 
 
