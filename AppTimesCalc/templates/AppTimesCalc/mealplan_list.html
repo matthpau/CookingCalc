@@ -3,14 +3,23 @@
 {% block content %}
 
     <h2>Meal Plans</h2>
-    <p>Your most recent meal plans:</p>
+    <p><strong>Your most recent meal plans:</strong></p>
 
-    {% for x in mealplan_list%}
-    <p>{{x.id}} {{x.User}}  {{x.PlanName}} {{x.created_at}}</p>
+    {% for x in object_list%}
+        <p>
+            {{x.PlanName}}, saved {{x.created_at}}
+
+            <a class="badge badge-primary" href="{{ x.get_absolute_url }}">View</a>
+            <!----
+            Alternative view...
+            <a class="badge badge-primary" href="{% url 'MealPlanDetail' x.id %}">View2</a>
+            ---->
+            <a class="badge badge-secondary" href="{% url 'MealPlanUpdate' x.id %}">Update</a>
+            <a class="badge badge-danger" href="#">Delete</a>
+        </p>
+
     {% endfor%}
 
 {% include 'AppTimesCalc/login_msg.html' %}
 
 {% endblock %}
-
-

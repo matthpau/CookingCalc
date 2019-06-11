@@ -1,21 +1,26 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import *
-from .forms import CalcFormPerson, CalcFormWeight, mealPlanComment
+from .forms import CalcFormPerson, CalcFormWeight, mealPlanComment, MealPlanForm
 from .businessLogic import CookCalc,AddMeal
 
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
-from django.views.generic import ListView
+from django.views.generic import ListView, UpdateView, DetailView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 # https://docs.djangoproject.com/en/2.2/topics/auth/default/#limiting-access-to-logged-in-users
 
 
 def Home(request):
     return render(request, 'AppTimesCalc/Home.html')
+
+
+def About(request):
+    return render(request, 'AppTimesCalc/about.html')
 
 
 def CalculatorGen(request, CalcType):
@@ -108,7 +113,6 @@ def MealPlannerSaved(request):
 
         request.session['redirected'] = False  # reset the redirect flag
 
-
         # Perform the save of the data to the MealPlans table
         x = AddMeal(saveData)  # returns PK of the newly saved record
 
@@ -126,10 +130,23 @@ class MealPlanList(LoginRequiredMixin, ListView):
     context variable name is object_list OR mealplan_list, both work. Or you can set your own
      model = MealPlan use this to show ALL meal plans
     """
-    def get_queryset(self): # this is how you return only records for the current user https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#dynamic-filtering
-        return MealPlan.objects.filter(User=self.request.user).order_by('-created_at')[:5]
+    def get_queryset(self):
+        #  this is how you return only records for the current user
+        #  https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#dynamic-filtering
+        return MealPlan.objects.filter(User=self.request.user).order_by('-created_at')  # [:5]
 
 
-def About(request):
-    return render(request, 'AppTimesCalc/about.html')
+class MealPlanDetail(DetailView):
+    queryset = MealPlan.objects.all()
+
+
+class MealPlanUpdate(UpdateView):
+    form_class = MealPlanForm
+    template_name = 'AppTimesCalc/mealplan_update.html'
+    # queryset = MealPlan.objects.all()
+
+    def get_object(self):
+        id_ = self.kwargs.get('pk')
+        return get_object_or_404(MealPlan, id=id_)
+
 

@@ -6,10 +6,9 @@ from django import forms
 from django.forms import ModelForm
 from .models import *
 from bootstrap_datepicker_plus import TimePickerInput
+from crispy_forms.helper import FormHelper
 
 from allauth.account.forms import SignupForm, LoginForm
-
-from crispy_forms.helper import FormHelper
 
 
 class CalcFormGen(forms.Form):
@@ -70,9 +69,13 @@ class CalcFormWeight(CalcFormGen):
 
 
 class mealPlanComment(forms.Form):
-    MealComment = forms.CharField(max_length=200,
-                                  required=False,
+    MealComment = forms.CharField(max_length=200, required=False,
                                   widget=forms.TextInput(attrs={'placeholder': 'My plan name (optional)',
-                                                                "class": "w-100",}
-                                                         )
-                                  )
+                                                                "class": "w-100", }))
+
+
+class MealPlanForm(forms.ModelForm):
+
+    class Meta:
+        model = MealPlan
+        fields = ['RatingStars', 'RatingComment', 'RatingResult']
