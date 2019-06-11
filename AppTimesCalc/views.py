@@ -138,6 +138,7 @@ class MealPlanList(LoginRequiredMixin, ListView):
 
 class MealPlanDetail(DetailView):
     queryset = MealPlan.objects.all()
+    # Automatically looks for mealplan_detail.html
 
 
 class MealPlanUpdate(UpdateView):

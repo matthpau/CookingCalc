@@ -93,7 +93,7 @@ class MealPlan(models.Model):
     CountChildren = models.IntegerField(default=0)  # CountChildren
     CalcType = models.CharField(max_length=20, default="")  # CalcType, byWeight or byPerson
 
-    RatingStars = models.IntegerField(blank=True)
+    RatingStars = models.IntegerField(blank=True, null=True)
     RatingComment = models.TextField(max_length=1000, blank=True)
     RatingResult = models.CharField(choices=CookingOutcomes, max_length=3, blank=True)
 
