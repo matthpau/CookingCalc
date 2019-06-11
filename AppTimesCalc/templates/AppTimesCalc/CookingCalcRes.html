@@ -38,16 +38,16 @@
             </div>
 
             <div class="col">
-
                 <div class="alert alert-primary" role="alert">
                     Please be sure to save this meal and rate it afterwards so we can improve our suggestions.
                 </div>
 
                     <form method="POST" action = "/MealPlannerSaved">
-                    {% csrf_token %}
-                        <p>{{form.MealComment}}</p>
-                    <a class="btn btn-primary" href="javascript:history.back()">Go back</a>
-                    <button type="submit" class="btn btn-success">Save this meal</button>
+                        {% csrf_token %}
+                            <p>{{form.MealComment}}</p>
+                        <button type="submit" class="btn btn-success btn-block">Save this meal</button>
+                        <a class="btn btn-primary btn-block" href="javascript:history.back()">Go back</a>
+
                     </form>
             </div>
 
