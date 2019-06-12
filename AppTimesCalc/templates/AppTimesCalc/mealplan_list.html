@@ -3,7 +3,6 @@
 {% block content %}
 
     <h2>Meal Plans</h2>
-    <p><strong>Your most recent meal plans:</strong></p>
 
     {% for x in object_list%}
         <p>
@@ -14,8 +13,7 @@
             Alternative view...
             <a class="badge badge-primary" href="{% url 'MealPlanDetail' x.id %}">View2</a>
             ---->
-            <a class="badge badge-secondary" href="{% url 'MealPlanUpdate' x.id %}">Give a rating</a>
-            <a class="badge badge-danger" href="{% url 'MealPlanDelete' x.id %}">Delete</a>
+            <a class="badge badge-primary" href="{% url 'MealPlanUpdate' x.id %}">View or give a rating</a>
         </p>
 
     {% endfor%}

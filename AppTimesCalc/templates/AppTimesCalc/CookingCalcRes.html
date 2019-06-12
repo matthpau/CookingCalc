@@ -11,7 +11,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-7">
+            <div class="col-sm col-md-7">
 
                 {%if calc_outputs.CalcType == 'byPerson' %}
                     <h5>Your {{calc_inputs.MeatType|lower}} needs to weigh about {{calc_outputs.InputWeight}} or
@@ -45,8 +45,8 @@
                     <form method="POST" action = "/MealPlannerSaved">
                         {% csrf_token %}
                             <p>{{form.MealComment}}</p>
-                        <button type="submit" class="btn btn-success btn-block">Save this meal</button>
-                        <a class="btn btn-primary btn-block" href="javascript:history.back()">Go back</a>
+                        <button type="submit" class="btn btn-primary btn-block">Save this meal</button>
+                        <a class="btn btn-secondary btn-block" href="javascript:history.back()">Go back</a>
 
                     </form>
             </div>

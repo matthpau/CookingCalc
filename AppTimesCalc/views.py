@@ -155,6 +155,7 @@ class MealPlanUpdate(UpdateView):
         print(form.cleaned_data)
         return super().form_valid(form)
 
+
 class MealPlanDelete(DeleteView):
     # Automatically looks for mealplan_confirm_delete.html
     success_url = '/MealPlanList'

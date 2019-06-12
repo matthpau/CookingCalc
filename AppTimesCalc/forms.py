@@ -12,16 +12,16 @@ from allauth.account.forms import SignupForm, LoginForm
 
 
 class CalcFormGen(forms.Form):
-    MeatType = forms.ModelChoiceField(MeatType.objects.all(), label="Meat Type ", required=True, initial = "Beef")
-    CookingLevel = forms.ModelChoiceField(CookingLevel.objects.all(), label="Cooking Level ", required = True, initial = "Rare")
+    MeatType = forms.ModelChoiceField(MeatType.objects.all(), label="Meat Type ", required=True, initial="Beef")
+    CookingLevel = forms.ModelChoiceField(CookingLevel.objects.all(), label="Cooking Level ", required=True, initial = "Rare")
     EatingTime = forms.TimeField(label="When do you want to eat? HH:MM (24hr clock, optional)",
                                  required = True, initial="14:00",
                                  widget=TimePickerInput(format='%H:%M',attrs={"class": "w-40"})
                                  )
                                 #w-10 needed to get the clock widget showing at 40% of width
-    Weight_kg = forms.DecimalField(label="Weight of meat (kilograms) ", initial=3.14, required = False)
-    Weight_lb = forms.DecimalField(label="or, weight of meat (pounds) ", initial=0, required = False)
-    Weight_g = forms.DecimalField(label="or, weight of meat (grams) ", initial=0, required = False)
+    Weight_kg = forms.DecimalField(label="Weight of meat (kilograms) ", initial=3.14, required=False)
+    Weight_lb = forms.DecimalField(label="or, weight of meat (pounds) ", initial=0, required=False)
+    Weight_g = forms.DecimalField(label="or, weight of meat (grams) ", initial=0, required=False)
     CountAdults = forms.IntegerField(label='Number of Adults', initial=1, required = False, min_value=0)
     CountChildren = forms.IntegerField(label='Number of Children', initial=0, required = False, min_value=0)
 

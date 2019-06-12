@@ -9,14 +9,3 @@ h5 {
 body {
     font-family: 'Quicksand', Sans-Serif ;
 }
-
-input {
-  text-align: left;
-  width: 10%;
-}
-
-#paulstestid {
-  size: 25;
-  color: blue;
-  background-color: yellow;
-}

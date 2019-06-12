@@ -8,12 +8,52 @@
 
 <!--https://getbootstrap.com/docs/4.3/layout/grid/-->
 
+<h5>Tell me about your meal</h5>
 <form method="POST">
     {% csrf_token %}
-    <h5>Tell me about your meal</h5>
-            {{form1|crispy}}
 
     <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                {{form1.MeatType|as_crispy_field}}
+            </div>
+            <div class="col-md-6">
+                {{form1.CookingLevel|as_crispy_field}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{form1.EatingTime|as_crispy_field}}
+            </div>
+        </div>
+
+        {%if form1.Weight_kg %}
+
+            <div class="row">
+                <div class="col-md-4">
+                    {{form1.Weight_kg|as_crispy_field}}
+                </div>
+                <div class="col-md-4">
+                    {{form1.Weight_lb|as_crispy_field}}
+                </div>
+                <div class="col-md-4">
+                    {{form1.Weight_g|as_crispy_field}}
+                </div>
+            </div>
+
+        {% else %}
+
+            <div class="row">
+                <div class="col-md-6">
+                    {{form1.CountAdults|as_crispy_field}}
+                </div>
+                <div class="col">
+                    {{form1.CountChildren|as_crispy_field}}
+                </div>
+            </div>
+
+        {% endif %}
+
         <div class="row">
             <div class="col-md-4 col-lg-2">
                 <button class="btn btn-primary btn-block" type="submit" name= "Calculator2">Calculate</button>

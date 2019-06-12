@@ -177,3 +177,4 @@ ACCOUNT_UNIQUE_EMAIL = True
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+

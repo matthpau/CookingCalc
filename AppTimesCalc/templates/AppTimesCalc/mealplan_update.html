@@ -2,74 +2,46 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-    <!---
-    <form method="POST">
-        {% csrf_token %}
-        <div class="container">
-             <div class="row">
-                <div class="col">
-                    <h5>You did a calculation for {{form.instance.InputWeight }} of {{form.instance.MeatType|lower }}
-                        cooked {{form.instance.CookingLevel|lower }},
-                        saved on {{form.instance.created_at }}</h5>
-                </div>
-             </div>
-             <div class="row">
-                <div class="col">
-                    {{form.PlanName|as_crispy_field }}
-                </div>
+<form method="POST">
+    {% csrf_token %}
+    <div class="container">
+         <div class="row">
+            <div class="col">
+                <h5>You did a calculation for {{form.instance.InputWeight }} of {{form.instance.MeatType|lower }}
+                    cooked {{form.instance.CookingLevel|lower }},
+                    saved on {{form.instance.created_at }}</h5>
             </div>
-            <div class="row">
-                <div class="col">
-                    {{form.RatingStars|as_crispy_field }}
-                </div>
-                <div class="col">
-                  {{form.RatingResult|as_crispy_field }}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    {{form.RatingComment|as_crispy_field }}
-                </div>
+         </div>
+         <div class="row">
+            <div class="col">
+                {{form.PlanName|as_crispy_field }}
             </div>
         </div>
-
-        <button class="btn btn-success" type="submit">Save</button>
-        <a class="btn btn-primary" href="javascript:history.back()">Go back</a>
-    </form>
-    ---->
-    <form method="POST">
-        {% csrf_token %}
-        <div class="container">
-             <div class="row">
-                <div class="col">
-                    <h5>You did a calculation for {{form.instance.InputWeight }} of {{form.instance.MeatType|lower }}
-                        cooked {{form.instance.CookingLevel|lower }},
-                        saved on {{form.instance.created_at }}</h5>
-                </div>
-             </div>
-             <div class="row">
-                <div class="col">
-                    {{form.PlanName|as_crispy_field }}
-                </div>
+        <div class="row">
+            <div class="col-md-6">
+                {{form.RatingStars|as_crispy_field }}
             </div>
-            <div class="row">
-                <div class="col">
-                    {{form.RatingStars|as_crispy_field }}
-                </div>
-                <div class="col">
-                  {{form.RatingResult|as_crispy_field }}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    {{form.RatingComment|as_crispy_field }}
-                </div>
+            <div class="col">
+              {{form.RatingResult|as_crispy_field }}
             </div>
         </div>
+        <div class="row">
+            <div class="col">
+                {{form.RatingComment|as_crispy_field }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-4">
+                <button class="btn btn-primary btn-block" type="submit">Save</button>
+            </div>
+            <div class="col col-md-4">
+                <a class="btn btn-secondary btn-block" href="javascript:history.back()">Go back</a>
+            </div>
+        </div>
+    </div>
 
-        <button class="btn btn-success" type="submit">Save</button>
-        <a class="btn btn-primary" href="javascript:history.back()">Go back</a>
-    </form>
+
+</form>
 
 
 {% include 'AppTimesCalc/login_msg.html' %}

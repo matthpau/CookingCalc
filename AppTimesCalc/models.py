@@ -75,7 +75,7 @@ class MealPlan(models.Model):
 
     User = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
 
-    PlanName = models.CharField(max_length=100)
+    PlanName = models.CharField(max_length=100, verbose_name="Plan Name")
     PlanDesc = models.TextField(blank=True)
     MeatType = models.ForeignKey(MeatType, on_delete=models.CASCADE)  # MeatType
     CookingLevel = models.ForeignKey(CookingLevel, on_delete=models.CASCADE)  # CookingLevel
@@ -98,10 +98,11 @@ class MealPlan(models.Model):
     CountChildren = models.IntegerField(default=0)  # CountChildren
     CalcType = models.CharField(max_length=20, default="")  # CalcType, byWeight or byPerson
 
-    RatingStars = models.IntegerField(blank=True, null=True, default=0, verbose_name="Rating", choices=Ratings)
+    RatingStars = models.IntegerField(blank=True, null=True, default=0,
+                                      verbose_name="How would you rate our instructions?", choices=Ratings)
     RatingComment = models.TextField(max_length=1000, blank=True, verbose_name="Tell us how it went")
     RatingResult = models.IntegerField(choices=CookingOutcomes, blank=True, null=True, default=0,
-                                       verbose_name="How well was it cooked?")
+                                       verbose_name="How well was it cooked compared to what you had in mind?")
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
