@@ -15,7 +15,7 @@
             <a class="badge badge-primary" href="{% url 'MealPlanDetail' x.id %}">View2</a>
             ---->
             <a class="badge badge-secondary" href="{% url 'MealPlanUpdate' x.id %}">Give a rating</a>
-            <a class="badge badge-danger" onclick="return confirm('Are you sure?')"href="#">Delete</a>
+            <a class="badge badge-danger" href="{% url 'MealPlanDelete' x.id %}">Delete</a>
         </p>
 
     {% endfor%}

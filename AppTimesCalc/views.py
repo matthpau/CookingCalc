@@ -6,7 +6,7 @@ from .businessLogic import CookCalc,AddMeal
 
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
-from django.views.generic import ListView, UpdateView, DetailView
+from django.views.generic import ListView, UpdateView, DetailView, DeleteView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -116,7 +116,7 @@ def MealPlannerSaved(request):
         # Perform the save of the data to the MealPlans table
         x = AddMeal(saveData)  # returns PK of the newly saved record
 
-        context = {"saveData": saveData, "savePK": x}
+        context = {"saveData": saveData}
         return render(request, 'AppTimesCalc/MealPlannerSaved.html', context)
 
 
@@ -144,15 +144,21 @@ class MealPlanDetail(DetailView):
 class MealPlanUpdate(UpdateView):
     form_class = MealPlanForm
     template_name = 'AppTimesCalc/mealplan_update.html'
-    # success_url = 'AppTimesCalc/mealplan_list.html'
+    success_url = '/MealPlanList'
 
     def get_object(self):
         id_ = self.kwargs.get('pk')
         return get_object_or_404(MealPlan, id=id_)
 
-    """
+
     def form_valid(self, form):
         print(form.cleaned_data)
         return super().form_valid(form)
-    """
 
+class MealPlanDelete(DeleteView):
+    # Automatically looks for mealplan_confirm_delete.html
+    success_url = '/MealPlanList'
+
+    def get_object(self):
+        id_ = self.kwargs.get('pk')
+        return get_object_or_404(MealPlan, id=id_)
