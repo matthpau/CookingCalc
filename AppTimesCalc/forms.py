@@ -75,7 +75,8 @@ class mealPlanComment(forms.Form):
 
 
 class MealPlanForm(forms.ModelForm):
-
     class Meta:
         model = MealPlan
-        fields = ['RatingStars', 'RatingComment', 'RatingResult']
+        fields = ['PlanName', 'RatingStars', 'RatingComment', 'RatingResult', 'MeatType', 'CookingLevel', 'InputWeight']
+        widgets = {'RatingComment': forms.Textarea(attrs={'rows': 3})}
+

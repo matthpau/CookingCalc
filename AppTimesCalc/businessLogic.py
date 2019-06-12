@@ -71,8 +71,8 @@ def CookCalc(inputVals):
         results['RestTimeDT'] = DTrestMins
         results['TotalTime'] = niceTime(totalMins)
         results['TotalTimeDT'] = DTtotalMins
-        results['InputWeight'] = str(round(weightResult[1],3)) + ' ' + str(weightResult[2])
-        results['GivenWeightKg'] = round(givenWeightKg,3)
+        results['InputWeight'] = str(round(weightResult[1], 3)) + ' ' + str(weightResult[2])
+        results['GivenWeightKg'] = round(givenWeightKg, 3)
         results['WeightStandardkg'] = str(round(givenWeightKg, 1)) + ' kg'
         results['WeightStandardlb'] = str(round(givenWeightKg*kgToLb(), 1)) + ' lb'
         results['BrowningTempStandardC']  = c['BrowningTempC']
@@ -114,10 +114,10 @@ def AddMeal(saveData):
     if saveData['planName']:
         planName = saveData['planName']
     else:
-        planName = '(Add your description here)'
+        planName = '(Add a plan name here)'
 
     m = MealPlan(User = saveData['User'],
-                 PlanName = planName,
+                 PlanName=planName,
                  PlanDesc='(Add any comments here...)',
                  MeatType=MeatType.objects.get(MeatTypeName=saveData['MeatType']),
                  CookingLevel=CookingLevel.objects.get(CookingLevel=saveData['CookingLevel']),
@@ -130,12 +130,13 @@ def AddMeal(saveData):
                  RestTime=saveData['RestTimeDT'],
                  TotalTime=saveData['TotalTimeDT'],
                  GivenWeightKg=saveData['GivenWeightKg'],
+                 InputWeight=saveData['InputWeight'],
                  OvenTempStandardC=saveData['OvenTempStandardC'],  # OvenTempStandardC
                  InternalTempStandardC=saveData['InternalTempStandardC'],  # InternalTempStandardC
                  CountAdults=saveData['CountAdults'],  # CountAdults
                  CountChildren=saveData['CountChildren'],  # CountChildren
                  CalcType=saveData['CalcType'],
-                )
+                 )
     m.save()
     return m.pk
 

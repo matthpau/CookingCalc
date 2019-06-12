@@ -144,10 +144,15 @@ class MealPlanDetail(DetailView):
 class MealPlanUpdate(UpdateView):
     form_class = MealPlanForm
     template_name = 'AppTimesCalc/mealplan_update.html'
-    # queryset = MealPlan.objects.all()
+    # success_url = 'AppTimesCalc/mealplan_list.html'
 
     def get_object(self):
         id_ = self.kwargs.get('pk')
         return get_object_or_404(MealPlan, id=id_)
 
+    """
+    def form_valid(self, form):
+        print(form.cleaned_data)
+        return super().form_valid(form)
+    """
 

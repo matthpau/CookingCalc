@@ -9,13 +9,13 @@
         <p>
             {{x.PlanName}}, saved {{x.created_at}}
 
-            <a class="badge badge-primary" href="{{ x.get_absolute_url }}">View</a>
             <!----
+            <a class="badge badge-primary" href="{{ x.get_absolute_url }}">View</a>
             Alternative view...
             <a class="badge badge-primary" href="{% url 'MealPlanDetail' x.id %}">View2</a>
             ---->
-            <a class="badge badge-secondary" href="{% url 'MealPlanUpdate' x.id %}">Update</a>
-            <a class="badge badge-danger" href="#">Delete</a>
+            <a class="badge badge-secondary" href="{% url 'MealPlanUpdate' x.id %}">Give a rating</a>
+            <a class="badge badge-danger" onclick="return confirm('Are you sure?')"href="#">Delete</a>
         </p>
 
     {% endfor%}

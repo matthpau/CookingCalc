@@ -25,7 +25,7 @@ class MeatType(models.Model):
 
 
 class CookingLevel(models.Model):
-    CookingLevel = models.CharField(max_length = 30, unique=True)
+    CookingLevel = models.CharField(max_length=30, unique=True)
     CookingLevelSort = models.IntegerField()
     CookingInfo = models.ManyToManyField(MeatType, through='CookingInfo')
 
@@ -55,26 +55,30 @@ class CookingInfo(models.Model):
         verbose_name_plural = 'CookingInfo'
         ordering = ['MeatType', 'CookingLevel__CookingLevelSort']
         constraints = [
-            models.UniqueConstraint(fields= ['MeatType','CookingLevel'], name='UniquePerMeat'),
+            models.UniqueConstraint(fields=['MeatType', 'CookingLevel'], name='UniquePerMeat'),
         ]
 # https://wsvincent.com/django-referencing-the-user-model/
 
 
-CookingOutcomes = [('CO1', 'Very undercooked'),
-                   ('CO2', 'Undercooked'),
-                   ('CO3', 'Just Right'),
-                   ('CO4', 'Overcooked'),
-                   ('CO5', 'Very Overcooked')]
-
-
 class MealPlan(models.Model):
+
+    CookingOutcomes = [(1, 'Very undercooked'),
+                       (2, 'Undercooked'),
+                       (3, 'Just right'),
+                       (4, 'Overcooked'),
+                       (5, 'Very overcooked')]
+
+    Ratings = [(0, 'Not rated'),
+               (1, 'One star'),
+               (2, 'Two stars'),
+               (3, 'Three stars')]
 
     User = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
 
     PlanName = models.CharField(max_length=100)
     PlanDesc = models.TextField(blank=True)
-    MeatType = models.ForeignKey(MeatType, on_delete=models.CASCADE) # MeatType
-    CookingLevel = models.ForeignKey(CookingLevel, on_delete=models.CASCADE) # CookingLevel
+    MeatType = models.ForeignKey(MeatType, on_delete=models.CASCADE)  # MeatType
+    CookingLevel = models.ForeignKey(CookingLevel, on_delete=models.CASCADE)  # CookingLevel
 
     StartTime = models.TimeField(default=dt.time(0, 0))  # StartTime
     MeatInTime = models.TimeField(default=dt.time(0, 0))  # MeatInTime
@@ -87,15 +91,17 @@ class MealPlan(models.Model):
     TotalTime = models.DurationField(default=dt.timedelta(0))   # TotalTimeDT
 
     GivenWeightKg = models.FloatField(default=0.0)  # GivenWeightKg
+    InputWeight = models.CharField(default="", max_length=50)  # Weight as given by the user
     OvenTempStandardC = models.IntegerField(default=0)  # OvenTempStandardC
     InternalTempStandardC = models.IntegerField(default=0)  # InternalTempStandardC
     CountAdults = models.IntegerField(default=0)  # CountAdults
     CountChildren = models.IntegerField(default=0)  # CountChildren
     CalcType = models.CharField(max_length=20, default="")  # CalcType, byWeight or byPerson
 
-    RatingStars = models.IntegerField(blank=True, null=True)
-    RatingComment = models.TextField(max_length=1000, blank=True)
-    RatingResult = models.CharField(choices=CookingOutcomes, max_length=3, blank=True)
+    RatingStars = models.IntegerField(blank=True, null=True, default=0, verbose_name="Rating", choices=Ratings)
+    RatingComment = models.TextField(max_length=1000, blank=True, verbose_name="Tell us how it went")
+    RatingResult = models.IntegerField(choices=CookingOutcomes, blank=True, null=True, default=0,
+                                       verbose_name="How well was it cooked?")
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

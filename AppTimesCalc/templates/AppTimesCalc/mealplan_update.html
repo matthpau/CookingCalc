@@ -2,12 +2,35 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-    <h2>Meal Plan Detail</h2>
-
     <form method="POST">
         {% csrf_token %}
-
-        {{form|crispy}}
+        <div class="container">
+             <div class="row">
+                <div class="col">
+                    <h5>You did a calculation for {{form.instance.InputWeight }} of {{form.instance.MeatType|lower }}
+                        cooked {{form.instance.CookingLevel|lower }},
+                        saved on {{form.instance.created_at }}</h5>
+                </div>
+             </div>
+             <div class="row">
+                <div class="col">
+                    {{form.PlanName|as_crispy_field }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    {{form.RatingStars|as_crispy_field }}
+                </div>
+                <div class="col">
+                  {{form.RatingResult|as_crispy_field }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    {{form.RatingComment|as_crispy_field }}
+                </div>
+            </div>
+        </div>
 
         <button class="btn btn-success" type="submit">Save</button>
         <a class="btn btn-primary" href="javascript:history.back()">Go back</a>
