@@ -3,10 +3,8 @@
 #https://github.com/monim67/django-bootstrap-datepicker-plus
 
 from django import forms
-from django.forms import ModelForm
 from .models import *
 from bootstrap_datepicker_plus import TimePickerInput
-from crispy_forms.helper import FormHelper
 
 from allauth.account.forms import SignupForm, LoginForm
 
@@ -79,4 +77,3 @@ class MealPlanForm(forms.ModelForm):
         model = MealPlan
         fields = ['PlanName', 'RatingStars', 'RatingComment', 'RatingResult']
         widgets = {'RatingComment': forms.Textarea(attrs={'rows': 3})}
-

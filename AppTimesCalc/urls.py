@@ -11,7 +11,7 @@ urlpatterns = [
     path('MealPlanList', views.MealPlanList.as_view(), name='MealPlanList'),
     path('MealPlan/<int:pk>/update', views.MealPlanUpdate.as_view(), name='MealPlanUpdate'),
     path('MealPlan/<int:pk>/detail', views.MealPlanDetail.as_view(), name='MealPlanDetail'),
-    path('MealPlan/<int:pk>/delete', views.MealPlanDelete.as_view(), name='MealPlanDelete'),
+    path('MealPlan/<int:pk>/delete', views.MealPlanDelete, name='MealPlanDelete'),
     path('accounts/', include('allauth.urls')),
     path('About', views.About, name='About'),
     path('CalcResult', views.CalcResult, name='CalcResult'),

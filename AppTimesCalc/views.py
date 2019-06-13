@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse
 from .models import *
 from .forms import CalcFormPerson, CalcFormWeight, mealPlanComment, MealPlanForm
 from .businessLogic import CookCalc,AddMeal
@@ -10,6 +10,10 @@ from django.views.generic import ListView, UpdateView, DetailView, DeleteView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.conf import settings
+
+
+from users.models import CustomUser
 
 
 # https://docs.djangoproject.com/en/2.2/topics/auth/default/#limiting-access-to-logged-in-users
@@ -155,6 +159,9 @@ class MealPlanUpdate(UpdateView):
         print(form.cleaned_data)
         return super().form_valid(form)
 
+"""
+This was based on the generic view, but I want a DELETE to lead to changing 
+the user to a defaultuser instead, so I keep the data
 
 class MealPlanDelete(DeleteView):
     # Automatically looks for mealplan_confirm_delete.html
@@ -163,3 +170,36 @@ class MealPlanDelete(DeleteView):
     def get_object(self):
         id_ = self.kwargs.get('pk')
         return get_object_or_404(MealPlan, id=id_)
+"""
+
+
+def MealPlanDelete(request, pk):
+
+    if request.method == 'POST':
+
+        CurrentRecord = MealPlan.objects.get(id=pk)
+
+        #  Check we are the logged in user for security
+        if request.user == CurrentRecord.User:
+
+            # needs to be filter so that .exists() works
+            a = CustomUser.objects.filter(username=settings.ARCHIVE_USERNAME)
+            if not a.exists():
+                b = CustomUser(username=settings.ARCHIVE_USERNAME, email=settings.ARCHIVE_USER_EMAIL)
+
+                b.save()
+
+            #Change the record in Meal PLan to the archive user
+            CurrentRecord.User = CustomUser.objects.get(username=settings.ARCHIVE_USERNAME)
+            # Could also clear out comments e.g. CurrentRecord.PlanName= '' etc
+            CurrentRecord.save()
+
+        return HttpResponseRedirect('/MealPlanList')
+
+    else:
+        PlanName = MealPlan.objects.get(id=pk).friendlyname()
+
+
+        context = {"MealPlanName": PlanName}
+        print(context)
+        return render(request, 'AppTimesCalc/mealplan_confirm_delete.html', context)

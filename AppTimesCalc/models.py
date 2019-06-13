@@ -110,6 +110,9 @@ class MealPlan(models.Model):
     def __str__(self):
         return str(self.id) + ' ' + str(self.User) + ' ' + str(self.PlanName) + ' ' + str(self.updated_at)
 
+    def friendlyname(self):
+        return str(self.id) + ' ' + str(self.PlanName) + ' created on ' + str(self.created_at)
+
     def get_absolute_url(self):
         # A better way TryDjango Video https://www.youtube.com/watch?v=JqbBGxDLQeU
         return reverse('MealPlanDetail', kwargs={'pk': self.id})

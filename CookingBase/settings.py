@@ -178,3 +178,5 @@ SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+ARCHIVE_USERNAME = 'archive_user'
+ARCHIVE_USER_EMAIL = 'archive_user@cooking-helpers.com'
