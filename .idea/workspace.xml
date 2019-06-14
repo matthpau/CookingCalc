@@ -4,14 +4,8 @@
     <bookmark url="file://$PROJECT_DIR$/AppTimesCalc/businessLogic.py" line="80" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="∆">
-      <change afterPath="$PROJECT_DIR$/users/signals.py" afterDir="false" />
+    <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CookingBase/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CookingBase/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1374">
-              <caret line="34" column="48" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+            <state relative-caret-position="251">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
             </state>
           </provider>
         </entry>
@@ -92,15 +86,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
               <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/users/migrations/0001_initial.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -226,11 +211,11 @@
         <option value="$PROJECT_DIR$/AppTimesCalc/views.py" />
         <option value="$PROJECT_DIR$/users/signals.py" />
         <option value="$PROJECT_DIR$/users/apps.py" />
-        <option value="$PROJECT_DIR$/CookingBase/settings.py" />
         <option value="$PROJECT_DIR$/users/migrations/0001_initial.py" />
         <option value="$PROJECT_DIR$/users/admin.py" />
         <option value="$PROJECT_DIR$/users/models.py" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/account/login.html" />
+        <option value="$PROJECT_DIR$/CookingBase/settings.py" />
       </list>
     </option>
   </component>
@@ -272,13 +257,6 @@
               <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="account" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
-              <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
@@ -701,7 +679,21 @@
       <option name="project" value="LOCAL" />
       <updated>1560497572899</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="∆">
+      <created>1560513092634</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1560513092634</updated>
+    </task>
+    <task id="LOCAL-00049" summary="∆">
+      <created>1560513751497</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1560513751497</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TodoView">
@@ -728,7 +720,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939634" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49964765" weight="0.20603675" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4982382" visible="true" weight="0.3727034" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4982382" visible="true" weight="0.32020998" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5017618" side_tool="true" weight="0.30183727" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32677165" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32939634" />
@@ -1150,8 +1142,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1374">
-          <caret line="34" column="48" lean-forward="true" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
+        <state relative-caret-position="251">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
