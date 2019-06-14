@@ -24,7 +24,7 @@ SECRET_KEY = 'id6@3=!641uy35qbz#@r#b^5nr4y_igzj4*m__=a6kl4fmf=w7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS=['*']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -39,7 +39,6 @@ AUTHENTICATION_BACKENDS = (
 )
 
 INSTALLED_APPS = [
-    'AppTimesCalc.apps.ApptimesCalcConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,11 +53,12 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
-    #Local - custom user model
+    #Local
     'users.apps.UsersConfig',
+    'AppTimesCalc.apps.ApptimesCalcConfig',
 
     #Datepicker https://github.com/monim67/django-bootstrap-datepicker-plus
-    "bootstrap_datepicker_plus",
+    'bootstrap_datepicker_plus',
 
     #https://django-crispy-forms.readthedocs.io/en/latest/index.html
     'crispy_forms',
