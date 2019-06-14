@@ -42,12 +42,10 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Calculators</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/Calculator_w">By weight</a>
-                <a class="dropdown-item" href="/Calculator_p">By number of people</a>
+                <a class="dropdown-item" href="{% url 'Calculator_w' %}">By weight</a>
+                <a class="dropdown-item" href="{% url 'Calculator_p' %}">By number of people</a>
+                <a class="dropdown-item" href="{% url 'MealPlanList' %}">My saved meals</a>
             </div>
-            </li>
-            <li>
-                <a class="nav-link" href="{% url 'MealPlanList' %}">My saved meals</a>
             </li>
 
             <li class="nav-item dropdown">
@@ -58,6 +56,10 @@
                 <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
                 <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
             </div>
+            </li>
+
+            <li>
+                <a class="nav-link" href="{% url 'About' %}">About</a>
             </li>
 
         </ul>
