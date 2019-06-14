@@ -47,15 +47,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
+    # Local
+    'users.apps.UsersConfig',
+    'AppTimesCalc.apps.ApptimesCalcConfig',
+
     #https://django-allauth.readthedocs.io/en/latest/installation.html
+    #important - this MUST come after the local apps are registered
     # 3rd party
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
 
-    #Local
-    'users.apps.UsersConfig',
-    'AppTimesCalc.apps.ApptimesCalcConfig',
 
     #Datepicker https://github.com/monim67/django-bootstrap-datepicker-plus
     'bootstrap_datepicker_plus',
