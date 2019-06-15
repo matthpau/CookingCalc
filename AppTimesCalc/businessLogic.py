@@ -71,7 +71,7 @@ def CookCalc(inputVals):
         results['RestTimeDT'] = DTrestMins
         results['TotalTime'] = niceTime(totalMins)
         results['TotalTimeDT'] = DTtotalMins
-        results['InputWeight'] = str(round(weightResult[1], 3)) + ' ' + str(weightResult[2])
+        results['InputWeight'] = str(round(weightResult[1], 3)) + str(weightResult[2])
         results['GivenWeightKg'] = round(givenWeightKg, 3)
         results['WeightStandardkg'] = str(round(givenWeightKg, 1)) + ' kg'
         results['WeightStandardlb'] = str(round(givenWeightKg*kgToLb(), 1)) + ' lb'
@@ -110,14 +110,13 @@ def AddMeal(saveData):
     #print(request.user.get_username())
     #print(request.user)
 
-
     getMeatType = MeatType.objects.get(MeatTypeName=saveData['MeatType'])
     getCookingLevel = CookingLevel.objects.get(CookingLevel=saveData['CookingLevel'])
 
     if saveData['planName']:
         planName = saveData['planName']
     else:
-        planName = str(saveData['InputWeight']) + ' ' + str(getMeatType) + ', ' + str(getCookingLevel)
+        planName = str(saveData['InputWeight']) + ' ' + str(getMeatType).lower() + ', ' + str(getCookingLevel).lower()
 
     m = MealPlan(User=saveData['User'],
                  PlanName=planName,

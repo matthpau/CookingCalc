@@ -6,7 +6,7 @@
 
     {% for x in object_list%}
         <p>
-            {{x.id}} {{x.PlanName}}, saved {{x.created_at}}
+            {{x.id}} - {{x.PlanName}}, saved {{x.created_at}}
 
             <!----
             <a class="badge badge-primary" href="{{ x.get_absolute_url }}">View</a>

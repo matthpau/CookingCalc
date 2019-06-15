@@ -1,6 +1,9 @@
 from django.urls import include, path
 from . import views
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 #https://docs.djangoproject.com/en/2.2/topics/http/shortcuts/
 
 urlpatterns = [
@@ -15,4 +18,4 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('About', views.About, name='About'),
     path('CalcResult', views.CalcResult, name='CalcResult'),
-    ]
+    ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
