@@ -100,7 +100,7 @@ class MealPlan(models.Model):
 
     RatingStars = models.IntegerField(blank=True, null=True, default=0,
                                       verbose_name="How would you rate our instructions?", choices=Ratings)
-    RatingComment = models.TextField(max_length=1000, blank=True, verbose_name="Tell us how it went")
+    RatingComment = models.TextField(max_length=1000, blank=True, verbose_name="Tell us how it went...")
     RatingResult = models.IntegerField(choices=CookingOutcomes, blank=True, null=True, default=0,
                                        verbose_name="How well was it cooked compared to what you had in mind?")
 
