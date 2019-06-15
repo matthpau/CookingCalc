@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppTimesCalc/businessLogic.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/businessLogic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppTimesCalc/templates/account/password_reset.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/templates/account/password_reset.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CookingBase/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CookingBase/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,90 +22,83 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppTimesCalc/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="44" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
+            <state>
+              <caret selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/users/admin.py">
+        <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/logout.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+              <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/password_reset_done.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+            <state relative-caret-position="177">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/users/signals.py">
+        <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/password_reset_from_key.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-              <folding>
-                <element signature="e#62#108#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="270">
+              <caret line="18" column="74" selection-start-line="18" selection-start-column="74" selection-end-line="18" selection-end-column="74" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppTimesCalc/models.py">
+        <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/password_reset_from_key_done.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="46" />
+            <state>
+              <caret column="38" selection-start-column="38" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/users/apps.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/users/__init__.py">
+        <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/signup.html">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/users/models.py">
+        <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/password_reset.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#64#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="285">
+              <caret line="19" column="95" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="95" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalc.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="201">
+              <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -119,7 +115,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>/favicon.ico</find>
       <find>BACKEND</find>
       <find>static</find>
       <find>6N0k0vg6</find>
@@ -149,6 +144,7 @@
       <find>get_user_model</find>
       <find>.models</find>
       <find>Backends</find>
+      <find>(Add a plan name here)</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -165,8 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/Login.html" />
-        <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/Signup.html" />
         <option value="$PROJECT_DIR$/CookingBase/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/registration/signup.html" />
@@ -182,7 +176,6 @@
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/account/signup.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/account/password_reset_done.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/account/logout.html" />
-        <option value="$PROJECT_DIR$/AppTimesCalc/templates/account/password_reset.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalcRes1.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/Calc_header.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalc_w.html" />
@@ -192,7 +185,6 @@
         <option value="$PROJECT_DIR$/AppTimesCalc/management/commands/createdummies.py" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_detail.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/admin.py" />
-        <option value="$PROJECT_DIR$/AppTimesCalc/businessLogic.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/MealPlannerSaved.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_delete.html" />
@@ -215,6 +207,10 @@
         <option value="$PROJECT_DIR$/users/admin.py" />
         <option value="$PROJECT_DIR$/users/models.py" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/account/login.html" />
+        <option value="$PROJECT_DIR$/AppTimesCalc/businessLogic.py" />
+        <option value="$PROJECT_DIR$/AppTimesCalc/templates/account/password_reset_from_key_done.html" />
+        <option value="$PROJECT_DIR$/AppTimesCalc/templates/account/password_reset.html" />
+        <option value="$PROJECT_DIR$/AppTimesCalc/templates/account/password_reset_from_key.html" />
         <option value="$PROJECT_DIR$/CookingBase/settings.py" />
       </list>
     </option>
@@ -257,6 +253,21 @@
               <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="account" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
+              <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="account" type="462c0819:PsiDirectoryNode" />
+              <item name="snippets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
+              <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
@@ -349,13 +360,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556307679324</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Got my first form working">
-      <created>1558514293857</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1558514293857</updated>
     </task>
     <task id="LOCAL-00002" summary="Got my first form working">
       <created>1558525786079</created>
@@ -693,7 +697,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560513751497</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="∆">
+      <created>1560514134998</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1560514134999</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TodoView">
@@ -707,8 +718,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4849138" visible="true" weight="0.20577872" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4849138" visible="true" weight="0.20577872" />
       <window_info id="Structure" order="1" sideWeight="0.51508623" side_tool="true" weight="0.20577872" />
       <window_info id="Favorites" order="2" sideWeight="0.5029354" side_tool="true" weight="0.24947146" />
       <window_info id="DB Browser" order="3" sideWeight="0.48922414" weight="0.32980973" />
@@ -720,7 +732,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939634" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49964765" weight="0.20603675" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4982382" visible="true" weight="0.32020998" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4982382" visible="true" weight="0.32020998" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5017618" side_tool="true" weight="0.30183727" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32677165" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32939634" />
@@ -830,30 +842,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="∆" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/signup.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/password_reset.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/businessLogicConverters.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/Calc_header.html" />
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalc_w.html" />
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/MealPlanner.html" />
     <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/about.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -870,13 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/logout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -956,13 +937,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AppTimesCalc/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -980,13 +954,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalc.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AppTimesCalc/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1125">
@@ -1001,13 +968,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/businessLogic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1069,23 +1029,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/users/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="44" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/signals.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <folding>
+            <element signature="e#62#108#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AppTimesCalc/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users/signals.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding>
-            <element signature="e#62#108#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1096,54 +1080,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/users/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/users/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/users/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        <state relative-caret-position="330">
+          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
           <folding>
             <element signature="e#0#64#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/users/admin.py">
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/businessLogic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="312">
+          <caret line="126" column="49" selection-start-line="126" selection-start-column="49" selection-end-line="126" selection-end-column="49" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/snippets/already_logged_in.html">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
+        <state>
+          <caret selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/urls.py">
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/logout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="44" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="225">
+          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/password_reset_done.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/signup.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/password_reset.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="95" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/password_reset_from_key.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="74" selection-start-line="18" selection-start-column="74" selection-end-line="18" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/password_reset_from_key_done.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="38" selection-start-column="38" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="177">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>

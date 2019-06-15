@@ -97,7 +97,7 @@ def AddMeal(saveData):
     """
     saves the calculation
     :param request:
-    :param saveData:
+    :param saveData: the saved data from the input
     :return: the PK of the newly saved record
     """
     #print(type(saveData), saveData)
@@ -111,16 +111,19 @@ def AddMeal(saveData):
     #print(request.user)
 
 
+    getMeatType = MeatType.objects.get(MeatTypeName=saveData['MeatType'])
+    getCookingLevel = CookingLevel.objects.get(CookingLevel=saveData['CookingLevel'])
+
     if saveData['planName']:
         planName = saveData['planName']
     else:
-        planName = '(Add a plan name here)'
+        planName = str(saveData['InputWeight']) + ' ' + str(getMeatType) + ', ' + str(getCookingLevel)
 
-    m = MealPlan(User = saveData['User'],
+    m = MealPlan(User=saveData['User'],
                  PlanName=planName,
                  PlanDesc='(Add any comments here...)',
-                 MeatType=MeatType.objects.get(MeatTypeName=saveData['MeatType']),
-                 CookingLevel=CookingLevel.objects.get(CookingLevel=saveData['CookingLevel']),
+                 MeatType=getMeatType,
+                 CookingLevel=getCookingLevel,
                  StartTime=saveData['StartTime'],
                  MeatInTime=saveData['MeatInTime'],
                  RemoveTime=saveData['RemoveTime'],

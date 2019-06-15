@@ -28,7 +28,17 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# for sending emails to the console
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+#Email Setup
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = DEFAULT_FROM_EMAIL = 'cooking.helpers.reset@gmail.com'
+EMAIL_HOST_PASSWORD = 'tupaki123'
+
 
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
