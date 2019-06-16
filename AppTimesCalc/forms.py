@@ -34,7 +34,7 @@ class CalcFormGen(forms.Form):
         # https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-dependent-or-chained-dropdown-list-with-django.html
 
 
-        # TODO this section is not working properly. USer has to press POST twice...
+        # this section is not working properly. USer has to press POST twice...
         print('data', self.data)
 
         if 'MeatType' in self.data:  # if the user has actually selected a meat type

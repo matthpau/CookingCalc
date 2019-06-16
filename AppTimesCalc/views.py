@@ -189,8 +189,8 @@ def MealPlanDelete(request, pk):
 
 def load_cooking_levels(request):
     meat_type = request.GET.get('MeatTypeID')
-    cooking_levels = CookingInfo.objects.filter(MeatType=meat_type)
+    cooking_levels = CookingLevel.objects.filter(cookinginfo__MeatType=meat_type)
+    print("cooking levels from dropdown:", cooking_levels.values())
+    # WRONG
+    # cooking_levels = CookingInfo.objects.filter(MeatType=meat_type)
     return render(request, 'AppTimesCalc/cooking_level_list_options.html', {'CookingLevels': cooking_levels})
-
-
-
