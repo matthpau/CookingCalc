@@ -5,24 +5,26 @@
 
 <div class="container">
     <div class="row">
-        <p class="lead">Welcome! I plan to release a bunch of helpful tools for passionate home cooks.
+        <p>Welcome! I plan to release a bunch of helpful tools for passionate home cooks.
             You can start by checking out the meat cooking time calculators.</p>
     </div>
 
     <div class="card-deck">
         <div class="card text-center" style="width: 18rem;">
-            <img class="card-img-top" src="{% static 'AppTimesCalc/roastpork.jpg' %}" alt="Card image cap">
+            <a href="{% url 'Calculator_w' %}">
+                <img class="card-img-top" src="{% static 'AppTimesCalc/roastpork.jpg' %}" alt="Card image cap"></a>
             <div class="card-body">
                 <p class="card-text">If you already know how much meat you plan to prepare</p>
-                <a href="/Calculator_w" class="card-link">Calculate</a>
+                <a href="{% url 'Calculator_w' %}" class="card-link">Calculate</a>
             </div>
         </div>
 
         <div class="card text-center" style="width: 18rem;">
-            <img class="card-img-top" src="{% static 'AppTimesCalc/dinnerparty.jpg' %}" alt="Card image cap">
+            <a href="{% url 'Calculator_p' %}">
+                <img class="card-img-top" src="{% static 'AppTimesCalc/dinnerparty.jpg' %}" alt="Card image cap"></a>
             <div class="card-body">
                 <p class="card-text">If you know how many guests you have and want to calculate how much you need</p>
-                <a href="/Calculator_p" class=class="card-link">Calculate</a>
+                <a href="{% url 'Calculator_p' %}" class=class="card-link">Calculate</a>
             </div>
         </div>
     </div>
