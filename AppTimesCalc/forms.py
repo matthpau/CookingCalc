@@ -9,8 +9,19 @@ from bootstrap_datepicker_plus import TimePickerInput
 
 class CalcFormGen(forms.Form):
 
-    MeatType = forms.ModelChoiceField(MeatType.objects.all(), label="Meat Type ", required=True,
-                                      empty_label='Please select')
+
+    #CookingLevel.objects.filter(cookinginfo__MeatType=meat_type)
+
+
+
+    #option 1
+    #MeatType = forms.ModelChoiceField(MeatType.objects.filter(cookinginfo__MeatType__isnull=False).distinct(),
+    #                                  label="Meat Type ", required=True, empty_label='Please select')
+
+    #option 2
+    MeatType = forms.ModelChoiceField(MeatType.objects.exclude(cookinginfo=None),
+                                      label="Meat Type ", required=True, empty_label='Please select')
+
     CookingLevel = forms.ModelChoiceField(CookingLevel.objects.none(), label="Cooking Level ",
                                           required=True)
     EatingTime = forms.TimeField(label="When do you want to eat? HH:MM (24hr clock)",
@@ -19,12 +30,13 @@ class CalcFormGen(forms.Form):
                                  )
     # w-10 needed to get the clock widget showing at 40% of width
 
-    Weight_kg = forms.DecimalField(label="Weight of meat (kilograms) ", initial=3.14, required=False)
+    Weight_kg = forms.DecimalField(label="Weight of meat (kilograms) ", initial=0, required=False)
     Weight_lb = forms.DecimalField(label="or, weight of meat (pounds) ", initial=0, required=False)
     Weight_g = forms.DecimalField(label="or, weight of meat (grams) ", initial=0, required=False)
     CountAdults = forms.IntegerField(label='Number of adults', initial=1, required=False, min_value=0)
     CountChildren = forms.IntegerField(label='Number of children', initial=0, required=False, min_value=0)
 
+    #TODO check errors not showing when person inputs 2 weights
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -33,8 +45,6 @@ class CalcFormGen(forms.Form):
         # It updates the allowed queryset for Cooking Levels based on the front end results of the ajax request
         # https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-dependent-or-chained-dropdown-list-with-django.html
 
-
-        # this section is not working properly. USer has to press POST twice...
         print('data', self.data)
 
         if 'MeatType' in self.data:  # if the user has actually selected a meat type

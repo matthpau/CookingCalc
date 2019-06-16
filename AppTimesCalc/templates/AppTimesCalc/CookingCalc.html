@@ -61,6 +61,17 @@
         </div>
     </div>
 
+      {% if form1.non_field_errors %}
+        <br>
+        <div class="alert alert-danger" role="alert">
+          {% for error in form1.non_field_errors %}
+            {{ error }}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+
+
 </form>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
