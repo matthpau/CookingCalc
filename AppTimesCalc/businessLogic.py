@@ -17,7 +17,7 @@ def CookCalc(inputVals):
     results = dict()
 
     #Get the meat and cooking info
-    c = CookingInfo.objects.filter(MeatType=inputVals['MeatType']).filter(CookingLevel = inputVals['CookingLevel'])
+    c = CookingInfo.objects.filter(MeatType=inputVals['MeatType']).filter(CookingLevel=inputVals['CookingLevel'])
     d = MeatType.objects.filter(MeatTypeName=inputVals['MeatType']).values()[0]
 
     if c.exists():
@@ -30,12 +30,12 @@ def CookCalc(inputVals):
 
             weightResult = allToKg(inputVals['Weight_kg'], inputVals['Weight_g'], inputVals['Weight_lb'])
 
-
         else:
 
             calcWeight = (inputVals['CountAdults'] or 0) * d['PortionKGPerAdult']
             calcWeight += (inputVals['CountChildren'] or 0) * d['PortionKGPerChild']
             weightResult = allToKg(calcWeight, 0, 0)
+
 
         givenWeightKg = weightResult[0]
         calcAdults = int(givenWeightKg // d['PortionKGPerAdult'])
@@ -48,9 +48,7 @@ def CookCalc(inputVals):
         DTtotalMins = dt.timedelta(minutes=totalMins)
         DTwarmupMins = dt.timedelta(minutes=ovenWarmupTime())
         DTrestMins = dt.timedelta(minutes=c['RestTimeMins'])
-
         DTBrowningMins = dt.timedelta(minutes=c['BrowningMins'])
-
 
         results['MeatType'] = inputVals['MeatType']
         results['CookingLevel'] = inputVals['CookingLevel']
@@ -100,15 +98,6 @@ def AddMeal(saveData):
     :param saveData: the saved data from the input
     :return: the PK of the newly saved record
     """
-    #print(type(saveData), saveData)
-
-    #for i, (k, v) in enumerate(saveData.items()):
-    #    print (i, k, v, type(v))
-
-    #print(get_user_model())
-    #print(CustomUser.objects.all())
-    #print(request.user.get_username())
-    #print(request.user)
 
     getMeatType = MeatType.objects.get(MeatTypeName=saveData['MeatType'])
     getCookingLevel = CookingLevel.objects.get(CookingLevel=saveData['CookingLevel'])

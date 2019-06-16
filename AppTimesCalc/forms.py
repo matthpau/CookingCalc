@@ -36,7 +36,6 @@ class CalcFormGen(forms.Form):
     CountAdults = forms.IntegerField(label='Number of adults', initial=1, required=False, min_value=0)
     CountChildren = forms.IntegerField(label='Number of children', initial=0, required=False, min_value=0)
 
-    #TODO check errors not showing when person inputs 2 weights
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

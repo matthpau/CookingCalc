@@ -28,7 +28,7 @@ def allToKg(w_kg, w_g, w_lb):
     elif w_g:
         return w_g / 1000, int(w_g), ' g'
     elif w_lb:
-        return w_lb * kgToLb(), w_lb, ' lb'
+        return w_lb / kgToLb(), w_lb, ' lb'
     else:
         return 0, 0, 0
 
