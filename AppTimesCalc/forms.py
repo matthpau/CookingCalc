@@ -33,6 +33,7 @@ class CalcFormGen(forms.Form):
         # It updates the allowed queryset for Cooking Levels based on the front end results of the ajax request
         # https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-dependent-or-chained-dropdown-list-with-django.html
 
+
         # TODO this section is not working properly. USer has to press POST twice...
         print('data', self.data)
 

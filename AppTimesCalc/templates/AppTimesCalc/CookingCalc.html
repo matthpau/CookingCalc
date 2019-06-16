@@ -9,7 +9,7 @@
 <!--https://getbootstrap.com/docs/4.3/layout/grid/-->
 
 <h5>Tell me about your meal</h5>
-<form method="POST">
+<form method="POST" id="meal_calc_form" data-cooking-level-url="{% url 'ajax_load_cooking_levels' %}">
     {% csrf_token %}
 
     <div class="container">
@@ -62,6 +62,27 @@
     </div>
 
 </form>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$("#id_MeatType").change(function () {
+  var url = $("#meal_calc_form").attr("data-cooking-level-url");  // get the url of the `load_cities` view
+  //console.log(url)
+  var meat_type_id = $(this).val();  // get the selected meat type ID from the HTML input
+  console.log(meat_type_id)
+
+  $.ajax({                       // initialize an AJAX request
+    url: url,                    // set the url of the request (= localhost:8000/AppTimesCalc/)
+    data: {
+      'MeatTypeID': meat_type_id       // add the cooking_levelID to the GET parameters
+    },
+    success: function (data) {   // `data` is the return of the `cooking levels` view function
+      $("#id_CookingLevel").html(data);  // replace the contents of the cooking level input with the data that came from the server
+    }
+  });
+});
+</script>
+
 
 {% include 'AppTimesCalc/login_msg.html' %}
 {% endblock %}

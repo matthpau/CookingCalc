@@ -18,4 +18,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('About', views.About, name='About'),
     path('CalcResult', views.CalcResult, name='CalcResult'),
+    path('ajax/load_cooking_levels/', views.load_cooking_levels, name='ajax_load_cooking_levels'),
     ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+# https://docs.djangoproject.com/en/2.2/howto/static-files/

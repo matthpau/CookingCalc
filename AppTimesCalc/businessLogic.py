@@ -17,8 +17,8 @@ def CookCalc(inputVals):
     results = dict()
 
     #Get the meat and cooking info
-    c = CookingInfo.objects.filter(MeatType = inputVals['MeatType']).filter(CookingLevel = inputVals['CookingLevel'])
-    d = MeatType.objects.filter(MeatTypeName = inputVals['MeatType']).values()[0]
+    c = CookingInfo.objects.filter(MeatType=inputVals['MeatType']).filter(CookingLevel = inputVals['CookingLevel'])
+    d = MeatType.objects.filter(MeatTypeName=inputVals['MeatType']).values()[0]
 
     if c.exists():
         c = c.values()[0]

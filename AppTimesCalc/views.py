@@ -4,14 +4,9 @@ from .models import *
 from .forms import CalcFormPerson, CalcFormWeight, mealPlanComment, MealPlanForm
 from .businessLogic import CookCalc,AddMeal
 
-from django.contrib.auth.forms import UserCreationForm
-from django.urls import reverse_lazy
 from django.views.generic import ListView, UpdateView, DetailView, DeleteView
-from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.conf import settings
-
 
 from users.models import CustomUser
 
@@ -35,6 +30,7 @@ def CalculatorGen(request, CalcType):
     :param ViewType: CookingCalc_w or CookingCalc_p
     :return:
     """
+
 
     if CalcType == 'byWeight':
         MyForm = CalcFormWeight
@@ -139,7 +135,7 @@ class MealPlanList(LoginRequiredMixin, ListView):
         #  https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#dynamic-filtering
         return MealPlan.objects.filter(User=self.request.user).order_by('-created_at')  # [:5]
 
-
+#TODO can delete?
 class MealPlanDetail(DetailView):
     queryset = MealPlan.objects.all()
     # Automatically looks for mealplan_detail.html
@@ -158,19 +154,6 @@ class MealPlanUpdate(UpdateView):
     def form_valid(self, form):
         print(form.cleaned_data)
         return super().form_valid(form)
-
-"""
-This was based on the generic view, but I want a DELETE to lead to changing 
-the user to a defaultuser instead, so I keep the data
-
-class MealPlanDelete(DeleteView):
-    # Automatically looks for mealplan_confirm_delete.html
-    success_url = '/MealPlanList'
-
-    def get_object(self):
-        id_ = self.kwargs.get('pk')
-        return get_object_or_404(MealPlan, id=id_)
-"""
 
 
 def MealPlanDelete(request, pk):
@@ -201,5 +184,13 @@ def MealPlanDelete(request, pk):
 
 
         context = {"MealPlanName": PlanName}
-        print(context)
         return render(request, 'AppTimesCalc/mealplan_confirm_delete.html', context)
+
+
+def load_cooking_levels(request):
+    meat_type = request.GET.get('MeatTypeID')
+    cooking_levels = CookingInfo.objects.filter(MeatType=meat_type)
+    return render(request, 'AppTimesCalc/cooking_level_list_options.html', {'CookingLevels': cooking_levels})
+
+
+
