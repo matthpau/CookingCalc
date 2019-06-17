@@ -49,19 +49,13 @@ class CalcFormGen(forms.Form):
         if 'MeatType' in self.data:  # if the user has actually selected a meat type
             try:
                 meat_type_id = int(self.data.get('MeatType'))
-                print(meat_type_id)
 
                 # need to generate a proper query from CookingLevels based on Cooking Info meat_type
                 a = CookingLevel.objects.filter(cookinginfo__MeatType=meat_type_id)
-                print('queryset was', self.fields['CookingLevel'].queryset)
-                print('setting query set to', a)
                 self.fields['CookingLevel'].queryset = a
-                print('new queryset', self.fields['CookingLevel'].queryset)
 
             except (ValueError, TypeError):
-                print('you idiot, you did an error')
                 pass  # invalid input from the client; ignore and fallback to empty City queryset
-
 
     def clean(self):
         # Only one weight should be filled

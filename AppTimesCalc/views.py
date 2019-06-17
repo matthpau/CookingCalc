@@ -165,7 +165,7 @@ def MealPlanDelete(request, pk):
         #  Check we are the logged in user for security
         if request.user == CurrentRecord.User:
 
-            # needs to be filter so that .exists() works
+            # needs to be filter rather than get so that .exists() works
             a = CustomUser.objects.filter(username=settings.ARCHIVE_USERNAME)
             if not a.exists():
                 b = CustomUser(username=settings.ARCHIVE_USERNAME, email=settings.ARCHIVE_USER_EMAIL)
@@ -190,7 +190,6 @@ def MealPlanDelete(request, pk):
 def load_cooking_levels(request):
     meat_type = request.GET.get('MeatTypeID')
     cooking_levels = CookingLevel.objects.filter(cookinginfo__MeatType=meat_type)
-    print("cooking levels from dropdown:", cooking_levels.values())
     # WRONG
     # cooking_levels = CookingInfo.objects.filter(MeatType=meat_type)
     return render(request, 'AppTimesCalc/cooking_level_list_options.html', {'CookingLevels': cooking_levels})

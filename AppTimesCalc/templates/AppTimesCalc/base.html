@@ -15,11 +15,14 @@
 
 
     <!-- Other CSS -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'AppTimesCalc/styles.css' %}">
 
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/265fe36e81.js"></script>
+
+    <link rel="shortcut icon" href="{% static 'AppTimesCalc/favicon.png' %}" />
 
 {% block extrahead %}
   {% endblock %}
@@ -28,10 +31,11 @@
   </head>
 <body>
 
-<div class="container">
-    <br>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #D0E7ED;">
         <a class="navbar-brand" href="/"><i style="color: #13496C;" class="fas fa-utensils"></i> Cooking Helpers</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
