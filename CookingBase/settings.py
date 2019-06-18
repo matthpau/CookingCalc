@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     # Local
     'users.apps.UsersConfig',
     'AppTimesCalc.apps.ApptimesCalcConfig',
+    'RecipeConverter.apps.RecipeconverterConfig',
 
     #https://django-allauth.readthedocs.io/en/latest/installation.html
     #important - this MUST come after the local apps are registered

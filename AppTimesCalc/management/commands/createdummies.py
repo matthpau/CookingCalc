@@ -2,6 +2,7 @@
 
 from django.core.management.base import BaseCommand, CommandError
 from AppTimesCalc.models import MeatType, CookingLevel, CookingInfo
+from RecipeConverter.models import Converter
 
 # https://docs.djangoproject.com/en/2.2/howto/custom-management-commands/
 
@@ -67,9 +68,18 @@ class Command(BaseCommand):
                          )
         c1.save()
 
+        cv = Converter(unit_source_name='pound',
+                       unit_source_keys="'lb', 'pounds', 'pound'",
+                       unit_dest_name='kg',
+                       unit_conversion=0.453592
+                       )
+        cv.save()
 
-
-
-
+        cv1 = Converter(unit_source_name='ounce',
+                        unit_source_keys="'ounces', 'oz'",
+                        unit_dest_name='kg',
+                        unit_conversion=0.0283495
+                        )
+        cv1.save()
 
 

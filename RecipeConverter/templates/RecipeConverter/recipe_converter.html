@@ -1,0 +1,17 @@
+{% extends 'AppTimesCalc/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<p><strong>Paste a recipe in metric or imperial and it will be converted in the other direction.
+    Use this to take recipes you have found on the web and convert to units familiar to you.</strong></p>
+<p>Tip: put ingredients on separate lines to help the converter do its job</p>
+
+<form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button class="btn btn-primary" type="submit">Convert</button>
+</form>
+    
+{% include 'AppTimesCalc/login_msg.html' %}
+{% endblock %}

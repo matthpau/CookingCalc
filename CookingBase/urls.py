@@ -18,5 +18,6 @@ from django.urls import include, path
 
 urlpatterns = [
     path('', include('AppTimesCalc.urls')),
+    path('converter/', include('RecipeConverter.urls')),
     path('admin/', admin.site.urls),
 ]

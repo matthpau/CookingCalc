@@ -56,7 +56,7 @@ def CalculatorGen(request, CalcType):
                        'form': mealPlanComment()}
 
             if outputs['GivenWeightKg'] > 0:
-                request.session['tempCalcOutputs'] = outputs # Store outputs for use if the user saves later
+                request.session['tempCalcOutputs'] = outputs  # Store outputs for use if the user saves later
                 return render(request, 'AppTimesCalc/CookingCalcRes.html', context)
             else:
                 return render(request, 'AppTimesCalc/CookingCalcResError.html')
@@ -169,7 +169,6 @@ def MealPlanDelete(request, pk):
             a = CustomUser.objects.filter(username=settings.ARCHIVE_USERNAME)
             if not a.exists():
                 b = CustomUser(username=settings.ARCHIVE_USERNAME, email=settings.ARCHIVE_USER_EMAIL)
-
                 b.save()
 
             #Change the record in Meal PLan to the archive user
@@ -181,8 +180,6 @@ def MealPlanDelete(request, pk):
 
     else:
         PlanName = MealPlan.objects.get(id=pk).friendlyname()
-
-
         context = {"MealPlanName": PlanName}
         return render(request, 'AppTimesCalc/mealplan_confirm_delete.html', context)
 

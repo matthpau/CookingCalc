@@ -19,7 +19,7 @@ class CookingInfoAdmin(admin.ModelAdmin):
 
 class MealPlanAdmin(admin.ModelAdmin):
     list_display = ('id', 'User', 'PlanName', 'MeatType', 'CookingLevel')
-    readonly_fields = ('created_at','updated_at',)
+    readonly_fields = ('created_at', 'updated_at',)
 
 
 admin.site.register(MeatType, MeatTypeAdmin)

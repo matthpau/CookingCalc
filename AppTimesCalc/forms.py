@@ -9,20 +9,13 @@ from bootstrap_datepicker_plus import TimePickerInput
 
 class CalcFormGen(forms.Form):
 
-
-    #CookingLevel.objects.filter(cookinginfo__MeatType=meat_type)
-
-
-
-    #option 1
-    #MeatType = forms.ModelChoiceField(MeatType.objects.filter(cookinginfo__MeatType__isnull=False).distinct(),
+    # option 1
+    # MeatType = forms.ModelChoiceField(MeatType.objects.filter(cookinginfo__MeatType__isnull=False).distinct(),
     #                                  label="Meat Type ", required=True, empty_label='Please select')
-
-    #option 2
+    # option 2
     MeatType = forms.ModelChoiceField(MeatType.objects.exclude(cookinginfo=None),
                                       label="Meat Type ", required=True, empty_label='Please select')
-
-    CookingLevel = forms.ModelChoiceField(CookingLevel.objects.none(), label="Cooking Level ",
+    CookingLevel = forms.ModelChoiceField(CookingLevel.objects.none(), label="How well done ",
                                           required=True)
     EatingTime = forms.TimeField(label="When do you want to eat? HH:MM (24hr clock)",
                                  required=True, initial="14:00",
@@ -36,15 +29,12 @@ class CalcFormGen(forms.Form):
     CountAdults = forms.IntegerField(label='Number of adults', initial=1, required=False, min_value=0)
     CountChildren = forms.IntegerField(label='Number of children', initial=0, required=False, min_value=0)
 
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         # This little section is needed because we are doing dynamic ajax requests
         # It updates the allowed queryset for Cooking Levels based on the front end results of the ajax request
         # https://simpleisbetterthancomplex.com/tutorial/2018/01/29/how-to-implement-dependent-or-chained-dropdown-list-with-django.html
-
-        print('data', self.data)
 
         if 'MeatType' in self.data:  # if the user has actually selected a meat type
             try:
@@ -65,7 +55,7 @@ class CalcFormGen(forms.Form):
             self.cleaned_data.get("Weight_g")
             ]
 
-        a = len([num for num in weights if int(num or 0) >0])
+        a = len([num for num in weights if int(num or 0) > 0])
         if a > 1:
             raise forms.ValidationError("Please put a weight in one and only one box")
 
