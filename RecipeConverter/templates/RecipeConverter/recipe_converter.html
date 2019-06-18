@@ -3,9 +3,12 @@
 
 {% block content %}
 
-<p><strong>Paste a recipe in metric or imperial and it will be converted in the other direction.
-    Use this to take recipes you have found on the web and convert to units familiar to you.</strong></p>
-<p>Tip: put ingredients on separate lines to help the converter do its job</p>
+<h5>Paste a recipe in metric or imperial and it will be converted in the other direction.</h5>
+    <p>Use this to take recipes you have found on the web and convert to units familiar to you.</p>
+<p>Tips to help the converter work properly:<p>
+<li>Put ingredients on separate lines</li>
+<li>and leave a single space between the ingredients and the method</li>
+<br>
 
 <form method="POST">
         {% csrf_token %}

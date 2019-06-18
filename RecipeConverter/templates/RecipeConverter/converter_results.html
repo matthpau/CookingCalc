@@ -3,11 +3,14 @@
 
 {% block content %}
 
-<p><strong>This is the recipe you gave me</strong></p>
-
+<h4>Inputs</h4>
 {% for key, value in inputs.items %}
     <p>{{ key }}: {{ value }} </p>
 {% endfor %}
+<h3>Outputs</h3>
+{{ outputs|linebreaks }}
+
+
 
 {% include 'AppTimesCalc/login_msg.html' %}
 {% endblock %}

@@ -3,7 +3,13 @@ from django.contrib.auth import get_user_model
 
 
 class Converter(models.Model):
+    system_choices = [
+        ('imp', 'Imperial'),
+        ('met', 'Metric'),
+        ]
+
     unit_source_name = models.CharField(max_length=60, unique=True)
+    unit_source_type = models.CharField(max_length=10, choices=system_choices)
     unit_source_keys = models.CharField(max_length=500)
     unit_dest_name = models.CharField(max_length=60)
     unit_conversion = models.FloatField()

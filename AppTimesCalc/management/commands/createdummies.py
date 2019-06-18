@@ -70,16 +70,27 @@ class Command(BaseCommand):
 
         cv = Converter(unit_source_name='pound',
                        unit_source_keys="'lb', 'pounds', 'pound'",
+                       unit_source_type="imp",
                        unit_dest_name='kg',
                        unit_conversion=0.453592
+
                        )
         cv.save()
 
         cv1 = Converter(unit_source_name='ounce',
                         unit_source_keys="'ounces', 'oz'",
+                        unit_source_type="imp",
                         unit_dest_name='kg',
                         unit_conversion=0.0283495
                         )
         cv1.save()
+
+        cv2 = Converter(unit_source_name='quart',
+                        unit_source_keys="'quart', 'quarts'",
+                        unit_source_type="imp",
+                        unit_dest_name='litre',
+                        unit_conversion=0.946353
+                        )
+        cv3.save()
 
 
