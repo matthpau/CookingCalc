@@ -20,18 +20,15 @@ def hasDigits(inputString):
 
 
 def converter(inputs):
-    """
-    word_text = []
-    for i in range(1, 50):
-        word_text.append(num2words(i))
-    print(word_text)
-    """
 
-    print(inputs)
+    #Generate dictionary of English number words and see if we can replace them
+
 
     output_conv = []  # stores row by row information about the conversion
     output_lines = []  # stores row by row results
     output_fails = []
+
+
 
     replacement_text = {' 1/2': '.5',
                         '1/2': '0.5',
@@ -43,32 +40,36 @@ def converter(inputs):
                         '1/5': '.2',
                         }
 
+    for i in range(20):
+        replacement_text[num2words(i)] = str(i)
+    working_text = inputs['recipe_text']
+
+    for k, v in replacement_text.items():
+        if k in working_text:
+            working_text = working_text.replace(k, v)
+
+    #Get converter table
     lookupSearch = Converter.objects.all()
 
-    for line in inputs['recipe_text'].splitlines():
+    for line in working_text.splitlines():
+        measure_found = False
         tempLine = line.strip()
-        line_found = False
 
         if len(tempLine) == 0 or tempLine == None or tempLine == '':
+            endFlag = True
             break
 
         elif not hasDigits(tempLine):
-            output_conv.append('No numbers found, unchanged')
+            output_conv.append('No digits found, unchanged')
             output_lines.append(tempLine)
-            break
+            measure_found = True
 
         # Step 2 - find the numbers
         else:
             #Run brute force replacements
-            for k, v in replacement_text.items():
-                if k in tempLine:
 
-                    tempLine = tempLine.replace(k, v)
 
             #Run keys search from data
-
-            measure_found = False
-
             for record in lookupSearch.values():
                 searchKeys = record['unit_source_keys'].split()
                 searchKeys.sort(key=len, reverse=True)  # always search for the longest one first
@@ -83,11 +84,13 @@ def converter(inputs):
 
                         #part 2 is the found weight
                         part2 = tempLine[:pos2]
-                        foundWeight = re.search(r'((?:\d*\.)?\d+)(?!.*((?:\d*\.)?\d+))', part2).group()
+                        foundWeight1 = re.search(r'((?:\d*\.)?\d+)(?!.*((?:\d*\.)?\d+))', part2)
+
                         # this last part finds the last number (decimals permitted) in the first half of the instruction
                         # https://stackoverflow.com/questions/5320525/regular-expression-to-match-last-number-in-a-string
 
-                        if foundWeight:
+                        if foundWeight1:
+                            foundWeight = foundWeight1.group()
                             foundWeightFloat = float(foundWeight)
 
                             #Get part1 - the part before the weight
@@ -122,9 +125,9 @@ def converter(inputs):
                 if measure_found:
                     break
 
-            if not measure_found:
-                    output_conv.append('No measures found, unchanged')
-                    output_lines.append(tempLine)
+        if not measure_found:
+                output_conv.append('No measures found, unchanged')
+                output_lines.append(tempLine)
 
     conversions = '\n'.join(output_conv)
     outputs = '\n'.join(output_lines)

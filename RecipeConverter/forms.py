@@ -2,9 +2,13 @@ from django import forms
 from .models import *
 from bootstrap_datepicker_plus import TimePickerInput
 
-test_text = """3 1/2 pounds rump roast
+test_text = """four pounds broccoli
+ddd pounds
+3 1/2 pounds rump roast
 1 (12 ounce) jar pickled mixed vegetables
 1 (16 ounce) jar pepperoncini 
+four pounds broccoli
+some pounds of 4 broccoli
 1 (.7 ounce) package dry Italian-style salad dressing mix
 1 (10.5 ounce) can beef broth
 
