@@ -18,24 +18,47 @@ re.search(r'\d+\.?\d*', '3.5 pounds rump roast').group(0)
 def hasDigits(inputString):
     return bool(re.search(r'\d', inputString))
 
+def prettyWeight(value, unit):
+    """
+    :param value: float, the original quantity
+    :param conversion: float, the conversion rate
+    :param unit: string, the destination unit type
+    :return:
+    """
+    if unit == 'kg':
+        if value < 1:
+            result = str(int(value * 1000)) + ' g'
+        elif value == 1:
+            result = '1 kg'
+        else:
+            result = str(round(value, 1)) + ' ' + unit
+    elif unit == 'litres' and value < 1:
+        result = str(int(value * 1000)) + ' ml'
+    elif unit == 'ml':
+        result = str(round(value)) + ' ' + unit
+    else:
+        result = str(round(value, 3)) + ' ' + unit
+
+    return result
 
 def converter(inputs):
 
     #Generate dictionary of English number words and see if we can replace them
 
-
     output_conv = []  # stores row by row information about the conversion
     output_lines = []  # stores row by row results
     output_fails = []
-
-
 
     replacement_text = {' 1/2': '.5',
                         '1/2': '0.5',
                         ' 1/3': '.333',
                         '1/3': '.333',
+                        ' 2/3': '.666',
+                        '2/3': '.666',
                         ' 1/4': '.25',
                         '1/4': '.25',
+                        ' 3/4': '.75',
+                        '3/4': '.75',
                         ' 1/5': '.2',
                         '1/5': '.2',
                         }
@@ -103,8 +126,9 @@ def converter(inputs):
                             part3 = tempLine[pos2+len(key):]
                             part3 = re.sub(r'^\W*', '', part3).strip()  # remove any non letters at the beginning
 
-                            conv_weight = str(round(foundWeightFloat * record['unit_conversion'],
-                                                    3)) + ' ' + record['unit_dest_name']
+                            conv_weight_value = foundWeightFloat * record['unit_conversion']
+                            conv_weight = prettyWeight(conv_weight_value, record['unit_dest_name'])
+
                             conv_op = str(foundWeight) + ' ' + str(key) + ' to ' + str(conv_weight)
                             conv_str = conv_weight + ' ' + part3.strip()
                             if len(part1) > 0:
