@@ -21,7 +21,10 @@ class RecipeConverter(forms.Form):
         (3, "To imperial"),
     ]
 
-    recipe_text = forms.CharField(max_length=5000, label='Paste your recipe here', initial=test_text, widget=forms.Textarea)
+    recipe_text = forms.CharField(max_length=5000, label='Paste your recipe here',
+                                  initial=test_text, widget=forms.Textarea)
+    comment = forms.CharField(max_length=200, label='Comments', required=False)
     conversion_type = forms.ChoiceField(choices=choices, initial=1)
+    source_url = forms.URLField(required=False)
 
 

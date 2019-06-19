@@ -19,10 +19,14 @@ def recipe_converter(request):
     if request.method == 'POST':
         form = RecipeConverter(request.POST)
         if form.is_valid():
+
             inputs = form.cleaned_data
-            outputs = converter(inputs)
+            inputs['user'] = request.user
+            conversions, outputs = converter(inputs)
+
             context = {'inputs': inputs,
-                       'outputs': outputs}
+                       'outputs': outputs,
+                       'conversions': conversions}
             return render(request, 'RecipeConverter/converter_results.html', context)
 
     else:

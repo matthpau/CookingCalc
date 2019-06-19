@@ -69,7 +69,7 @@ class Command(BaseCommand):
         c1.save()
 
         cv = Converter(unit_source_name='pound',
-                       unit_source_keys="'lb', 'pounds', 'pound'",
+                       unit_source_keys="lb pounds pound",
                        unit_source_type="imp",
                        unit_dest_name='kg',
                        unit_conversion=0.453592
@@ -78,7 +78,7 @@ class Command(BaseCommand):
         cv.save()
 
         cv1 = Converter(unit_source_name='ounce',
-                        unit_source_keys="'ounces', 'oz'",
+                        unit_source_keys="ounces oz ounce",
                         unit_source_type="imp",
                         unit_dest_name='kg',
                         unit_conversion=0.0283495
@@ -91,6 +91,6 @@ class Command(BaseCommand):
                         unit_dest_name='litre',
                         unit_conversion=0.946353
                         )
-        cv3.save()
+        cv2.save()
 
 

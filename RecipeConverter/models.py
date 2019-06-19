@@ -23,6 +23,7 @@ class Conversion(models.Model):
 
     conversion_name = models.CharField(max_length=100, default='No name given')
     user_comments = models.CharField(max_length=500)
+    source_url = models.URLField()
     original_text = models.TextField()
     original_ingredients = models.TextField()
     original_method = models.TextField()
