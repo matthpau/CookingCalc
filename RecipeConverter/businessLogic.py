@@ -18,6 +18,7 @@ re.search(r'\d+\.?\d*', '3.5 pounds rump roast').group(0)
 def hasDigits(inputString):
     return bool(re.search(r'\d', inputString))
 
+
 def prettyWeight(value, unit):
     """
     :param value: float, the original quantity
@@ -41,6 +42,7 @@ def prettyWeight(value, unit):
 
     return result
 
+
 def converter(inputs):
 
     #Generate dictionary of English number words and see if we can replace them
@@ -48,6 +50,10 @@ def converter(inputs):
     output_conv = []  # stores row by row information about the conversion
     output_lines = []  # stores row by row results
     output_fails = []
+
+    contentsFlag = False
+
+    # Brute Force Replacements
 
     replacement_text = {' 1/2': '.5',
                         '1/2': '0.5',
@@ -74,12 +80,16 @@ def converter(inputs):
     #Get converter table
     lookupSearch = Converter.objects.all()
 
+    #TODO need to make instructions not disappear
     for line in working_text.splitlines():
         measure_found = False
         tempLine = line.strip()
 
-        if len(tempLine) == 0 or tempLine == None or tempLine == '':
-            endFlag = True
+        if contentsFlag:  # we have reached the first empty line, this signals the end of the ingredients list. Now just add each line
+            pass
+
+        elif len(tempLine) == 0 or tempLine == None or tempLine == '':
+            contentsFlag = True
             break
 
         elif not hasDigits(tempLine):
@@ -120,9 +130,7 @@ def converter(inputs):
                             pos1 = tempLine.find(foundWeight)
                             part1 = tempLine[:pos1]
                             part1 = re.sub(r'\W*$', '', part1).strip()  # remove any non letters at end
-
                             # Part three is after the found unit
-
                             part3 = tempLine[pos2+len(key):]
                             part3 = re.sub(r'^\W*', '', part3).strip()  # remove any non letters at the beginning
 
@@ -136,10 +144,9 @@ def converter(inputs):
 
                             output_conv.append(conv_op)  # stores row by row information about the conversion
                             output_lines.append(conv_str)
-                            #TODO add these to the table to store results
 
                         else:
-                            output_conv.append('Found "' + key + '", could not determine a number, unchanged')
+                            output_conv.append('Found "' + key + '", but could not determine a number, unchanged')
                             output_fails.append(tempLine)
                             output_lines.append(tempLine)
 
@@ -149,9 +156,13 @@ def converter(inputs):
                 if measure_found:
                     break
 
-        if not measure_found:
-                output_conv.append('No measures found, unchanged')
-                output_lines.append(tempLine)
+        if contentsFlag:
+            output_conv.append("Method, unchanged")
+            output_lines.append(tempLine)
+
+        elif not measure_found:
+            output_conv.append('No measures found, unchanged')
+            output_lines.append(tempLine)
 
     conversions = '\n'.join(output_conv)
     outputs = '\n'.join(output_lines)

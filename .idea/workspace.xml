@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dump_19_06_20.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RecipeConverter/businessLogic.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeConverter/businessLogic.py" afterDir="false" />
     </list>
@@ -56,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/RecipeConverter/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="20" column="2" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+              <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -67,11 +68,33 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RecipeConverter/businessLogic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+            <state relative-caret-position="278">
+              <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#470#1098#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RecipeConverter/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/anaconda3/envs/CookingEnv/lib/python3.7/site-packages/django/db/models/base.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="675" selection-start-line="675" selection-end-line="675" />
             </state>
           </provider>
         </entry>
@@ -88,7 +111,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Backends</find>
       <find>(Add a plan name here)</find>
       <find>EMAIL_</find>
       <find>STATIC_</find>
@@ -118,6 +140,7 @@
       <find>get_user</find>
       <find>d</find>
       <find>URL</find>
+      <find>ROOT_URLCONF</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -229,26 +252,18 @@
             <path>
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
               <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
-              <item name="RecipeConverter" type="462c0819:PsiDirectoryNode" />
+              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
               <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
               <item name="RecipeConverter" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
-              <item name="RecipeConverter" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
               <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
               <item name="RecipeConverter" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="RecipeConverter" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
@@ -276,7 +291,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.27569443" />
   </component>
   <component name="RecentsManager">
@@ -424,14 +439,8 @@
       <workItem from="1560885852778" duration="1978000" />
       <workItem from="1560938946488" duration="339000" />
       <workItem from="1560947827218" duration="14175000" />
-      <workItem from="1560980745597" duration="2375000" />
-    </task>
-    <task id="LOCAL-00019" summary="∆">
-      <created>1558969222917</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1558969222917</updated>
+      <workItem from="1560980745597" duration="2435000" />
+      <workItem from="1561010999125" duration="3869000" />
     </task>
     <task id="LOCAL-00020" summary="∆">
       <created>1558986298092</created>
@@ -769,7 +778,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560962678078</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="A good days work">
+      <created>1560983974904</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1560983974905</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -784,7 +800,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51759000" />
+    <option name="totallyTimeSpent" value="55688000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -796,22 +812,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <frame x="0" y="203" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48240167" visible="true" weight="0.29613733" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48240167" weight="0.3004292" />
       <window_info id="Structure" order="1" sideWeight="0.51759833" side_tool="true" weight="0.20886981" />
       <window_info id="Favorites" order="2" sideWeight="0.5029354" side_tool="true" weight="0.24947146" />
       <window_info id="DB Browser" order="3" sideWeight="0.48922414" weight="0.32980973" />
-      <window_info id="Run" order="4" weight="0.33333334" />
-      <window_info id="Debug" order="5" weight="0.38737446" />
+      <window_info active="true" id="Run" order="4" visible="true" weight="0.4620887" />
+      <window_info id="Debug" order="5" weight="0.3869814" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3258278" />
       <window_info anchor="bottom" id="Cvs" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="4" weight="0.32939634" />
       <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.49964765" weight="0.21653543" />
-      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.4982382" visible="true" weight="0.33333334" />
+      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.4982382" weight="0.33333334" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5017618" side_tool="true" weight="0.30183727" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3258278" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32939634" />
@@ -825,7 +841,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.3297568" />
       <window_info anchor="right" id="SciView" order="4" weight="0.3297568" />
-      <window_info anchor="right" id="manage.py@CookingBase" order="5" weight="0.32832617" />
+      <window_info anchor="right" id="manage.py@CookingBase" order="5" weight="0.36266094" />
       <window_info anchor="right" id="Coverage" order="6" side_tool="true" />
     </layout>
     <layout-to-restore>
@@ -945,6 +961,17 @@
     <MESSAGE value="A good days work" />
     <option name="LAST_COMMIT_MESSAGE" value="A good days work" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RecipeConverter/businessLogic.py</url>
+          <line>83</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CookingBase$settings.coverage" NAME="settings Coverage Results" MODIFIED="1560781882796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CookingBase" />
     <SUITE FILE_PATH="coverage/CookingBase$Test__RecipeConverter_migrations.coverage" NAME="Test: RecipeConverter.migrations Coverage Results" MODIFIED="1560851216017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -959,27 +986,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_confirm_delete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="29" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://84cfad85-1447-4e45-9e5e-70b813add470/schema/main/table/django_session">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="f131f894-32f6-4b7b-b3c5-f9489ceb853f">
-          <filtering />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RecipeConverter/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1224,16 +1230,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RecipeConverter/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda3/envs/CookingEnv/lib/python3.7/site-packages/django/contrib/auth/decorators.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1248,13 +1244,6 @@
           <folding>
             <element signature="e#0#64#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/CookingEnv/lib/python3.7/site-packages/django/db/models/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8245">
-          <caret line="518" selection-start-line="518" selection-end-line="518" />
         </state>
       </provider>
     </entry>
@@ -1323,22 +1312,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RecipeConverter/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" column="2" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mydatdump.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydatdump.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/CookingEnv/lib/python3.7/site-packages/django/db/models/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="675" selection-start-line="675" selection-end-line="675" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecipeConverter/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RecipeConverter/businessLogic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+        <state relative-caret-position="278">
+          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#470#1098#0" />
           </folding>
         </state>
       </provider>
