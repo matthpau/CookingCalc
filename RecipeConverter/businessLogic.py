@@ -14,7 +14,6 @@ re.search(r'\d+\.?\d*', '3.5 pounds rump roast').group(0)
 '3.5'
 """
 
-
 def hasDigits(inputString):
     return bool(re.search(r'\d', inputString))
 
@@ -114,7 +113,6 @@ def converter(inputs):
     conv_msg = 'Converting from ' + conv_names[conv_lookup]
     if conv_auto:
         conv_msg = conv_msg + ' (autodetected)'
-    print(conv_msg)
 
     # if the user has selected cups and spoons conversion, then we need to add suffixes to each appearance to force correct conversion
 
@@ -162,7 +160,6 @@ def converter(inputs):
                 working_text = working_text.replace('__' + str(f) + "__", key + conv_lookup)
                 f += 1
 
-    print(working_text)
     #Main part of the replacement loop
     contentsFlag = False
 
@@ -177,9 +174,9 @@ def converter(inputs):
 
         elif len(tempLine) == 0 or tempLine == None or tempLine == '': #this is the first empty line
             contentsFlag = True
+            measure_found = True
             output_conv.append("")
             output_lines.append("")
-            measure_found = True
 
         elif not hasDigits(tempLine):
             output_conv.append('No digits found, unchanged')
