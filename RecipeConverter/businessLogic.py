@@ -38,23 +38,42 @@ def prettyWeight(value, unit):
     elif unit == 'ml':
         result = str(round(value)) + ' ' + unit
     else:
-        result = str(round(value, 3)) + ' ' + unit
+        result = str(round(value, 1)) + ' ' + unit
 
     return result
 
 
-def converter(inputs):
+def find_conversion_type(text):
+    """
+    Given a recipe text
+    :param inputs: the recipe
+    :return: imp or met, to show which is the detected 'from' state
+    this has the highest count when compared to the keys in the converter table
+    """
+    results = {'imp': 0, 'met': 0}
 
-    #Generate dictionary of English number words and see if we can replace them
+    lookupSearch = Converter.objects.filter(spoon_type=False).filter(cup_type=False)
+    for record in lookupSearch.values():
+        key_type = record['unit_source_type']  # "imp" or "met"
+        searchKeys = record['unit_source_keys'].split(",")
+
+        for key in searchKeys:
+            found_count = text.count(key)
+            if found_count > 0:
+                text = text.replace(key, "")
+                results[key_type] += found_count
+                # we do this so that pounds and pound are not doubled up
+
+    return max(results, key=results.get)
+
+
+def converter(inputs):
 
     output_conv = []  # stores row by row information about the conversion
     output_lines = []  # stores row by row results
     output_fails = []
 
-    contentsFlag = False
-
     # Brute Force Replacements
-
     replacement_text = {' 1/2': '.5',
                         '1/2': '0.5',
                         ' 1/3': '.333',
@@ -69,47 +88,122 @@ def converter(inputs):
                         '1/5': '.2',
                         }
 
+    # Generate dictionary of English number words and see if we can replace them
     for i in range(20):
         replacement_text[num2words(i)] = str(i)
+
     working_text = inputs['recipe_text']
 
     for k, v in replacement_text.items():
         if k in working_text:
             working_text = working_text.replace(k, v)
 
-    #Get converter table
-    lookupSearch = Converter.objects.all()
+    # if the user selected 'automatic' we need to count the instances of each measure type
+    # and determine if this is metric -> imperial or imperial -> metric
+    conv_auto = False
+    conv_names = {'imp': 'imperial', 'met': 'metric'}
 
-    #TODO need to make instructions not disappear
+    if inputs['conversion_type'] == '1':  # user selected automatic, we must determine
+        conv_lookup = find_conversion_type(working_text)
+        conv_auto = True
+    elif inputs['conversion_type'] == '2': # user selected 'to metric' in other word imp
+        conv_lookup = 'imp'
+    elif inputs['conversion_type'] == '3': # user selected 'to metric' in other word met
+        conv_lookup = 'met'
+
+    conv_msg = 'Converting from ' + conv_names[conv_lookup]
+    if conv_auto:
+        conv_msg = conv_msg + ' (autodetected)'
+    print(conv_msg)
+
+    # if the user has selected cups and spoons conversion, then we need to add suffixes to each appearance to force correct conversion
+
+    # Get converter table, only pick met or imperial as required
+    # lookupSearch = Converter.objects.all()
+    lookupSearch = Converter.objects.filter(unit_source_type=conv_lookup)
+
+    # Remove spoons and cups if requested, if not add suitable suffixes
+
+    #TODO could put this in a function as it is repeated
+    if inputs["cups_bool"]:
+        # do not search for cups
+        lookupSearch = lookupSearch.filter(cup_type=False)
+    else:
+        # do search for cups, need to add suffix to each cup appearance
+        suffixSearch = lookupSearch.filter(cup_type=True)
+        for record in suffixSearch.values():
+            searchKeys = record['unit_source_keys'].split(',')
+            searchKeys.sort(key=len, reverse=True)
+            f=0
+            for key in searchKeys:
+
+                working_text = working_text.replace(key, '__'+str(f)+"__")
+                f += 1
+            f = 0
+            for key in searchKeys:
+                working_text = working_text.replace('__'+str(f)+"__", key+conv_lookup)
+                f += 1
+
+    if inputs["spoons_bool"]:
+        # do not search for spoons
+        lookupSearch = lookupSearch.filter(spoon_type=False)
+    else:
+        # do search for spoons, need to add suffix to each cup appearance
+        suffixSearch = lookupSearch.filter(spoon_type=True)
+        for record in suffixSearch.values():
+            searchKeys = record['unit_source_keys'].split(',')
+            searchKeys.sort(key=len, reverse=True)
+            f = 0
+            for key in searchKeys:
+                working_text = working_text.replace(key, '__' + str(f) + "__")
+                f += 1
+            f = 0
+            for key in searchKeys:
+                working_text = working_text.replace('__' + str(f) + "__", key + conv_lookup)
+                f += 1
+
+    print(working_text)
+    #Main part of the replacement loop
+    contentsFlag = False
+
     for line in working_text.splitlines():
         measure_found = False
         tempLine = line.strip()
 
         if contentsFlag:  # we have reached the first empty line, this signals the end of the ingredients list. Now just add each line
-            pass
+            output_conv.append("Method")
+            output_lines.append('Method: ' + tempLine)
+            measure_found = True
 
-        elif len(tempLine) == 0 or tempLine == None or tempLine == '':
+        elif len(tempLine) == 0 or tempLine == None or tempLine == '': #this is the first empty line
             contentsFlag = True
-            break
+            output_conv.append("")
+            output_lines.append("")
+            measure_found = True
 
         elif not hasDigits(tempLine):
             output_conv.append('No digits found, unchanged')
             output_lines.append(tempLine)
             measure_found = True
 
-        # Step 2 - find the numbers
         else:
-            #Run brute force replacements
-
-
             #Run keys search from data
             for record in lookupSearch.values():
-                searchKeys = record['unit_source_keys'].split()
+                searchKeys = record['unit_source_keys'].split(',')
                 searchKeys.sort(key=len, reverse=True)  # always search for the longest one first
 
                 for key in searchKeys:
                     sub_measure_found = False
-                    pos2 = tempLine.find(key)
+
+                    #add necessary suffixes for cups and spoons
+                    if record['cup_type'] and not inputs['cups_bool']:
+                        key1 = key + conv_lookup
+                    elif record['spoon_type'] and not inputs['spoons_bool']:
+                        key1 = key + conv_lookup
+                    else:
+                        key1 = key
+
+                    pos2 = tempLine.find(key1)
 
                     if pos2 > -1:
                         measure_found = True
@@ -130,14 +224,14 @@ def converter(inputs):
                             pos1 = tempLine.find(foundWeight)
                             part1 = tempLine[:pos1]
                             part1 = re.sub(r'\W*$', '', part1).strip()  # remove any non letters at end
-                            # Part three is after the found unit
-                            part3 = tempLine[pos2+len(key):]
+                            # Part3 is after the found unit
+                            part3 = tempLine[pos2+len(key1):]
                             part3 = re.sub(r'^\W*', '', part3).strip()  # remove any non letters at the beginning
 
                             conv_weight_value = foundWeightFloat * record['unit_conversion']
                             conv_weight = prettyWeight(conv_weight_value, record['unit_dest_name'])
 
-                            conv_op = str(foundWeight) + ' ' + str(key) + ' to ' + str(conv_weight)
+                            conv_op = str(foundWeight) + ' ' + str(key1) + ' to ' + str(conv_weight)
                             conv_str = conv_weight + ' ' + part3.strip()
                             if len(part1) > 0:
                                 conv_str = part1 + ' ' + conv_str
@@ -146,7 +240,7 @@ def converter(inputs):
                             output_lines.append(conv_str)
 
                         else:
-                            output_conv.append('Found "' + key + '", but could not determine a number, unchanged')
+                            output_conv.append('Found "' + key1 + '", but could not determine a number, unchanged')
                             output_fails.append(tempLine)
                             output_lines.append(tempLine)
 
@@ -156,11 +250,7 @@ def converter(inputs):
                 if measure_found:
                     break
 
-        if contentsFlag:
-            output_conv.append("Method, unchanged")
-            output_lines.append(tempLine)
-
-        elif not measure_found:
+        if not measure_found:
             output_conv.append('No measures found, unchanged')
             output_lines.append(tempLine)
 
@@ -172,7 +262,8 @@ def converter(inputs):
                    source_url=inputs['source_url'],
                    user_comments=inputs['comment'],
                    original_text=inputs['recipe_text'],
-                   converted_ingredients=outputs,
+                   converted_text=outputs,
+                   conversion_type=conv_msg,
                    converted_method=conversions,
                    converted_fails=fails)
     m.save()

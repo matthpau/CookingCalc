@@ -5,7 +5,8 @@ from .models import *
 
 
 class ConverterAdmin(admin.ModelAdmin):
-    list_display = ('unit_source_name', 'unit_dest_name', 'unit_conversion')
+    list_display = ('unit_source_name', 'unit_source_type', 'add_suffix', 'cup_type', 'spoon_type',
+                    'unit_dest_name', 'unit_conversion')
 
 
 class ConversionAdmin(admin.ModelAdmin):

@@ -6,9 +6,15 @@ class Converter(models.Model):
     system_choices = [
         ('imp', 'Imperial'),
         ('met', 'Metric'),
+        ('none', 'None')  # for cups and spoons
         ]
 
     unit_source_name = models.CharField(max_length=60, unique=True)
+    spoon_type = models.BooleanField(default=False)
+    cup_type = models.BooleanField(default=False)
+    add_suffix = models.BooleanField(default=False)
+        #this is needed for measures which can have the same keys in both systems
+        # set = True where you expect this to be the case, eg teaspoons, cups, tablespoons
     unit_source_type = models.CharField(max_length=10, choices=system_choices)
     unit_source_keys = models.CharField(max_length=500)
     unit_dest_name = models.CharField(max_length=60)
@@ -20,17 +26,17 @@ class Converter(models.Model):
 
 class Conversion(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-
     conversion_name = models.CharField(max_length=100, default='No name given')
     user_comments = models.CharField(max_length=500)
     source_url = models.URLField()
     original_text = models.TextField()
     original_ingredients = models.TextField()
     original_method = models.TextField()
-    converted_ingredients = models.TextField()
+    converted_text = models.TextField()
     converted_method = models.TextField()
     converted_success = models.TextField()
     converted_fails = models.TextField()
+    conversion_type = models.CharField(max_length=50)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

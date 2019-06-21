@@ -3,13 +3,12 @@
 
 {% block content %}
 
-<h4>Inputs</h4>
+<h5>Inputs</h5>
 {{ inputs.recipe_text|linebreaks }}
-<h3>Outputs</h3>
+<h5>Conversions</h5>
 {{ conversions|linebreaks }}
+<h5>Outputs</h5>
 {{ outputs|linebreaks }}
-
-
 
 {% include 'AppTimesCalc/login_msg.html' %}
 {% endblock %}
