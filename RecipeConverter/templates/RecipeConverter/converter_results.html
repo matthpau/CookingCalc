@@ -3,22 +3,25 @@
 
 {% block content %}
 
-<p>{{ outputs.conversion_msg|linebreaks }}</p>
+<h5>{{ outputs.conversion_msg|linebreaks }}</h5>
 
 <div class="container">
     <div class="row">
+
         <div class="col-sm col-md-6">
-            <h5>Input</h5>
-            <div style="overflow: auto; height:400px;">
-                <p><small>{{ inputs.recipe_text|linebreaks }}</small></p>
+            <p>Input</p>
+            <div class="border" style="overflow: auto; height: 400px; padding: 10px;">
+                <small>{{ inputs.recipe_text|linebreaks }}</small>
             </div>
         </div>
+
         <div class="col">
-            <h5>Output (saved)</h5>
-            <div style="overflow: auto; height:400px;">
-                <p><small>{{ outputs.converted_text|linebreaks }}</small></p>
+            <p>Output</p>
+            <div class="border" style="overflow: auto; height:400px; padding: 10px;">
+                <small>{{ outputs.converted_text|linebreaks }}</small>
             </div>
         </div>
+
     </div>
 </div>
 {% include 'AppTimesCalc/login_msg.html' %}

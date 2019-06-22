@@ -262,7 +262,7 @@ def converter(inputs):
                    source_url=inputs['source_url'],
                    conversion_name=inputs['name'],
                    original_text=inputs['recipe_text'],
-                   converted_text=outputs,
+                   converted_text=outputs['converted_text'],
                    conversion_type=conv_msg,
                    converted_method=conversions,
                    converted_fails=fails)

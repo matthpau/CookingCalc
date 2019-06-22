@@ -3,7 +3,7 @@ from .models import *
 from bootstrap_datepicker_plus import TimePickerInput
 
 test_text = """3 1/2 pounds rump roast
-three cups of shit
+three cups of lemonade
 four pounds broccoli
 ddd pounds
 3 1/2 pounds rump roast
