@@ -35,7 +35,7 @@ class RecipeConverter(forms.Form):
 
     recipe_text = forms.CharField(max_length=5000, label='Paste your recipe here',
                                   initial=test_text, widget=forms.Textarea)
-    comment = forms.CharField(max_length=200, label='Comments', required=False)
+    name = forms.CharField(max_length=200, label='Give your recipe a name', required=False)
     conversion_type = forms.ChoiceField(choices=choices, initial=1)
     spoons_bool = forms.BooleanField(label="Don't convert spoons", initial=True, required=False)
     cups_bool = forms.BooleanField(label="Don't convert cups", initial=True, required=False)

@@ -169,7 +169,7 @@ def converter(inputs):
 
         if contentsFlag:  # we have reached the first empty line, this signals the end of the ingredients list. Now just add each line
             output_conv.append("Method")
-            output_lines.append('Method: ' + tempLine)
+            output_lines.append(tempLine)
             measure_found = True
 
         elif len(tempLine) == 0 or tempLine == None or tempLine == '': #this is the first empty line
@@ -252,12 +252,15 @@ def converter(inputs):
             output_lines.append(tempLine)
 
     conversions = '\n'.join(output_conv)
-    outputs = '\n'.join(output_lines)
     fails = '\n'.join(output_fails)
+
+    outputs = dict()
+    outputs['converted_text'] = '\n'.join(output_lines)
+    outputs['conversion_msg'] = conv_msg
 
     m = Conversion(user=inputs['user'],
                    source_url=inputs['source_url'],
-                   user_comments=inputs['comment'],
+                   conversion_name=inputs['name'],
                    original_text=inputs['recipe_text'],
                    converted_text=outputs,
                    conversion_type=conv_msg,

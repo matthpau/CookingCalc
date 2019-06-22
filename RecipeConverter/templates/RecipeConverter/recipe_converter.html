@@ -3,18 +3,52 @@
 
 {% block content %}
 
+<br>
 <h5>Paste a recipe in metric or imperial and it will be converted in the other direction.</h5>
     <p>Use this to take recipes you have found on the web and convert to units familiar to you.
         Tips to help the converter work properly:<p>
+
+<!------
 <li>Put ingredients on separate lines</li>
 <li>One ingredient per line</li>
 <li>Leave a single space between the ingredients and the method</li>
-<br>
+----->
+
+ <ul class="list-inline">
+  <li class="list-inline-item">Put ingredients on separate lines</li>
+  <li class="list-inline-item">One ingredient per line</li>
+  <li class="list-inline-item">Leave a single space between the ingredients and the method</li>
+</ul>
 
 <form method="POST">
         {% csrf_token %}
-        <button class="btn btn-primary" type="submit">Convert</button>
-        {{ form|crispy }}
+
+<div class="container">
+    <div class="row align-items-center">
+        <div class ="col">
+            {{ form.conversion_type|as_crispy_field }}
+        </div>
+       <div class ="col">
+            {{ form.spoons_bool|as_crispy_field }}
+            {{ form.cups_bool|as_crispy_field }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class ="col">
+            {{ form.source_url|as_crispy_field }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class ="col">
+            {{ form.recipe_text|as_crispy_field }}
+        </div>
+    </div>
+
+</div>
+
+<button class="btn btn-primary" type="submit">Convert</button>
 </form>
     
 {% include 'AppTimesCalc/login_msg.html' %}
