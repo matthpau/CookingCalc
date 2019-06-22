@@ -1,7 +1,6 @@
 from num2words import num2words
 import re
 from .models import Converter, Conversion
-from django.contrib.auth import get_user_model
 
 """
 re.findall(r'\d+\.?\d*', '3.5 pounds rump roast')
@@ -21,7 +20,6 @@ def hasDigits(inputString):
 def prettyWeight(value, unit):
     """
     :param value: float, the original quantity
-    :param conversion: float, the conversion rate
     :param unit: string, the destination unit type
     :return:
     """
@@ -45,7 +43,7 @@ def prettyWeight(value, unit):
 def find_conversion_type(text):
     """
     Given a recipe text
-    :param inputs: the recipe
+    :param text: the recipe
     :return: imp or met, to show which is the detected 'from' state
     this has the highest count when compared to the keys in the converter table
     """
@@ -89,7 +87,7 @@ def converter(inputs):
 
     # Generate dictionary of English number words and see if we can replace them
     for i in range(20):
-        replacement_text[num2words(i)] = str(i)
+        replacement_text[num2words(i) + ' '] = str(i)
 
     working_text = inputs['recipe_text']
 
@@ -102,12 +100,12 @@ def converter(inputs):
     conv_auto = False
     conv_names = {'imp': 'imperial', 'met': 'metric'}
 
-    if inputs['conversion_type'] == '1':  # user selected automatic, we must determine
+    if inputs['conversion_type'] == '1': # user selected automatic, we must determine
         conv_lookup = find_conversion_type(working_text)
         conv_auto = True
-    elif inputs['conversion_type'] == '2': # user selected 'to metric' in other word imp
+    elif inputs['conversion_type'] == '2':  # user selected 'to metric' in other word imp
         conv_lookup = 'imp'
-    elif inputs['conversion_type'] == '3': # user selected 'to metric' in other word met
+    elif inputs['conversion_type'] == '3':  # user selected 'to metric' in other word met
         conv_lookup = 'met'
 
     conv_msg = 'Converting from ' + conv_names[conv_lookup]

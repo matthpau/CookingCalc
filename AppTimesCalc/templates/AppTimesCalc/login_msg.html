@@ -1,8 +1,0 @@
-{% load static %}
-
-{% block login_msg %}
-    <br>
-        {% if user.is_authenticated %}
-            Logged in as {{ user.username }} | <a href="{% url 'account_logout' %}">logout</a>
-        {% endif %}
-{% endblock %}
