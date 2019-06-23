@@ -1,0 +1,1 @@
+[{"model": "AppTimesCalc.cookinglevel", "pk": 1, "fields": {"CookingLevel": "Rare", "CookingLevelSort": 10}}, {"model": "AppTimesCalc.cookinglevel", "pk": 2, "fields": {"CookingLevel": "Well done", "CookingLevelSort": 20}}]

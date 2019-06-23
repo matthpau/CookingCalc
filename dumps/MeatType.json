@@ -1,0 +1,1 @@
+[{"model": "AppTimesCalc.meattype", "pk": 1, "fields": {"MeatTypeName": "Beef", "PortionKGPerAdult": 0.4, "PortionKGPerChild": 0.2}}, {"model": "AppTimesCalc.meattype", "pk": 2, "fields": {"MeatTypeName": "Pork", "PortionKGPerAdult": 0.4, "PortionKGPerChild": 0.2}}]
