@@ -4,16 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/AppTimesCalc/businessLogic.py" line="76" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/deploy_prep.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deploy_server.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumps/CookingInfo.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumps/CookingLevel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumps/MeatType.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dumps/alldata.json" beforeDir="false" afterPath="$PROJECT_DIR$/dumps/datadump.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dumps/converter.json" beforeDir="false" afterPath="$PROJECT_DIR$/dumps/Converter.json" afterDir="false" />
-    </list>
+    <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,20 +54,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/datadump.txt">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/deploy_server explanation.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="65" />
+            <state relative-caret-position="408">
+              <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deploy_server.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state>
+              <caret selection-end-line="8" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -208,7 +199,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/users/models.py" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/account/password_reset_from_key_done.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/account/password_reset.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/models.py" />
@@ -255,10 +245,11 @@
         <option value="$PROJECT_DIR$/RecipeConverter/forms.py" />
         <option value="$PROJECT_DIR$/RecipeConverter/businessLogic.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.txt" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/datadump.txt" />
         <option value="$PROJECT_DIR$/CookingBase/deploy_prep.py" />
         <option value="$PROJECT_DIR$/CookingBase/deploy_server.sh" />
         <option value="$PROJECT_DIR$/deploy_server.sh" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/datadump.txt" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/deploy_server explanation.txt" />
       </list>
     </option>
   </component>
@@ -290,6 +281,15 @@
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
               <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
               <item name="dumps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+            <path>
+              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
             </path>
           </expand>
           <select />
@@ -488,14 +488,7 @@
       <workItem from="1561216101774" duration="650000" />
       <workItem from="1561236706188" duration="472000" />
       <workItem from="1561279587417" duration="2141000" />
-      <workItem from="1561282004473" duration="232000" />
-    </task>
-    <task id="LOCAL-00026" summary="∆">
-      <created>1559117649428</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1559117649428</updated>
+      <workItem from="1561282004473" duration="1057000" />
     </task>
     <task id="LOCAL-00027" summary="∆">
       <created>1559236590804</created>
@@ -833,7 +826,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561215749596</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="A good days work">
+      <created>1561282655635</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1561282655635</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -848,7 +848,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83981000" />
+    <option name="totallyTimeSpent" value="84806000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1315,13 +1315,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://84cfad85-1447-4e45-9e5e-70b813add470/schema/main/table/AppTimesCalc_cookinginfo">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="0bddafdb-1bde-47a4-9802-29b6eb658380">
@@ -1364,17 +1357,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/datadump.txt">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="65" />
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/deploy_server.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state>
+          <caret selection-end-line="8" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/deploy_server explanation.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
         </state>
       </provider>
     </entry>
