@@ -14,8 +14,8 @@ class CalcFormGen(forms.Form):
     #                                  label="Meat Type ", required=True, empty_label='Please select')
     # option 2
     MeatType = forms.ModelChoiceField(MeatType.objects.exclude(cookinginfo=None),
-                                      label="Meat Type ", required=True, empty_label='Please select')
-    CookingLevel = forms.ModelChoiceField(CookingLevel.objects.none(), label="How well done ",
+                                      label="What kind of meat?", required=True, empty_label='Please select')
+    CookingLevel = forms.ModelChoiceField(CookingLevel.objects.none(), label="How well done?",
                                           required=True)
     EatingTime = forms.TimeField(label="When do you want to eat? HH:MM (24hr clock)",
                                  required=True, initial="14:00",
@@ -23,11 +23,11 @@ class CalcFormGen(forms.Form):
                                  )
     # w-10 needed to get the clock widget showing at 40% of width
 
-    Weight_kg = forms.DecimalField(label="Weight of meat (kilograms) ", initial=0, required=False)
-    Weight_lb = forms.DecimalField(label="or, weight of meat (pounds) ", initial=0, required=False)
-    Weight_g = forms.DecimalField(label="or, weight of meat (grams) ", initial=0, required=False)
-    CountAdults = forms.IntegerField(label='Number of adults', initial=1, required=False, min_value=0)
-    CountChildren = forms.IntegerField(label='Number of children', initial=0, required=False, min_value=0)
+    Weight_kg = forms.DecimalField(label="Weight of meat (kg) ", initial=0, required=False)
+    Weight_lb = forms.DecimalField(label="or, weight of meat (lb) ", initial=0, required=False)
+    Weight_g = forms.DecimalField(label="or, weight of meat (gr) ", initial=0, required=False)
+    CountAdults = forms.IntegerField(label='Number of adults?', initial=1, required=False, min_value=0)
+    CountChildren = forms.IntegerField(label='Number of children?', initial=0, required=False, min_value=0)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
