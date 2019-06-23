@@ -1,12 +1,11 @@
 {% extends 'AppTimesCalc/base.html' %}
 
 {% block content %}
-
+    <h5>Confirm Delete</h5>
     <form method='POST'>
     {% csrf_token %}
-        <p>Do you want to delete</p>
-        <p><strong>{{ MealPlanName }} ?</strong></p>
-        <button class="btn btn-danger" type="submit">Delete</button>
+        <p>Do you want to delete {{ MealPlanName }} ?</p>
+        <button class="btn btn-danger" type="submit">Delete</button><br>
         <a href='/MealPlanList'>Cancel</a>
     </form>
 

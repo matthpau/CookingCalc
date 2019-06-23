@@ -8,4 +8,5 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('recipe_converter', views.recipe_converter, name='recipe_converter'),
+    path('saved_conversions', views.saved_conversions, name='saved_conversions'),
     ]

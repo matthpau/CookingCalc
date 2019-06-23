@@ -35,3 +35,7 @@ def recipe_converter(request):
     context = {'form': form}
 
     return render(request, 'RecipeConverter/recipe_converter.html', context)
+
+
+def saved_conversions(request):
+    return render(request, 'RecipeConverter/saved_conversions.html')
