@@ -12,26 +12,26 @@ the ingredients and the method.</p>
         {% csrf_token %}
 <div class="container">
     <div class="row align-items-center">
-        <div class ="col">
+        <div class ="col-sm">
             {{ form.conversion_type|as_crispy_field }}
         </div>
-       <div class ="col">
+       <div class ="col"-sm>
             {{ form.spoons_bool|as_crispy_field }}
             {{ form.cups_bool|as_crispy_field }}
         </div>
     </div>
 
     <div class="row">
-        <div class ="col">
+        <div class ="col-sm">
             {{ form.name|as_crispy_field }}
         </div>
-        <div class ="col">
+        <div class ="col-sm">
             {{ form.source_url|as_crispy_field }}
         </div>
     </div>
 
     <div class="row">
-        <div class ="col">
+        <div class ="col-sm">
             {{ form.recipe_text|as_crispy_field }}
         </div>
     </div>

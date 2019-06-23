@@ -72,7 +72,8 @@ def converter(inputs):
 
     # Brute Force Replacements
     replacement_text = {' 1/2': '.5',
-                        '1/2': '0.5',
+                        '1/2': '.5',
+                        '½': '.5',
                         ' 1/3': '.333',
                         '1/3': '.333',
                         ' 2/3': '.666',
@@ -94,7 +95,10 @@ def converter(inputs):
     for k, v in replacement_text.items():
         if k in working_text:
             working_text = working_text.replace(k, v)
+        if k.capitalize() in working_text:
+            working_text = working_text.replace(k.capitalize(), v)
 
+    # DETERMINE AUTO CONVERSION TYPE
     # if the user selected 'automatic' we need to count the instances of each measure type
     # and determine if this is metric -> imperial or imperial -> metric
     conv_auto = False
@@ -112,7 +116,9 @@ def converter(inputs):
     if conv_auto:
         conv_msg = conv_msg + ' (autodetected)'
 
-    # if the user has selected cups and spoons conversion, then we need to add suffixes to each appearance to force correct conversion
+    # MAKE IMPERIAL OR METRIC CUPS AND SPOONS
+    # if the user has selected cups and spoons conversion, then we need to add
+    # suffixes to each appearance to force correct conversion
 
     # Get converter table, only pick met or imperial as required
     # lookupSearch = Converter.objects.all()
@@ -120,19 +126,21 @@ def converter(inputs):
 
     # Remove spoons and cups if requested, if not add suitable suffixes
 
-    #TODO could put this in a function as it is repeated
+    # TODO could put this in a function as it is repeated
     if inputs["cups_bool"]:
         # do not search for cups
         lookupSearch = lookupSearch.filter(cup_type=False)
     else:
         # do search for cups, need to add suffix to each cup appearance
+        # conv_lookup is either 'imp' or 'met'
         suffixSearch = lookupSearch.filter(cup_type=True)
+
+        # replace each "cup" with cupimp or cupmet etc
         for record in suffixSearch.values():
             searchKeys = record['unit_source_keys'].split(',')
             searchKeys.sort(key=len, reverse=True)
-            f=0
+            f = 0
             for key in searchKeys:
-
                 working_text = working_text.replace(key, '__'+str(f)+"__")
                 f += 1
             f = 0
@@ -158,7 +166,7 @@ def converter(inputs):
                 working_text = working_text.replace('__' + str(f) + "__", key + conv_lookup)
                 f += 1
 
-    #Main part of the replacement loop
+    # Main part of the replacement loop
     contentsFlag = False
 
     for line in working_text.splitlines():
@@ -170,7 +178,7 @@ def converter(inputs):
             output_lines.append(tempLine)
             measure_found = True
 
-        elif len(tempLine) == 0 or tempLine == None or tempLine == '': #this is the first empty line
+        elif len(tempLine) == 0 or tempLine is None or tempLine == '': #this is the first empty line
             contentsFlag = True
             measure_found = True
             output_conv.append("")
