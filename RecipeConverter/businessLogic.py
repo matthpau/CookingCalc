@@ -34,6 +34,11 @@ def prettyWeight(value, unit):
         result = str(int(value * 1000)) + ' ml'
     elif unit == 'ml':
         result = str(round(value)) + ' ' + unit
+    elif unit == 'quart':
+        if value == 1:
+            result = '1 quart'
+        else:
+            result = str(round(value, 1)) + ' quarts'
     else:
         result = str(round(value, 1)) + ' ' + unit
 
@@ -87,7 +92,7 @@ def converter(inputs):
                         }
 
     # Generate dictionary of English number words and see if we can replace them
-    for i in range(20):
+    for i in range(50):
         replacement_text[num2words(i) + ' '] = str(i)
 
     working_text = inputs['recipe_text']
@@ -97,6 +102,18 @@ def converter(inputs):
             working_text = working_text.replace(k, v)
         if k.capitalize() in working_text:
             working_text = working_text.replace(k.capitalize(), v)
+
+    #Single letter replacements
+    #these are problematic in conversions
+    #make sure they appear here, and that there are no single letter search keys in the converters model
+    single_replace = {'l': 'litres'}
+
+    for k, v in single_replace.items():
+        # replace standalone versions with spaces on both sides
+        working_text = working_text.replace(' ' + k + ' ', ' ' + v + ' ')  # ' l ' becomes ' litres'
+        #Search for any single letter in list with a digit in front and a space after it
+        working_text = re.sub(r'(?<=\d)' + k + '(?=\s)', ' ' + v, working_text) # '5l ' becomes '5 litres'
+
 
     # DETERMINE AUTO CONVERSION TYPE
     # if the user selected 'automatic' we need to count the instances of each measure type
@@ -177,6 +194,14 @@ def converter(inputs):
             output_conv.append("Method")
             output_lines.append(tempLine)
             measure_found = True
+
+            #TODO need to use regex now to find celcius or farenheit numbers and convert depending on conv_lookup value
+            """
+            Examples: find 350 C or 350 c
+            print(re.search(r'\d+(?=\s[cC])', '350 C').group()) # find 350 C or 350 c
+            print(re.search(r'\d+(?=\sdeg\s[cC])', '350 deg C').group()) # find 350 deg C or 350 deg c
+            print(re.search(r'\d+(?=\sdeg\s[cC])\sdeg\s[cC]', '350 deg C').group()) #  includes the deg C as well if you want it
+            """
 
         elif len(tempLine) == 0 or tempLine is None or tempLine == '': #this is the first empty line
             contentsFlag = True

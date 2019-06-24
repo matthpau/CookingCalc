@@ -12,7 +12,7 @@ class Converter(models.Model):
     unit_source_name = models.CharField(max_length=60, unique=True)
     spoon_type = models.BooleanField(default=False)
     cup_type = models.BooleanField(default=False)
-    add_suffix = models.BooleanField(default=False)
+    test_can_delete_add_suffix = models.BooleanField(default=False)
         #this is needed for measures which can have the same keys in both systems
         # set = True where you expect this to be the case, eg teaspoons, cups, tablespoons
     unit_source_type = models.CharField(max_length=10, choices=system_choices)
