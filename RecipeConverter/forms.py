@@ -8,7 +8,7 @@ METHOD:
 Roast the doves, french hens and partridge for seven hours then serve cold, like revenge.
 """
 
-inital_text = """
+inital_text = """Tomato sauce (makes approximately 1l)
 ½ cup fresh basil
 2 large red kumara
 2 large parsnip
@@ -48,7 +48,7 @@ class RecipeConverter(forms.Form):
 
     url_placeholder = "www.my-favourite-recipe-site.com/this-recipe.html"
 
-    recipe_text = forms.CharField(max_length=5000, label='Paste your recipe here:',
+    recipe_text = forms.CharField(max_length=5000, label='Paste your recipe here:', initial=inital_text,
                                   widget=forms.Textarea(attrs={'placeholder': test_text})
                                   )
     name = forms.CharField(max_length=200, label='Give your recipe a name:', required=False,

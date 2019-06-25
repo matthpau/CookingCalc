@@ -1,23 +1,14 @@
 from num2words import num2words
 import re
 from .models import Converter, Conversion
-
-"""
-re.findall(r'\d+\.?\d*', '3.5 pounds rump roast')
-['3.5']
-
-re.search(r'\d+\.?\d*', '3.5 pounds rump roast')
-<re.Match object; span=(0, 3), match='3.5'>
-
-re.search(r'\d+\.?\d*', '3.5 pounds rump roast').group(0)
-'3.5'
-"""
-
-def hasDigits(inputString):
-    return bool(re.search(r'\d', inputString))
+from functools import partial
 
 
-def prettyWeight(value, unit):
+def has_digits(input_string):
+    return bool(re.search(r'\d', input_string))
+
+
+def pretty_weight(value, unit):
     """
     :param value: float, the original quantity
     :param unit: string, the destination unit type
@@ -69,6 +60,29 @@ def find_conversion_type(text):
     return max(results, key=results.get)
 
 
+def get_temp_str(conv_type, match):
+    # Called below in order to convert temperatures in the method section
+    original_phrase = match.group(0)
+    old_temp = int(match.group(1))
+    given_type = match.group(2).lower()
+
+    if conv_type == 'met' and given_type == 'c':  # from c to f
+        new_temp = int((old_temp * 9 / 5) + 32)
+        new_temp -= (new_temp % -10)  # round up to nearest 10
+        return str(new_temp) + '°F'
+
+    elif conv_type == 'imp' and given_type == 'f':  # from f to c
+        new_temp = int((old_temp - 32) * 5 / 9)
+        new_temp -= (new_temp % -10)  # round up to nearest 10
+        return str(new_temp) + '°C'
+
+    else:
+        return original_phrase
+
+def get_conv_str(match):
+    # Called below in order to get converted string given a match input and info about the conversions
+    pass
+
 def converter(inputs):
 
     output_conv = []  # stores row by row information about the conversion
@@ -103,18 +117,6 @@ def converter(inputs):
         if k.capitalize() in working_text:
             working_text = working_text.replace(k.capitalize(), v)
 
-    #Single letter replacements
-    #these are problematic in conversions
-    #make sure they appear here, and that there are no single letter search keys in the converters model
-    single_replace = {'l': 'litres'}
-
-    for k, v in single_replace.items():
-        # replace standalone versions with spaces on both sides
-        working_text = working_text.replace(' ' + k + ' ', ' ' + v + ' ')  # ' l ' becomes ' litres'
-        #Search for any single letter in list with a digit in front and a space after it
-        working_text = re.sub(r'(?<=\d)' + k + '(?=\s)', ' ' + v, working_text) # '5l ' becomes '5 litres'
-
-
     # DETERMINE AUTO CONVERSION TYPE
     # if the user selected 'automatic' we need to count the instances of each measure type
     # and determine if this is metric -> imperial or imperial -> metric
@@ -131,7 +133,7 @@ def converter(inputs):
 
     conv_msg = 'Converting from ' + conv_names[conv_lookup]
     if conv_auto:
-        conv_msg = conv_msg + ' (autodetected)'
+        conv_msg = conv_msg + ' (auto-detected)'
 
     # MAKE IMPERIAL OR METRIC CUPS AND SPOONS
     # if the user has selected cups and spoons conversion, then we need to add
@@ -175,6 +177,7 @@ def converter(inputs):
             searchKeys = record['unit_source_keys'].split(',')
             searchKeys.sort(key=len, reverse=True)
             f = 0
+            #need to do it using 2nd key to avoid falce replacements
             for key in searchKeys:
                 working_text = working_text.replace(key, '__' + str(f) + "__")
                 f += 1
@@ -192,16 +195,18 @@ def converter(inputs):
 
         if contentsFlag:  # we have reached the first empty line, this signals the end of the ingredients list. Now just add each line
             output_conv.append("Method")
-            output_lines.append(tempLine)
             measure_found = True
+            # we have reached the method section. We need to replace tempratures here in the right direction
+            # search for any digit, followed by deg, degrees,  or nothing, then a c or an F
 
-            #TODO need to use regex now to find celcius or farenheit numbers and convert depending on conv_lookup value
-            """
-            Examples: find 350 C or 350 c
-            print(re.search(r'\d+(?=\s[cC])', '350 C').group()) # find 350 C or 350 c
-            print(re.search(r'\d+(?=\sdeg\s[cC])', '350 deg C').group()) # find 350 deg C or 350 deg c
-            print(re.search(r'\d+(?=\sdeg\s[cC])\sdeg\s[cC]', '350 deg C').group()) #  includes the deg C as well if you want it
-            """
+            result = re.sub(r'(\d+)(?=\s?(?:deg|degrees|°|)\s?[cCfF])\s?(?:deg|degrees|°|)\s?([cCfF])',
+                            partial(get_temp_str, conv_lookup),
+                            tempLine)
+
+            # About partial in this context
+            # https://stackoverflow.com/questions/7868554/python-re-subs-replace-function-doesnt-accept-extra-arguments-how-to-avoid
+
+            output_lines.append(result)
 
         elif len(tempLine) == 0 or tempLine is None or tempLine == '': #this is the first empty line
             contentsFlag = True
@@ -209,7 +214,7 @@ def converter(inputs):
             output_conv.append("")
             output_lines.append("")
 
-        elif not hasDigits(tempLine):
+        elif not has_digits(tempLine):
             output_conv.append('No digits found, unchanged')
             output_lines.append(tempLine)
             measure_found = True
@@ -257,7 +262,7 @@ def converter(inputs):
                             part3 = re.sub(r'^\W*', '', part3).strip()  # remove any non letters at the beginning
 
                             conv_weight_value = foundWeightFloat * record['unit_conversion']
-                            conv_weight = prettyWeight(conv_weight_value, record['unit_dest_name'])
+                            conv_weight = pretty_weight(conv_weight_value, record['unit_dest_name'])
 
                             conv_op = str(foundWeight) + ' ' + str(key1) + ' to ' + str(conv_weight)
                             conv_str = conv_weight + ' ' + part3.strip()

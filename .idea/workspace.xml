@@ -4,12 +4,11 @@
     <bookmark url="file://$PROJECT_DIR$/AppTimesCalc/businessLogic.py" line="76" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="A good days work">
+    <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/paulmatthews.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeConverter/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeConverter/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RecipeConverter/businessLogic.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeConverter/businessLogic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeConverter/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeConverter/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy_server.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deploy_server.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeConverter/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeConverter/forms.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +74,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
+            <state relative-caret-position="867">
               <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
             </state>
           </provider>
@@ -84,14 +83,31 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RecipeConverter/businessLogic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1001">
-              <caret line="203" column="15" lean-forward="true" selection-start-line="203" selection-start-column="15" selection-end-line="203" selection-end-column="15" />
+            <state relative-caret-position="-860">
+              <caret line="179" column="68" selection-start-line="179" selection-start-column="68" selection-end-line="179" selection-end-column="68" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
-                <element signature="e#423#1149#0" />
-                <element signature="e#575#761#0" />
-                <element signature="e#1188#1999#0" />
+                <element signature="e#232#958#0" />
+                <element signature="e#997#1808#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/anaconda3/envs/CookingEnv/lib/python3.7/re.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3043">
+              <caret line="182" selection-start-line="182" selection-end-line="182" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RecipeConverter/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -128,7 +144,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RecipeConverter/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="323">
               <caret line="20" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
@@ -158,8 +174,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>print(cont</find>
-      <find>print(con</find>
       <find>CookingLevel</find>
       <find>__</find>
       <find>please put</find>
@@ -188,6 +202,8 @@
       <find>suffix</find>
       <find>re.find</find>
       <find>TODO</find>
+      <find>conv_lookup</find>
+      <find>partial</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -204,7 +220,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/AppTimesCalc/models.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/account/password_reset_from_key.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/urls.py" />
@@ -239,7 +254,6 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/deploy_server explanation.txt" />
         <option value="$PROJECT_DIR$/AppTimesCalc/forms.py" />
         <option value="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/recipe_converter.html" />
-        <option value="$PROJECT_DIR$/RecipeConverter/forms.py" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/about.html" />
         <option value="$PROJECT_DIR$/deploy_prep.py" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/MealPlannerSaved.html" />
@@ -254,6 +268,8 @@
         <option value="$PROJECT_DIR$/RecipeConverter/admin.py" />
         <option value="$PROJECT_DIR$/deploy_server.sh" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/regex explanations.txt" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/playing with regex.py" />
+        <option value="$PROJECT_DIR$/RecipeConverter/forms.py" />
         <option value="$PROJECT_DIR$/RecipeConverter/businessLogic.py" />
       </list>
     </option>
@@ -270,6 +286,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -280,19 +297,6 @@
             <path>
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
               <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
-              <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
-              <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
-              <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -336,7 +340,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -350,7 +353,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
     <property name="settings.editor.splitter.proportion" value="0.27569443" />
   </component>
   <component name="RecentsManager">
@@ -538,14 +541,10 @@
       <workItem from="1561300109415" duration="563000" />
       <workItem from="1561304448716" duration="198000" />
       <workItem from="1561366809125" duration="37000" />
-      <workItem from="1561367309217" duration="3434000" />
-    </task>
-    <task id="LOCAL-00032" summary="∆">
-      <created>1559586812076</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1559586812076</updated>
+      <workItem from="1561367309217" duration="3446000" />
+      <workItem from="1561373847354" duration="393000" />
+      <workItem from="1561379094410" duration="1944000" />
+      <workItem from="1561455496011" duration="391000" />
     </task>
     <task id="LOCAL-00033" summary="∆">
       <created>1559648804828</created>
@@ -883,7 +882,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561299206515</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="A good days work">
+      <created>1561371945771</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1561371945772</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -898,7 +904,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94366000" />
+    <option name="totallyTimeSpent" value="97106000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -913,7 +919,7 @@
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48240167" weight="0.3483548" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48240167" weight="0.23247497" />
       <window_info id="Structure" order="1" sideWeight="0.51759833" side_tool="true" weight="0.20886981" />
       <window_info id="Favorites" order="2" sideWeight="0.5029354" side_tool="true" weight="0.24947146" />
       <window_info id="DB Browser" order="3" sideWeight="0.48922414" weight="0.32980973" />
@@ -927,7 +933,7 @@
       <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.49964765" weight="0.21653543" />
       <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.4982382" weight="0.33333334" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5017618" side_tool="true" weight="0.30183727" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="8" visible="true" weight="0.32545933" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32545933" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32939634" />
       <window_info anchor="bottom" id="DB Execution Console" order="10" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -1059,17 +1065,6 @@
     <MESSAGE value="A good days work" />
     <option name="LAST_COMMIT_MESSAGE" value="A good days work" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/RecipeConverter/businessLogic.py</url>
-          <line>25</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CookingBase$deploy_prep.coverage" NAME="deploy_prep Coverage Results" MODIFIED="1561298315775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CookingBase$settings.coverage" NAME="settings Coverage Results" MODIFIED="1560781882796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CookingBase" />
@@ -1085,20 +1080,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/RecipeConverter/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/CookingEnv/lib/python3.7/site-packages/django/contrib/auth/decorators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda3/envs/CookingEnv/lib/python3.7/site-packages/django/core/handlers/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1751">
@@ -1257,13 +1238,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RecipeConverter/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/about.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1343,6 +1317,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/regex explanations.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/deploy_server explanation.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/playing with regex.py" />
     <entry file="file://$PROJECT_DIR$/RecipeConverter/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1350,6 +1339,27 @@
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/CookingEnv/lib/python3.7/re.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3043">
+          <caret line="182" selection-start-line="182" selection-end-line="182" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecipeConverter/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1376,16 +1386,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_confirm_delete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RecipeConverter/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="323">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
@@ -1393,36 +1396,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/regex explanations.txt">
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_confirm_delete.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/deploy_server explanation.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="51" column="22" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+        <state relative-caret-position="51">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RecipeConverter/businessLogic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1001">
-          <caret line="203" column="15" lean-forward="true" selection-start-line="203" selection-start-column="15" selection-end-line="203" selection-end-column="15" />
+        <state relative-caret-position="-860">
+          <caret line="179" column="68" selection-start-line="179" selection-start-column="68" selection-end-line="179" selection-end-column="68" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <element signature="e#423#1149#0" />
-            <element signature="e#575#761#0" />
-            <element signature="e#1188#1999#0" />
+            <element signature="e#232#958#0" />
+            <element signature="e#997#1808#0" />
           </folding>
         </state>
       </provider>
