@@ -6,10 +6,21 @@
 <div class="container">
     <div class="row">
         <p>Welcome! I plan to release a bunch of helpful tools for passionate home cooks.
-            You can start by checking out the meat cooking time calculators.</p>
+            You can start by checking out the recipe converter.</p>
     </div>
 
     <div class="card-deck">
+
+        <div class="card text-center" style="width: 18rem;">
+         <a href="{% url 'recipe_converter' %}">
+            <img class="card-img-top" src="{% static 'AppTimesCalc/recipebook.jpg' %}" alt="Card image cap"></a>
+            <div class="card-body">
+                <p class="card-text">Convert a recipe from metric to imperial and vice verse</p>
+                <a href="{% url 'recipe_converter' %}" class=class="card-link">Convert</a>
+            </div>
+        </div>
+
+
         <div class="card text-center" style="width: 18rem;">
             <a href="{% url 'Calculator_w' %}">
                 <img class="card-img-top" src="{% static 'AppTimesCalc/roastpork.jpg' %}" alt="Card image cap"></a>
@@ -25,15 +36,6 @@
             <div class="card-body">
                 <p class="card-text">If you know how many guests you have and want to calculate how much you need.</p>
                 <a href="{% url 'Calculator_p' %}" class=class="card-link">Calculate</a>
-            </div>
-        </div>
-
-        <div class="card text-center" style="width: 18rem;">
-            <a href="{% url 'recipe_converter' %}">
-                <img class="card-img-top" src="{% static 'AppTimesCalc/recipebook.jpg' %}" alt="Card image cap"></a>
-            <div class="card-body">
-                <p class="card-text">Convert a recipe from metric to imperial and vice verse</p>
-                <a href="{% url 'recipe_converter' %}" class=class="card-link">Convert</a>
             </div>
         </div>
 

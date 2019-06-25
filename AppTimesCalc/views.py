@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect
 from .models import *
 from .forms import CalcFormPerson, CalcFormWeight, mealPlanComment, MealPlanForm
 from .businessLogic import CookCalc, AddMeal
 
-from django.views.generic import ListView, UpdateView, DetailView, DeleteView
+from django.views.generic import ListView, UpdateView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.conf import settings
 

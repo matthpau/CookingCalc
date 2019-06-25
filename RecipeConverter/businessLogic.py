@@ -51,7 +51,8 @@ def find_conversion_type(text):
         searchKeys = record['unit_source_keys'].split(",")
 
         for key in searchKeys:
-            found_count = text.count(key)
+            if len(key) > 1:  # don't search for g, l etc
+                found_count = text.count(key)
             if found_count > 0:
                 text = text.replace(key, "")
                 results[key_type] += found_count
@@ -81,17 +82,14 @@ def get_temp_str(conv_type, match):
 
 
 def get_conv_str(record, match):
-    print(record)
-    print(match)
-
-    for x in match.groups():
-        print(x)
-    print(match.groups())
-    print(match.groups(0))
-    print(match.group(1))
-
-    result = pretty_weight(record['unit_conversion'] * float(match.group(1)), record['unit_dest_name'])
-
+    # Called below in order to convert units in the method section
+    try:
+        result = pretty_weight(record['unit_conversion'] * float(match.group(1)), record['unit_dest_name'])
+    except:
+        result = '__problem__'
+        print(record['unit_conversion'])
+        print(match.group(1))
+        print(record['unit_dest_name'])
     return result
 
 
@@ -99,7 +97,6 @@ def converter(inputs):
 
     output_conv = []  # stores row by row information about the conversion
     output_lines = []  # stores row by row results
-    output_fails = []
 
     # Brute Force Replacements
     replacement_text = {' 1/2': '.5',
@@ -208,7 +205,7 @@ def converter(inputs):
         if contentsFlag:  # we have reached the first empty line, this signals the end of the ingredients list. Now just add each line
             output_conv.append("Method")
             measure_found = True
-            # we have reached the method section. We need to replace tempratures here in the right direction
+            # we have reached the method section. We need to replace temperatures here in the right direction
             # search for any digit, followed by deg, degrees,  or nothing, then a c or an F
 
             result = re.sub(r'(\d+)(?=\s?(?:deg|degrees|°|)\s?[cCfF])\s?(?:deg|degrees|°|)\s?([cCfF])',
@@ -247,7 +244,8 @@ def converter(inputs):
 
                     #str = '((?:[\d,.]*))\s*' + key + '(?!\w)'
                     #searches for a number using any combination of digits , or . together
-                    obj = re.compile(r'((?:[\d,.]*))\s*' + key1 + '(?!\w)')
+                    # with last one before key must be a digit
+                    obj = re.compile(r'((?:[\d,.]*)(?<=\d))\s*' + key1)
                     conv_str = obj.sub(partial(get_conv_str, record),  tempLine)
 
                     if conv_str != tempLine:  # substitutions were made, search key was found
@@ -263,10 +261,16 @@ def converter(inputs):
             output_lines.append(tempLine)
 
     conversions = '\n'.join(output_conv)
-    fails = '\n'.join(output_fails)
 
     outputs = dict()
-    outputs['converted_text'] = '\n'.join(output_lines)
+    finished_text = '\n'.join(output_lines)
+
+    #Final tidyup
+    #replace any .5 with 0.5 etc
+    prog = re.compile(r'(?<!\d)([\.,]\d+)')
+    finished_text = prog.sub("0\g<1>", finished_text)
+
+    outputs['converted_text'] = finished_text
     outputs['conversion_msg'] = conv_msg
 
     m = Conversion(user=inputs['user'],
@@ -274,9 +278,7 @@ def converter(inputs):
                    conversion_name=inputs['name'],
                    original_text=inputs['recipe_text'],
                    converted_text=outputs['converted_text'],
-                   conversion_type=conv_msg,
-                   converted_method=conversions,
-                   converted_fails=fails)
+                   conversion_type=conv_msg)
     m.save()
 
     return conversions, outputs
