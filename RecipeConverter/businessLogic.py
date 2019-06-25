@@ -79,9 +79,21 @@ def get_temp_str(conv_type, match):
     else:
         return original_phrase
 
-def get_conv_str(match):
-    # Called below in order to get converted string given a match input and info about the conversions
-    pass
+
+def get_conv_str(record, match):
+    print(record)
+    print(match)
+
+    for x in match.groups():
+        print(x)
+    print(match.groups())
+    print(match.groups(0))
+    print(match.group(1))
+
+    result = pretty_weight(record['unit_conversion'] * float(match.group(1)), record['unit_dest_name'])
+
+    return result
+
 
 def converter(inputs):
 
@@ -211,11 +223,9 @@ def converter(inputs):
         elif len(tempLine) == 0 or tempLine is None or tempLine == '': #this is the first empty line
             contentsFlag = True
             measure_found = True
-            output_conv.append("")
             output_lines.append("")
 
         elif not has_digits(tempLine):
-            output_conv.append('No digits found, unchanged')
             output_lines.append(tempLine)
             measure_found = True
 
@@ -226,8 +236,7 @@ def converter(inputs):
                 searchKeys.sort(key=len, reverse=True)  # always search for the longest one first
 
                 for key in searchKeys:
-                    sub_measure_found = False
-
+                    key_found = False
                     #add necessary suffixes for cups and spoons
                     if record['cup_type'] and not inputs['cups_bool']:
                         key1 = key + conv_lookup
@@ -236,55 +245,21 @@ def converter(inputs):
                     else:
                         key1 = key
 
-                    pos2 = tempLine.find(key1)
+                    #str = '((?:[\d,.]*))\s*' + key + '(?!\w)'
+                    #searches for a number using any combination of digits , or . together
+                    obj = re.compile(r'((?:[\d,.]*))\s*' + key1 + '(?!\w)')
+                    conv_str = obj.sub(partial(get_conv_str, record),  tempLine)
 
-                    if pos2 > -1:
+                    if conv_str != tempLine:  # substitutions were made, search key was found
+                        key_found = True
                         measure_found = True
-                        sub_measure_found = True
-
-                        #part 2 is the found weight
-                        part2 = tempLine[:pos2]
-                        foundWeight1 = re.search(r'((?:\d*\.)?\d+)(?!.*((?:\d*\.)?\d+))', part2)
-
-                        # this last part finds the last number (decimals permitted) in the first half of the instruction
-                        # https://stackoverflow.com/questions/5320525/regular-expression-to-match-last-number-in-a-string
-
-                        if foundWeight1:
-                            foundWeight = foundWeight1.group()
-                            foundWeightFloat = float(foundWeight)
-
-                            #Get part1 - the part before the weight
-                            pos1 = tempLine.find(foundWeight)
-                            part1 = tempLine[:pos1]
-                            part1 = re.sub(r'\W*$', '', part1).strip()  # remove any non letters at end
-                            # Part3 is after the found unit
-                            part3 = tempLine[pos2+len(key1):]
-                            part3 = re.sub(r'^\W*', '', part3).strip()  # remove any non letters at the beginning
-
-                            conv_weight_value = foundWeightFloat * record['unit_conversion']
-                            conv_weight = pretty_weight(conv_weight_value, record['unit_dest_name'])
-
-                            conv_op = str(foundWeight) + ' ' + str(key1) + ' to ' + str(conv_weight)
-                            conv_str = conv_weight + ' ' + part3.strip()
-                            if len(part1) > 0:
-                                conv_str = part1 + ' ' + conv_str
-
-                            output_conv.append(conv_op)  # stores row by row information about the conversion
-                            output_lines.append(conv_str)
-
-                        else:
-                            output_conv.append('Found "' + key1 + '", but could not determine a number, unchanged')
-                            output_fails.append(tempLine)
-                            output_lines.append(tempLine)
-
-                    if sub_measure_found:
+                        output_lines.append(conv_str)
                         break
 
-                if measure_found:
+                if key_found:
                     break
 
         if not measure_found:
-            output_conv.append('No measures found, unchanged')
             output_lines.append(tempLine)
 
     conversions = '\n'.join(output_conv)
