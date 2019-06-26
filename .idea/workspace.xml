@@ -4,8 +4,8 @@
     <bookmark url="file://$PROJECT_DIR$/AppTimesCalc/businessLogic.py" line="76" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="A good days work">
-      <change beforePath="$PROJECT_DIR$/CookingBase/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CookingBase/settings.py" afterDir="false" />
+    <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RecipeConverter/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="28" column="19" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="19" />
+            <state relative-caret-position="187">
+              <caret line="12" column="51" lean-forward="true" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -109,8 +109,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="126" column="3" lean-forward="true" selection-start-line="126" selection-start-column="3" selection-end-line="126" selection-end-column="3" />
+            <state relative-caret-position="254">
+              <caret line="18" column="71" lean-forward="true" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -139,8 +139,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deploy_server.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="67" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="67" />
+            <state relative-caret-position="391">
+              <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -166,9 +166,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Ratings</find>
-      <find>listrecord</find>
-      <find>get_user</find>
       <find>d</find>
       <find>URL</find>
       <find>ROOT_URLCONF</find>
@@ -196,6 +193,9 @@
       <find>instance</find>
       <find>print</find>
       <find>success_url</find>
+      <find>deb</find>
+      <find>conversion_type</find>
+      <find>USE_T</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -249,7 +249,6 @@
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalc.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/views.py" />
         <option value="$PROJECT_DIR$/RecipeConverter/businessLogic.py" />
-        <option value="$PROJECT_DIR$/RecipeConverter/models.py" />
         <option value="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/converter_results.html" />
         <option value="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/recipe_update.html" />
         <option value="$PROJECT_DIR$/RecipeConverter/urls.py" />
@@ -258,11 +257,12 @@
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_confirm_delete.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/Home.html" />
         <option value="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/conversion_list.html" />
-        <option value="$PROJECT_DIR$/deploy_server.sh" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_list.html" />
         <option value="$PROJECT_DIR$/RecipeConverter/forms.py" />
+        <option value="$PROJECT_DIR$/RecipeConverter/models.py" />
         <option value="$PROJECT_DIR$/CookingBase/settings.py" />
+        <option value="$PROJECT_DIR$/deploy_server.sh" />
       </list>
     </option>
   </component>
@@ -368,6 +368,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -575,28 +576,7 @@
       <workItem from="1561483762529" duration="154000" />
       <workItem from="1561523404844" duration="8711000" />
       <workItem from="1561541779437" duration="3911000" />
-      <workItem from="1561548273509" duration="7741000" />
-    </task>
-    <task id="LOCAL-00043" summary="∆">
-      <created>1560269819132</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1560269819133</updated>
-    </task>
-    <task id="LOCAL-00044" summary="∆">
-      <created>1560335644535</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1560335644535</updated>
-    </task>
-    <task id="LOCAL-00045" summary="∆">
-      <created>1560337941506</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1560337941506</updated>
+      <workItem from="1561548273509" duration="11455000" />
     </task>
     <task id="LOCAL-00046" summary="∆">
       <created>1560375956318</created>
@@ -920,7 +900,28 @@
       <option name="project" value="LOCAL" />
       <updated>1561555879282</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="A good days work">
+      <created>1561557041863</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1561557041863</updated>
+    </task>
+    <task id="LOCAL-00093" summary="A good days work">
+      <created>1561557131305</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1561557131306</updated>
+    </task>
+    <task id="LOCAL-00094" summary="A good days work">
+      <created>1561560819095</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1561560819095</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -935,7 +936,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130771000" />
+    <option name="totallyTimeSpent" value="134485000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -950,14 +951,14 @@
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48031497" visible="true" weight="0.2353362" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48031497" weight="0.2353362" />
       <window_info id="Structure" order="1" sideWeight="0.51968503" side_tool="true" weight="0.2353362" />
       <window_info id="Favorites" order="2" sideWeight="0.5029354" side_tool="true" weight="0.24947146" />
       <window_info id="DB Browser" order="3" sideWeight="0.48922414" weight="0.3297568" />
-      <window_info id="Run" order="4" sideWeight="0.49868765" weight="0.42274678" />
+      <window_info active="true" id="Run" order="4" sideWeight="0.49868765" visible="true" weight="0.42274678" />
       <window_info id="Debug" order="5" weight="0.42989987" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32545933" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32545933" />
       <window_info anchor="bottom" id="Cvs" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="4" weight="0.32939634" />
@@ -976,7 +977,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.3297568" />
       <window_info anchor="right" id="SciView" order="4" weight="0.3297568" />
-      <window_info anchor="right" id="manage.py@CookingBase" order="5" weight="0.36480686" />
+      <window_info anchor="right" id="manage.py@CookingBase" order="5" weight="0.34263232" />
       <window_info anchor="right" id="Coverage" order="6" side_tool="true" />
     </layout>
     <layout-to-restore>
@@ -1379,16 +1380,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RecipeConverter/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dumps/Converter.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1403,13 +1394,6 @@
           <folding>
             <element signature="e#0#47#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deploy_server.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="67" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -1450,10 +1434,27 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/RecipeConverter/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="51" lean-forward="true" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deploy_server.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="126" column="3" lean-forward="true" selection-start-line="126" selection-start-column="3" selection-end-line="126" selection-end-column="3" />
+        <state relative-caret-position="254">
+          <caret line="18" column="71" lean-forward="true" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
         </state>
       </provider>
     </entry>
