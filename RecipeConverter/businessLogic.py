@@ -112,7 +112,11 @@ def converter(inputs):
                         '3/4': '.75',
                         ' 1/5': '.2',
                         '1/5': '.2',
-                        '1/8': '.125'
+                        '1/8': '.125',
+                        'half a': '0.5',
+                        'half': '0.5',
+                        'third of': '0.333',
+                        'third': '0.333'
                         }
 
     # Generate dictionary of English number words and see if we can replace them
