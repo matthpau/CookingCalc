@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/conversion_confirm_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/recipe_update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/Home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_confirm_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppTimesCalc/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeConverter/businessLogic.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeConverter/businessLogic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeConverter/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeConverter/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeConverter/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeConverter/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/conversion_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/conversion_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/converter_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/converter_results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeConverter/testrecipes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeConverter/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeConverter/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeConverter/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeConverter/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy_server.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deploy_server.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumps/Converter.json" beforeDir="false" afterPath="$PROJECT_DIR$/dumps/Converter.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,36 +70,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RecipeConverter/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/conversion_confirm_delete.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/converter_about.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="117" selection-start-line="13" selection-start-column="117" selection-end-line="13" selection-end-column="117" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/Home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="379">
@@ -123,31 +79,61 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_list.html">
+        <entry file="file://$PROJECT_DIR$/RecipeConverter/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="459">
+              <caret line="28" column="19" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/conversion_list.html">
+        <entry file="file://$PROJECT_DIR$/dumps/Converter.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+            <state>
+              <caret column="117" lean-forward="true" selection-start-column="117" selection-end-column="117" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RecipeConverter/urls.py">
+        <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="86" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="86" />
+            <state relative-caret-position="68">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/conversion_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/deploy_prep.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
               <folding>
-                <element signature="e#0#37#0" expanded="true" />
+                <element signature="e#0#47#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/deploy_server.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" selection-start-line="21" selection-end-line="21" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -249,7 +235,6 @@
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/MealPlannerSaved.html" />
         <option value="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/saved_conversions.html" />
         <option value="$PROJECT_DIR$/RecipeConverter/admin.py" />
-        <option value="$PROJECT_DIR$/deploy_server.sh" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/regex explanations.txt" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/playing with regex.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.html" />
@@ -279,6 +264,7 @@
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/Home.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_list.html" />
         <option value="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/conversion_list.html" />
+        <option value="$PROJECT_DIR$/deploy_server.sh" />
       </list>
     </option>
   </component>
@@ -305,6 +291,19 @@
             <path>
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
               <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
+              <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
+              <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
+              <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -408,7 +407,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Django server.CookingTimes">
+  <component name="RunManager" selected="Python.deploy_prep">
     <configuration name="Test: RecipeConverter.migrations" type="DjangoTestsConfigurationType">
       <module name="CookingBase" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -578,14 +577,7 @@
       <workItem from="1561483762529" duration="154000" />
       <workItem from="1561523404844" duration="8711000" />
       <workItem from="1561541779437" duration="3911000" />
-      <workItem from="1561548273509" duration="4641000" />
-    </task>
-    <task id="LOCAL-00037" summary="∆">
-      <created>1559916582129</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1559916582129</updated>
+      <workItem from="1561548273509" duration="5386000" />
     </task>
     <task id="LOCAL-00038" summary="∆">
       <created>1559978317798</created>
@@ -923,7 +915,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561538078019</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="A good days work">
+      <created>1561553290701</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1561553290702</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -938,7 +937,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127671000" />
+    <option name="totallyTimeSpent" value="128416000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -953,11 +952,11 @@
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48031497" visible="true" weight="0.2353362" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48031497" weight="0.2353362" />
       <window_info id="Structure" order="1" sideWeight="0.51968503" side_tool="true" weight="0.2353362" />
       <window_info id="Favorites" order="2" sideWeight="0.5029354" side_tool="true" weight="0.24947146" />
       <window_info id="DB Browser" order="3" sideWeight="0.48922414" weight="0.3297568" />
-      <window_info id="Run" order="4" sideWeight="0.49868765" weight="0.42274678" />
+      <window_info active="true" id="Run" order="4" sideWeight="0.49868765" visible="true" weight="0.42274678" />
       <window_info id="Debug" order="5" weight="0.42989987" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32545933" />
@@ -1100,7 +1099,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="A good days work" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CookingBase$deploy_prep.coverage" NAME="deploy_prep Coverage Results" MODIFIED="1561298315775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CookingBase$deploy_prep.coverage" NAME="deploy_prep Coverage Results" MODIFIED="1561553906805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CookingBase$settings.coverage" NAME="settings Coverage Results" MODIFIED="1560781882796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CookingBase" />
     <SUITE FILE_PATH="coverage/CookingBase$Test__RecipeConverter_migrations.coverage" NAME="Test: RecipeConverter.migrations Coverage Results" MODIFIED="1560851216017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
@@ -1114,13 +1113,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://84cfad85-1447-4e45-9e5e-70b813add470/schema/main/table/AppTimesCalc_cookinginfo">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="0bddafdb-1bde-47a4-9802-29b6eb658380">
-          <filtering />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://84cfad85-1447-4e45-9e5e-70b813add470/schema/main/table/AppTimesCalc_meattype">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="0bddafdb-1bde-47a4-9802-29b6eb658380">
@@ -1144,27 +1136,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deploy_prep.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/MealPlannerSaved.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deploy_server.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -1368,16 +1343,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RecipeConverter/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AppTimesCalc/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1452,15 +1417,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="68">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/conversion_list.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deploy_prep.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deploy_server.sh">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+          <caret line="21" selection-start-line="21" selection-end-line="21" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RecipeConverter/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="28" column="19" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dumps/Converter.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="117" lean-forward="true" selection-start-column="117" selection-end-column="117" />
         </state>
       </provider>
     </entry>
