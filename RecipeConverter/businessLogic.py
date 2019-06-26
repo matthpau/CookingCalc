@@ -25,11 +25,13 @@ def pretty_weight(value, unit):
         result = str(int(value * 1000)) + ' ml'
     elif unit == 'ml':
         result = str(round(value)) + ' ' + unit
-    elif unit == 'quart':
+    elif unit == 'quarts':
         if value == 1:
             result = '1 quart'
         else:
             result = str(round(value, 1)) + ' quarts'
+    elif unit == 'grams':
+        result = str(int(value)) + ' grams'
     else:
         result = str(round(value, 1)) + ' ' + unit
 
@@ -67,6 +69,7 @@ def get_temp_str(conv_type, match):
     old_temp = int(match.group(1))
     given_type = match.group(2).lower()
 
+    #TODO can put pretty_weight in here instead
     if conv_type == 'met' and given_type == 'c':  # from c to f
         new_temp = int((old_temp * 9 / 5) + 32)
         new_temp -= (new_temp % -10)  # round up to nearest 10
@@ -95,7 +98,6 @@ def get_conv_str(record, match):
 
 def converter(inputs):
 
-    output_conv = []  # stores row by row information about the conversion
     output_lines = []  # stores row by row results
 
     # Brute Force Replacements
@@ -112,6 +114,7 @@ def converter(inputs):
                         '3/4': '.75',
                         ' 1/5': '.2',
                         '1/5': '.2',
+                        '1/8': '.125'
                         }
 
     # Generate dictionary of English number words and see if we can replace them
@@ -143,6 +146,9 @@ def converter(inputs):
     conv_msg = 'Converting from ' + conv_names[conv_lookup]
     if conv_auto:
         conv_msg = conv_msg + ' (auto-detected)'
+
+    #TODO need to convert 'a stick' 'a cup' into '1 stick'
+
 
     # MAKE IMPERIAL OR METRIC CUPS AND SPOONS
     # if the user has selected cups and spoons conversion, then we need to add
@@ -203,7 +209,6 @@ def converter(inputs):
         tempLine = line.strip()
 
         if contentsFlag:  # we have reached the first empty line, this signals the end of the ingredients list. Now just add each line
-            output_conv.append("Method")
             measure_found = True
             # we have reached the method section. We need to replace temperatures here in the right direction
             # search for any digit, followed by deg, degrees,  or nothing, then a c or an F
@@ -260,7 +265,6 @@ def converter(inputs):
         if not measure_found:
             output_lines.append(tempLine)
 
-    conversions = '\n'.join(output_conv)
 
     outputs = dict()
     finished_text = '\n'.join(output_lines)
@@ -281,4 +285,4 @@ def converter(inputs):
                    conversion_type=conv_msg)
     m.save()
 
-    return conversions, outputs
+    return outputs

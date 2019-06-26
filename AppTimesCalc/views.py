@@ -136,6 +136,8 @@ class MealPlanList(LoginRequiredMixin, ListView):
         return MealPlan.objects.filter(User=self.request.user).order_by('-created_at')  # [:5]
 
 #TODO can delete?
+
+
 class MealPlanDetail(DetailView):
     queryset = MealPlan.objects.all()
     # Automatically looks for mealplan_detail.html
@@ -190,3 +192,5 @@ def load_cooking_levels(request):
     # WRONG
     # cooking_levels = CookingInfo.objects.filter(MeatType=meat_type)
     return render(request, 'AppTimesCalc/cooking_level_list_options.html', {'CookingLevels': cooking_levels})
+
+

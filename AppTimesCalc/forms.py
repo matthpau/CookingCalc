@@ -52,7 +52,6 @@ class CalcFormGen(forms.Form):
         weights = [
             self.cleaned_data.get("Weight_kg"),
             self.cleaned_data.get("Weight_lb"),
-            self.cleaned_data.get("Weight_g")
             ]
 
         a = len([num for num in weights if int(num or 0) > 0])
@@ -80,7 +79,6 @@ class mealPlanComment(forms.Form):
     MealComment = forms.CharField(max_length=200, required=False,
                                   widget=forms.TextInput(attrs={'placeholder': 'My plan name (optional)',
                                                                 "class": "w-100", }))
-
 
 class MealPlanForm(forms.ModelForm):
     class Meta:

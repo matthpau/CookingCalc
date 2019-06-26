@@ -39,8 +39,7 @@
                     <form method="POST" action = "/MealPlannerSaved">
                         {% csrf_token %}
                             <p>{{form.MealComment}}</p>
-                        <button type="submit" class="btn btn-primary btn-block">Save this meal</button>
-                        <a class="btn btn-secondary btn-block" href="javascript:history.back()">Go back</a>
+                        <button type="submit" class="btn btn-primary">Save this meal</button>
 
                     </form>
             </div>

@@ -180,7 +180,7 @@ ACCOUNT_LOGOUT_REDIRECT_URL = '/' #Allauth
 
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_UNIQUE_EMAIL = True
@@ -191,5 +191,6 @@ SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+#my settings for usage during various operaetions
 ARCHIVE_USERNAME = 'archive_user'
 ARCHIVE_USER_EMAIL = 'archive_user@cooking-helpers.com'

@@ -7,33 +7,23 @@
     <div class="container">
          <div class="row">
             <div class="col">
+            </div>
+
+
+            <div class="col-sm6">
                 <h5>You did a calculation for {{form.instance.InputWeight }} of {{form.instance.MeatType|lower }}
                     cooked {{form.instance.CookingLevel|lower }},
                     saved on {{form.instance.created_at }}</h5>
-            </div>
-         </div>
-         <div class="row">
-            <div class="col">
+
                 {{form.PlanName|as_crispy_field }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
                 {{form.RatingStars|as_crispy_field }}
-            </div>
-            <div class="col">
-              {{form.RatingResult|as_crispy_field }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
+                {{form.RatingResult|as_crispy_field }}
                 {{form.RatingComment|as_crispy_field }}
+
+                <button class="btn btn-primary" type="submit">Save</button>
             </div>
-        </div>
-        <div class="row">
-            <div class="col col-md-4">
-                <button class="btn btn-primary btn-block" type="submit">Save</button>
-                <a href="javascript:history.back()">Go back</a>
+
+            <div class="col">
             </div>
         </div>
     </div>

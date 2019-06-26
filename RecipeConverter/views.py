@@ -16,11 +16,9 @@ def recipe_converter(request):
 
             inputs = form.cleaned_data
             inputs['user'] = request.user
-            conversions, outputs = converter(inputs)
+            outputs = converter(inputs)
 
-            context = {'inputs': inputs,
-                       'outputs': outputs,
-                       'conversions': conversions}
+            context = {'inputs': inputs, 'outputs': outputs}
             return render(request, 'RecipeConverter/converter_results.html', context)
 
     else:
@@ -45,3 +43,6 @@ class ConversionsList(LoginRequiredMixin, ListView):
         #  this is how you return only records for the current user
         #  https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#dynamic-filtering
         return Conversion.objects.filter(user=self.request.user).order_by('-created_at')
+
+def converter_about(request):
+    return render(request, 'RecipeConverter/converter_about.html')

@@ -8,67 +8,45 @@
 
 <!--https://getbootstrap.com/docs/4.3/layout/grid/-->
 
-<h5>Tell me about your meal</h5>
+
 <form method="POST" id="meal_calc_form" data-cooking-level-url="{% url 'ajax_load_cooking_levels' %}">
     {% csrf_token %}
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                {{form1.MeatType|as_crispy_field}}
-            </div>
-            <div class="col-md-6">
-                {{form1.CookingLevel|as_crispy_field}}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                {{form1.EatingTime|as_crispy_field}}
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
         </div>
 
-        {% if form1.non_field_errors %}
-            <br>
-            <div class="alert alert-danger" role="alert">
-              {% for error in form1.non_field_errors %}
-                {{ error }}
-              {% endfor %}
-            </div>
-      {% endif %}
+        <div class="col-sm-6">
+            <h5>Tell me about your meal</h5>
+            {{form1.MeatType|as_crispy_field}}
+            {{form1.CookingLevel|as_crispy_field}}
+            {{form1.EatingTime|as_crispy_field}}
 
-        {%if form1.Weight_kg %}
-
-            <div class="row">
-                <div class="col-md-4">
-                    {{form1.Weight_kg|as_crispy_field}}
+            {% if form1.non_field_errors %}
+                <br>
+                <div class="alert alert-danger" role="alert">
+                  {% for error in form1.non_field_errors %}
+                    {{ error }}
+                  {% endfor %}
                 </div>
-                <div class="col-md-4">
-                    {{form1.Weight_lb|as_crispy_field}}
-                </div>
-                <div class="col-md-4">
-                    {{form1.Weight_g|as_crispy_field}}
-                </div>
-            </div>
+            {% endif %}
 
-        {% else %}
+            {%if form1.Weight_kg %}
+                        {{form1.Weight_kg|as_crispy_field}}
+                        {{form1.Weight_lb|as_crispy_field}}
+            {% else %}
+                        {{form1.CountAdults|as_crispy_field}}
+                        {{form1.CountChildren|as_crispy_field}}
+            {% endif %}
 
-            <div class="row">
-                <div class="col-md-6">
-                    {{form1.CountAdults|as_crispy_field}}
-                </div>
-                <div class="col">
-                    {{form1.CountChildren|as_crispy_field}}
-                </div>
-            </div>
+            <button class="btn btn-primary" type="submit" name= "Calculator2">Calculate</button>
+        </div>
 
-        {% endif %}
-
-        <div class="row">
-            <div class="col-md-4 col-lg-2">
-                <button class="btn btn-primary btn-block" type="submit" name= "Calculator2">Calculate</button>
-            </div>
+        <div class="col-sm">
         </div>
     </div>
+</div>
 
 </form>
 
