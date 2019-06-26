@@ -4,10 +4,13 @@
     <h5>Confirm Delete</h5>
     <form method='POST'>
     {% csrf_token %}
-        <p>Do you want to delete {{ MealPlanName }} ?</p>
+        <p>Do you want to delete {{ Conversion.conversion_name }} ?</p>
         <button class="btn btn-danger" type="submit">Delete</button>
-        <a href='/MealPlanList'>Cancel</a>
+        <a class="btn" href='{%  url 'saved_conversions' %}'>Cancel</a>
     </form>
+
+
+
 
 {% endblock %}
 

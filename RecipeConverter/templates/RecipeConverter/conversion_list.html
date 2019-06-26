@@ -2,14 +2,22 @@
 
 {% block content %}
 
-<h5>Saved recipes to appear here</h5>
-<p>Not yet complete</p>
+<h5>Your saved recipes</h5>
 
+{% if conversion_list %}
 
-<ul>
-    {% for x in conversion_list %}
-        <ul>{{ x.id }} - {{ x.conversion_name }} - {{ x.created_at }}</ul>
-    {% endfor %}
-</ul>
+    <ul class="list-group-flush">
+        {% for x in conversion_list %}
+            <li class="list-group-item">
+
+                <a class="badge badge-primary" href="{% url 'ConversionUpdate' x.id %}">Edit</a>
+                <a class="badge badge-danger" href="{% url 'ConversionDelete' x.id %}">Delete</a>
+                {{ x.id }} - {{ x.conversion_name }} - {{ x.created_at }}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No saved conversions</p>
+{% endif %}
 
 {% endblock %}

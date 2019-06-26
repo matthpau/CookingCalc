@@ -1,10 +1,11 @@
-from django.shortcuts import render
-from .forms import RecipeConverter
+from django.shortcuts import render, get_object_or_404
+from .forms import RecipeConverter, ConversionUpdateForm
 from django.contrib.auth.decorators import login_required
 from .businessLogic import converter
-from django.views.generic import ListView
+from django.views.generic import ListView, UpdateView
 from .models import Conversion
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseRedirect
 
 
 @login_required()
@@ -16,9 +17,9 @@ def recipe_converter(request):
 
             inputs = form.cleaned_data
             inputs['user'] = request.user
-            outputs = converter(inputs)
+            saved_key, outputs = converter(inputs)
 
-            context = {'inputs': inputs, 'outputs': outputs}
+            context = {'inputs': inputs, 'saved_key': saved_key, 'outputs': outputs}
             return render(request, 'RecipeConverter/converter_results.html', context)
 
     else:
@@ -46,3 +47,37 @@ class ConversionsList(LoginRequiredMixin, ListView):
 
 def converter_about(request):
     return render(request, 'RecipeConverter/converter_about.html')
+
+
+class ConversionUpdate(UpdateView):
+    form_class = ConversionUpdateForm
+    template_name = 'RecipeConverter/recipe_update.html'
+    success_url = '/converter/saved_conversions'
+
+    def get_object(self):
+        id_ = self.kwargs.get('pk')
+
+        result = get_object_or_404(Conversion, id=id_)
+        return result
+
+    def form_valid(self, form):
+        return super().form_valid(form)
+
+
+def ConversionDelete(request, pk):
+
+    if request.method == 'POST':
+
+        CurrentRecord = Conversion.objects.get(id=pk)
+
+        #  Check we are the logged in user for security
+        if request.user == CurrentRecord.user:
+
+            CurrentRecord.delete()
+
+        return HttpResponseRedirect('/converter/saved_conversions')
+
+    else:   #get, just showing the record
+        ConversionRec = Conversion.objects.get(id=pk)
+        context = {"Conversion": ConversionRec}
+        return render(request, 'RecipeConverter/conversion_confirm_delete.html', context)

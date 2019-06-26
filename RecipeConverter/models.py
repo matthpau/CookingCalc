@@ -26,18 +26,18 @@ class Converter(models.Model):
 
 class Conversion(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-    conversion_name = models.CharField(max_length=100, default='No name given')
+    conversion_name = models.CharField(max_length=100, default='No name given', verbose_name="Recipe name")
     user_comments = models.CharField(max_length=500)
     source_url = models.URLField()
     original_text = models.TextField()
-    converted_text = models.TextField()
+    converted_text = models.TextField(verbose_name="Converted Recipe")
     conversion_type = models.CharField(max_length=20)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return str(self.id) + str(self.user) + str(self.created_at)
+        return str(self.id) + ' ' + str(self.user) + ' ' + str(self.created_at)
 
 
 

@@ -152,7 +152,6 @@ class MealPlanUpdate(UpdateView):
         id_ = self.kwargs.get('pk')
         return get_object_or_404(MealPlan, id=id_)
 
-
     def form_valid(self, form):
         print(form.cleaned_data)
         return super().form_valid(form)

@@ -2,21 +2,22 @@
 
 {% block content %}
 
-    <h5>Meal Plans</h5>
+<h5>Meal Plans</h5>
 
-    {% for x in object_list%}
-        <p>
+{% if object_list %}
+    <ul class="list-group-flush">
+        {% for x in object_list%}
+            <li class="list-group-item">
             {{x.id}} - {{x.PlanName}}, saved {{x.created_at}}
-
-            <!----
-            <a class="badge badge-primary" href="{{ x.get_absolute_url }}">View</a>
-            Alternative view...
-            <a class="badge badge-primary" href="{% url 'MealPlanDetail' x.id %}">View2</a>
-            ---->
             <a class="badge badge-primary" href="{% url 'MealPlanUpdate' x.id %}">Give a rating</a>
             <a class="badge badge-danger" href="{% url 'MealPlanDelete' x.id %}">Delete</a>
-        </p>
-
+            </li>
+    </ul>
     {% endfor%}
+
+{%  else %}
+    <p>No saved meal plans.</p>
+{% endif %}
+
 
 {% endblock %}

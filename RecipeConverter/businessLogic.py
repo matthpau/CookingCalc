@@ -90,15 +90,13 @@ def get_conv_str(record, match):
         result = pretty_weight(record['unit_conversion'] * float(match.group(1)), record['unit_dest_name'])
     except:
         result = '__problem__'
-        print(record['unit_conversion'])
-        print(match.group(1))
-        print(record['unit_dest_name'])
     return result
 
 
 def converter(inputs):
 
     output_lines = []  # stores row by row results
+    working_text = inputs['recipe_text']
 
     # Brute Force Replacements
     replacement_text = {' 1/2': '.5',
@@ -120,20 +118,21 @@ def converter(inputs):
     # Generate dictionary of English number words and see if we can replace them
     for i in range(50):
         replacement_text[num2words(i) + ' '] = str(i)
-
-    working_text = inputs['recipe_text']
+    # TODO update this so that it uses REGEX to exclude search for text before and after.
 
     for k, v in replacement_text.items():
-        if k in working_text:
-            working_text = working_text.replace(k, v)
-        if k.capitalize() in working_text:
-            working_text = working_text.replace(k.capitalize(), v)
+        #search for the keys above but not where they have a letter just before and just after
+        s_str = '(?<![a-zA-Z])' + k + '(?![a-zA-Z])'
+        prog = re.compile(r"" + s_str)
+
+        working_text = prog.sub(v, working_text)
+
 
     # DETERMINE AUTO CONVERSION TYPE
     # if the user selected 'automatic' we need to count the instances of each measure type
     # and determine if this is metric -> imperial or imperial -> metric
     conv_auto = False
-    conv_names = {'imp': 'imperial', 'met': 'metric'}
+    conv_names = {'imp': 'metric', 'met': 'imperial'}
 
     if inputs['conversion_type'] == '1': # user selected automatic, we must determine
         conv_lookup = find_conversion_type(working_text)
@@ -143,7 +142,7 @@ def converter(inputs):
     elif inputs['conversion_type'] == '3':  # user selected 'to metric' in other word met
         conv_lookup = 'met'
 
-    conv_msg = 'Converting from ' + conv_names[conv_lookup]
+    conv_msg = 'Converting to ' + conv_names[conv_lookup]
     if conv_auto:
         conv_msg = conv_msg + ' (auto-detected)'
 
@@ -270,9 +269,32 @@ def converter(inputs):
     finished_text = '\n'.join(output_lines)
 
     #Final tidyup
-    #replace any .5 with 0.5 etc
+    #1 replace any .5 with 0.5 etc
     prog = re.compile(r'(?<!\d)([\.,]\d+)')
     finished_text = prog.sub("0\g<1>", finished_text)
+
+    #2 brute force replacements - order is important, do the long ones first
+
+    replacement_text = {'0.5': '½',
+                        '0.125': '⅛',
+                        '0.25': '¼',
+                        '0.75': '¾',
+                        '0.375': '⅜',
+                        '0.675': '⅝',
+                        '0.875': '⅞',
+                        '.5': '½',
+                        '.125': '⅛',
+                        '.25': '¼',
+                        '.75': '¾',
+                        '.375': '⅜',
+                        '.675': '⅝',
+                        '.875': '⅞',
+                        }
+
+
+    for k, v in replacement_text.items():
+        if k in finished_text:
+            finished_text = finished_text.replace(k, v)
 
     outputs['converted_text'] = finished_text
     outputs['conversion_msg'] = conv_msg
@@ -285,4 +307,4 @@ def converter(inputs):
                    conversion_type=conv_msg)
     m.save()
 
-    return outputs
+    return m.pk, outputs

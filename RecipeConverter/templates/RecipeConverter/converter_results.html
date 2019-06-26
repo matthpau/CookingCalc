@@ -3,25 +3,34 @@
 
 {% block content %}
 
-<h5>{{ outputs.conversion_msg|linebreaks }}</h5>
 
-<div class="container">
-    <div class="row">
-
-        <div class="col-sm col-md-6">
-            <p>Input</p>
-            <div class="border" style="overflow: auto; height: 200px; padding: 10px;">
-                <small>{{ inputs.recipe_text|linebreaks }}</small>
-            </div>
+<div class="card-deck">
+    <div class="card">
+        <div class="card-header">
+        Original Recipe
         </div>
 
-        <div class="col">
-            <p>Output</p>
-            <div class="border" style="overflow: auto; height:200px; padding: 10px;">
-                <small>{{ outputs.converted_text|linebreaks }}</small>
-            </div>
+        <div class="card-body">
+            <small>{{ inputs.recipe_text|linebreaks }}</small>
         </div>
 
     </div>
+
+    <div class="card">
+        <div class="card-header">
+        {{ outputs.conversion_msg }}
+        </div>
+        <div class="card-body">
+            <small>{{ outputs.converted_text|linebreaks }}</small>
+        </div>
+        <div class="card-footer">
+           <a class="btn btn-primary" href="{% url 'ConversionUpdate' saved_key %}">Change or rename</a>
+        </div>
+
+
+
+    </div>
+
 </div>
+
 {% endblock %}
