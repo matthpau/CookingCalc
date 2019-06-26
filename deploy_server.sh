@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+#workon matthpau.pythonanywhere.com
+#cd matthpau.pythonanywhere.com/CookingCalc
+
+#if need to set permissions:
+
+#chmod u+x deploy_server.sh
+
+#./deploy_server
+
+
 
 #couldn't get it to work with the git pull inside the comment
 #git pull https://matthpau:6N0k0vg6@github.com/matthpau/CookingCalc
