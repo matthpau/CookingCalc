@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'id6@3=!641uy35qbz#@r#b^5nr4y_igzj4*m__=a6kl4fmf=w7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -109,26 +109,30 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'CookingBase.wsgi.application'
 
-# Database
+ Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'cookingcalc',
-#         'USER': 'root',
-#         'PASSWORD': 'tupaki123',
-#         'HOST': '127.0.0.1',
-#         'PORT': '3306',
-#     }
-# }
+#forproduction
+DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': 'matthpau$CookingCalc',
+         'USER': 'matthpau',
+         'PASSWORD': 'matthpaucookingpw',
+         'HOST': 'matthpau.mysql.pythonanywhere-services.com',
+         'PORT': '3306',
+     }
+ }
 
+"""
+for local
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+"""
 
 
 # Password validation
