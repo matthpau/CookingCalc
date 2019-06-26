@@ -7,13 +7,13 @@
 {% if object_list %}
     <ul class="list-group-flush">
         {% for x in object_list%}
-            <li class="list-group-item">
-            {{x.id}} - {{x.PlanName}}, saved {{x.created_at}}
-            <a class="badge badge-primary" href="{% url 'MealPlanUpdate' x.id %}">Give a rating</a>
+            <li class="list-group-item"><a class="badge badge-primary" href="{% url 'MealPlanUpdate' x.id %}">Give a rating</a>
             <a class="badge badge-danger" href="{% url 'MealPlanDelete' x.id %}">Delete</a>
+            {{x.id}} - {{x.PlanName}}, saved {{x.created_at}}
             </li>
+        {% endfor%}
     </ul>
-    {% endfor%}
+
 
 {%  else %}
     <p>No saved meal plans.</p>
