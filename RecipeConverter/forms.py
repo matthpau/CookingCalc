@@ -43,7 +43,7 @@ class RecipeConverter(forms.Form):
     url_placeholder = "www.my-favourite-recipe-site.com/this-recipe.html"
 
     recipe_text = forms.CharField(max_length=5000, label='Paste or type your recipe and conversions here:',
-                                  initial=inital_text,
+                                  #initial=inital_text,
                                   widget=forms.Textarea(attrs={'placeholder': test_text})
                                   )
     name = forms.CharField(max_length=200, label='Give your recipe a name:', required=True,
