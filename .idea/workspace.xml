@@ -4,10 +4,8 @@
     <bookmark url="file://$PROJECT_DIR$/AppTimesCalc/businessLogic.py" line="76" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeConverter/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeConverter/forms.py" afterDir="false" />
+    <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="A good days work">
+      <change beforePath="$PROJECT_DIR$/CookingBase/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CookingBase/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,15 +57,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/Home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="30" column="120" selection-start-line="30" selection-start-column="120" selection-end-line="30" selection-end-column="120" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RecipeConverter/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
@@ -100,7 +89,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RecipeConverter/forms.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="154">
@@ -108,6 +97,20 @@
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="126" column="3" lean-forward="true" selection-start-line="126" selection-start-column="3" selection-end-line="126" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -138,15 +141,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
               <caret line="14" column="67" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_confirm_delete.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="68" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -242,7 +236,6 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/regex explanations.txt" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/playing with regex.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.html" />
-        <option value="$PROJECT_DIR$/CookingBase/settings.py" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/account/login.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/cooking_level_list_options.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/about.html" />
@@ -269,6 +262,7 @@
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_list.html" />
         <option value="$PROJECT_DIR$/RecipeConverter/forms.py" />
+        <option value="$PROJECT_DIR$/CookingBase/settings.py" />
       </list>
     </option>
   </component>
@@ -581,14 +575,7 @@
       <workItem from="1561483762529" duration="154000" />
       <workItem from="1561523404844" duration="8711000" />
       <workItem from="1561541779437" duration="3911000" />
-      <workItem from="1561548273509" duration="7301000" />
-    </task>
-    <task id="LOCAL-00042" summary="∆">
-      <created>1560268504025</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1560268504025</updated>
+      <workItem from="1561548273509" duration="7741000" />
     </task>
     <task id="LOCAL-00043" summary="∆">
       <created>1560269819132</created>
@@ -926,7 +913,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561555618796</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="A good days work">
+      <created>1561555879282</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1561555879282</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -941,7 +935,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130331000" />
+    <option name="totallyTimeSpent" value="130771000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1117,13 +1111,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://84cfad85-1447-4e45-9e5e-70b813add470/schema/main/table/AppTimesCalc_meattype">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="0bddafdb-1bde-47a4-9802-29b6eb658380">
-          <filtering />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://84cfad85-1447-4e45-9e5e-70b813add470/schema/main/table/AppTimesCalc_mealplan">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="0bddafdb-1bde-47a4-9802-29b6eb658380">
@@ -1211,13 +1198,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3910">
           <caret line="233" selection-start-line="233" selection-end-line="233" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="193" column="49" selection-start-line="193" selection-start-column="49" selection-end-line="193" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -1464,6 +1444,16 @@
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="126" column="3" lean-forward="true" selection-start-line="126" selection-start-column="3" selection-end-line="126" selection-end-column="3" />
         </state>
       </provider>
     </entry>
