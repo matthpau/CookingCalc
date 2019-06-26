@@ -31,7 +31,7 @@ class Conversion(models.Model):
     source_url = models.URLField()
     original_text = models.TextField()
     converted_text = models.TextField(verbose_name="Converted Recipe")
-    conversion_type = models.CharField(max_length=20)
+    conversion_type = models.CharField(max_length=50)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

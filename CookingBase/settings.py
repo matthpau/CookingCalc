@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'id6@3=!641uy35qbz#@r#b^5nr4y_igzj4*m__=a6kl4fmf=w7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -112,19 +112,42 @@ WSGI_APPLICATION = 'CookingBase.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 #forproduction
+"""
 DATABASES = {
      'default': {
-         'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'matthpau$CookingCalc',
-         'USER': 'matthpau',
-         'PASSWORD': 'matthpaucookingpw',
-         'HOST': 'matthpau.mysql.pythonanywhere-services.com',
-         'PORT': '3306',
-     }
- }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'matthpau$CookingCalc',
+        'USER': 'matthpau',
+        'PASSWORD': 'matthpaucookingpw',
+        'HOST': 'matthpau.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+                    },
+                }
+            }
+"""
+
+# About Strict Trans Tables mode
+# https://django-mysql.readthedocs.io/en/latest/checks.html
+# for local SQL
+DATABASES = {
+     'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'cooking_calc',
+        'USER': 'root',
+        'PASSWORD': 'tupaki123',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+                    },
+                }
+            }
+
 
 """
-for local
+for local original mysql
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -132,6 +155,13 @@ DATABASES = {
     }
 }
 """
+
+
+
+
+
+
+
 
 
 # Password validation
@@ -158,6 +188,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Europe/Berlin'
+#Note - need to run SET GLOBAL time_zone = '+01:00'; in mySQL to make them compatible
+
+
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
