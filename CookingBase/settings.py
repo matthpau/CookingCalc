@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import my_secrets.py
+from . import my_secrets
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'id6@3=!641uy35qbz#@r#b^5nr4y_igzj4*m__=a6kl4fmf=w7'
+SECRET_KEY = my_secrets.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,8 +38,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = DEFAULT_FROM_EMAIL = 'cooking.helpers.reset@gmail.com'
-EMAIL_HOST_PASSWORD = 'tupaki123'
-
+EMAIL_HOST_PASSWORD = my_secrets.EMAIL_HOST_PASSWORD
 
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -119,7 +118,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'matthpau$CookingCalc',
         'USER': 'matthpau',
-        'PASSWORD': 'matthpaucookingpw',
+        'PASSWORD': my_secrets.PDN_DB_PASSWORD,
         'HOST': 'matthpau.mysql.pythonanywhere-services.com',
         'PORT': '3306',
         'OPTIONS': {
@@ -137,7 +136,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cooking_calc',
         'USER': 'root',
-        'PASSWORD': 'tupaki123',
+        'PASSWORD': my_secrets.LOC_DB_PASSWORD,
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {
