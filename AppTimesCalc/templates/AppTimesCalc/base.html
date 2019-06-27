@@ -13,16 +13,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-
     <!-- Other CSS -->
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'AppTimesCalc/styles.css' %}">
+    <link rel="shortcut icon" href="{% static 'AppTimesCalc/favicon.png' %}" />
 
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/265fe36e81.js"></script>
-
-    <link rel="shortcut icon" href="{% static 'AppTimesCalc/favicon.png' %}" />
 
 {% block extrahead %}
   {% endblock %}
@@ -33,7 +31,7 @@
 
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #D0E7ED;">
-        <a class="navbar-brand" href="/"><i style="color: #13496C;" class="fas fa-utensils"></i> Cooking Helpers</a>
+        <a class="navbar-brand" href="/">Cooking Helpers <i style="color: #13496C;" class="fas fa-utensils"></i></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
