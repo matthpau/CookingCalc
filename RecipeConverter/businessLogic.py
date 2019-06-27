@@ -30,8 +30,8 @@ def pretty_weight(value, unit):
             result = '1 quart'
         else:
             result = str(round(value, 1)) + ' quarts'
-    elif unit == 'grams':
-        result = str(int(value)) + ' grams'
+    elif unit == 'g':
+        result = str(int(value)) + ' g'
     else:
         result = str(round(value, 1)) + ' ' + unit
 
@@ -98,7 +98,7 @@ def converter(inputs):
     output_lines = []  # stores row by row results
     working_text = inputs['recipe_text']
 
-    # Brute Force Replacements
+    # Brute Force Replacements fractions
     replacement_text = {' 1/2': '.5',
                         '1/2': '.5',
                         '½': '.5',
@@ -113,17 +113,7 @@ def converter(inputs):
                         ' 1/5': '.2',
                         '1/5': '.2',
                         '1/8': '.125',
-                        'half a': '0.5',
-                        'half': '0.5',
-                        'a third of a': '0.333',
-                        'third': '0.333',
-                        'a cup': '1 cup',
                         }
-
-    # Generate dictionary of English number words and see if we can replace them
-    for i in range(50):
-        replacement_text[num2words(i) + ' '] = str(i)
-    # TODO update this so that it uses REGEX to exclude search for text before and after.
 
     for k, v in replacement_text.items():
         #search for the keys above but not where they have a letter just before and just after
@@ -131,6 +121,22 @@ def converter(inputs):
         prog = re.compile(r"" + s_str)
 
         working_text = prog.sub(v, working_text)
+
+    #Brute Force replacements text
+
+    replacement_text = {'half a': '0.5',
+                        'half': '0.5',
+                        'a third of a': '0.333',
+                        'third': '0.333',
+                        'a cup': '1 cup',
+                        }
+
+    # Generate dictionary of English number words and see if we can replace them
+    for i in range(20):
+        replacement_text[num2words(i) + ' '] = str(i)
+
+    for k, v in replacement_text.items():
+        working_text = working_text.replace(k, v)
 
 
     # DETERMINE AUTO CONVERSION TYPE
