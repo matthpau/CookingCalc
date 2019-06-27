@@ -4,12 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/AppTimesCalc/businessLogic.py" line="76" mnemonic="8" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeConverter/businessLogic.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeConverter/businessLogic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/converter_about.html" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/converter_about.html" afterDir="false" />
-    </list>
+    <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,8 +123,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-14">
-              <caret line="121" column="59" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="59" />
+            <state relative-caret-position="88">
+              <caret line="127" column="13" lean-forward="true" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
               <folding>
                 <element signature="e#310#319#0" expanded="true" />
               </folding>
@@ -559,14 +554,7 @@
       <workItem from="1561541779437" duration="3911000" />
       <workItem from="1561548273509" duration="14700000" />
       <workItem from="1561575001258" duration="3953000" />
-      <workItem from="1561637372614" duration="5095000" />
-    </task>
-    <task id="LOCAL-00051" summary="∆">
-      <created>1560598362897</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1560598362898</updated>
+      <workItem from="1561637372614" duration="5201000" />
     </task>
     <task id="LOCAL-00052" summary="∆">
       <created>1560601549806</created>
@@ -904,7 +892,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561639159602</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="A good days work">
+      <created>1561643044863</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1561643044863</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -919,7 +914,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146778000" />
+    <option name="totallyTimeSpent" value="146884000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -932,7 +927,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48031497" visible="true" weight="0.24749643" />
       <window_info id="Structure" order="1" sideWeight="0.51968503" side_tool="true" weight="0.2353362" />
@@ -1489,8 +1483,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
-          <caret line="121" column="59" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="59" />
+        <state relative-caret-position="88">
+          <caret line="127" column="13" lean-forward="true" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
           <folding>
             <element signature="e#310#319#0" expanded="true" />
           </folding>
