@@ -68,12 +68,13 @@ def ConversionDelete(request, pk):
 
     if request.method == 'POST':
 
-        CurrentRecord = Conversion.objects.get(id=pk)
+        # https://docs.djangoproject.com/en/2.1/ref/models/querysets/#exists
+        entry = Conversion.objects.get(id=pk)
+        if Conversion.objects.filter(id=entry.id).exists():
 
         #  Check we are the logged in user for security
-        if request.user == CurrentRecord.user:
-
-            CurrentRecord.delete()
+            if request.user == entry.user:
+                entry.delete()
 
         return HttpResponseRedirect('/converter/saved_conversions')
 

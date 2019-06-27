@@ -115,8 +115,9 @@ def converter(inputs):
                         '1/8': '.125',
                         'half a': '0.5',
                         'half': '0.5',
-                        'third of': '0.333',
-                        'third': '0.333'
+                        'a third of a': '0.333',
+                        'third': '0.333',
+                        'a cup': '1 cup',
                         }
 
     # Generate dictionary of English number words and see if we can replace them
@@ -241,6 +242,7 @@ def converter(inputs):
                 searchKeys.sort(key=len, reverse=True)  # always search for the longest one first
 
                 for key in searchKeys:
+
                     key_found = False
                     #add necessary suffixes for cups and spoons
                     if record['cup_type'] and not inputs['cups_bool']:
@@ -279,6 +281,7 @@ def converter(inputs):
 
     #2 brute force replacements - order is important, do the long ones first
 
+    # http://unicodefractions.com/
     replacement_text = {'0.5': '½',
                         '0.125': '⅛',
                         '0.25': '¼',
@@ -293,6 +296,7 @@ def converter(inputs):
                         '.375': '⅜',
                         '.675': '⅝',
                         '.875': '⅞',
+                        '0.333': '⅓'
                         }
 
 
