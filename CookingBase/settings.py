@@ -77,6 +77,9 @@ INSTALLED_APPS = [
     #https://django-crispy-forms.readthedocs.io/en/latest/index.html
     'crispy_forms',
 
+    #https://django-taggit.readthedocs.io/en/stable/index.html
+    'taggit',
+
 ]
 
 MIDDLEWARE = [

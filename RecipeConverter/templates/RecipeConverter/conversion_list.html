@@ -10,8 +10,8 @@
         {% for x in conversion_list %}
             <li class="list-group-item">
 
-                <a class="badge badge-primary" href="{% url 'ConversionUpdate' x.id %}">Edit</a>
-                <a class="badge badge-danger" href="{% url 'ConversionDelete' x.id %}">Delete</a>
+                <a class="badge badge-primary" href="{% url 'converter:ConversionUpdate' x.id %}">Edit</a>
+                <a class="badge badge-danger" href="{% url 'converter:ConversionDelete' x.id %}">Delete</a>
                 {{ x.id }} - {{ x.conversion_name }} - {{ x.created_at }}
             </li>
         {% endfor %}

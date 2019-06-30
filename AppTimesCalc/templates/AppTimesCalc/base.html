@@ -54,9 +54,18 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Recipe Converter</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{% url 'recipe_converter' %}">Converter</a>
-                    <a class="dropdown-item" href="{% url 'saved_conversions' %}">My saved conversions</a>
-                    <a class="dropdown-item" href="{% url 'ConverterAbout' %}">How it works</a>
+                    <a class="dropdown-item" href="{% url 'converter:recipe_converter' %}">Converter</a>
+                    <a class="dropdown-item" href="{% url 'converter:saved_conversions' %}">My saved conversions</a>
+                    <a class="dropdown-item" href="{% url 'converter:ConverterAbout' %}">How it works</a>
+                </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Store Directory</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'store:store_list' %}">Listings</a>
+                        <a class="dropdown-item" href="{% url 'store:store_create' %}">Add Store</a>
                 </div>
                 </li>
 

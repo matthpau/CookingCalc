@@ -24,10 +24,8 @@
             <small>{{ outputs.converted_text|linebreaks }}</small>
         </div>
         <div class="card-footer">
-           <a class="btn btn-primary" href="{% url 'ConversionUpdate' saved_key %}">Change or rename</a>
+           <a class="btn btn-primary" href="{% url 'converter:ConversionUpdate' saved_key %}">Change or rename</a>
         </div>
-
-
 
     </div>
 

@@ -6,7 +6,7 @@
     {% csrf_token %}
     {{ form|crispy }}
     <button class="btn btn-primary" type="submit">Save</button>
-    <a class="btn" href='{%  url 'saved_conversions' %}'>Cancel</a>
+    <a class="btn" href='{%  url 'converter:saved_conversions' %}'>Cancel</a>
 
 </form>
 

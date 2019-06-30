@@ -1,0 +1,17 @@
+{% extends 'AppTimesCalc/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h2>Stores</h2>
+    <ul>
+        {%  for store in store_list_view %}
+            <li>{{ store.name }} {{ store.address }}
+            {% if store.latitude != 0 %}
+                <a href="{{ store.google_coords }}" target="_blank">Google Map</a>
+            {%  endif %}
+            </li>
+        {%  endfor %}
+    </ul>
+
+{% endblock %}
