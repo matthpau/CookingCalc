@@ -59,6 +59,6 @@ class RecipeConverter(forms.Form):
 class ConversionUpdateForm(forms.ModelForm):
     class Meta:
         model = Conversion
-        fields = ['conversion_name', 'converted_text']
+        fields = ['conversion_name', 'original_text', 'converted_text']
 
 

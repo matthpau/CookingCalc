@@ -29,7 +29,7 @@ class Conversion(models.Model):
     conversion_name = models.CharField(max_length=100, default='No name given', verbose_name="Recipe name")
     user_comments = models.CharField(max_length=500)
     source_url = models.URLField()
-    original_text = models.TextField()
+    original_text = models.TextField(verbose_name="Original Recipe")
     converted_text = models.TextField(verbose_name="Converted Recipe")
     conversion_type = models.CharField(max_length=50)
 
