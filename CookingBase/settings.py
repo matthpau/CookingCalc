@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django.contrib.gis',
 
     # Local
     'users.apps.UsersConfig',
@@ -135,6 +136,7 @@ DATABASES = {
 # About Strict Trans Tables mode
 # https://django-mysql.readthedocs.io/en/latest/checks.html
 # for local SQL
+"""
 DATABASES = {
      'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -148,7 +150,7 @@ DATABASES = {
                     },
                 }
             }
-
+"""
 
 """
 for local original mysql
@@ -159,12 +161,21 @@ DATABASES = {
     }
 }
 """
+#For Local PostGres SQL
+#https://postgresapp.com/
+DATABASES = {
+    "default": {
+        "ENGINE": "django.contrib.gis.db.backends.postgis",
+        "NAME": "paulmatthews",
+        "USER": "paulmatthews",
+        "PASSWORD": "",
+        "HOST": "localhost",
+        "PORT": "",
+    }
+}
 
-
-
-
-
-
+#For production PostGres SQL
+# https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-14-04
 
 
 

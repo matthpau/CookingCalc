@@ -1,8 +1,40 @@
-from django.db import models
+#from django.db import models
+from django.contrib.gis.db import models
 from django.contrib.auth import get_user_model
 from taggit.managers import TaggableManager
 from django.urls import reverse
 
+# https://realpython.com/location-based-app-with-geodjango-tutorial/
+
+
+class Store(models.Model):
+    name = models.CharField(max_length=100)
+    location = models.PointField()
+    lat = models.FloatField()
+    long = models.FloatField()
+    address = models.CharField(max_length=200)
+    add_house_number = models.CharField(max_length=10)
+    add_street = models.CharField(max_length=100)
+    add_postcode = models.CharField(max_length=20)
+    add_city = models.CharField(max_length=50)
+    add_country = models.CharField(max_length=10)
+    email = models.EmailField()
+    phone = models.CharField(max_length=50)
+    opening_hours = models.CharField(max_length=200)
+    website = models.CharField(max_length=50)
+    OSM_ID = models.BigIntegerField(unique=True)
+    likes = models.ManyToManyField(get_user_model(), blank=True, related_name='stores')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    tags = TaggableManager(blank=True)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('store:store_profile', kwargs={'store_id': self.pk})
+
+"""
 
 class Store(models.Model):
     name = models.CharField(max_length=100)
@@ -31,6 +63,7 @@ class Store(models.Model):
 
     def get_absolute_url(self):
         return reverse('store:store_profile', kwargs={'store_id': self.pk})
+"""
 
 
 class StoreComment(models.Model):

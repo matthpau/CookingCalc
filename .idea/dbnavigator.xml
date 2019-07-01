@@ -22,19 +22,44 @@
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
-    <show-object-properties value="true" />
-    <loaded-nodes />
+    <show-object-properties value="false" />
+    <loaded-nodes>
+      <connection connection-id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66">
+        <schema name="information_schema" object-types="table, view" />
+        <schema name="public" object-types="index, sequence, table, view, function, constraint, dataset trigger, column" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="74e407bc-cbce-4012-bfb7-201e3db21e73">
-      <console name="Connection" type="STANDARD" schema="cooking_calc" session="Main" />
+    <connection id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66">
+      <console name="CookingCalc" type="STANDARD" schema="public" session="Main">DROP TABLE stores_store;
+DROP TABLE stores_store_likes;
+DROP TABLE stores_storecomment;
+DROP TABLE stores_storecomment_likes;
+commit</console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66" object-ref="schemas/public/tables/stores_store" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="74e407bc-cbce-4012-bfb7-201e3db21e73" />
+    <connection id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66" dataset="public.auth_group" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66" dataset="public.RecipeConverter_converter" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66" dataset="public.AppTimesCalc_cookinglevel" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66" dataset="public.stores_storecomment" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66" dataset="public.taggit_tag" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66" dataset="public.socialaccount_socialtoken" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66" dataset="public.stores_store" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66" dataset="public.account_emailaddress" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66" dataset="public.django_session" active-filter-id="" />
+    <filter-actions connection-id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66" dataset="public.stores_storecomment_likes" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66" dataset="public.stores_store_likes" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66" dataset="information_schema.sql_implementation_info" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -59,23 +84,23 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="74e407bc-cbce-4012-bfb7-201e3db21e73" active="true">
+      <connection id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66" active="true">
         <database>
-          <name value="Connection" />
-          <description value="cooking_calc" />
-          <database-type value="MYSQL" />
+          <name value="CookingCalc" />
+          <description value="CookingCalc" />
+          <database-type value="POSTGRES" />
           <config-type value="BASIC" />
-          <database-version value="8.0" />
+          <database-version value="11.4" />
           <driver-source value="BUILTIN" />
           <driver-library value="" />
           <driver value="" />
           <url-type value="DATABASE" />
           <host value="localhost" />
-          <port value="3306" />
-          <database value="cooking_calc" />
-          <type value="USER_PASSWORD" />
-          <user value="root" />
-          <deprecated-pwd value="dHVwYWtpMTIz" />
+          <port value="5432" />
+          <database value="paulmatthews" />
+          <type value="USER" />
+          <user value="paulmatthews" />
+          <deprecated-pwd value="" />
         </database>
         <properties>
           <auto-commit value="false" />
