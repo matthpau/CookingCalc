@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dumps/store_import/butchers_croatia.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumps/store_import/butchers_england.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumps/store_import/butchers_germany.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/store_loader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CookingBase/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CookingBase/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy_prep.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/deploy_prep.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stores/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/stores/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stores/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/stores/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumps/store_import/butchers_croatia.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumps/store_import/butchers_england.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumps/store_import/butchers_germany.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/store_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/store_loader.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,75 +61,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/store_loader.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
-              <folding>
-                <element signature="e#203#216#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/anaconda3/envs/CookingEnv/lib/python3.7/site-packages/geopy/location.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="96" selection-start-line="96" selection-end-line="96" />
-            </state>
-          </provider>
+        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/anaconda3/envs/CookingEnv/lib/python3.7/site-packages/geopy/geocoders/osm.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="430" selection-start-line="430" selection-end-line="430" />
-            </state>
-          </provider>
+        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/regex explanations.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
+        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/Get User Model fields.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="db://cbe00abd-04bf-42e2-bbe4-56b12bbeaa66/objects/schemas/public/tables/stores_store">
-          <provider selected="true" editor-type-id="1.DATA">
-            <state row-count="15" readonly="false">
-              <columns>
-                <column name="id" position="0" visible="true" />
-                <column name="name" position="1" visible="true" />
-                <column name="address" position="2" visible="true" />
-                <column name="location" position="2" visible="true" />
-                <column name="add_street" position="3" visible="true" />
-                <column name="created_at" position="3" visible="true" />
-                <column name="add_city" position="4" visible="true" />
-                <column name="updated_at" position="4" visible="true" />
-                <column name="OSM_ID" position="7" visible="true" />
-                <column name="add_country" position="8" visible="true" />
-                <column name="add_house_number" position="9" visible="true" />
-                <column name="add_postcode" position="10" visible="true" />
-                <column name="email" position="11" visible="true" />
-                <column name="lat" position="12" visible="true" />
-                <column name="long" position="13" visible="true" />
-                <column name="opening_hours" position="14" visible="true" />
-                <column name="phone" position="15" visible="true" />
-                <column name="website" position="16" visible="true" />
-              </columns>
-              <sorting>
-                <column name="name" index="1" direction="ASCENDING" />
-              </sorting>
-              <content-types />
-            </state>
-          </provider>
+        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/DEPLOYMENT STEPS.txt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -150,34 +100,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dumps/store_import/butchers_germany.json">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/git tips">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="158" column="30" selection-start-line="158" selection-start-column="30" selection-end-line="158" selection-end-column="30" />
+            <state>
+              <caret column="25" selection-start-column="25" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stores/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="18" column="12" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="12" />
-              <folding>
-                <element signature="e#30#70#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dumps/store_import/butchers_england.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="243" column="13" selection-start-line="243" selection-start-column="9" selection-end-line="243" selection-end-column="13" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/dumps/store_import/test.json">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -238,8 +172,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/saved_conversions.html" />
-        <option value="$PROJECT_DIR$/RecipeConverter/admin.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/regex explanations.txt" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/playing with regex.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.html" />
@@ -289,6 +221,8 @@
         <option value="$PROJECT_DIR$/stores/store_loader.py" />
         <option value="$PROJECT_DIR$/stores/models.py" />
         <option value="$PROJECT_DIR$/scripts/store_loader.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/git tips" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -323,16 +257,6 @@
               <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
               <item name="dumps" type="462c0819:PsiDirectoryNode" />
               <item name="store_import" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
-              <item name="stores" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
@@ -615,14 +539,7 @@
       <workItem from="1561929865440" duration="888000" />
       <workItem from="1561977856221" duration="2532000" />
       <workItem from="1561980520631" duration="253000" />
-      <workItem from="1561980961239" duration="12422000" />
-    </task>
-    <task id="LOCAL-00057" summary="∆">
-      <created>1560673464054</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1560673464055</updated>
+      <workItem from="1561980961239" duration="13069000" />
     </task>
     <task id="LOCAL-00058" summary="∆">
       <created>1560692479922</created>
@@ -960,7 +877,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561922896369</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="A good days work">
+      <created>1561998531691</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1561998531692</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -975,7 +899,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183342000" />
+    <option name="totallyTimeSpent" value="183989000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -988,6 +912,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48031497" visible="true" weight="0.17596567" />
       <window_info id="Structure" order="1" sideWeight="0.51968503" side_tool="true" weight="0.2353362" />
@@ -1001,7 +926,7 @@
       <window_info anchor="bottom" id="Inspection" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="4" weight="0.32939634" />
       <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.49964765" weight="0.21653543" />
-      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.4982382" visible="true" weight="0.3464567" />
+      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.4982382" weight="0.3464567" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5017618" side_tool="true" weight="0.30183727" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32545933" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32939634" />
@@ -1202,62 +1127,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/RecipeConverter/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecipeConverter/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="78" selection-start-line="6" selection-end-line="7" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalc.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/Home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="53" selection-start-line="53" selection-end-line="53" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stores/templates/stores/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/account/logout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_update.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stores/templates/stores/store_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="73" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1139">
@@ -1550,7 +1419,7 @@
     <entry file="file://$PROJECT_DIR$/stores/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dumps/store_import/butchers_croatia.json">
+    <entry file="file://$PROJECT_DIR$/dumps/store_import/croatia.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="47855">
           <caret line="2815" column="5" lean-forward="true" selection-start-line="2815" selection-start-column="5" selection-end-line="2815" selection-end-column="5" />
@@ -1570,7 +1439,7 @@
     <entry file="file://$PROJECT_DIR$/stores/migrations/0002_auto_20190701_1549.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dumps/store_import/butchers_england.json">
+    <entry file="file://$PROJECT_DIR$/dumps/store_import/but_england.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="243" column="13" selection-start-line="243" selection-start-column="9" selection-end-line="243" selection-end-column="13" />
@@ -1587,7 +1456,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dumps/store_import/butchers_germany.json">
+    <entry file="file://$PROJECT_DIR$/dumps/store_import/germany.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="158" column="30" selection-start-line="158" selection-start-column="30" selection-end-line="158" selection-end-column="30" />
@@ -1624,16 +1493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/deploy_server explanation.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/about geo stuff">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1662,6 +1521,48 @@
           <folding>
             <element signature="e#203#216#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/regex explanations.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/Get User Model fields.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/DEPLOYMENT STEPS.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/deploy_server explanation.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/about geo stuff">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dumps/store_import/test.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/git tips">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
         </state>
       </provider>
     </entry>

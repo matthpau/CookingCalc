@@ -76,4 +76,4 @@ def load_data(filename):
 print('clearing table')
 delete_data()
 print('loading table')
-load_data('butchers_england.json')
+load_data('but_england.json')

@@ -32,17 +32,15 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66">
-      <console name="CookingCalc" type="STANDARD" schema="public" session="Main">DROP TABLE stores_store;
+      <console name="CookingCalc" type="STANDARD" schema="public" session="Main"><![CDATA[DROP TABLE stores_store;
 DROP TABLE stores_store_likes;
 DROP TABLE stores_storecomment;
 DROP TABLE stores_storecomment_likes;
-commit</console>
+commit]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66" object-ref="schemas/public/tables/stores_store" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66" />
