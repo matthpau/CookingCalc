@@ -1,8 +1,6 @@
 # this is run to provide some initial values for which the database works
 
-from django.core.management.base import BaseCommand, CommandError
-from AppTimesCalc.models import MeatType, CookingLevel, CookingInfo
-from RecipeConverter.models import Converter
+from django.core.management.base import BaseCommand
 
 # https://docs.djangoproject.com/en/2.2/howto/custom-management-commands/
 
@@ -12,7 +10,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         import django
         import json
-        import os
+        from os.path import expanduser, isfile
         from django.contrib.gis.geos import fromstr
         from django.apps import apps
         from django.db.utils import IntegrityError
@@ -22,16 +20,23 @@ class Command(BaseCommand):
 
         from stores.models import Store
 
-        DATA_PATH = '../CookingBase/dumps/store_import/'
 
         def delete_data():
             Store.objects.all().delete()
 
         def load_data(filename):
+
+            DATA_PATH = expanduser('~/matthpau.pythonanywhere.com/CookingCalc/dumps/store_import/')
+            if isfile(DATA_PATH + filename):   # this is valid for linux
+                jsonfile = DATA_PATH + filename
+            else:
+                DATA_PATH = '../CookingBase/dumps/store_import/'
+                if isfile(DATA_PATH + filename):  # this is valid for local mac
+                    print('found data file for mac')
+                    jsonfile = DATA_PATH + filename
+
             i = 0
             Shop = apps.get_model('stores', 'Store')
-            jsonfile = DATA_PATH + filename
-
             with open(str(jsonfile)) as datafile:
                 objects = json.load(datafile)
                 for obj in objects['elements']:

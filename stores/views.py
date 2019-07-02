@@ -10,7 +10,7 @@ from django.contrib.gis.geos import Point
 
 class StoreCreate(CreateView):
     model = Store
-    fields = ['name', 'address', 'store_url', 'tags']
+    fields = ['name', 'address', 'tags']
     success_url = '/stores/list'
     # points to store_form.html automatically
 
