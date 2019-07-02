@@ -25,18 +25,18 @@
     <show-object-properties value="false" />
     <loaded-nodes>
       <connection connection-id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66">
-        <schema name="information_schema" object-types="table, view" />
-        <schema name="public" object-types="index, sequence, table, view, function, constraint, dataset trigger, column" />
+        <schema name="information_schema" object-types="view, table" />
+        <schema name="public" object-types="view, table" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66">
-      <console name="CookingCalc" type="STANDARD" schema="public" session="Main"><![CDATA[DROP TABLE stores_store;
+      <console name="CookingCalc" type="STANDARD" schema="public" session="Main">DROP TABLE stores_store;
 DROP TABLE stores_store_likes;
 DROP TABLE stores_storecomment;
 DROP TABLE stores_storecomment_likes;
-commit]]></console>
+commit</console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

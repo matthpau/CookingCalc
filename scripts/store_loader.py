@@ -40,26 +40,17 @@ def load_data(filename):
                     longitude = obj.get('lon', 0)
                     latitude = obj.get('lat', 0)
                     location = fromstr(f'POINT({longitude} {latitude})', srid=4326)
-                    address = tags.get('addr:housenumber', '') + ' ' + tags.get('addr:street', '')
-                    #address_full = address + tags.get('addr:city', '') + tags.get('addr:postcode', '') + tags.get('addr:country', '')
-                    address = address.strip()
-                    id = obj.get('id', 0)
-                    my_city = tags.get('addr:city', 'unknown')
-
-                    f_str = f"{latitude}, {longitude}"
-                    #print(f_str)
-                    loc = geolocator.reverse(f_str)
-                    print(loc.raw)
-                    #(loc.raw)
+                    osmid = obj.get('id', 0)
 
                     try:
                         s = Shop(name=store_name,
-                                 address=loc.address,
                                  location=location,
+                                 add_house_number=tags.get('addr:housenumber', ''),
+                                 add_street=tags.get('addr:street', ''),
                                  add_postcode=tags.get('addr:postcode', 'unknown'),
                                  add_city=tags.get('addr:city', 'unknown'),
                                  add_country=tags.get('addr:country', 'unknown'),
-                                 OSM_ID=id,
+                                 OSM_ID=osmid,
                                  lat=latitude,
                                  long=longitude,
                                  )
@@ -67,6 +58,8 @@ def load_data(filename):
                         i += 1
 
                     except IntegrityError:
+                        print(osmid, 'already exists, skipping')
+                        #store already exists, has OSM_ID in database
                         pass
             except KeyError:
                 pass
@@ -76,4 +69,4 @@ def load_data(filename):
 print('clearing table')
 delete_data()
 print('loading table')
-load_data('but_england.json')
+load_data('germany.json')

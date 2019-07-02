@@ -28,6 +28,23 @@ class Store(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     tags = TaggableManager(blank=True)
 
+    @property
+    def addr_full(self):
+        result = self.add_house_number + ' ' + self.add_street + ' ' + self.add_city + ' ' + self.add_country
+        result = result.replace('unknown', '')
+        result = result.lstrip().rstrip()
+
+        if len(result) > 0:
+            if result[-1] == ',':
+                result = result[:-1]
+        else:
+            result = ''
+        return result
+
+    @property
+    def url_search(self):
+        return self.addr_full.replace(' ', '+')
+
     def __str__(self):
         return self.name
 

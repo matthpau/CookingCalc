@@ -1,0 +1,22 @@
+{% extends 'AppTimesCalc/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h2>Search results for {{ city }}, {{ country }}</h2>
+
+<ul class="list-group-flush">
+{%  for store in store_list %}
+    <li class="list-group-item">{{ store.name }}
+        {% if store.addr_full %}
+            <a href="https://www.google.com/maps/search/?api=1&query={{ store.name }}+{{store.address}}">Map</a>
+        {%  else %}
+            <a href="https://www.google.com/maps/search/?api=1&query={{ store.lat }}, {{store.long}}">Map</a>
+        {%  endif %}
+        <br>
+        <small>{{store.addr_full}} {{ store.distance.km|floatformat }} km  </small>
+    </li>
+{%  endfor %}
+ </ul>
+
+{% endblock %}

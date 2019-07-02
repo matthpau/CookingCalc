@@ -3,7 +3,10 @@ from .models import Store
 from django.views.generic import CreateView, ListView
 from geopy.geocoders import Nominatim
 import json
-
+from ipware import get_client_ip
+from django.contrib.gis.geoip2 import GeoIP2
+from django.contrib.gis.db.models.functions import Distance
+from django.contrib.gis.geos import Point
 
 class StoreCreate(CreateView):
     model = Store
@@ -45,7 +48,46 @@ def store_profile(request, store_id):
 
 class StoreList(ListView):
     model = Store
-    context_object_name = 'store_list_view'   #note defaults to object_list
+    context_object_name = 'store_list_view'   #note context defaults to object_list
+
+def store_search(request):
+    # https://docs.djangoproject.com/en/2.2/ref/contrib/gis/geoip2/#
+    # https://github.com/un33k/django-ipware
+    # https://developers.google.com/maps/documentation/urls/guide
+
+    dev_ip = 'www.google.com'  # for use during development, Hamburg Germany
+    #dev_ip = '2a02:8108:4640:1214:b9e5:9090:525c:d282'
+    #Get client ip address
+    client_ip, is_routable = get_client_ip(request)
+
+    if client_ip is None:
+        found_ip = dev_ip
+    else:
+        # We got the client's IP address
+        if is_routable:
+            found_ip = client_ip
+        else:
+            #found_ip = 'Your IP is private'
+            found_ip = dev_ip
+
+    # Get location from IP address
+    g = GeoIP2()
+    city = g.city(found_ip)
+    print(city)
+    lat, lon = g.lat_lon(found_ip)
+    user_location = Point(lon, lat, srid=4326)
+
+    #Filter stores by distance
+    q = Store.objects.annotate(distance=Distance('location', user_location)
+                               ).order_by('distance')[:20]
+
+    context = {'city': city['city'],
+               'country': city['country_name'],
+               'store_list': q}
+
+    return render(request, 'stores/search_results.html', context)
+
+
 
 
 

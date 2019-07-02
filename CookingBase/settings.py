@@ -245,3 +245,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 #my settings for usage during various operaetions
 ARCHIVE_USERNAME = 'archive_user'
 ARCHIVE_USER_EMAIL = 'archive_user@cooking-helpers.com'
+
+#GeoIP settings
+GEOIP_PATH = os.path.join(BASE_DIR, 'geo_data')
