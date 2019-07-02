@@ -79,7 +79,7 @@ def store_search(request):
 
     #Filter stores by distance
     q = Store.objects.annotate(distance=Distance('location', user_location)
-                               ).order_by('distance')[:20]
+                               ).order_by('distance')[:100]
 
     context = {'city': city['city'],
                'country': city['country_name'],

@@ -1,0 +1,3416 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.55.7 8b86ff77",
+  "osm3s": {
+    "timestamp_osm_base": "2019-07-02T06:51:03Z",
+    "timestamp_areas_base": "2019-07-02T06:02:02Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 183296738,
+      "lat": 55.9424743,
+      "lon": -3.2815848,
+      "tags": {
+        "addr:housenumber": "139",
+        "addr:street": "St John's Road",
+        "name": "Charles Wilson",
+        "shop": "butcher",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 287590157,
+      "lat": 56.0297195,
+      "lon": -3.3993516,
+      "tags": {
+        "name": "Brians Butchers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 324160527,
+      "lat": 60.1571166,
+      "lon": -1.1493235,
+      "tags": {
+        "name": "Anderson Globe",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 357632711,
+      "lat": 57.2807923,
+      "lon": -5.7152043,
+      "tags": {
+        "addr:postcode": "IV40 8AE",
+        "addr:street": "Station Road",
+        "contact:facebook": "https://www.facebook.com/lochalshbutchers.mallaig",
+        "fhrs:id": "560724",
+        "name": "Lochalsh Butchers",
+        "shop": "butcher",
+        "website": "http://lochalshbutchers.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 406382340,
+      "lat": 55.6515645,
+      "lon": -2.2518787,
+      "tags": {
+        "name": "Graham Sanderson",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 476932138,
+      "lat": 57.4832705,
+      "lon": -4.4595876,
+      "tags": {
+        "addr:city": "Beauly",
+        "addr:housename": "3",
+        "addr:postcode": "IV4 7BX",
+        "addr:street": "The Square",
+        "fhrs:id": "560660",
+        "name": "John M. Munro Ltd",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 494343807,
+      "lat": 58.2084206,
+      "lon": -6.3875774,
+      "tags": {
+        "addr:postcode": "HS1 2XD",
+        "facebook": "https://www.facebook.com/wjmacdonalds/",
+        "fhrs:id": "806715",
+        "name": "W J Macdonald",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 513896539,
+      "lat": 57.1897687,
+      "lon": -3.8289253,
+      "tags": {
+        "name": "Frasers Butchers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 537015137,
+      "lat": 55.5920451,
+      "lon": -4.4873819,
+      "tags": {
+        "accuracy": "13 feet",
+        "addr:city": "Kilmarnock",
+        "addr:country": "GB",
+        "addr:housenumber": "81b",
+        "addr:postcode": "KA1 3RB",
+        "addr:street": "Whatriggs Road",
+        "name": "William Luke & Son",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 584987291,
+      "lat": 55.5467739,
+      "lon": -2.8417824,
+      "tags": {
+        "name": "Halliwells",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 588498442,
+      "lat": 55.9713482,
+      "lon": -3.1729206,
+      "tags": {
+        "addr:housenumber": "44",
+        "addr:street": "Great Junction Street",
+        "name": "George Bowman",
+        "shop": "butcher",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 619466288,
+      "lat": 56.5907568,
+      "lon": -3.3413333,
+      "tags": {
+        "name": "Irvines",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 635298321,
+      "lat": 56.4496542,
+      "lon": -2.8811201,
+      "tags": {
+        "name": "Marzipans Meats Ltd",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 717882690,
+      "lat": 55.6807063,
+      "lon": -4.5143373,
+      "tags": {
+        "name": "Wm Allan & Son",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 794051348,
+      "lat": 56.4674222,
+      "lon": -2.8758364,
+      "tags": {
+        "name": "Scott Brothers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 819634007,
+      "lat": 55.8689421,
+      "lon": -4.0435491,
+      "tags": {
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 864934136,
+      "lat": 57.1493289,
+      "lon": -2.1223056,
+      "tags": {
+        "addr:housenumber": "277",
+        "addr:postcode": "AB25 2YB",
+        "addr:street": "Rosemount Place",
+        "alt_name": "A W Herd & Sons Ltd",
+        "fhrs:id": "143164",
+        "name": "Herd's",
+        "note": "addr already present before fhrs but fhrs provides confirmation",
+        "shop": "butcher",
+        "source:addr": "fhrs",
+        "source:alt_name": "fhrs",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1123466177,
+      "lat": 58.2158448,
+      "lon": -6.3849454,
+      "tags": {
+        "addr:city": "Stornoway",
+        "addr:postcode": "HS1 2LB",
+        "addr:street": "Barraid nan Ròp",
+        "fhrs:id": "806676",
+        "name": "Charles Macleod",
+        "shop": "butcher",
+        "website": "https://www.charlesmacleod.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1167134121,
+      "lat": 55.8569446,
+      "lon": -4.5785416,
+      "tags": {
+        "name": "W Holmes",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1190761869,
+      "lat": 56.0392287,
+      "lon": -3.420047,
+      "tags": {
+        "addr:city": "Rosyth",
+        "addr:housenumber": "4",
+        "addr:postcode": "KY11 2JW",
+        "addr:street": "Parkgate",
+        "name": "Neil Hoey",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1235930356,
+      "lat": 57.3431619,
+      "lon": -2.6118899,
+      "tags": {
+        "name": "Dean's Country Butcher",
+        "opening_hours": "Tu-Sa 08:30-16:30",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1308343548,
+      "lat": 56.2432866,
+      "lon": -4.214914,
+      "tags": {
+        "name": "D. Campbell & Son",
+        "shop": "butcher",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1318030316,
+      "lat": 57.5840401,
+      "lon": -3.8703998,
+      "tags": {
+        "name": "Clark & Son",
+        "phone": "+44 1667 453221",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1341652778,
+      "lat": 55.8027818,
+      "lon": -4.0685356,
+      "tags": {
+        "name": "A. Donald",
+        "shop": "butcher",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1349067622,
+      "lat": 57.0798861,
+      "lon": -4.0511424,
+      "tags": {
+        "name": "George Gow",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1401007667,
+      "lat": 55.4579753,
+      "lon": -2.6826766,
+      "tags": {
+        "name": "Douglas and Son",
+        "shop": "butcher",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1435322495,
+      "lat": 55.9333253,
+      "lon": -3.1780752,
+      "tags": {
+        "addr:housenumber": "74",
+        "addr:street": "Ratcliffe Terrace",
+        "name": "Mathieson",
+        "shop": "butcher",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1491908231,
+      "lat": 59.0838653,
+      "lon": -3.042664,
+      "tags": {
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1599999012,
+      "lat": 55.8015003,
+      "lon": -3.9165379,
+      "tags": {
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1600288290,
+      "lat": 55.8585698,
+      "lon": -4.2160708,
+      "tags": {
+        "name": "David S Mason",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1611064131,
+      "lat": 55.8552115,
+      "lon": -4.2358915,
+      "tags": {
+        "name": "GA Low & Son",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1612149103,
+      "lat": 55.8602223,
+      "lon": -4.2402612,
+      "tags": {
+        "name": "The Country Shop",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1628708784,
+      "lat": 55.820226,
+      "lon": -4.2332822,
+      "tags": {
+        "name": "Adam",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1637944090,
+      "lat": 55.8582784,
+      "lon": -4.2203957,
+      "tags": {
+        "name": "J McDonald",
+        "phone": "+44 141 550 1020",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1660995226,
+      "lat": 55.9361121,
+      "lon": -3.2095201,
+      "tags": {
+        "addr:city": "Edinburgh",
+        "addr:housenumber": "186",
+        "addr:postcode": "EH10 4DF",
+        "addr:street": "Bruntsfield Place",
+        "name": "Wm. Christie",
+        "shop": "butcher",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1663626175,
+      "lat": 55.1803723,
+      "lon": -2.8124117,
+      "tags": {
+        "addr:housenumber": "46",
+        "addr:postcode": "TD9 0RA",
+        "addr:street": "North Hermitage Street",
+        "name": "T. Elliot & Sons",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1689080402,
+      "lat": 55.8364909,
+      "lon": -4.2644641,
+      "tags": {
+        "name": "Country Shop",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1689095566,
+      "lat": 55.8365873,
+      "lon": -4.2643246,
+      "tags": {
+        "name": "Jeddah Food Store",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1705220243,
+      "lat": 55.886017,
+      "lon": -2.1573586,
+      "tags": {
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1705228654,
+      "lat": 55.8722185,
+      "lon": -2.0889152,
+      "tags": {
+        "name": "RG Foreman & Son",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1716179867,
+      "lat": 55.836294,
+      "lon": -4.2637533,
+      "tags": {
+        "description": "Wholesale - meat, fruit, veg",
+        "name": "Al-Madina Foodstore",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1716179873,
+      "lat": 55.8357937,
+      "lon": -4.2608586,
+      "tags": {
+        "butcher": "halal",
+        "name": "Faisal Foodstore",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1716179882,
+      "lat": 55.835722,
+      "lon": -4.2605085,
+      "tags": {
+        "name": "Madni Halal Foods",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1716179883,
+      "lat": 55.8358296,
+      "lon": -4.2599901,
+      "tags": {
+        "name": "Nafees Halal Meat",
+        "shop": "butcher",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1716444018,
+      "lat": 55.8347861,
+      "lon": -4.2554481,
+      "tags": {
+        "addr:housenumber": "334",
+        "addr:street": "Allison Street",
+        "name": "GWS Wislon",
+        "shop": "butcher",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1743361394,
+      "lat": 57.3350183,
+      "lon": -2.3191371,
+      "tags": {
+        "addr:housenumber": "37",
+        "addr:postcode": "AB51 0AA",
+        "addr:street": "Market Square",
+        "name": "Presley",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1776084688,
+      "lat": 55.8833959,
+      "lon": -4.2294382,
+      "tags": {
+        "name": "A Wier",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1788979319,
+      "lat": 56.0586096,
+      "lon": -2.7183206,
+      "tags": {
+        "name": "Andersons",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1801771310,
+      "lat": 56.203373,
+      "lon": -3.4210948,
+      "tags": {
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1841744032,
+      "lat": 55.8199237,
+      "lon": -3.8077771,
+      "tags": {
+        "name": "James Moffat",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1929439153,
+      "lat": 55.8913042,
+      "lon": -4.203917,
+      "tags": {
+        "name": "Douglas Sillars",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1940367226,
+      "lat": 57.7225627,
+      "lon": -3.2858881,
+      "tags": {
+        "addr:city": "Lossiemouth",
+        "addr:country": "GB",
+        "addr:housenumber": "41",
+        "addr:postcode": "IV31 6PR",
+        "addr:street": "Queen Street",
+        "entrance": "yes",
+        "name": "B.Clark & Son",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1951173117,
+      "lat": 55.8674331,
+      "lon": -4.1929141,
+      "tags": {
+        "name": "Lorimers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1975875701,
+      "lat": 55.9242551,
+      "lon": -4.4021816,
+      "tags": {
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2019491586,
+      "lat": 55.8308279,
+      "lon": -4.5369829,
+      "tags": {
+        "name": "E. Williams & Sons",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2065487465,
+      "lat": 55.7990375,
+      "lon": -4.238162,
+      "tags": {
+        "addr:city": "Glasgow",
+        "addr:housenumber": "117",
+        "addr:street": "Stravanan Road",
+        "name": "J Martin",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2075196858,
+      "lat": 55.8312994,
+      "lon": -4.3390896,
+      "tags": {
+        "name": "West Coast Butcher",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2076697874,
+      "lat": 55.9590449,
+      "lon": -3.2133693,
+      "tags": {
+        "addr:housenumber": "75",
+        "addr:street": "Raeburn Place",
+        "name": "George Bower",
+        "shop": "butcher",
+        "website": "http://www.georgebowerbutchers.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2081402447,
+      "lat": 55.9586742,
+      "lon": -3.1898407,
+      "tags": {
+        "addr:housenumber": "97-99-101",
+        "addr:street": "Broughton Street",
+        "name": "Crombie's of Edinburgh",
+        "opening_hours": "Mo-Fr 08:00-17:30, Sa 07:30-17:00",
+        "shop": "butcher",
+        "source": "survey",
+        "website": "http://www.sausages.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2091264094,
+      "lat": 55.8965749,
+      "lon": -4.2407353,
+      "tags": {
+        "name": "Alex Cameron",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2093419927,
+      "lat": 55.9447464,
+      "lon": -3.2502929,
+      "tags": {
+        "addr:housenumber": "113",
+        "addr:street": "Corstorphine Road",
+        "name": "John Brash",
+        "opening_hours": "Mo-Tu 08:00-16:00; We 08:00-12:00; Th-Fr 08:00-17:00; Sa 08:00-14:30",
+        "phone": "+44 131 337 3730",
+        "shop": "butcher",
+        "source": "survey",
+        "website": "http://www.johnbrashbutcher.com/index2.html",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2149430603,
+      "lat": 55.8973064,
+      "lon": -3.3042792,
+      "tags": {
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2157130268,
+      "lat": 57.8922461,
+      "lon": -4.3462852,
+      "tags": {
+        "name": "Matheson & McLeod",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2161097151,
+      "lat": 57.8391042,
+      "lon": -5.5755667,
+      "tags": {
+        "name": "Aultbea Butchers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2189458797,
+      "lat": 56.3911492,
+      "lon": -3.2154777,
+      "tags": {
+        "addr:city": "Errol",
+        "addr:postcode": "PH2 7QW",
+        "name": "Alan Dobbie Butcher",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2200208729,
+      "lat": 56.4028547,
+      "lon": -3.2020132,
+      "tags": {
+        "designation": "farm shop",
+        "name": "Carse Finest Farmshop",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2216631074,
+      "lat": 56.0022715,
+      "lon": -2.5163239,
+      "tags": {
+        "name": "Peter Whitecross",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2229453383,
+      "lat": 56.5653575,
+      "lon": -3.5852524,
+      "tags": {
+        "addr:city": "Dunkeld",
+        "addr:housenumber": "8",
+        "addr:postcode": "PH8 0AH",
+        "addr:street": "Bridge Street",
+        "fhrs:id": "1048094",
+        "name": "Dunkeld Butchers",
+        "shop": "butcher",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2305002798,
+      "lat": 57.0764739,
+      "lon": -2.7779519,
+      "tags": {
+        "name": "Troups",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2331048435,
+      "lat": 55.772771,
+      "lon": -4.3339966,
+      "tags": {
+        "name": "Charles Frazer Quality Meats",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2371569792,
+      "lat": 55.8708824,
+      "lon": -4.3063697,
+      "tags": {
+        "name": "Grampian Butcher",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2371584117,
+      "lat": 55.8719147,
+      "lon": -4.30251,
+      "tags": {
+        "name": "Vincent",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2371593353,
+      "lat": 55.8746963,
+      "lon": -4.2940369,
+      "tags": {
+        "addr:city": "Glasgow",
+        "addr:housenumber": "180",
+        "addr:postcode": "G12 8SN",
+        "addr:street": "Byres Road",
+        "name": "Rodgers Butcher",
+        "opening_hours": "Mo-Sa 08:00-17:30; Su 11:00-17:00",
+        "phone": "+44 141 334 9724",
+        "shop": "butcher",
+        "website": "www.rodgersbutchers.com"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2373121785,
+      "lat": 55.8780175,
+      "lon": -4.3223946,
+      "tags": {
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2387857605,
+      "lat": 55.8700693,
+      "lon": -4.226684,
+      "tags": {
+        "name": "The Butchers Shop In The Garngad",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2406178802,
+      "lat": 57.3092995,
+      "lon": -2.0539926,
+      "tags": {
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2456168489,
+      "lat": 57.6145037,
+      "lon": -3.0972269,
+      "tags": {
+        "addr:housenumber": "1",
+        "addr:postcode": "IV32 7DN",
+        "addr:street": "Duke Street",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2599710037,
+      "lat": 55.9700653,
+      "lon": -3.1697415,
+      "tags": {
+        "addr:city": "Edinburgh",
+        "addr:housenumber": "37",
+        "addr:postcode": "EH6 8HH",
+        "addr:street": "Duke Street",
+        "name": "Mieso Wedliny Wedzonki",
+        "shop": "butcher",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2625762496,
+      "lat": 54.868926,
+      "lon": -4.4418105,
+      "tags": {
+        "name": "S Cronnie",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2656595902,
+      "lat": 56.2010577,
+      "lon": -3.2143546,
+      "tags": {
+        "name": "CW Green",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2681974911,
+      "lat": 56.1828001,
+      "lon": -3.1627913,
+      "tags": {
+        "name": "Alex Mitchell Butchers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2696171818,
+      "lat": 56.1964747,
+      "lon": -3.1706093,
+      "tags": {
+        "name": "Fife Butchers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2700632678,
+      "lat": 55.9425315,
+      "lon": -3.1823143,
+      "tags": {
+        "addr:housenumber": "36",
+        "addr:street": "Clerk Street",
+        "name": "First Class Butchers",
+        "shop": "butcher",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2714151488,
+      "lat": 57.1716426,
+      "lon": -2.1172883,
+      "tags": {
+        "addr:housenumber": "61",
+        "addr:postcode": "AB24 2RN",
+        "addr:street": "Hayton Road",
+        "fhrs:id": "592415",
+        "fhrs:localauthoritybusinessID": "EHDC10807",
+        "name": "Tilly Butcher",
+        "shop": "butcher",
+        "source": "survey",
+        "source:addr": "fhrs"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2788305193,
+      "lat": 55.8781561,
+      "lon": -3.1485785,
+      "tags": {
+        "name": "R Brown & Son",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3000236857,
+      "lat": 55.9409843,
+      "lon": -3.2032932,
+      "tags": {
+        "addr:city": "Edinburgh",
+        "addr:housenumber": "40",
+        "addr:postcode": "EH3 9LJ",
+        "addr:street": "Leven Street",
+        "name": "John Saunderson",
+        "shop": "butcher",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3018565572,
+      "lat": 55.9595899,
+      "lon": -3.4607059,
+      "tags": {
+        "addr:city": "Winchburgh",
+        "addr:housenumber": "8",
+        "addr:postcode": "EH52 6RT",
+        "addr:street": "Main Street",
+        "fhrs:id": "587578",
+        "name": "John Lawson",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3038836437,
+      "lat": 57.4792898,
+      "lon": -4.2266594,
+      "tags": {
+        "addr:city": "Inverness",
+        "addr:housenumber": "22-24",
+        "addr:postcode": "IV1 1DJ",
+        "addr:street": "Queensgate",
+        "fhrs:id": "359749",
+        "name": "Duncan Fraser & Son",
+        "shop": "butcher",
+        "website": "https://duncanfraserbutcher.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3203153731,
+      "lat": 56.459579,
+      "lon": -2.9712126,
+      "tags": {
+        "addr:housenumber": "32",
+        "addr:postcode": "DD1 4ET",
+        "addr:street": "Nethergate",
+        "fhrs:id": "151228",
+        "fixme:addr1": "32 Nethergate",
+        "name": "Scott Brothers",
+        "shop": "butcher",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3262395449,
+      "lat": 55.736727,
+      "lon": -3.8414814,
+      "tags": {
+        "name": "Ramsey",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3355769576,
+      "lat": 55.9564836,
+      "lon": -3.138181,
+      "tags": {
+        "addr:housenumber": "2G",
+        "addr:street": "Craigentinny Avenue",
+        "name": "I & L Fraser Butchers",
+        "phone": "+44 131 669 3745",
+        "shop": "butcher",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3545843200,
+      "lat": 55.9537915,
+      "lon": -3.1155688,
+      "tags": {
+        "addr:housenumber": "116",
+        "addr:street": "Portobello High Street",
+        "name": "Findlays",
+        "phone": "+44 131 669 4559",
+        "shop": "butcher",
+        "source": "survey",
+        "web": "http://findlayofportobello.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3640610797,
+      "lat": 55.4640297,
+      "lon": -4.6309988,
+      "tags": {
+        "addr:city": "Ayr",
+        "addr:housenumber": "23",
+        "addr:postcode": "KA7 1LU",
+        "addr:street": "High Street",
+        "name": "Pollok Williamson",
+        "phone": "+44 1292 611528",
+        "shop": "butcher",
+        "website": "www.pollokwilliamson.co.uk"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3644176125,
+      "lat": 55.4441419,
+      "lon": -4.6145241,
+      "tags": {
+        "addr:city": "Ayr",
+        "addr:housenumber": "27",
+        "addr:postcode": "KA7 3RS",
+        "addr:street": "Annfield Glen Road",
+        "name": "Prime Cuts",
+        "phone": "+44 1292 265747",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3647798297,
+      "lat": 55.9227407,
+      "lon": -3.2868053,
+      "tags": {
+        "addr:city": "Edinburgh",
+        "addr:housenumber": "499",
+        "addr:postcode": "EH11 4AW",
+        "addr:street": "Calder Road",
+        "name": "P Campbell",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3648567709,
+      "lat": 55.4596493,
+      "lon": -4.6287096,
+      "tags": {
+        "addr:city": "Ayr",
+        "addr:street": "Alloway Street",
+        "name": "A Picken Butchers",
+        "phone": "+44 1292 263970",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3650711469,
+      "lat": 55.45352,
+      "lon": -4.6175492,
+      "tags": {
+        "addr:city": "Ayr",
+        "addr:housenumber": "27",
+        "addr:postcode": "KA7 3EN",
+        "addr:street": "Mount Oliphant Crescent",
+        "name": "Pollok Williamson",
+        "phone": "+44 1292 611558",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3650816808,
+      "lat": 55.4663549,
+      "lon": -4.6302628,
+      "tags": {
+        "addr:city": "Ayr",
+        "addr:housenumber": "24",
+        "addr:postcode": "KA8 8BX",
+        "addr:street": "Main Street",
+        "name": "John C Wilson",
+        "shop": "butcher",
+        "website": "01292%20263067"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3650840955,
+      "lat": 55.4670852,
+      "lon": -4.6304902,
+      "tags": {
+        "addr:city": "Ayr",
+        "addr:housenumber": "69-71",
+        "addr:postcode": "KA8 8BU",
+        "addr:street": "Main Street",
+        "fhrs:id": "43591",
+        "name": "Pickens",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3754770175,
+      "lat": 55.7069992,
+      "lon": -5.2994657,
+      "tags": {
+        "name": "Arran Butcher",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3822987288,
+      "lat": 57.138013,
+      "lon": -2.1203716,
+      "tags": {
+        "addr:city": "Aberdeen",
+        "addr:housenumber": "16",
+        "addr:postcode": "AB10 6RD",
+        "addr:street": "Chattan Place",
+        "name": "JK Fine Foods",
+        "opening_hours": "Mo-We 08:30-18:00, Th 08:30-18:30, Fr-Sa 08:30-18:00, Su 09:00-16:00",
+        "operator": "John King",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3885873921,
+      "lat": 55.9712083,
+      "lon": -3.1733004,
+      "tags": {
+        "addr:housenumber": "51-53",
+        "addr:street": "Great Junction Street",
+        "name": "Anderson The Butchers",
+        "shop": "butcher",
+        "source": "survey",
+        "website": "https://www.edinburghbutchers.co.uk/about-us-c-5.html/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3895139627,
+      "lat": 56.0595465,
+      "lon": -3.2323151,
+      "tags": {
+        "addr:city": "Burntisland",
+        "addr:housenumber": "213",
+        "addr:postcode": "KY3 9AE",
+        "addr:street": "High Street",
+        "fhrs:id": "109954",
+        "name": "Tom Courts",
+        "opening_hours": "Mo-Sa 08:00-16:30",
+        "phone": "+44 1592 872706",
+        "shop": "butcher",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3926242223,
+      "lat": 58.2099048,
+      "lon": -6.3882112,
+      "tags": {
+        "addr:postcode": "HS1 2DH",
+        "facebook": "https://www.facebook.com/macleodandmacleod/",
+        "fhrs:id": "806516",
+        "name": "Macleod and Macleod",
+        "shop": "butcher",
+        "website": "https://www.macleodandmacleod.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4011933607,
+      "lat": 56.0699771,
+      "lon": -3.1753244,
+      "tags": {
+        "addr:city": "Kinghorn",
+        "addr:housenumber": "30",
+        "addr:postcode": "KY3 9UE",
+        "addr:street": "High Street",
+        "fhrs:id": "109920",
+        "name": "The Butcher Shop",
+        "shop": "butcher",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4151703695,
+      "lat": 55.7571423,
+      "lon": -6.2872649,
+      "tags": {
+        "name": "Alasdair Porter",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4159944190,
+      "lat": 56.0653197,
+      "lon": -4.4527994,
+      "tags": {
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4190107884,
+      "lat": 56.0241613,
+      "lon": -3.8156921,
+      "tags": {
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4233743282,
+      "lat": 55.9737077,
+      "lon": -3.1843309,
+      "tags": {
+        "addr:housenumber": "119-121",
+        "addr:street": "Pitt Street",
+        "name": "Edinburgh Bacon Company",
+        "phone": "+44 131 554 9320",
+        "shop": "butcher",
+        "source": "Bing",
+        "wholesale": "only"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4241452548,
+      "lat": 55.5982518,
+      "lon": -2.7216889,
+      "tags": {
+        "addr:city": "Melrose",
+        "addr:housenumber": "2",
+        "addr:street": "High Street",
+        "name": "Millers of Melrose",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4294321112,
+      "lat": 55.9428903,
+      "lon": -3.048382,
+      "tags": {
+        "name": "Musselburgh Family Butcher",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4316450789,
+      "lat": 56.1881192,
+      "lon": -3.9640101,
+      "tags": {
+        "name": "David Bennett & Son",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4353351932,
+      "lat": 55.8255381,
+      "lon": -4.5054359,
+      "tags": {
+        "addr:street": "Sycamore Avenue",
+        "name": "Butcher",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4363185017,
+      "lat": 55.9321415,
+      "lon": -3.2597596,
+      "tags": {
+        "addr:housenumber": "2",
+        "addr:street": "Stenhouse Cross",
+        "name": "John Bain and Son Butcher",
+        "shop": "butcher",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4383996296,
+      "lat": 56.5583323,
+      "lon": -2.5879938,
+      "tags": {
+        "name": "Fleming",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4384422502,
+      "lat": 56.5604176,
+      "lon": -2.5788552,
+      "tags": {
+        "name": "Fleming",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4452379468,
+      "lat": 56.081501,
+      "lon": -3.8697104,
+      "tags": {
+        "addr:city": "Stirling",
+        "addr:country": "GB",
+        "addr:place": "Cowie",
+        "addr:street": "Main Street",
+        "name": "Gavin's Butcher and Deli",
+        "phone": "+44 1786 817 593",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4464083377,
+      "lat": 57.5975397,
+      "lon": -4.4378259,
+      "tags": {
+        "addr:city": "Dingwall",
+        "addr:housenumber": "19",
+        "addr:postcode": "IV15 9PZ",
+        "addr:street": "Mill Street",
+        "fhrs:id": "359709",
+        "name": "Geo. Cockburn and Son",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4498707908,
+      "lat": 57.2655044,
+      "lon": -3.6576871,
+      "tags": {
+        "addr:city": "Nethy Bridge",
+        "addr:postcode": "PH25 3DN",
+        "addr:street": "Station Road",
+        "name": "SG Mustard Butcher",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4543772778,
+      "lat": 56.4672718,
+      "lon": -2.8748766,
+      "tags": {
+        "name": "Scott Brothers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4548200901,
+      "lat": 55.9552968,
+      "lon": -2.7768293,
+      "tags": {
+        "name": "Kevin Watt",
+        "shop": "butcher",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4564380589,
+      "lat": 57.5953528,
+      "lon": -4.4285817,
+      "tags": {
+        "addr:city": "Dingwall",
+        "addr:housenumber": "20",
+        "addr:postcode": "IV15 9RU",
+        "addr:street": "High Street",
+        "fhrs:id": "359886",
+        "name": "John M Munro",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4584729964,
+      "lat": 57.5175497,
+      "lon": -4.4586569,
+      "tags": {
+        "addr:city": "Muir of Ord",
+        "addr:postcode": "IV6 7TP",
+        "addr:street": "Great North Road",
+        "fhrs:id": "359895",
+        "name": "John M. Munro Ltd",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4624116850,
+      "lat": 55.9022676,
+      "lon": -3.6419736,
+      "tags": {
+        "name": "Hugh Black & Sons",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4626855781,
+      "lat": 57.6931493,
+      "lon": -2.0052608,
+      "tags": {
+        "name": "Bruce",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4630871028,
+      "lat": 57.5952144,
+      "lon": -4.4256925,
+      "tags": {
+        "addr:city": "Dingwall",
+        "addr:postcode": "IV15 9HL",
+        "addr:street": "High Street",
+        "fhrs:id": "359728",
+        "name": "Fraser Brothers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4712429268,
+      "lat": 58.964665,
+      "lon": -3.2969897,
+      "tags": {
+        "name": "Eric Flett's",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4771344070,
+      "lat": 56.473296,
+      "lon": -2.9286055,
+      "tags": {
+        "name": "Grossett the Butchers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4789008821,
+      "lat": 55.8773454,
+      "lon": -4.3088035,
+      "tags": {
+        "addr:housenumber": "85",
+        "addr:street": "Lauderdale Gardens",
+        "name": "James Allan",
+        "name:en": "James Allan",
+        "name:es": "James Allan",
+        "phone": "+441413348973",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4811205521,
+      "lat": 57.609627,
+      "lon": -3.6119832,
+      "tags": {
+        "addr:housenumber": "11",
+        "addr:street": "Tolbooth Street",
+        "name": "Macbeth's Butchers",
+        "name:en": "Macbeth's Butchers",
+        "opening_hours": "Mo-Fr 08:00-17:00",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4955745729,
+      "lat": 55.7800881,
+      "lon": -3.9563066,
+      "tags": {
+        "name": "Family Halal Butcher",
+        "shop": "butcher",
+        "source": "Fieldwork"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4980468477,
+      "lat": 55.9022255,
+      "lon": -3.6425559,
+      "tags": {
+        "name": "David Stein",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4987967437,
+      "lat": 58.5922467,
+      "lon": -3.5248826,
+      "tags": {
+        "level": "0",
+        "name": "Bews Butchers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5005663899,
+      "lat": 56.0678824,
+      "lon": -4.3358633,
+      "tags": {
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5031298219,
+      "lat": 55.6521656,
+      "lon": -3.1881939,
+      "tags": {
+        "addr:city": "Peebles",
+        "addr:housenumber": "21-25",
+        "addr:postcode": "EH45 8AD",
+        "addr:street": "Eastgate",
+        "name": "Forsyths Quality Butchers",
+        "phone": "+44 1721 720833",
+        "shop": "butcher",
+        "website": "https://www.forsythsofpeebles.co.uk/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5035458689,
+      "lat": 57.5264898,
+      "lon": -3.2077007,
+      "tags": {
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5111916518,
+      "lat": 55.8390214,
+      "lon": -4.2750337,
+      "tags": {
+        "name": "W. Cranston",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5121420247,
+      "lat": 57.8954216,
+      "lon": -5.1604901,
+      "tags": {
+        "name": "Food For Thought",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5126658403,
+      "lat": 55.9769436,
+      "lon": -3.5989552,
+      "tags": {
+        "name": "WM Holleran & Sons",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5135785351,
+      "lat": 56.1263346,
+      "lon": -4.1714572,
+      "tags": {
+        "name": "Skinner of Kippen",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5141817985,
+      "lat": 56.4401851,
+      "lon": -2.9408531,
+      "tags": {
+        "name": "Minick of Newport",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5176299458,
+      "lat": 55.5975865,
+      "lon": -2.7203103,
+      "tags": {
+        "name": "Martin Baird",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5196729250,
+      "lat": 55.652055,
+      "lon": -3.194342,
+      "tags": {
+        "name": "W T S Forsyth & Sons",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5202528558,
+      "lat": 56.1262386,
+      "lon": -3.1834094,
+      "tags": {
+        "addr:city": "Kirkcaldy",
+        "addr:housenumber": "236",
+        "addr:postcode": "KY2 6LE",
+        "addr:street": "Dunearn Drive",
+        "fhrs:id": "97223",
+        "name": "Al-Shaan",
+        "shop": "butcher",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5243488959,
+      "lat": 56.1090161,
+      "lon": -3.9684824,
+      "tags": {
+        "name": "Michael R. More",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5299388637,
+      "lat": 56.6445512,
+      "lon": -2.8881342,
+      "tags": {
+        "addr:city": "Forfar",
+        "addr:street": "Castle Street",
+        "name": "Ewarts Butchers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5299433950,
+      "lat": 56.6442488,
+      "lon": -2.887745,
+      "tags": {
+        "name": "Rennie's Quality Butchers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5376411620,
+      "lat": 56.4712077,
+      "lon": -2.9760913,
+      "tags": {
+        "name": "Yorres of Dundee",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5396736196,
+      "lat": 56.3192532,
+      "lon": -3.0113542,
+      "tags": {
+        "addr:city": "Cupar",
+        "addr:housenumber": "4",
+        "addr:postcode": "KY15 5HH",
+        "addr:street": "Crossgate",
+        "fhrs:id": "93420",
+        "name": "Minick of Cupar Ltd",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5399030908,
+      "lat": 55.9343268,
+      "lon": -3.4706873,
+      "tags": {
+        "name": "Boghall Buthchers @ Broxburn",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5457129370,
+      "lat": 56.2300858,
+      "lon": -5.0726937,
+      "tags": {
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5457666721,
+      "lat": 56.4128391,
+      "lon": -5.4717958,
+      "tags": {
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5480486044,
+      "lat": 56.673338,
+      "lon": -3.0032568,
+      "tags": {
+        "addr:city": "Kirriemuir",
+        "addr:housenumber": "13",
+        "addr:postcode": "DD8 4BE",
+        "addr:street": "Bank Street",
+        "name": "Bertram's Quality Butchers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5506538295,
+      "lat": 55.5566184,
+      "lon": -3.8479386,
+      "tags": {
+        "name": "Wm Brown",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5523521586,
+      "lat": 57.412825,
+      "lon": -6.1934392,
+      "tags": {
+        "fhrs:id": "560733",
+        "name": "Portree Butcher",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5646397069,
+      "lat": 55.9601365,
+      "lon": -4.8166713,
+      "tags": {
+        "name": "The Gourock Butcher",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5700213586,
+      "lat": 55.8999136,
+      "lon": -3.6095021,
+      "tags": {
+        "name": "Boghall Butcher",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5729249198,
+      "lat": 57.234154,
+      "lon": -2.4453489,
+      "tags": {
+        "name": "A & G Collie",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5765984925,
+      "lat": 55.7505564,
+      "lon": -3.8838212,
+      "tags": {
+        "name": "J & H Cairns",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5796301782,
+      "lat": 56.0073798,
+      "lon": -3.9066112,
+      "tags": {
+        "name": "A&S Corkill Butchers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5810741716,
+      "lat": 57.1445938,
+      "lon": -4.6822388,
+      "tags": {
+        "name": "D. J. MacDougall",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5909742014,
+      "lat": 55.7764167,
+      "lon": -3.9287228,
+      "tags": {
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5940946481,
+      "lat": 56.1091481,
+      "lon": -3.3422068,
+      "tags": {
+        "name": "Black & Sons",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5943756957,
+      "lat": 56.0711104,
+      "lon": -3.4629903,
+      "tags": {
+        "name": "Thomas Johnson",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5991376419,
+      "lat": 56.4563659,
+      "lon": -2.9943561,
+      "tags": {
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6015866104,
+      "lat": 56.4808028,
+      "lon": -3.4481393,
+      "tags": {
+        "addr:city": "Perth",
+        "addr:housenumber": "10",
+        "addr:place": "Stanley",
+        "addr:postcode": "PH1 4LU",
+        "addr:street": "Percy Street",
+        "fhrs:id": "924151",
+        "name": "T. H. Stevenson & Sons",
+        "shop": "butcher",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6089791480,
+      "lat": 55.9438039,
+      "lon": -3.0602631,
+      "tags": {
+        "name": "Butcher",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6169453283,
+      "lat": 55.925072,
+      "lon": -3.259694,
+      "tags": {
+        "name": "Campbell & Sons",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6253641024,
+      "lat": 56.0022424,
+      "lon": -4.7284897,
+      "tags": {
+        "name": "Prime Cuts Fine Foods",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6306594604,
+      "lat": 57.6755172,
+      "lon": -2.9672816,
+      "tags": {
+        "addr:housenumber": "29",
+        "addr:postcode": "AB56 1BP",
+        "addr:street": "West Church Street",
+        "fhrs:id": "17584",
+        "name": "Andersons Butchers",
+        "opening_hours": "Mo-Fr 07:00-17:30; Sa 07:00-17::00",
+        "shop": "butcher",
+        "source": "OnOSM;FHRS Open Data"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6306656438,
+      "lat": 56.168577,
+      "lon": -3.1463032,
+      "tags": {
+        "name": "Thomson Butchers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6343691319,
+      "lat": 55.9481075,
+      "lon": -4.763091,
+      "tags": {
+        "name": "MacKenzie's",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6361564381,
+      "lat": 55.820823,
+      "lon": -4.1789552,
+      "tags": {
+        "name": "A Warnock Butcher",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6361565109,
+      "lat": 55.819138,
+      "lon": -4.1694837,
+      "tags": {
+        "name": "Hugh Black's & Sons",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6363086973,
+      "lat": 55.8282958,
+      "lon": -4.2097875,
+      "tags": {
+        "name": "A. Warnock Butcher",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6474128343,
+      "lat": 57.047962,
+      "lon": -3.0387099,
+      "tags": {
+        "name": "H. M. Sheridan",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6534317879,
+      "lat": 55.8162507,
+      "lon": -4.3621172,
+      "tags": {
+        "addr:city": "Glasgow",
+        "addr:housenumber": "16",
+        "addr:postcode": "G53 6RA",
+        "addr:street": "Craigbank Drive",
+        "fhrs:id": "89768",
+        "name": "Martins Quality Butcher",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6566572496,
+      "lat": 56.2595495,
+      "lon": -2.6274101,
+      "tags": {
+        "name": "J B Penman",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6570207273,
+      "lat": 55.4780621,
+      "lon": -2.5548296,
+      "tags": {
+        "name": "A. J. Learmonth",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 100646582,
+      "nodes": [
+        1163494222,
+        1163494366,
+        1163494339,
+        1163494360,
+        1163494389,
+        1163494222
+      ],
+      "tags": {
+        "building": "yes",
+        "name": "Shaws Fine Meats",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 113552700,
+      "nodes": [
+        1287557525,
+        1287557170,
+        1287557313,
+        1287557136,
+        1287557525
+      ],
+      "tags": {
+        "building": "yes",
+        "shop": "butcher",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "way",
+      "id": 115675978,
+      "nodes": [
+        1306209411,
+        1306209476,
+        1306209452,
+        1306209414,
+        1306209411
+      ],
+      "tags": {
+        "building": "yes",
+        "shop": "butcher",
+        "source": "Bing;photographic_survey"
+      }
+    },
+    {
+      "type": "way",
+      "id": 144945816,
+      "nodes": [
+        3193648865,
+        3193648868,
+        1306232914,
+        1306232917,
+        3193648865
+      ],
+      "tags": {
+        "building": "yes",
+        "name": "Wm Wylie",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 184474356,
+      "nodes": [
+        1949637476,
+        1949637415,
+        1949637383,
+        1949637381,
+        1949637379,
+        1949637434,
+        1949637438,
+        1949637465,
+        1949637469,
+        1949637476
+      ],
+      "tags": {
+        "name": "Lees Butchers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 184824106,
+      "nodes": [
+        1953595520,
+        1953595509,
+        1953595499,
+        1953595512,
+        1953595515,
+        1953595502,
+        1953595519,
+        1953595505,
+        1953595520
+      ],
+      "tags": {
+        "building": "yes",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 186559811,
+      "nodes": [
+        1972940380,
+        1972940384,
+        1972940398,
+        1972940403,
+        1972940378,
+        1972940375,
+        1972940382,
+        1972940380
+      ],
+      "tags": {
+        "addr:postcode": "TD5 8RF",
+        "addr:street": "High Street",
+        "name": "Valley Meats",
+        "phone": "+44 1573 420285",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 203129141,
+      "nodes": [
+        2131008049,
+        2131008046,
+        2131008047,
+        2131008052,
+        2131008049
+      ],
+      "tags": {
+        "building": "yes",
+        "name": "Family Butcher",
+        "shop": "butcher",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "way",
+      "id": 224263338,
+      "nodes": [
+        2330816498,
+        2330816502,
+        2330816496,
+        2330816492,
+        2330816498
+      ],
+      "tags": {
+        "addr:street": "Guildford Street",
+        "building": "yes",
+        "name": "J A McFarlane",
+        "shop": "butcher",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "way",
+      "id": 227519851,
+      "nodes": [
+        2361882357,
+        2361882361,
+        2361882363,
+        2361882359,
+        2361882357
+      ],
+      "tags": {
+        "addr:housenumber": "124",
+        "addr:postcode": "DG3 5LS",
+        "addr:street": "Drumlanrig Street",
+        "building": "yes",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 238843242,
+      "nodes": [
+        2466427070,
+        2466427071,
+        2466427077,
+        2466427076,
+        2466427070
+      ],
+      "tags": {
+        "building": "yes",
+        "building:color": "white",
+        "building:levels": "1",
+        "contact:phone": "+44 13397 41206",
+        "haggis": "yes",
+        "name": "N. G. Menzies",
+        "roof:levels": "1",
+        "roof:shape": "gabled",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 297203982,
+      "nodes": [
+        3010523338,
+        3010523339,
+        3010523340,
+        3010523341,
+        3010523338
+      ],
+      "tags": {
+        "addr:city": "Bridge of Allan",
+        "addr:housenumber": "66",
+        "addr:postcode": "FK9 4HS",
+        "addr:street": "Henderson Street",
+        "building": "yes",
+        "fhrs:id": "20623",
+        "name": "John Cullens Butcher",
+        "opening_hours": "Mo 09:00-15:00, Tu-Fr 09:00-17:00",
+        "phone": "+44 1786 832 131",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 320099376,
+      "nodes": [
+        3265970262,
+        3265970264,
+        3265970276,
+        3265970274,
+        3265970262
+      ],
+      "tags": {
+        "addr:city": "Tillicoultry",
+        "addr:country": "GB",
+        "building": "yes",
+        "name": "J McArthur family butchers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 360892713,
+      "nodes": [
+        3654410343,
+        3654410344,
+        3654410345,
+        3654410346,
+        3654410343
+      ],
+      "tags": {
+        "addr:city": "Aberfeldy",
+        "building": "yes",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 399094490,
+      "nodes": [
+        4018341930,
+        4018341931,
+        4018341932,
+        4018341933,
+        4018341930
+      ],
+      "tags": {
+        "building": "commercial",
+        "name": "Kenneth Morrison",
+        "shop": "butcher",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "way",
+      "id": 442096439,
+      "nodes": [
+        4397857559,
+        4397857561,
+        4397857560,
+        4397857558,
+        4397857559
+      ],
+      "tags": {
+        "building": "yes",
+        "name": "Graeme Barber Butcher",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 460601638,
+      "nodes": [
+        4562278360,
+        2105971928,
+        4562278367,
+        4562278364,
+        4562278365,
+        4562278366,
+        4562278361,
+        4562278360
+      ],
+      "tags": {
+        "addr:city": "East Linton",
+        "addr:housenumber": "14;12-14",
+        "addr:housenumber_1": "12",
+        "addr:street": "High Street",
+        "building": "yes",
+        "name": "Linton Butchers",
+        "phone": "+44 1620 860232",
+        "shop": "butcher",
+        "website": "www.lintonbutchers.co.uk"
+      }
+    },
+    {
+      "type": "way",
+      "id": 515337671,
+      "nodes": [
+        5033014735,
+        5033014736,
+        5033014737,
+        5033014738,
+        5033014735
+      ],
+      "tags": {
+        "addr:city": "Corpach",
+        "addr:housenumber": "Unit 1-2",
+        "addr:postcode": "PH33 7NA",
+        "addr:street": "Annat Point Industrial Estate",
+        "building": "yes",
+        "name": "Letterfinlay Fine Foods",
+        "operator": "Letterfinlay Fine Foods",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 529163283,
+      "nodes": [
+        5140963745,
+        5125499674,
+        5125499675,
+        5140963746,
+        5140963745
+      ],
+      "tags": {
+        "addr:city": "Blairgowrie",
+        "addr:housenumber": "12",
+        "addr:place": "Coupar Angus",
+        "addr:postcode": "PH13 9DH",
+        "addr:street": "George Street",
+        "building": "yes",
+        "fhrs:id": "920411",
+        "name": "Ann Davidson",
+        "shop": "butcher",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 534649653,
+      "nodes": [
+        5184629051,
+        5184629052,
+        5184629053,
+        5184629054,
+        5184629051
+      ],
+      "tags": {
+        "building": "yes",
+        "name": "Dalmellington Country Butchers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 562058598,
+      "nodes": [
+        5418840885,
+        5418840886,
+        5418840887,
+        5418840888,
+        5418840885
+      ],
+      "tags": {
+        "addr:city": "Comrie",
+        "addr:postcode": "PH6 2DW",
+        "addr:street": "Drummond Street",
+        "building": "yes",
+        "name": "David comrie and son",
+        "shop": "butcher",
+        "source:addr": "FHRS Open Data"
+      }
+    },
+    {
+      "type": "way",
+      "id": 598409620,
+      "nodes": [
+        5695468658,
+        5695468659,
+        5695468660,
+        5695468661,
+        5695468658
+      ],
+      "tags": {
+        "addr:city": "Strichen",
+        "addr:housenumber": "26",
+        "addr:postcode": "AB43 6SR",
+        "addr:street": "High Street",
+        "building": "yes",
+        "name": "Bert Fowlie",
+        "opening_hours": "Mo-Sa 08:00-17:30",
+        "phone": "+44 1771 637234",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 618022482,
+      "nodes": [
+        1565870448,
+        5841831361,
+        5841831363,
+        5841831362,
+        1565870448
+      ],
+      "tags": {
+        "building": "yes",
+        "name": "Thomas Johnston Butchers",
+        "opening_hours": "Mo-Fr 09:00-17:00; Sa 09:00-16:00",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 623126804,
+      "nodes": [
+        5885049920,
+        5885049921,
+        5885049922,
+        5885049923,
+        5885049920
+      ],
+      "tags": {
+        "building": "yes",
+        "name": "Macleod and Macleod",
+        "shop": "butcher",
+        "website": "https://www.macleodandmacleod.co.uk/"
+      }
+    },
+    {
+      "type": "way",
+      "id": 627890732,
+      "nodes": [
+        5927635815,
+        5927635817,
+        5927635818,
+        5927635816,
+        5927635815
+      ],
+      "tags": {
+        "building": "yes",
+        "name": "A&M Family Butcher",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 627897521,
+      "nodes": [
+        5927695840,
+        5927695839,
+        5927695838,
+        5927695837,
+        5927695840
+      ],
+      "tags": {
+        "building": "yes",
+        "name": "Mackie Butchers",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 631271816,
+      "nodes": [
+        5961354177,
+        5961354178,
+        5961354179,
+        5961354180,
+        5961354177
+      ],
+      "tags": {
+        "building": "yes",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 645297811,
+      "nodes": [
+        6066336666,
+        6066336667,
+        6066336668,
+        6066336669,
+        6066336666
+      ],
+      "tags": {
+        "building": "yes",
+        "name": "R. Coutts & Son",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "way",
+      "id": 645595828,
+      "nodes": [
+        6068302780,
+        6068302777,
+        6068302776,
+        6068302779,
+        6068302780
+      ],
+      "tags": {
+        "building": "yes",
+        "name": "Sheridan",
+        "shop": "butcher"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5184629051,
+      "lat": 55.323179,
+      "lon": -4.3965546
+    },
+    {
+      "type": "node",
+      "id": 5184629052,
+      "lat": 55.3232412,
+      "lon": -4.39637
+    },
+    {
+      "type": "node",
+      "id": 5184629053,
+      "lat": 55.3231975,
+      "lon": -4.3963246
+    },
+    {
+      "type": "node",
+      "id": 5184629054,
+      "lat": 55.3231354,
+      "lon": -4.3965092
+    },
+    {
+      "type": "node",
+      "id": 2330816492,
+      "lat": 55.7531464,
+      "lon": -4.9288987
+    },
+    {
+      "type": "node",
+      "id": 2330816496,
+      "lat": 55.7531954,
+      "lon": -4.928784
+    },
+    {
+      "type": "node",
+      "id": 2330816498,
+      "lat": 55.7532292,
+      "lon": -4.9290105
+    },
+    {
+      "type": "node",
+      "id": 2330816502,
+      "lat": 55.7532783,
+      "lon": -4.9288958
+    },
+    {
+      "type": "node",
+      "id": 2361882357,
+      "lat": 55.2411074,
+      "lon": -3.7659183
+    },
+    {
+      "type": "node",
+      "id": 2361882359,
+      "lat": 55.2411464,
+      "lon": -3.7659691
+    },
+    {
+      "type": "node",
+      "id": 2361882361,
+      "lat": 55.2411628,
+      "lon": -3.7657875
+    },
+    {
+      "type": "node",
+      "id": 2361882363,
+      "lat": 55.2412018,
+      "lon": -3.7658383
+    },
+    {
+      "type": "node",
+      "id": 1953595499,
+      "lat": 55.9007547,
+      "lon": -4.107846
+    },
+    {
+      "type": "node",
+      "id": 1953595502,
+      "lat": 55.9008539,
+      "lon": -4.1077601
+    },
+    {
+      "type": "node",
+      "id": 1953595505,
+      "lat": 55.9007186,
+      "lon": -4.1075885
+    },
+    {
+      "type": "node",
+      "id": 1953595509,
+      "lat": 55.9007562,
+      "lon": -4.1077597
+    },
+    {
+      "type": "node",
+      "id": 1953595512,
+      "lat": 55.9007984,
+      "lon": -4.1078484
+    },
+    {
+      "type": "node",
+      "id": 1953595515,
+      "lat": 55.9007968,
+      "lon": -4.1077567
+    },
+    {
+      "type": "node",
+      "id": 1953595519,
+      "lat": 55.9008545,
+      "lon": -4.1075969
+    },
+    {
+      "type": "node",
+      "id": 1953595520,
+      "lat": 55.9007186,
+      "lon": -4.1077575
+    },
+    {
+      "type": "node",
+      "id": 1565870448,
+      "lat": 55.998485,
+      "lon": -3.7829076
+    },
+    {
+      "type": "node",
+      "id": 5841831361,
+      "lat": 55.9984577,
+      "lon": -3.7831288
+    },
+    {
+      "type": "node",
+      "id": 5841831362,
+      "lat": 55.9983883,
+      "lon": -3.7828621
+    },
+    {
+      "type": "node",
+      "id": 5841831363,
+      "lat": 55.9983667,
+      "lon": -3.7830817
+    },
+    {
+      "type": "node",
+      "id": 1287557136,
+      "lat": 56.0932858,
+      "lon": -3.9262683
+    },
+    {
+      "type": "node",
+      "id": 1287557170,
+      "lat": 56.0932576,
+      "lon": -3.9265911
+    },
+    {
+      "type": "node",
+      "id": 1287557313,
+      "lat": 56.093185,
+      "lon": -3.9263792
+    },
+    {
+      "type": "node",
+      "id": 1287557525,
+      "lat": 56.0933584,
+      "lon": -3.9264802
+    },
+    {
+      "type": "node",
+      "id": 3010523338,
+      "lat": 56.154479,
+      "lon": -3.946629
+    },
+    {
+      "type": "node",
+      "id": 3010523341,
+      "lat": 56.1545054,
+      "lon": -3.9467187
+    },
+    {
+      "type": "node",
+      "id": 3010523339,
+      "lat": 56.1545791,
+      "lon": -3.9465398
+    },
+    {
+      "type": "node",
+      "id": 3010523340,
+      "lat": 56.1546039,
+      "lon": -3.9466381
+    },
+    {
+      "type": "node",
+      "id": 2131008046,
+      "lat": 55.9004439,
+      "lon": -3.566522
+    },
+    {
+      "type": "node",
+      "id": 2131008047,
+      "lat": 55.9004796,
+      "lon": -3.5663788
+    },
+    {
+      "type": "node",
+      "id": 2131008049,
+      "lat": 55.900482,
+      "lon": -3.5665517
+    },
+    {
+      "type": "node",
+      "id": 2131008052,
+      "lat": 55.9005171,
+      "lon": -3.5664079
+    },
+    {
+      "type": "node",
+      "id": 3265970262,
+      "lat": 56.1533259,
+      "lon": -3.7419246
+    },
+    {
+      "type": "node",
+      "id": 3265970264,
+      "lat": 56.1533345,
+      "lon": -3.7420171
+    },
+    {
+      "type": "node",
+      "id": 3265970274,
+      "lat": 56.15341,
+      "lon": -3.7419011
+    },
+    {
+      "type": "node",
+      "id": 3265970276,
+      "lat": 56.1534186,
+      "lon": -3.7419936
+    },
+    {
+      "type": "node",
+      "id": 5418840885,
+      "lat": 56.3744111,
+      "lon": -3.9876406
+    },
+    {
+      "type": "node",
+      "id": 5418840886,
+      "lat": 56.3743653,
+      "lon": -3.9875875
+    },
+    {
+      "type": "node",
+      "id": 5418840887,
+      "lat": 56.3743977,
+      "lon": -3.9875024
+    },
+    {
+      "type": "node",
+      "id": 5418840888,
+      "lat": 56.3744437,
+      "lon": -3.98756
+    },
+    {
+      "type": "node",
+      "id": 3654410343,
+      "lat": 56.6192776,
+      "lon": -3.867389
+    },
+    {
+      "type": "node",
+      "id": 3654410344,
+      "lat": 56.6192728,
+      "lon": -3.8671746
+    },
+    {
+      "type": "node",
+      "id": 3654410345,
+      "lat": 56.6191874,
+      "lon": -3.8671809
+    },
+    {
+      "type": "node",
+      "id": 3654410346,
+      "lat": 56.6191922,
+      "lon": -3.8673953
+    },
+    {
+      "type": "node",
+      "id": 1163494222,
+      "lat": 55.7195062,
+      "lon": -2.7491202
+    },
+    {
+      "type": "node",
+      "id": 1163494339,
+      "lat": 55.7193779,
+      "lon": -2.7490724
+    },
+    {
+      "type": "node",
+      "id": 1163494360,
+      "lat": 55.7193881,
+      "lon": -2.7490575
+    },
+    {
+      "type": "node",
+      "id": 1163494366,
+      "lat": 55.719449,
+      "lon": -2.7492096
+    },
+    {
+      "type": "node",
+      "id": 1163494389,
+      "lat": 55.7194352,
+      "lon": -2.7489879
+    },
+    {
+      "type": "node",
+      "id": 1949637379,
+      "lat": 55.5176532,
+      "lon": -2.3644852
+    },
+    {
+      "type": "node",
+      "id": 1949637381,
+      "lat": 55.5176557,
+      "lon": -2.3646377
+    },
+    {
+      "type": "node",
+      "id": 1949637383,
+      "lat": 55.5176656,
+      "lon": -2.3646406
+    },
+    {
+      "type": "node",
+      "id": 1949637415,
+      "lat": 55.5177271,
+      "lon": -2.3646507
+    },
+    {
+      "type": "node",
+      "id": 1949637434,
+      "lat": 55.517755,
+      "lon": -2.3644831
+    },
+    {
+      "type": "node",
+      "id": 1949637438,
+      "lat": 55.5177621,
+      "lon": -2.3645651
+    },
+    {
+      "type": "node",
+      "id": 1949637465,
+      "lat": 55.5178456,
+      "lon": -2.3645694
+    },
+    {
+      "type": "node",
+      "id": 1949637469,
+      "lat": 55.5178584,
+      "lon": -2.3646205
+    },
+    {
+      "type": "node",
+      "id": 1949637476,
+      "lat": 55.5178687,
+      "lon": -2.3646612
+    },
+    {
+      "type": "node",
+      "id": 1972940375,
+      "lat": 55.5451527,
+      "lon": -2.2873775
+    },
+    {
+      "type": "node",
+      "id": 1972940378,
+      "lat": 55.5451712,
+      "lon": -2.2874656
+    },
+    {
+      "type": "node",
+      "id": 1972940380,
+      "lat": 55.5451944,
+      "lon": -2.2872947
+    },
+    {
+      "type": "node",
+      "id": 1972940382,
+      "lat": 55.5452046,
+      "lon": -2.2873434
+    },
+    {
+      "type": "node",
+      "id": 1972940384,
+      "lat": 55.5452148,
+      "lon": -2.2872813
+    },
+    {
+      "type": "node",
+      "id": 1972940398,
+      "lat": 55.545307,
+      "lon": -2.2872258
+    },
+    {
+      "type": "node",
+      "id": 1972940403,
+      "lat": 55.5453348,
+      "lon": -2.2873581
+    },
+    {
+      "type": "node",
+      "id": 1306209411,
+      "lat": 55.599564,
+      "lon": -2.4317991
+    },
+    {
+      "type": "node",
+      "id": 1306209414,
+      "lat": 55.5996192,
+      "lon": -2.4319143
+    },
+    {
+      "type": "node",
+      "id": 1306209452,
+      "lat": 55.5995614,
+      "lon": -2.4320222
+    },
+    {
+      "type": "node",
+      "id": 1306209476,
+      "lat": 55.599499,
+      "lon": -2.4319181
+    },
+    {
+      "type": "node",
+      "id": 1306232914,
+      "lat": 55.5988569,
+      "lon": -2.4333086
+    },
+    {
+      "type": "node",
+      "id": 1306232917,
+      "lat": 55.5988342,
+      "lon": -2.4333755
+    },
+    {
+      "type": "node",
+      "id": 3193648865,
+      "lat": 55.5989266,
+      "lon": -2.4334734
+    },
+    {
+      "type": "node",
+      "id": 3193648868,
+      "lat": 55.5989492,
+      "lon": -2.4334065
+    },
+    {
+      "type": "node",
+      "id": 5961354177,
+      "lat": 56.205027,
+      "lon": -3.1354301
+    },
+    {
+      "type": "node",
+      "id": 5961354178,
+      "lat": 56.2050593,
+      "lon": -3.1352104
+    },
+    {
+      "type": "node",
+      "id": 5961354179,
+      "lat": 56.2049749,
+      "lon": -3.1351702
+    },
+    {
+      "type": "node",
+      "id": 5961354180,
+      "lat": 56.2049426,
+      "lon": -3.1353899
+    },
+    {
+      "type": "node",
+      "id": 2105971928,
+      "lat": 55.9868219,
+      "lon": -2.6559735
+    },
+    {
+      "type": "node",
+      "id": 4562278360,
+      "lat": 55.9869011,
+      "lon": -2.656022
+    },
+    {
+      "type": "node",
+      "id": 4562278361,
+      "lat": 55.9869303,
+      "lon": -2.6558697
+    },
+    {
+      "type": "node",
+      "id": 4562278364,
+      "lat": 55.9868576,
+      "lon": -2.655787
+    },
+    {
+      "type": "node",
+      "id": 4562278365,
+      "lat": 55.9868923,
+      "lon": -2.6558083
+    },
+    {
+      "type": "node",
+      "id": 4562278366,
+      "lat": 55.9868858,
+      "lon": -2.6558425
+    },
+    {
+      "type": "node",
+      "id": 4562278367,
+      "lat": 55.9868259,
+      "lon": -2.6559526
+    },
+    {
+      "type": "node",
+      "id": 5125499674,
+      "lat": 56.5450181,
+      "lon": -3.268428
+    },
+    {
+      "type": "node",
+      "id": 5125499675,
+      "lat": 56.5449369,
+      "lon": -3.2683473
+    },
+    {
+      "type": "node",
+      "id": 5140963745,
+      "lat": 56.5450701,
+      "lon": -3.268261
+    },
+    {
+      "type": "node",
+      "id": 5140963746,
+      "lat": 56.544987,
+      "lon": -3.268178
+    },
+    {
+      "type": "node",
+      "id": 5033014735,
+      "lat": 56.8444169,
+      "lon": -5.1518717
+    },
+    {
+      "type": "node",
+      "id": 5033014736,
+      "lat": 56.8442118,
+      "lon": -5.1521512
+    },
+    {
+      "type": "node",
+      "id": 5033014737,
+      "lat": 56.8439627,
+      "lon": -5.15154
+    },
+    {
+      "type": "node",
+      "id": 5033014738,
+      "lat": 56.8441678,
+      "lon": -5.1512605
+    },
+    {
+      "type": "node",
+      "id": 5885049920,
+      "lat": 58.216276,
+      "lon": -6.381194
+    },
+    {
+      "type": "node",
+      "id": 5885049921,
+      "lat": 58.2162108,
+      "lon": -6.3812852
+    },
+    {
+      "type": "node",
+      "id": 5885049922,
+      "lat": 58.2160804,
+      "lon": -6.3810768
+    },
+    {
+      "type": "node",
+      "id": 5885049923,
+      "lat": 58.2161387,
+      "lon": -6.3809791
+    },
+    {
+      "type": "node",
+      "id": 4018341930,
+      "lat": 57.7318882,
+      "lon": -5.7052217
+    },
+    {
+      "type": "node",
+      "id": 4018341931,
+      "lat": 57.7318094,
+      "lon": -5.7052801
+    },
+    {
+      "type": "node",
+      "id": 4018341932,
+      "lat": 57.7317562,
+      "lon": -5.7050283
+    },
+    {
+      "type": "node",
+      "id": 4018341933,
+      "lat": 57.7318349,
+      "lon": -5.70497
+    },
+    {
+      "type": "node",
+      "id": 2466427070,
+      "lat": 57.0057589,
+      "lon": -3.3986235
+    },
+    {
+      "type": "node",
+      "id": 2466427071,
+      "lat": 57.0057617,
+      "lon": -3.3984655
+    },
+    {
+      "type": "node",
+      "id": 2466427076,
+      "lat": 57.0058228,
+      "lon": -3.3986273
+    },
+    {
+      "type": "node",
+      "id": 2466427077,
+      "lat": 57.0058256,
+      "lon": -3.3984693
+    },
+    {
+      "type": "node",
+      "id": 5927695837,
+      "lat": 57.471208,
+      "lon": -3.2238852
+    },
+    {
+      "type": "node",
+      "id": 5927695838,
+      "lat": 57.4711584,
+      "lon": -3.2238017
+    },
+    {
+      "type": "node",
+      "id": 5927695839,
+      "lat": 57.4710806,
+      "lon": -3.2239616
+    },
+    {
+      "type": "node",
+      "id": 5927695840,
+      "lat": 57.4711302,
+      "lon": -3.224045
+    },
+    {
+      "type": "node",
+      "id": 4397857558,
+      "lat": 57.2339987,
+      "lon": -2.7058033
+    },
+    {
+      "type": "node",
+      "id": 4397857559,
+      "lat": 57.2340582,
+      "lon": -2.7058943
+    },
+    {
+      "type": "node",
+      "id": 4397857560,
+      "lat": 57.2340793,
+      "lon": -2.7056236
+    },
+    {
+      "type": "node",
+      "id": 4397857561,
+      "lat": 57.2341387,
+      "lon": -2.7057146
+    },
+    {
+      "type": "node",
+      "id": 6068302776,
+      "lat": 57.0516721,
+      "lon": -2.5053631
+    },
+    {
+      "type": "node",
+      "id": 6068302777,
+      "lat": 57.0516776,
+      "lon": -2.5054561
+    },
+    {
+      "type": "node",
+      "id": 6068302779,
+      "lat": 57.0515685,
+      "lon": -2.5053839
+    },
+    {
+      "type": "node",
+      "id": 6068302780,
+      "lat": 57.051574,
+      "lon": -2.5054769
+    },
+    {
+      "type": "node",
+      "id": 5927635815,
+      "lat": 57.1491891,
+      "lon": -2.0912568
+    },
+    {
+      "type": "node",
+      "id": 5927635816,
+      "lat": 57.1491565,
+      "lon": -2.091102
+    },
+    {
+      "type": "node",
+      "id": 5927635817,
+      "lat": 57.1492249,
+      "lon": -2.0912328
+    },
+    {
+      "type": "node",
+      "id": 5927635818,
+      "lat": 57.1492054,
+      "lon": -2.0910707
+    },
+    {
+      "type": "node",
+      "id": 5695468658,
+      "lat": 57.5857714,
+      "lon": -2.0892804
+    },
+    {
+      "type": "node",
+      "id": 5695468659,
+      "lat": 57.585693,
+      "lon": -2.08944
+    },
+    {
+      "type": "node",
+      "id": 5695468660,
+      "lat": 57.5856233,
+      "lon": -2.089326
+    },
+    {
+      "type": "node",
+      "id": 5695468661,
+      "lat": 57.5857002,
+      "lon": -2.0891637
+    },
+    {
+      "type": "node",
+      "id": 6066336666,
+      "lat": 57.5137773,
+      "lon": -1.7886268
+    },
+    {
+      "type": "node",
+      "id": 6066336667,
+      "lat": 57.5138803,
+      "lon": -1.7885898
+    },
+    {
+      "type": "node",
+      "id": 6066336668,
+      "lat": 57.5138755,
+      "lon": -1.7885117
+    },
+    {
+      "type": "node",
+      "id": 6066336669,
+      "lat": 57.5137685,
+      "lon": -1.7885418
+    }
+  ]
+}

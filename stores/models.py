@@ -13,11 +13,11 @@ class Store(models.Model):
     lat = models.FloatField()
     long = models.FloatField()
     address = models.CharField(max_length=200)
-    add_house_number = models.CharField(max_length=10)
+    add_house_number = models.CharField(max_length=100)
     add_street = models.CharField(max_length=100)
     add_postcode = models.CharField(max_length=20)
     add_city = models.CharField(max_length=50)
-    add_country = models.CharField(max_length=10)
+    add_country = models.CharField(max_length=20)
     email = models.EmailField()
     phone = models.CharField(max_length=50)
     opening_hours = models.CharField(max_length=200)
@@ -50,37 +50,6 @@ class Store(models.Model):
 
     def get_absolute_url(self):
         return reverse('store:store_profile', kwargs={'store_id': self.pk})
-
-"""
-
-class Store(models.Model):
-    name = models.CharField(max_length=100)
-    address = models.CharField(max_length=200)
-    cl_address = models.TextField(default='')
-    cl_city = models.CharField(max_length=50, default='')
-    cl_postcode = models.CharField(max_length=20, default='')
-    cl_country = models.CharField(max_length=50, default='')
-    cl_state = models.CharField(max_length=50, default='')
-    cl_country_code = models.CharField(max_length=5, default='')
-    cl_latitude = models.FloatField(blank=True, default=0)
-    cl_longitude = models.FloatField(blank=True, default=0)
-    likes = models.ManyToManyField(get_user_model(), blank=True, related_name='stores')
-    store_url = models.URLField(blank=True)
-    google_url = models.URLField(blank=True, verbose_name='Google Maps Link')
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    tags = TaggableManager(blank=True)
-
-    @property
-    def google_coords(self):
-        return f"https://www.google.com/maps?q={self.cl_latitude},{self.cl_longitude}"
-
-    def __str__(self):
-        return self.name + ', ' + self.address
-
-    def get_absolute_url(self):
-        return reverse('store:store_profile', kwargs={'store_id': self.pk})
-"""
 
 
 class StoreComment(models.Model):
