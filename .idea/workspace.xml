@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/stores/templates/stores/search_results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dumps/store_import/germany.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CookingBase/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CookingBase/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/store_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/store_loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stores/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/stores/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stores/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/stores/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stores/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/stores/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stores/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/stores/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +57,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stores/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="203">
@@ -76,6 +67,27 @@
                 <element signature="e#222#1591#0" />
                 <element signature="e#1636#1771#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="57" column="27" lean-forward="true" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
+              <folding>
+                <element signature="e#310#319#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/deploy_server.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -267,6 +279,11 @@
             <path>
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
               <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
+              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
               <item name="dumps" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -274,24 +291,6 @@
               <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
               <item name="dumps" type="462c0819:PsiDirectoryNode" />
               <item name="store_import" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
-              <item name="RecipeConverter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
-              <item name="RecipeConverter" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
-              <item name="RecipeConverter" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="RecipeConverter" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
@@ -573,14 +572,7 @@
       <workItem from="1561980961239" duration="13272000" />
       <workItem from="1561999858374" duration="291000" />
       <workItem from="1562000713289" duration="193000" />
-      <workItem from="1562050498728" duration="13181000" />
-    </task>
-    <task id="LOCAL-00059" summary="Working with dynamic selection, however need to double press">
-      <created>1560692657930</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1560692657930</updated>
+      <workItem from="1562050498728" duration="14041000" />
     </task>
     <task id="LOCAL-00060" summary="Working with dynamic selection, however need to double press">
       <created>1560700450001</created>
@@ -918,7 +910,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561999182461</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="A good days work">
+      <created>1562068707007</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1562068707008</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -933,7 +932,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197857000" />
+    <option name="totallyTimeSpent" value="198717000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -946,13 +945,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48031497" weight="0.25751072" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48031497" visible="true" weight="0.25751072" />
       <window_info id="Structure" order="1" sideWeight="0.51968503" side_tool="true" weight="0.2353362" />
       <window_info id="Favorites" order="2" sideWeight="0.5029354" side_tool="true" weight="0.24947146" />
       <window_info id="DB Browser" order="3" sideWeight="0.48922414" weight="0.2446352" />
-      <window_info active="true" id="Run" order="4" sideWeight="0.49868765" visible="true" weight="0.23676682" />
+      <window_info id="Run" order="4" sideWeight="0.49868765" weight="0.23676682" />
       <window_info id="Debug" order="5" weight="0.30972818" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32545933" />
@@ -1320,13 +1318,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/deploy_server.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stores/migrations/0002_auto_20190701_1348.py" />
     <entry file="file://$PROJECT_DIR$/dumps/store_import/export.json" />
     <entry file="file://$PROJECT_DIR$/scripts/deploy_prep.py">
@@ -1469,16 +1460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="245" column="16" selection-start-line="245" selection-end-line="245" selection-end-column="16" />
-          <folding>
-            <element signature="e#310#319#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
@@ -1580,6 +1561,23 @@
             <element signature="e#0#54#0" expanded="true" />
             <element signature="e#222#1591#0" />
             <element signature="e#1636#1771#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/deploy_server.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="57" column="27" lean-forward="true" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
+          <folding>
+            <element signature="e#310#319#0" expanded="true" />
           </folding>
         </state>
       </provider>
