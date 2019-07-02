@@ -9,7 +9,6 @@ import os
 from django.contrib.gis.geos import fromstr
 from django.apps import apps
 from django.db.utils import IntegrityError
-from geopy.geocoders import Nominatim
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "CookingBase.settings")
 django.setup()
@@ -24,7 +23,6 @@ def delete_data():
 
 
 def load_data(filename):
-    geolocator = Nominatim(user_agent="cookingcalc")
     i = 0
     Shop = apps.get_model('stores', 'Store')
     jsonfile = DATA_PATH + filename
