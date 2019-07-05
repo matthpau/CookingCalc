@@ -1,14 +1,15 @@
+import json
 from django.shortcuts import get_object_or_404, render
-from .models import Store
 from django.views.generic import CreateView, ListView
 from geopy.geocoders import Nominatim
-import json
 from ipware import get_client_ip
 from django.contrib.gis.geoip2 import GeoIP2
 from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.geos import Point
-from django.http import HttpResponse, JsonResponse
+from django.http import JsonResponse
+from django.contrib.gis.measure import D
 from .forms import StoreSearch
+from .models import Store
 
 class StoreCreate(CreateView):
     model = Store
@@ -86,13 +87,14 @@ def store_search(request):
 
     user_location = Point(lon, lat, srid=4326)
 
+    
     #Filter stores by distance
-    q = Store.objects.annotate(distance=Distance('location', user_location))
-    q = q.order_by('distance')[:100]
+    results = Store.objects.annotate(distance=Distance('location', user_location))
+    results = results.order_by('distance')[:100]
 
     context = {'city': city['city'],
                'country': city['country_name'],
-               'store_list': q}
+               'store_list': results}
 
     return render(request, 'stores/search_results.html', context)
 
@@ -106,33 +108,29 @@ def get_loc(request):
 def process_loc(request):
     lat = float(request.GET.get('lat'))
     lon = float(request.GET.get('lon'))
+    res_lim = int(request.GET.get('results_limit'))
     print(request.GET)
 
     user_location = Point(lon, lat, srid=4326)
 
+    #https://stackoverflow.com/questions/19703975/django-sort-by-distance
     #Filter stores by distance
-    store_results = Store.objects.annotate(distance=Distance('location', user_location))
-    store_results = store_results.order_by('distance')[:20].values()
-    # since this is a dictionary with location (non serializable) and a calculated Distance, I 
+    store_results = Store.objects.annotate(distance=Distance('location', user_location)) \
+                    .order_by('distance')[:res_lim].values()
+    print(store_results)
+
+    # since this is a dictionary with location (non serializable) and a calculated Distance, I
     # need to convert it the long way to a dictionary
     return_data = []
     for store in store_results:
         ww_dict = {}
         for key, val in store.items():
             if key == 'distance':
-                ww_dict['distance'] = float(val.km)  # convert the distance object to km
+                ww_dict['distance'] = round(float(val.km), 1)  # convert the distance object to km
             elif key == 'location':
                 pass
             else:
                 ww_dict[key] = val
         return_data.append(ww_dict)
 
-    # mydict = {'you': 1, 'did': 2, 'it':3}
-    # do other stuff to enhance the context
     return JsonResponse(return_data, safe=False)
-
-
-
-
-
-

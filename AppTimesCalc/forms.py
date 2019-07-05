@@ -2,16 +2,19 @@
 #https://docs.djangoproject.com/en/2.2/topics/forms/
 #https://github.com/monim67/django-bootstrap-datepicker-plus
 
-from django import forms
-from .models import MeatType, CookingLevel, CookingInfo, MealPlan
 from bootstrap_datepicker_plus import TimePickerInput
+from django import forms
+from .models import MeatType, CookingLevel, MealPlan
+
 
 class CalcFormGen(forms.Form):
-
-    # option 1
-    # MeatType = forms.ModelChoiceField(MeatType.objects.filter(cookinginfo__MeatType__isnull=False).distinct(),
-    #                                  label="Meat Type ", required=True, empty_label='Please select')
+    """
+    option 1
+    # MeatType = forms.ModelChoiceField(MeatType.objects.filter(cookinginfo__MeatType__isnull=False).
+    # distinct(),
+    #label="Meat Type ", required=True, empty_label='Please select')
     # option 2
+    """
     MeatType = forms.ModelChoiceField(MeatType.objects.exclude(cookinginfo=None),
                                       label="What kind of meat?", required=True, empty_label='Please select')
     CookingLevel = forms.ModelChoiceField(CookingLevel.objects.none(), label="How well done?",
@@ -40,8 +43,8 @@ class CalcFormGen(forms.Form):
                 meat_type_id = int(self.data.get('MeatType'))
 
                 # need to generate a proper query from CookingLevels based on Cooking Info meat_type
-                a = CookingLevel.objects.filter(cookinginfo__MeatType=meat_type_id)
-                self.fields['CookingLevel'].queryset = a
+                html_lookup = CookingLevel.objects.filter(cookinginfo__MeatType=meat_type_id)
+                self.fields['CookingLevel'].queryset = html_lookup
 
             except (ValueError, TypeError):
                 pass  # invalid input from the client; ignore and fallback to empty City queryset

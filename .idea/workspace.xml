@@ -5,36 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stores/static/stores/scripts/get_location.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stores/templates/stores/get_loc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stores/templates/stores/process_loc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CookingBase.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CookingBase.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppTimesCalc/management/commands/store_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/management/commands/store_loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalc.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dumps/store_import/australia.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dumps/store_import/brazil.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dumps/store_import/canada.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dumps/store_import/croatia.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dumps/store_import/england.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dumps/store_import/france.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dumps/store_import/germany.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dumps/store_import/ireland.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dumps/store_import/nz.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dumps/store_import/scotland.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dumps/store_import/spain.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dumps/store_import/usa.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dumps/store_import/za.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stores/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/stores/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stores/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/stores/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stores/templates/stores/search_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/stores/templates/stores/search_results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stores/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/stores/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stores/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/stores/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stores/templates/stores/get_loc.html" beforeDir="false" afterPath="$PROJECT_DIR$/stores/templates/stores/get_loc.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stores/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1581">
-              <caret line="102" selection-start-line="102" selection-end-line="106" selection-end-column="62" />
+            <state relative-caret-position="1632">
+              <caret line="105" selection-start-line="105" selection-end-line="105" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -100,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/stores/templates/stores/get_loc.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="450">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
             </state>
           </provider>
         </entry>
@@ -116,15 +87,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stores/templates/stores/process_loc.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -625,6 +587,7 @@
       <workItem from="1562142522909" duration="551000" />
       <workItem from="1562223881576" duration="9355000" />
       <workItem from="1562256380465" duration="2485000" />
+      <workItem from="1562327602990" duration="11000" />
     </task>
     <task id="LOCAL-00064" summary="A good days work">
       <created>1560860998823</created>
@@ -984,7 +947,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222725000" />
+    <option name="totallyTimeSpent" value="222736000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -997,7 +960,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48031497" weight="0.26466382" />
       <window_info id="Structure" order="1" sideWeight="0.51968503" side_tool="true" weight="0.2353362" />
@@ -1474,8 +1436,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stores/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1581">
-          <caret line="102" selection-start-line="102" selection-end-line="106" selection-end-column="62" />
+        <state relative-caret-position="1632">
+          <caret line="105" selection-start-line="105" selection-end-line="105" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
@@ -1525,8 +1487,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stores/templates/stores/get_loc.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="450">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
         </state>
       </provider>
     </entry>

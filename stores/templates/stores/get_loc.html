@@ -9,15 +9,19 @@ https://simpleisbetterthancomplex.com/tutorial/2016/08/29/how-to-work-with-ajax-
 https://www.youtube.com/watch?v=fEYx8dQr_cQ for the tutorial
 --->
 
-<div id="result">
-        <!--Position information will be inserted here-->
-</div>
+<div id="result"><small>
+    <!--Position information will be inserted here-->
+</small></div>
+
+<button class="btn btn-primary" id="search_btn" disabled>Show stores</button>
 
 <form>
     {{ form|crispy}}
 </form>
 
-<button class="btn btn-primary" id="search_btn" disabled>Show stores</button>
+<ul id='store_list' class="list-group-flush">
+    <!--Storelist information will be inserted here-->
+</ul>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 <script>
@@ -37,27 +41,7 @@ $(document).ready(function(){
     }
 
     $('#search_btn').on('click', function(){
-        console.log($('#id_search_distance').val())
-        console.log($('#id_search_distance').val())
-        console.log($('#id_results_limit').val())
-
-
-
-        $.ajax({
-            type: "GET",
-            url: success_url,
-            data:{
-                'lat': lat,
-                'lon': lon,
-                'search_distance': $('#id_search_distance').val(),
-                'sort_by': $('#id_search_distance').val(),
-                'results_limit': $('#id_results_limit').val()
-            },
-            dataType : "json",
-            success: function(data) {
-                console.log('success', data)
-            }
-        })
+        populateList()
     })
 
     function successCallback(position) {
@@ -65,13 +49,37 @@ $(document).ready(function(){
         lon = position.coords.longitude;
         result.innerHTML = "Found your location"
         $('#search_btn').prop('disabled', false);
-
+        populateList()
     }
 
     function errorCallback(){
-        alert("Can't find your location, sorry")
+        result.innerHTML = "Could not find your location, sorry."
     }
 
+    function populateList(){
+        var $my_list = $('#store_list')
+        $.ajax({
+            type: "GET",
+            url: success_url,
+            data:{
+                'lat': lat,
+                'lon': lon,
+                'search_distance': $('#id_search_distance').val(),
+                'sort_by': $('#id_sort_by').val(),
+                'results_limit': limit = $('#id_results_limit').val()
+            },
+            dataType : "json",
+            success: function(stores) {
+                $my_list.empty()
+                $.each(stores, function(i, store){
+                    var new_row = '<li class="list-group-item">' + store.name + 
+                        ', ' + store.distance + ' km </li>'
+                    $my_list.append(new_row)
+                })
+            },
+        })
+
+    }
 });
 
 </script>
