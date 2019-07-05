@@ -9,16 +9,22 @@ https://simpleisbetterthancomplex.com/tutorial/2016/08/29/how-to-work-with-ajax-
 https://www.youtube.com/watch?v=fEYx8dQr_cQ for the tutorial
 --->
 
-<div id="mainPart">
+<div id="result">
+        <!--Position information will be inserted here-->
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
+<form>
+    {{ form|crispy}}
+</form>
+
+<button class="btn btn-primary" id="search_btn" disabled>Show stores</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 <script>
-$(document).ready(showPosition)
-var result, lat, lon;
-var success_url = 'process_loc';
+$(document).ready(function(){
+    var result, lat, lon;
+    var success_url = 'process_loc';
 
-function showPosition(){
     // Store the element where the page displays the result
     result = document.getElementById("result");
 
@@ -29,38 +35,46 @@ function showPosition(){
     } else{
         alert("Sorry, your browser does not support HTML5 geolocation.");
     }
-}
 
-function successCallback(position) {
-    lat = position.coords.latitude;
-    lon = position.coords.longitude;
-    result.innerHTML = "Your current position is (" + "Latitude: " + lat + ", " + "Longitude: " + lon + ")";
+    $('#search_btn').on('click', function(){
+        console.log($('#id_search_distance').val())
+        console.log($('#id_search_distance').val())
+        console.log($('#id_results_limit').val())
 
-    $.ajax({
-        type: "GET",
-        url: success_url,
-        data:{
-            'lat': lat,
-            'lon': lon
-        },
-        dataType : "json",
-        success: function(data) {
-            console.log('success', data)
 
-        }
+
+        $.ajax({
+            type: "GET",
+            url: success_url,
+            data:{
+                'lat': lat,
+                'lon': lon,
+                'search_distance': $('#id_search_distance').val(),
+                'sort_by': $('#id_search_distance').val(),
+                'results_limit': $('#id_results_limit').val()
+            },
+            dataType : "json",
+            success: function(data) {
+                console.log('success', data)
+            }
+        })
     })
 
+    function successCallback(position) {
+        lat = position.coords.latitude;
+        lon = position.coords.longitude;
+        result.innerHTML = "Found your location"
+        $('#search_btn').prop('disabled', false);
 
-}
+    }
 
-function errorCallback(){
-    alert('Failed')
-}
+    function errorCallback(){
+        alert("Can't find your location, sorry")
+    }
+
+});
 
 </script>
 
-<div id="result">
-    <!--Position information will be inserted here-->
-</div>
 
 {% endblock %}

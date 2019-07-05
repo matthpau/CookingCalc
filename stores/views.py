@@ -8,6 +8,7 @@ from django.contrib.gis.geoip2 import GeoIP2
 from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.geos import Point
 from django.http import HttpResponse, JsonResponse
+from .forms import StoreSearch
 
 class StoreCreate(CreateView):
     model = Store
@@ -97,13 +98,15 @@ def store_search(request):
 
 
 def get_loc(request):
-    return render(request, 'stores/get_loc.html')
+    form = StoreSearch
+    context = {'form': form}
+    return render(request, 'stores/get_loc.html', context)
 
 
 def process_loc(request):
     lat = float(request.GET.get('lat'))
     lon = float(request.GET.get('lon'))
-    print(lat,lon)
+    print(request.GET)
 
     user_location = Point(lon, lat, srid=4326)
 
@@ -123,8 +126,6 @@ def process_loc(request):
             else:
                 ww_dict[key] = val
         return_data.append(ww_dict)
-    print(return_data)
-
 
     # mydict = {'you': 1, 'did': 2, 'it':3}
     # do other stuff to enhance the context
