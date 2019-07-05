@@ -3,9 +3,8 @@
 #https://github.com/monim67/django-bootstrap-datepicker-plus
 
 from django import forms
-from .models import *
+from .models import MeatType, CookingLevel, CookingInfo, MealPlan
 from bootstrap_datepicker_plus import TimePickerInput
-
 
 class CalcFormGen(forms.Form):
 

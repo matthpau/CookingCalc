@@ -38,6 +38,7 @@ class Command(BaseCommand):
                     jsonfile = DATA_PATH + filename
 
             i = 0
+            skipped = 0
             Shop = apps.get_model('stores', 'Store')
             with open(str(jsonfile)) as datafile:
                 objects = json.load(datafile)
@@ -68,7 +69,8 @@ class Command(BaseCommand):
                                 i += 1
 
                             except IntegrityError:
-                                print(osmid, 'already exists, skipping')
+                                #print(osmid, 'already exists, skipping')
+                                skipped += 1
                                 # store already exists, has OSM_ID in database
                                 pass
                             except DataError:
@@ -78,10 +80,11 @@ class Command(BaseCommand):
 
                     except KeyError:
                         pass
-            print(i, 'stores loaded')
+            print(i, 'stores loaded, ', skipped, 'stores skipped')
 
-        print('clearing table')
-        delete_data()
+        #print('clearing table')
+        #delete_data()
+
         print('loading table')
         print('Loading Germany')
         load_data('germany.json')
@@ -105,6 +108,10 @@ class Command(BaseCommand):
         load_data('za.json')
         print('Loading Brazil')
         load_data('brazil.json')
+        print('Loading UK')
+        load_data('uk.json')
+        print('Loading Canada')
+        load_data('canada.json')
 
 
 

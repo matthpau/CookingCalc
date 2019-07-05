@@ -7,6 +7,7 @@ from ipware import get_client_ip
 from django.contrib.gis.geoip2 import GeoIP2
 from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.geos import Point
+from django.http import HttpResponse, JsonResponse
 
 class StoreCreate(CreateView):
     model = Store
@@ -55,8 +56,8 @@ def store_search(request):
     # https://github.com/un33k/django-ipware
     # https://developers.google.com/maps/documentation/urls/guide
 
-    dev_ip = 'www.google.com'  # for use during development, Hamburg Germany
-    #dev_ip = '2a02:8108:4640:1214:b9e5:9090:525c:d282'
+    #dev_ip = 'www.hamburg.de'  # for use during development, Hamburg Germany
+    dev_ip = '2a02:8108:4640:1214:b9e5:9090:525c:d282'
     #Get client ip address
     client_ip, is_routable = get_client_ip(request)
 
@@ -75,17 +76,60 @@ def store_search(request):
     city = g.city(found_ip)
     print(city)
     lat, lon = g.lat_lon(found_ip)
+
+    # Have a bit of fun
+    #lat, lon, city['city'], city['country_name'] = 51.5074, 0.1278, 'London', 'UK'
+    #lat, lon, city['city'], city['country_name'] = 43.6532, -79.3832, 'Toronto', 'Canada'
+    #lat, lon, city['city'], city['country_name'] = 48.8566, 2.3522, 'Paris', 'France'
+    #lat, lon, city['city'], city['country_name'] = 53.3498, -6.2603, 'Dublin', 'Ireland'
+
     user_location = Point(lon, lat, srid=4326)
 
     #Filter stores by distance
-    q = Store.objects.annotate(distance=Distance('location', user_location)
-                               ).order_by('distance')[:100]
+    q = Store.objects.annotate(distance=Distance('location', user_location))
+    q = q.order_by('distance')[:100]
 
     context = {'city': city['city'],
                'country': city['country_name'],
                'store_list': q}
 
     return render(request, 'stores/search_results.html', context)
+
+
+def get_loc(request):
+    return render(request, 'stores/get_loc.html')
+
+
+def process_loc(request):
+    lat = float(request.GET.get('lat'))
+    lon = float(request.GET.get('lon'))
+    print(lat,lon)
+
+    user_location = Point(lon, lat, srid=4326)
+
+    #Filter stores by distance
+    store_results = Store.objects.annotate(distance=Distance('location', user_location))
+    store_results = store_results.order_by('distance')[:20].values()
+    # since this is a dictionary with location (non serializable) and a calculated Distance, I 
+    # need to convert it the long way to a dictionary
+    return_data = []
+    for store in store_results:
+        ww_dict = {}
+        for key, val in store.items():
+            if key == 'distance':
+                ww_dict['distance'] = float(val.km)  # convert the distance object to km
+            elif key == 'location':
+                pass
+            else:
+                ww_dict[key] = val
+        return_data.append(ww_dict)
+    print(return_data)
+
+
+    # mydict = {'you': 1, 'did': 2, 'it':3}
+    # do other stuff to enhance the context
+    return JsonResponse(return_data, safe=False)
+
 
 
 

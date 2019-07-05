@@ -1,0 +1,5 @@
+{
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.pythonPath": "/Users/paulmatthews/anaconda3/envs/CookingEnv/bin/python"
+}

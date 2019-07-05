@@ -3,22 +3,64 @@
 
 {% block content %}
 
-<h2>Search results for {{ city }}, {{ country }}</h2>
+<!---- adapted from
+https://www.tutorialrepublic.com/html-tutorial/html5-geolocation.php
+https://simpleisbetterthancomplex.com/tutorial/2016/08/29/how-to-work-with-ajax-request-with-django.html
+https://www.youtube.com/watch?v=fEYx8dQr_cQ for the tutorial
+--->
 
-<ul class="list-group-flush">
-{%  for store in store_list %}
-    <li class="list-group-item">{{ store.name }}
-        {% if store.address_full %}
-            <a href="https://www.google.com/maps/search/?api=1&query={{store.address_url}}">Map address</a><br>
-            <small>{{store.address_full}} | {{ store.distance.km|floatformat }} km  </small>
-        {%  else %}
-            <a href="https://www.google.com/maps/search/?api=1&query={{ store.lat }}, {{store.long}}">Map loc</a><br>
-            <small>{{ store.distance.km|floatformat }} km  </small>
-        {%  endif %}
-        <br>
+<div id="mainPart">
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-    </li>
-{%  endfor %}
- </ul>
+<script>
+$(document).ready(showPosition)
+var result, lat, lon;
+var success_url = 'process_loc';
+
+function showPosition(){
+    // Store the element where the page displays the result
+    result = document.getElementById("result");
+
+    // If geolocation is available, try to get the visitor's position
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+        result.innerHTML = "Getting the position information...";
+    } else{
+        alert("Sorry, your browser does not support HTML5 geolocation.");
+    }
+}
+
+function successCallback(position) {
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
+    result.innerHTML = "Your current position is (" + "Latitude: " + lat + ", " + "Longitude: " + lon + ")";
+
+    $.ajax({
+        type: "GET",
+        url: success_url,
+        data:{
+            'lat': lat,
+            'lon': lon
+        },
+        dataType : "json",
+        success: function(data) {
+            console.log('success', data)
+
+        }
+    })
+
+
+}
+
+function errorCallback(){
+    alert('Failed')
+}
+
+</script>
+
+<div id="result">
+    <!--Position information will be inserted here-->
+</div>
 
 {% endblock %}

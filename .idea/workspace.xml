@@ -5,21 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dumps/store_import/australia.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumps/store_import/brazil.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumps/store_import/canada.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumps/store_import/croatia.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumps/store_import/england.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumps/store_import/france.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumps/store_import/ireland.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumps/store_import/nz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumps/store_import/scotland.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumps/store_import/spain.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumps/store_import/usa.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumps/store_import/za.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stores/static/stores/scripts/get_location.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stores/templates/stores/get_loc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stores/templates/stores/process_loc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CookingBase.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CookingBase.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppTimesCalc/management/commands/store_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/management/commands/store_loader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalc.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumps/store_import/australia.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumps/store_import/brazil.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumps/store_import/canada.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumps/store_import/croatia.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumps/store_import/england.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumps/store_import/france.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumps/store_import/germany.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumps/store_import/ireland.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumps/store_import/nz.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumps/store_import/scotland.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumps/store_import/spain.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumps/store_import/usa.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumps/store_import/za.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stores/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/stores/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stores/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/stores/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stores/templates/stores/search_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/stores/templates/stores/search_results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stores/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/stores/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stores/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/stores/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -74,8 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stores/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="75" column="15" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="15" />
+            <state relative-caret-position="1581">
+              <caret line="102" selection-start-line="102" selection-end-line="106" selection-end-column="62" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -83,66 +97,66 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/deploy_server.sh">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/stores/templates/stores/get_loc.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="67" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="67" />
+            <state relative-caret-position="348">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stores/templates/stores/profile.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stores/templates/stores/search_results.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+            <state relative-caret-position="255">
+              <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/conversion_list.html">
+        <entry file="file://$PROJECT_DIR$/stores/templates/stores/process_loc.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="40" />
+            <state relative-caret-position="136">
+              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stores/models.py">
+        <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalc.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+            <state relative-caret-position="884">
+              <caret line="52" selection-start-line="52" selection-end-line="52" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stores/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
               <folding>
-                <element signature="e#30#70#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/AppTimesCalc/management/commands/store_loader.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="106" column="23" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppTimesCalc/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage.py">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -150,15 +164,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>instance</find>
-      <find>print</find>
       <find>success_url</find>
       <find>deb</find>
       <find>conversion_type</find>
@@ -187,6 +200,8 @@
       <find>deploy_prep</find>
       <find>settings</find>
       <find>settings .py import</find>
+      <find>jquer</find>
+      <find>got it</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -195,6 +210,7 @@
       <dir>$PROJECT_DIR$/AppTimesCalc</dir>
       <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/..</dir>
+      <dir>$PROJECT_DIR$/stores</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -203,14 +219,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/AppTimesCalc/templates/account/login.html" />
-        <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/cooking_level_list_options.html" />
-        <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/converter_about.html" />
-        <option value="$PROJECT_DIR$/AppTimesCalc/urls.py" />
-        <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_update.html" />
-        <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/forms.py" />
-        <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalc.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/views.py" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_confirm_delete.html" />
         <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/mealplan_list.html" />
@@ -234,26 +243,33 @@
         <option value="$PROJECT_DIR$/RecipeConverter/urls.py" />
         <option value="$PROJECT_DIR$/CookingBase/urls.py" />
         <option value="$PROJECT_DIR$/stores/templates/stores/profile.html" />
-        <option value="$PROJECT_DIR$/stores/templates/stores/store_form.html" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/about geo stuff" />
         <option value="$PROJECT_DIR$/CookingBase/my_secrets.py" />
         <option value="cbe00abd-04bf-42e2-bbe4-56b12bbeaa66/consoles/CookingCalc" />
         <option value="$PROJECT_DIR$/stores/migrations/0002_auto_20190701_1348.py" />
         <option value="$PROJECT_DIR$/stores/store_loader.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/git tips" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/stores/urls.py" />
-        <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/packages used and homepages" />
-        <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/about.html" />
         <option value="$PROJECT_DIR$/CookingBase/settings.py" />
         <option value="$PROJECT_DIR$/stores/templates/stores/store_list.html" />
-        <option value="$PROJECT_DIR$/stores/admin.py" />
-        <option value="$PROJECT_DIR$/stores/templates/stores/search_results.html" />
         <option value="$PROJECT_DIR$/scripts/store_loader.py" />
-        <option value="$PROJECT_DIR$/stores/views.py" />
-        <option value="$PROJECT_DIR$/stores/models.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/AppTimesCalc/management/commands/store_loader.py" />
+        <option value="$PROJECT_DIR$/stores/admin.py" />
+        <option value="$PROJECT_DIR$/stores/test.py" />
+        <option value="$PROJECT_DIR$/stores/models.py" />
+        <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/about.html" />
+        <option value="$PROJECT_DIR$/stores/static/stores/scripts/get_location.js" />
+        <option value="$PROJECT_DIR$/stores/urls.py" />
+        <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html" />
+        <option value="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalc.html" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/ajax store.html" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/ajax store" />
+        <option value="$PROJECT_DIR$/stores/templates/stores/search_results.html" />
+        <option value="$PROJECT_DIR$/stores/templates/stores/store_form.html" />
+        <option value="$PROJECT_DIR$/stores/views.py" />
+        <option value="$PROJECT_DIR$/stores/templates/stores/process_loc.html" />
+        <option value="$PROJECT_DIR$/stores/templates/stores/get_loc.html" />
       </list>
     </option>
   </component>
@@ -271,7 +287,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -288,25 +303,19 @@
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
               <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
               <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
-              <item name="management" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
               <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
               <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
-              <item name="management" type="462c0819:PsiDirectoryNode" />
-              <item name="commands" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="AppTimesCalc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
               <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
-              <item name="dumps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
-              <item name="dumps" type="462c0819:PsiDirectoryNode" />
-              <item name="store_import" type="462c0819:PsiDirectoryNode" />
+              <item name="geo_data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
@@ -316,6 +325,19 @@
             <path>
               <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
               <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
+              <item name="stores" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
+              <item name="stores" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CookingBase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CookingBase" type="462c0819:PsiDirectoryNode" />
+              <item name="stores" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="stores" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -331,6 +353,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -340,7 +363,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT&#10;Python&#10;HTML" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/AppTimesCalc/management/commands" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/stores/templates/stores" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -349,19 +372,19 @@
     <property name="settings.editor.splitter.proportion" value="0.27569443" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/AppTimesCalc/management/commands" />
-      <recent name="$PROJECT_DIR$/stores/templates/stores" />
-      <recent name="$PROJECT_DIR$/dumps/store_import" />
-      <recent name="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter" />
-      <recent name="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/dumps/store_import" />
       <recent name="$PROJECT_DIR$/dumps" />
       <recent name="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter" />
       <recent name="$PROJECT_DIR$/AppTimesCalc/management/commands" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/stores/templates/stores" />
+      <recent name="$PROJECT_DIR$/AppTimesCalc/management/commands" />
+      <recent name="$PROJECT_DIR$/dumps/store_import" />
+      <recent name="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter" />
+      <recent name="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -598,14 +621,10 @@
       <workItem from="1561999858374" duration="291000" />
       <workItem from="1562000713289" duration="193000" />
       <workItem from="1562050498728" duration="17092000" />
-      <workItem from="1562097764098" duration="3693000" />
-    </task>
-    <task id="LOCAL-00063" summary="A good days work">
-      <created>1560771756686</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1560771756687</updated>
+      <workItem from="1562097764098" duration="8566000" />
+      <workItem from="1562142522909" duration="551000" />
+      <workItem from="1562223881576" duration="9355000" />
+      <workItem from="1562256380465" duration="2485000" />
     </task>
     <task id="LOCAL-00064" summary="A good days work">
       <created>1560860998823</created>
@@ -943,7 +962,14 @@
       <option name="project" value="LOCAL" />
       <updated>1562098955199</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="A good days work">
+      <created>1562102022213</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1562102022213</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -958,7 +984,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205461000" />
+    <option name="totallyTimeSpent" value="222725000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -971,12 +997,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48031497" visible="true" weight="0.26108727" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48031497" weight="0.26466382" />
       <window_info id="Structure" order="1" sideWeight="0.51968503" side_tool="true" weight="0.2353362" />
       <window_info id="Favorites" order="2" sideWeight="0.5029354" side_tool="true" weight="0.24947146" />
       <window_info id="DB Browser" order="3" sideWeight="0.48922414" weight="0.2446352" />
-      <window_info id="Run" order="4" sideWeight="0.49868765" weight="0.546495" />
+      <window_info id="Run" order="4" sideWeight="0.49868765" weight="0.29613733" />
       <window_info id="Debug" order="5" weight="0.30972818" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32545933" />
@@ -984,8 +1011,8 @@
       <window_info anchor="bottom" id="Inspection" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="4" weight="0.32939634" />
       <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.49964765" weight="0.21653543" />
-      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.49785408" visible="true" weight="0.3464567" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50214595" side_tool="true" visible="true" weight="0.3464567" />
+      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.49713877" weight="0.3464567" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5028612" side_tool="true" weight="0.3464567" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32545933" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32939634" />
       <window_info anchor="bottom" id="DB Execution Console" order="10" weight="0.32939634" />
@@ -1002,11 +1029,11 @@
       <window_info anchor="right" id="Coverage" order="6" side_tool="true" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48031497" weight="0.25751072" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48031497" visible="true" weight="0.26466382" />
       <window_info id="Structure" order="1" sideWeight="0.51968503" side_tool="true" weight="0.2353362" />
       <window_info id="Favorites" order="2" sideWeight="0.5029354" side_tool="true" weight="0.24947146" />
       <window_info id="DB Browser" order="3" sideWeight="0.48922414" weight="0.2446352" />
-      <window_info active="true" id="Run" order="4" sideWeight="0.49868765" visible="true" weight="0.23676682" />
+      <window_info id="Run" order="4" sideWeight="0.49868765" weight="0.29613733" />
       <window_info id="Debug" order="5" weight="0.30972818" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32545933" />
@@ -1014,8 +1041,8 @@
       <window_info anchor="bottom" id="Inspection" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="4" weight="0.32939634" />
       <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.49964765" weight="0.21653543" />
-      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.4982382" weight="0.3464567" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5017618" side_tool="true" weight="0.30183727" />
+      <window_info anchor="bottom" id="Terminal" order="6" sideWeight="0.49713877" weight="0.3464567" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5028612" side_tool="true" weight="0.3464567" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32545933" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32939634" />
       <window_info anchor="bottom" id="DB Execution Console" order="10" weight="0.32939634" />
@@ -1185,114 +1212,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="db://cbe00abd-04bf-42e2-bbe4-56b12bbeaa66/objects/schemas/public/tables/AppTimesCalc_cookinglevel">
-      <provider selected="true" editor-type-id="1.DATA">
-        <state row-count="6" readonly="false">
-          <columns>
-            <column name="id" position="0" visible="true" />
-            <column name="CookingLevel" position="1" visible="true" />
-            <column name="CookingLevelSort" position="2" visible="true" />
-          </columns>
-          <sorting>
-            <column name="CookingLevelSort" index="1" direction="DESCENDING" />
-          </sorting>
-          <content-types />
-        </state>
-      </provider>
-    </entry>
-    <entry file="db://cbe00abd-04bf-42e2-bbe4-56b12bbeaa66/objects/schemas/information_schema/tables/sql_implementation_info">
-      <provider selected="true" editor-type-id="1.DATA">
-        <state row-count="12" readonly="false">
-          <columns>
-            <column name="implementation_info_id" position="0" visible="true" />
-            <column name="implementation_info_name" position="1" visible="true" />
-            <column name="integer_value" position="2" visible="true" />
-            <column name="character_value" position="3" visible="true" />
-            <column name="comments" position="4" visible="true" />
-          </columns>
-          <sorting />
-          <content-types />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stores/migrations/0002_auto_20190701_1303.py" />
-    <entry file="db://cbe00abd-04bf-42e2-bbe4-56b12bbeaa66/objects/schemas/public/tables/socialaccount_socialtoken">
-      <provider selected="true" editor-type-id="1.DATA">
-        <state row-count="0" readonly="false">
-          <columns>
-            <column name="id" position="0" visible="true" />
-            <column name="token" position="1" visible="true" />
-            <column name="token_secret" position="2" visible="true" />
-            <column name="expires_at" position="3" visible="true" />
-            <column name="account_id" position="4" visible="true" />
-            <column name="app_id" position="5" visible="true" />
-          </columns>
-          <sorting />
-          <content-types />
-        </state>
-      </provider>
-    </entry>
-    <entry file="db://cbe00abd-04bf-42e2-bbe4-56b12bbeaa66/session_browsers/CookingCalc Sessions">
-      <provider selected="true" editor-type-id="0.SESSION_BROWSER">
-        <state>
-          <refresh-interval value="0" />
-          <sorting />
-          <filter>
-            <user value="" />
-            <host value="" />
-            <status value="" />
-          </filter>
-        </state>
-      </provider>
-    </entry>
-    <entry file="db://cbe00abd-04bf-42e2-bbe4-56b12bbeaa66/objects/schemas/public/tables/stores_storecomment">
-      <provider selected="true" editor-type-id="1.DATA">
-        <state row-count="0" readonly="false">
-          <columns>
-            <column name="id" position="0" visible="true" />
-            <column name="comment" position="1" visible="true" />
-            <column name="store_id" position="2" visible="true" />
-            <column name="user_id" position="3" visible="true" />
-            <column name="created_at" position="4" visible="true" />
-            <column name="updated_at" position="5" visible="true" />
-          </columns>
-          <sorting />
-          <content-types />
-        </state>
-      </provider>
-    </entry>
-    <entry file="db://cbe00abd-04bf-42e2-bbe4-56b12bbeaa66/objects/schemas/public/tables/stores_storecomment_likes">
-      <provider selected="true" editor-type-id="1.DATA">
-        <state row-count="0" readonly="false">
-          <columns>
-            <column name="id" position="0" visible="true" />
-            <column name="storecomment_id" position="1" visible="true" />
-            <column name="customuser_id" position="2" visible="true" />
-          </columns>
-          <sorting />
-          <content-types />
-        </state>
-      </provider>
-    </entry>
-    <entry file="db://cbe00abd-04bf-42e2-bbe4-56b12bbeaa66/objects/schemas/public/tables/stores_store_likes">
-      <provider selected="true" editor-type-id="1.DATA">
-        <state row-count="0" readonly="false">
-          <columns />
-          <sorting />
-          <content-types />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stores/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#49#81#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="db://cbe00abd-04bf-42e2-bbe4-56b12bbeaa66/consoles/CookingCalc">
       <provider selected="true" editor-type-id="0.CONSOLE">
         <state line="0" column="0" selection-start="0" selection-end="24" vertical-scroll-proportion="0.0">
@@ -1324,13 +1243,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stores/migrations/0002_auto_20190701_1549.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dumps/store_import/england.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="243" column="13" selection-start-line="243" selection-start-column="9" selection-end-line="243" selection-end-column="13" />
-        </state>
-      </provider>
     </entry>
     <entry file="db://cbe00abd-04bf-42e2-bbe4-56b12bbeaa66/objects/schemas/public/tables/stores_store">
       <provider selected="true" editor-type-id="1.DATA">
@@ -1383,13 +1295,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1402,45 +1307,12 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/deploy_server explanation.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/git tips">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/Get User Model fields.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dumps/store_import/test.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dumps/store_import/test.json" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/regex explanations.txt">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stores/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/packages used and homepages">
       <provider selected="true" editor-type-id="text-editor">
@@ -1470,23 +1342,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stores/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stores/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/store_loader.py" />
     <entry file="file://$PROJECT_DIR$/CookingBase/settings.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1498,20 +1353,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stores/templates/stores/search_results.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/conversion_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/about geo stuff">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1519,8 +1360,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/management/commands/createdummies.py">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dumps/store_import/england.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="243" column="13" selection-start-line="243" selection-start-column="9" selection-end-line="243" selection-end-column="13" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/deploy_server.sh">
       <provider selected="true" editor-type-id="text-editor">
@@ -1529,9 +1384,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/management/commands/createdummies.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/AppTimesCalc/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1539,30 +1391,142 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stores/views.py">
+    <entry file="file://$PROJECT_DIR$/stores/test.py" />
+    <entry file="file://$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter/conversion_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="75" column="15" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="15" />
+        <state relative-caret-position="170">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="130" selection-start-line="6" selection-start-column="130" selection-end-line="6" selection-end-column="130" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stores/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/stores/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/management/commands/store_loader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1819">
+          <caret line="107" column="28" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/git tips">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/stores/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+        <state relative-caret-position="417">
+          <caret line="45" column="57" selection-start-line="45" selection-start-column="57" selection-end-line="45" selection-end-column="57" />
           <folding>
             <element signature="e#30#70#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AppTimesCalc/management/commands/store_loader.py">
+    <entry file="file://$PROJECT_DIR$/stores/static/stores/scripts/get_location.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="106" column="23" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
+        <state relative-caret-position="255">
+          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/ajax store.html" />
+    <entry file="file://$PROJECT_DIR$/stores/templates/stores/store_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/ajax store">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stores/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1581">
+          <caret line="102" selection-start-line="102" selection-end-line="106" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stores/templates/stores/profile.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stores/templates/stores/search_results.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stores/templates/stores/process_loc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/CookingCalc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="52" selection-start-line="52" selection-end-line="52" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stores/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stores/templates/stores/get_loc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>

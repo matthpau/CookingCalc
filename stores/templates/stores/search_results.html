@@ -8,13 +8,15 @@
 <ul class="list-group-flush">
 {%  for store in store_list %}
     <li class="list-group-item">{{ store.name }}
-        {% if store.addr_full %}
-            <a href="https://www.google.com/maps/search/?api=1&query={{ store.name }}+{{store.address}}">Map</a>
+        {% if store.address_full %}
+            <a href="https://www.google.com/maps/search/?api=1&query={{store.address_url}}">Map address</a><br>
+            <small>{{store.address_full}} | {{ store.distance.km|floatformat }} km  </small>
         {%  else %}
-            <a href="https://www.google.com/maps/search/?api=1&query={{ store.lat }}, {{store.long}}">Map</a>
+            <a href="https://www.google.com/maps/search/?api=1&query={{ store.lat }}, {{store.long}}">Map loc</a><br>
+            <small>{{ store.distance.km|floatformat }} km  </small>
         {%  endif %}
         <br>
-        <small>{{store.addr_full}} {{ store.distance.km|floatformat }} km  </small>
+
     </li>
 {%  endfor %}
  </ul>

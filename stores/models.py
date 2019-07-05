@@ -29,7 +29,7 @@ class Store(models.Model):
     tags = TaggableManager(blank=True)
 
     @property
-    def addr_full(self):
+    def address_full(self):
         result = self.add_house_number + ' ' + self.add_street + ' ' + self.add_city + ' ' + self.add_country
         result = result.replace('unknown', '')
         result = result.lstrip().rstrip()
@@ -42,8 +42,15 @@ class Store(models.Model):
         return result
 
     @property
-    def url_search(self):
-        return self.addr_full.replace(' ', '+')
+    def address_url(self):
+        URL_reserved = "!*'();:@&=$,/?%#[]"   # no plus +
+        working_str = self.name + '+' + self.address_full
+
+        for char in URL_reserved:  # remove the rest https://developers.google.com/maps/documentation/urls/url-encoding
+            working_str = working_str.replace(char, '')
+
+        working_str = '+'.join(working_str.split())  # spaces to pluses
+        return working_str
 
     def __str__(self):
         return self.name
