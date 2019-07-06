@@ -21,7 +21,6 @@ class Command(BaseCommand):
 
         from stores.models import Store
 
-
         def delete_data():
             Store.objects.all().delete()
 

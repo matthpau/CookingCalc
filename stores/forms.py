@@ -1,7 +1,4 @@
 from django import forms
-#from .models import MeatType, CookingLevel, CookingInfo, MealPlan
-
-
 
 class StoreSearch(forms.Form):
     DIST_CHOICES = [
@@ -18,4 +15,3 @@ class StoreSearch(forms.Form):
 
     search_distance = forms.ChoiceField(choices=DIST_CHOICES, initial='10')
     sort_order = forms.ChoiceField(choices=SORT_CHOICES, initial='Distance')
-

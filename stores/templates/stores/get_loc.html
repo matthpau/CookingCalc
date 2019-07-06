@@ -15,8 +15,8 @@ https://www.youtube.com/watch?v=fEYx8dQr_cQ for the tutorial
         </div>
 
         <div class="col-sm-8">
-                <div id="result">
-                    <!--Position information will be inserted here-->
+                <div id="result" class="alert alert-info" role="alert">
+                    Getting your position...
                 </div>
 
             <form>
@@ -59,7 +59,8 @@ $(document).ready(function(){
     function successCallback(position) {
         lat = position.coords.latitude;
         lon = position.coords.longitude;
-        result.innerHTML = ""
+        result.innerHTML = "Found your location"
+        $(result).delay(2000).hide(500);
         populateList()
     }
 
