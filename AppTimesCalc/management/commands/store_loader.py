@@ -63,7 +63,7 @@ class Command(BaseCommand):
                                          add_country=tags.get('addr:country', 'unknown'),
                                          OSM_ID=osmid,
                                          lat=latitude,
-                                         long=longitude,
+                                         lon=longitude,
                                          )
                                 s.save()
                                 i += 1
