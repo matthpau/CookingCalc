@@ -9,19 +9,31 @@ https://simpleisbetterthancomplex.com/tutorial/2016/08/29/how-to-work-with-ajax-
 https://www.youtube.com/watch?v=fEYx8dQr_cQ for the tutorial
 --->
 
-<div id="result"><small>
-    <!--Position information will be inserted here-->
-</small></div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+        </div>
 
-<button class="btn btn-primary" id="search_btn" disabled>Show stores</button>
+        <div class="col-sm-8">
+                <div id="result">
+                    <!--Position information will be inserted here-->
+                </div>
 
-<form>
-    {{ form|crispy}}
-</form>
+            <form>
+                {{ form|crispy}}
+            </form>
 
-<ul id='store_list' class="list-group-flush">
-    <!--Storelist information will be inserted here-->
-</ul>
+            <ul id='store_list' class="list-group-flush">
+                    <!--Storelist information will be inserted here-->
+                </ul>
+        </div>
+
+        <div class="col-sm">
+        </div>
+    </div>
+</div>
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 <script>
@@ -35,20 +47,19 @@ $(document).ready(function(){
     // If geolocation is available, try to get the visitor's position
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-        result.innerHTML = "Getting the position information...";
+        result.innerHTML = "Getting your position...";
     } else{
         alert("Sorry, your browser does not support HTML5 geolocation.");
     }
 
-    $('#search_btn').on('click', function(){
+    $('#id_search_distance').on('change', function(){
         populateList()
     })
 
     function successCallback(position) {
         lat = position.coords.latitude;
         lon = position.coords.longitude;
-        result.innerHTML = "Found your location"
-        $('#search_btn').prop('disabled', false);
+        result.innerHTML = ""
         populateList()
     }
 
@@ -65,15 +76,20 @@ $(document).ready(function(){
                 'lat': lat,
                 'lon': lon,
                 'search_distance': $('#id_search_distance').val(),
-                'sort_by': $('#id_sort_by').val(),
-                'results_limit': limit = $('#id_results_limit').val()
             },
             dataType : "json",
             success: function(stores) {
                 $my_list.empty()
                 $.each(stores, function(i, store){
-                    var new_row = '<li class="list-group-item">' + store.name + 
-                        ', ' + store.distance + ' km </li>'
+                    var new_row = '<li class="list-group-item">' + 
+                    store.name + ', ' + 
+                    store.distance + ' km<br><small>'  +
+                    store.friendly_address + '</small> ' +
+                    '<a class="badge badge-primary" href='+ store.id + '/profile>store profile</a> ' +
+                    '<a class="badge badge-secondary" href=https://www.google.com/maps/search/?api=1' +
+                    store.search_url + '>find on map</a>' +
+                    '</li>'
+
                     $my_list.append(new_row)
                 })
             },

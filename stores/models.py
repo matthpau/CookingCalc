@@ -11,7 +11,7 @@ class Store(models.Model):
     name = models.CharField(max_length=100)
     location = models.PointField()
     lat = models.FloatField()
-    long = models.FloatField()
+    lon = models.FloatField()
     address = models.CharField(max_length=200)
     add_house_number = models.CharField(max_length=100)
     add_street = models.CharField(max_length=100)
@@ -23,7 +23,7 @@ class Store(models.Model):
     opening_hours = models.CharField(max_length=200)
     website = models.CharField(max_length=50)
     OSM_ID = models.BigIntegerField(unique=True)
-    likes = models.ManyToManyField(get_user_model(), blank=True, related_name='stores')
+    likes = models.ManyToManyField(get_user_model(), blank=True, related_name='store_likes')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     tags = TaggableManager(blank=True)
@@ -43,10 +43,10 @@ class Store(models.Model):
 
     @property
     def address_url(self):
-        URL_reserved = "!*'();:@&=$,/?%#[]"   # no plus +
+        URL_RESERVED = "!*'();:@&=$,/?%#[]"   # no plus +
         working_str = self.name + '+' + self.address_full
 
-        for char in URL_reserved:  # remove the rest https://developers.google.com/maps/documentation/urls/url-encoding
+        for char in URL_RESERVED:  # remove the rest https://developers.google.com/maps/documentation/urls/url-encoding
             working_str = working_str.replace(char, '')
 
         working_str = '+'.join(working_str.split())  # spaces to pluses

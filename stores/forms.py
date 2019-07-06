@@ -7,20 +7,15 @@ class StoreSearch(forms.Form):
     DIST_CHOICES = [
                 (1, '1km'),
                 (5, '5km'),
-                (20, '20km')
-]
+                (10, '10km'),
+                (100, '100km')
+                ]
 
     SORT_CHOICES = [
-                    ('d', 'Distance'),
-                    ('v', 'Votes')
+                (1,'Distance'),
+                (2,'Likes')
     ]
 
-    LIMIT_CHOICES = [
-        (5, '5'),
-        (20, '20 '),
-        (99, 'All')
-    ]
-    search_distance = forms.ChoiceField(choices=DIST_CHOICES, initial='5')
-    sort_by = forms.ChoiceField(choices=SORT_CHOICES, initial='d')
-    results_limit = forms.ChoiceField(choices=LIMIT_CHOICES, initial='5')
+    search_distance = forms.ChoiceField(choices=DIST_CHOICES, initial='10')
+    sort_order = forms.ChoiceField(choices=SORT_CHOICES, initial='Distance')
 

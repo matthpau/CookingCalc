@@ -10,6 +10,8 @@ from django.http import JsonResponse
 from django.contrib.gis.measure import D
 from .forms import StoreSearch
 from .models import Store
+from django.utils.encoding import escape_uri_path
+
 
 class StoreCreate(CreateView):
     model = Store
@@ -108,16 +110,16 @@ def get_loc(request):
 def process_loc(request):
     lat = float(request.GET.get('lat'))
     lon = float(request.GET.get('lon'))
-    res_lim = int(request.GET.get('results_limit'))
-    print(request.GET)
+    search_dis = request.GET.get('search_distance')
 
     user_location = Point(lon, lat, srid=4326)
 
     #https://stackoverflow.com/questions/19703975/django-sort-by-distance
+    #https://docs.djangoproject.com/en/2.2/ref/contrib/gis/db-api/
     #Filter stores by distance
-    store_results = Store.objects.annotate(distance=Distance('location', user_location)) \
-                    .order_by('distance')[:res_lim].values()
-    print(store_results)
+    store_results = Store.objects.filter(location__distance_lte=(user_location, D(km=search_dis))) \
+                    .annotate(distance=Distance('location', user_location)) \
+                    .order_by('distance').values()
 
     # since this is a dictionary with location (non serializable) and a calculated Distance, I
     # need to convert it the long way to a dictionary
@@ -131,6 +133,24 @@ def process_loc(request):
                 pass
             else:
                 ww_dict[key] = val
+
+        
+        # Create a google maps friendly search
+        search_url = '&query=' + escape_uri_path(store['name']) + '@' + str(store['lat']) + ',' + str(store['lon'])
+        ww_dict['search_url'] = search_url
+
+        # Create a friendly address
+        result = store['add_house_number'] + ' ' + store['add_street'] + ' ' + store['add_city'] + ' ' + store['add_country']
+        result = result.replace('unknown', '')
+        result = result.lstrip().rstrip()
+
+        if len(result) > 0:
+            if result[-1] == ',':
+                result = result[:-1]
+        else:
+            result = ''
+        
+        ww_dict['friendly_address'] = result
         return_data.append(ww_dict)
 
     return JsonResponse(return_data, safe=False)
