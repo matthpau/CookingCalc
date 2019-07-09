@@ -3,6 +3,22 @@
 
 {% block content %}
 <h1>{{ store.name }}</h1>
-<p>{{ store.address_full}}</p>
-{% endblock %}
+{% if store.my_address %}
+    <p>{{ store.my_address}}</p>
+{% else %}
+    <small>
+    <a href="https://www.openstreetmap.org/node/{{ store.OSM_ID }}">No address - edit on Open Streetmap (requires OSM account)?</a>
+    </small>
+{% endif %}
 
+<form action="{% url 'store:store_like' store.id %}" method="POST">
+    {% csrf_token %}
+    {% if is_liked %}
+        <button type='submit' class='btn btn-warning'>UNLIKE</button>
+    {% else %}
+        <button type='submit' class='btn btn-primary'>LIKE</button>
+    {% endif %}
+</form>
+
+<p>Likes: {{ store.likes.count }}</p>
+{% endblock %}

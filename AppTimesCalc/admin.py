@@ -26,4 +26,3 @@ admin.site.register(MeatType, MeatTypeAdmin)
 admin.site.register(CookingLevel, CookingLevelAdmin)
 admin.site.register(CookingInfo, CookingInfoAdmin)
 admin.site.register(MealPlan, MealPlanAdmin)
-

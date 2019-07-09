@@ -11,11 +11,15 @@ from django.contrib.gis.measure import D
 from .forms import StoreSearch
 from .models import Store
 from django.utils.encoding import escape_uri_path
-
+from django.views.generic import RedirectView
+from django.urls import reverse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 class StoreCreate(CreateView):
     model = Store
-    fields = ['name', 'address', 'tags']
+    fields = ['name', 'tags']
     success_url = '/stores/list'
     # points to store_form.html automatically
 
@@ -47,13 +51,18 @@ class StoreCreate(CreateView):
 
 def store_profile(request, store_id):
     store = get_object_or_404(Store, pk=store_id)
-    context = {'store': store}
+    is_liked = False
+    if store.likes.filter(id=request.user.id).exists():
+        is_liked = True
+
+    context = {
+        'store': store,
+        'is_liked': is_liked
+        }
+
     return render(request, 'stores/profile.html', context)
 
 
-class StoreList(ListView):
-    model = Store
-    context_object_name = 'store_list_view'   #note context defaults to object_list
 
 def store_search(request):
     # https://docs.djangoproject.com/en/2.2/ref/contrib/gis/geoip2/#
@@ -134,7 +143,6 @@ def process_loc(request):
             else:
                 ww_dict[key] = val
 
-        
         # Create a google maps friendly search
         search_url = '&query=' + escape_uri_path(store['name']) + '@' + str(store['lat']) + ',' + str(store['lon'])
         ww_dict['search_url'] = search_url
@@ -143,14 +151,19 @@ def process_loc(request):
         result = store['add_house_number'] + ' ' + store['add_street'] + ' ' + store['add_city'] + ' ' + store['add_country']
         result = result.replace('unknown', '')
         result = result.lstrip().rstrip()
-
-        if len(result) > 0:
-            if result[-1] == ',':
-                result = result[:-1]
-        else:
-            result = ''
         
         ww_dict['friendly_address'] = result
         return_data.append(ww_dict)
 
     return JsonResponse(return_data, safe=False)
+
+@login_required
+def store_like(request, store_id):
+    my_store = get_object_or_404(Store, id=store_id)
+
+    if my_store.likes.filter(id=request.user.id).exists():
+        my_store.likes.remove(request.user)
+    else:
+        my_store.likes.add(request.user)
+
+    return HttpResponseRedirect(my_store.get_absolute_url())
