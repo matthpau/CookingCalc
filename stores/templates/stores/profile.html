@@ -3,13 +3,18 @@
 
 {% block content %}
 <h1>{{ store.name }}</h1>
+<p>{{ store.OSM_storetype|safe }}</p>
+
 {% if store.my_address %}
     <p>{{ store.my_address}}</p>
 {% else %}
     <small>
-    <a href="https://www.openstreetmap.org/node/{{ store.OSM_ID }}">No address - edit on Open Streetmap (requires OSM account)?</a>
+        No address found
     </small>
 {% endif %}
+<small>
+<a href="https://www.openstreetmap.org/node/{{ store.OSM_ID }}">Edit on OpenStreetmap (requires OSM account)</a>
+</small>
 
 <form action="{% url 'store:store_like' store.id %}" method="POST">
     {% csrf_token %}

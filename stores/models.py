@@ -13,6 +13,13 @@ class Country(models.Model):
     def __str__(self):
         return self.code + ' ' + self.name
 
+class StoreType(models.Model):
+    type_text = models.CharField(max_length=50, primary_key=True)
+    icon_text = models.CharField(max_length=50)
+    
+    def __str__(self):
+        return self.icon_text
+
 class Store(models.Model):
     name = models.CharField(max_length=100)
     location = models.PointField()
@@ -33,6 +40,7 @@ class Store(models.Model):
     opening_hours = models.CharField(max_length=200)
     website = models.CharField(max_length=50)
     OSM_ID = models.BigIntegerField(unique=True)
+    OSM_storetype = models.ForeignKey(StoreType, null=True, on_delete=models.SET_NULL)
     likes = models.ManyToManyField(get_user_model(), blank=True, related_name='store_likes')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -52,3 +60,4 @@ class StoreComment(models.Model):
     likes = models.ManyToManyField(get_user_model(), blank=True, related_name='store_comments')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+

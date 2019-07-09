@@ -18,9 +18,7 @@ class Command(BaseCommand):
         from django.contrib.gis.geos import fromstr
         from django.apps import apps
         from django.db.utils import IntegrityError, DataError
-
-
-        from stores.models import Store
+        from stores.models import Store, StoreType, Country
         import_folder = 'dumps/store_import'
 
         def delete_data():
@@ -28,20 +26,39 @@ class Command(BaseCommand):
             print('All records have been deleted')
             print()
 
-        def get_data_from_OSM(country_name, country_code):
+
+        #https://wiki.openstreetmap.org/wiki/Overpass_API/Language_Guide
+        def get_data_from_OSM(country_name, country_code, osm_shops, fresh=False):
             was_replaced = False
-            max_file_age = 7 * 24 * 60 * 60  #how old a file needs to be before it is replace, secs
+            
+            if fresh:
+                max_file_age = 0
+            else:   
+                max_file_age = 7 * 24 * 60 * 60  #how old a file needs to be before it is replace, secs
             country_name = country_name.replace(' ', '_').lower()
             save_file = os.path.join(settings.BASE_DIR, import_folder, country_name + '.json')
             print('downloading', country_name, 'to', save_file)
 
             overpass_url = "http://overpass-api.de/api/interpreter"
             overpass_query = f"""
-[out:json][timeout:1000];
-area["ISO3166-1"="{country_code}"][admin_level=2];
-nwr(area)["shop"="butcher"];
-out center;
-"""
+            [out:json][timeout:1000];
+            area["ISO3166-1"="{country_code}"][admin_level=2]->.searchArea;
+            """
+            from stores.models import StoreType
+
+            for elt in osm_shops:
+                shop_text = f"""
+                node(area.searchArea)["shop"="{elt}"];
+                out center;
+                """
+                overpass_query += shop_text
+
+                #Add storetype to list of storetypes if not there
+                c, created = StoreType.objects.get_or_create(
+                    pk=elt,
+                    defaults={'icon_text': 'Font awesome icon here please'}
+                    )  
+
             replace_flag = False
 
             if isfile(save_file):
@@ -72,7 +89,6 @@ out center;
             return was_replaced
 
         def load_data(country_name, country_code):
-            from stores.models import Country
             nice_name = country_name
             country_name = country_name.replace(' ', '_').lower()
 
@@ -135,6 +151,8 @@ out center;
                                 if not address:
                                     address = ''
 
+                                o = StoreType.objects.get(pk=tags.get('shop', ''))
+
                                 try:
                                     s = shop(name=store_name,
                                              my_name=store_name,
@@ -147,13 +165,33 @@ out center;
                                              add_city=tags.get('addr:city', ''),
                                              add_country=tags.get('addr:country', ''),
                                              OSM_ID=osmid,
+                                             OSM_storetype=o,
                                              lat=latitude,
                                              lon=longitude,
                                              )
                                     s.save()
                                     i += 1
 
+
                                 except IntegrityError:
+                                    s = Store.objects.get(OSM_ID=osmid)
+                                    s.name = store_name
+                                    s.location = location
+                                    s.add_house_number = tags.get('addr:housenumber', '')
+                                    s.add_street = tags.get('addr:street', '')
+                                    s.add_postcode = tags.get('addr:postcode', '')
+                                    s.add_city = tags.get('addr:city', '')
+                                    s.add_country = tags.get('addr:country', '')
+                                    s.OSM_storetype = o
+                                    
+                                    if not s.my_address:
+                                        s.my_address = address
+
+                                    s.lat = latitude
+                                    s.lon = longitude
+
+                                    s.save()
+                                    
                                     skipped += 1
                                 except DataError:
                                     print('Problem with', obj)
@@ -161,23 +199,33 @@ out center;
 
                         except KeyError:
                             pass
-                print(i, 'stores loaded, ', skipped, 'stores skipped')
+                print(i, 'stores loaded, ', skipped, 'stores updated')
                 print()
 
         # https://www.nationsonline.org/oneworld/country_code_list.htm
         country_list = {
             'Croatia': 'HR',
             'Great Britain': 'GB',
-            'New zealand': 'NZ',
+            'New Zealand': 'NZ',
             'Ireland': 'IE',
             'South Africa': 'ZA',
             'Canada': 'CA',
             'Jamaica': 'JM',
             'Germany': 'DE',
-            'United States': 'US'
+            'United States': 'US',
+            'Norway': 'NO',
+            'Sweden': 'SE',
+            'Finland': 'FI',
+            'Australia': 'AU',
+            'Pakistan': 'PK',
+            'Spain': 'ES'
         }
 
+        
         #get latest from OSM
+        #https://wiki.openstreetmap.org/wiki/Map_Features#Shop
+        
+        osm_shops = ['butcher', 'deli', 'cheese', 'dairy', 'farm', 'coffee', 'greengrocer']
 
         delete_data()
 
@@ -185,10 +233,11 @@ out center;
         i = 0
         for k, v in country_list.items():
             i += 1
-            x = get_data_from_OSM(k, v)
-            if x and i != country_count:
-                print('Waiting a bit before I do the next one...')
-                time.sleep(20)
-
-        for k, v in country_list.items():
+            was_updated = get_data_from_OSM(k, v, osm_shops, fresh=False)
             load_data(k, v)
+            #if was_updated:
+            #   load_data(k, v)
+            if was_updated and i != country_count:
+                print('Waiting a bit before I do the next one...')
+                time.sleep(40)
+            

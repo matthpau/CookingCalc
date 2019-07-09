@@ -5,7 +5,6 @@ app_name = 'store'
 urlpatterns = [
     path('<int:store_id>/profile', views.store_profile, name='store_profile'),
     path('<int:store_id>/like', views.store_like, name='store_like'),
-    path('create', views.StoreCreate.as_view(), name='store_create'),
     path('search', views.store_search, name='store_search'),
     path('get_loc', views.get_loc, name='get_loc'),
     path('process_loc', views.process_loc, name='process_loc')
