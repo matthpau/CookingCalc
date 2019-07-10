@@ -28,13 +28,17 @@ class Command(BaseCommand):
             print()
 
         #https://wiki.openstreetmap.org/wiki/Overpass_API/Language_Guide
-        def get_data_from_OSM(country_name, country_code, osm_shops, fresh=False):
+        def get_data_from_OSM(country_name, country_code, osm_shops, fresh=False, max_days=2):
+            """
+            fresh True forces a download regardless of file age
+            maxAge in days how old a file should be before being replaced
+            """
             was_replaced = False
             
             if fresh:
                 max_file_age = 0
             else:   
-                max_file_age = 7 * 24 * 60 * 60  #how old a file needs to be before it is replace, secs
+                max_file_age = max_days * 24 * 60 * 60  #how old a file needs to be before it is replace, secs
             country_name = country_name.replace(' ', '_').lower()
             save_file = os.path.join(settings.BASE_DIR, import_folder, country_name + '.json')
             print('downloading', country_name, 'to', save_file)
@@ -217,21 +221,21 @@ class Command(BaseCommand):
 
         # https://www.nationsonline.org/oneworld/country_code_list.htm
         country_list = {
-            #'Croatia': 'HR',
-            #'Great Britain': 'GB',
-            #'New Zealand': 'NZ',
-            #'Ireland': 'IE',
-            #'South Africa': 'ZA',
-            #'Canada': 'CA',
-            #'Jamaica': 'JM',
+            'Croatia': 'HR',
+            'Great Britain': 'GB',
+            'New Zealand': 'NZ',
+            'Ireland': 'IE',
+            'South Africa': 'ZA',
+            'Canada': 'CA',
+            'Jamaica': 'JM',
             'Germany': 'DE',
-            #'United States': 'US',
-            #'Norway': 'NO',
-            #'Sweden': 'SE',
-            #'Finland': 'FI',
-            #'Australia': 'AU',
-            #'Pakistan': 'PK',
-            #'Spain': 'ES'
+            'United States': 'US',
+            'Norway': 'NO',
+            'Sweden': 'SE',
+            'Finland': 'FI',
+            'Australia': 'AU',
+            'Pakistan': 'PK',
+            'Spain': 'ES'
         }
 
         #get latest from OSM
@@ -239,17 +243,15 @@ class Command(BaseCommand):
         
         osm_shops = ['butcher', 'deli', 'cheese', 'dairy', 'farm', 'coffee', 'greengrocer']
 
-        delete_data()
+        #delete_data()
 
         country_count = len(country_list)
         i = 0
         for k, v in country_list.items():
             i += 1
-            was_updated = get_data_from_OSM(k, v, osm_shops, fresh=False)
-            load_data(k, v)
-            #if was_updated:
-            #   load_data(k, v)
+            was_updated = get_data_from_OSM(k, v, osm_shops, fresh=False, max_days=2)
+            if was_updated:
+               load_data(k, v)
             if was_updated and i != country_count:
                 print('Waiting a bit before I do the next one...')
                 time.sleep(40)
-            
