@@ -6,14 +6,13 @@ from ipware import get_client_ip
 from django.contrib.gis.geoip2 import GeoIP2
 from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.geos import Point
-from django.http import JsonResponse
 from django.contrib.gis.measure import D
 from .forms import StoreSearch
 from .models import Store, StoreType
 from django.utils.encoding import escape_uri_path
 from django.views.generic import RedirectView
 from django.urls import reverse
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.db.models import Count

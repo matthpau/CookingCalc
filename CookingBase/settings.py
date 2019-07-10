@@ -71,7 +71,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
-
     #Datepicker https://github.com/monim67/django-bootstrap-datepicker-plus
     'bootstrap_datepicker_plus',
 
@@ -80,6 +79,9 @@ INSTALLED_APPS = [
 
     #https://django-taggit.readthedocs.io/en/stable/index.html
     'taggit',
+    
+    #https://pypi.org/project/django-bootstrap4/
+    'bootstrap4',
 
 ]
 

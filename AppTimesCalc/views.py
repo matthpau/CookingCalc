@@ -13,7 +13,6 @@ from users.models import CustomUser
 
 # https://docs.djangoproject.com/en/2.2/topics/auth/default/#limiting-access-to-logged-in-users
 
-
 def Home(request):
     return render(request, 'AppTimesCalc/Home.html')
 
@@ -30,7 +29,6 @@ def CalculatorGen(request, CalcType):
     :param ViewType: CookingCalc_w or CookingCalc_p
     :return:
     """
-
 
     if CalcType == 'byWeight':
         MyForm = CalcFormWeight
@@ -191,5 +189,3 @@ def load_cooking_levels(request):
     # WRONG
     # cooking_levels = CookingInfo.objects.filter(MeatType=meat_type)
     return render(request, 'AppTimesCalc/cooking_level_list_options.html', {'CookingLevels': cooking_levels})
-
-

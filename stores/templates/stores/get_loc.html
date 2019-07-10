@@ -11,31 +11,29 @@ https://www.youtube.com/watch?v=fEYx8dQr_cQ for the tutorial
 
 <div class="container">
     <div class="row">
-        <div class="col-sm">
-        </div>
-
-        <div class="col-sm-8">
+        <div class="col-sm-3">
                 <div id="result">
+                    <div class="spinner-border text-info spinner-border-sm" role="status">
+                            <span class="sr-only">Loading...</span>
+                    </div>    
                     Getting your position...
                 </div>
 
             <form>
                 {{ form|crispy}}
             </form>
+            <small>Data provided by <a href="https://www.openstreetmap.org">OpenStreetMap</a></small>
+        </div>
+        
 
+        <div class="col-sm">
             <ul id='store_list' class="list-group-flush">
                     <!--Storelist information will be inserted here-->
                 </ul>
         </div>
-
-        <div class="col-sm">
-        </div>
     </div>
 </div>
 
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 <script>
 $(document).ready(function(){
     var result, lat, lon;
@@ -47,7 +45,6 @@ $(document).ready(function(){
     // If geolocation is available, try to get the visitor's position
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-        result.innerHTML = "Getting your position...";
     } else{
         alert("Sorry, your browser does not support HTML5 geolocation.");
     }
@@ -67,8 +64,10 @@ $(document).ready(function(){
     function successCallback(position) {
         lat = position.coords.latitude;
         lon = position.coords.longitude;
-        result.innerHTML = "Found your location"
-        $(result).delay(2000).hide(500);
+        result.innerHTML = '<div class="alert alert-success" role="alert">' +
+                            'Found your location' +
+                            '</div>'
+        $(result).delay(3000).hide(500);
         populateList()
     }
 
@@ -93,21 +92,22 @@ $(document).ready(function(){
             success: function(stores) {
                 $my_list.empty()
                 $.each(stores, function(i, store){
-                    var list_start = '<li class="list-group-item">'
-                    var new_row_text = store.name + ' | ' + 
-                    store.distance + ' km '  +
+                    var new_row_1 = '<li class="list-group-item">' + store.icon_text +' '+
+                        store.name + ' | ' + store.distance + ' km '  +
+                        '<a class="badge badge-primary" href='+ store.id + '/profile>store profile</a> ' +
+                        '<a class="badge badge-secondary" href=https://www.google.com/maps/search/?api=1' +
+                        store.search_url + '>find on map</a><br>'
+
+                        
+                    var new_row_2 = ''
+                    if(store.friendly_address.length!=0){
+                        new_row_2 = '<small>' + store.friendly_address + '</small><br>'
+                    }
+
+                    var new_row_3 = '<button type="submit" class="btn btn-light">Likes <span class="badge badge-dark">' +
+                    store.likes_total + '</span></button><br></li>'
                     
-                    '<a class="badge badge-primary" href='+ store.id + '/profile>store profile</a> ' +
-                    '<a class="badge badge-secondary" href=https://www.google.com/maps/search/?api=1' +
-                    store.search_url + '>find on map</a><br>' +
-                    '<small>' + store.friendly_address + '</small><br>' +
-                    
-                    '<button type="submit" class="btn btn-light">Likes <span class="badge badge-dark">' +
-                    store.likes_total + '</span></button><br>' +
-    
-                    '</li>'
-                    
-                    var new_row_final = list_start.concat(store.icon_text, ' ', new_row_text)
+                    var new_row_final = new_row_1.concat(new_row_2, new_row_3)
                     $my_list.append(new_row_final)
                 })
             },
