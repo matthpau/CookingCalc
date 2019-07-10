@@ -3,27 +3,35 @@
 
 {% block content %}
 <h1>{{ store.name }}</h1>
-<p>{{ store.OSM_storetype|safe }}</p>
+<h5>{{ store.OSM_storetype.icon_text|safe }} <span class="badge badge-light">{{ store.OSM_storetype.type_text|capfirst }}</span></h5>
 
 {% if store.my_address %}
-    <p>{{ store.my_address}}</p>
-{% else %}
-    <small>
-        No address found
-    </small>
+    {{ store.my_address}}<br>
 {% endif %}
-<small>
-<a href="https://www.openstreetmap.org/node/{{ store.OSM_ID }}">Edit on OpenStreetmap (requires OSM account)</a>
-</small>
 
+{% if store.website %}
+    <a href="{{ store.website }}">{{ store.website }}</a><br>
+{% endif %}
+
+<a class="badge badge-secondary" href="{{ store.search_url }}">find on map</a>
+
+<br><br>
 <form action="{% url 'store:store_like' store.id %}" method="POST">
     {% csrf_token %}
     {% if is_liked %}
-        <button type='submit' class='btn btn-warning'>UNLIKE</button>
+        <button type="submit" class="btn btn-info">
+        Unlike <span class="badge badge-light">{{ store.likes.count }}</span>
+        </button>
     {% else %}
-        <button type='submit' class='btn btn-primary'>LIKE</button>
+        <button type="submit" class="btn btn-primary">
+        Like <span class="badge badge-light">{{ store.likes.count }}</span>
+        </button>
     {% endif %}
 </form>
 
-<p>Likes: {{ store.likes.count }}</p>
+<small>
+    <a href="https://www.openstreetmap.org/node/{{ store.OSM_ID }}">Edit on OpenStreetmap (requires account)</a>
+</small>
+<br><br>
+
 {% endblock %}

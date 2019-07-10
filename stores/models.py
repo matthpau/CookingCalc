@@ -3,6 +3,7 @@ from django.contrib.gis.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 from taggit.managers import TaggableManager
+from django.utils.encoding import escape_uri_path
 
 # https://realpython.com/location-based-app-with-geodjango-tutorial/
 
@@ -18,7 +19,7 @@ class StoreType(models.Model):
     icon_text = models.CharField(max_length=50)
     
     def __str__(self):
-        return self.icon_text
+        return self.type_text
 
 class Store(models.Model):
     name = models.CharField(max_length=100)
@@ -28,17 +29,17 @@ class Store(models.Model):
     add_house_number = models.CharField(max_length=100)
     add_street = models.CharField(max_length=100)
     add_postcode = models.CharField(max_length=20)
-    add_city = models.CharField(max_length=50)
+    add_city = models.CharField(max_length=100)
     add_country = models.CharField(max_length=20)
     email = models.EmailField()
 
     my_name = models.CharField(max_length=100)
-    my_address = models.CharField(max_length=200)
+    my_address = models.CharField(max_length=300)
     my_country = models.ForeignKey(Country, null=True, on_delete=models.SET_NULL)
 
     phone = models.CharField(max_length=50)
     opening_hours = models.CharField(max_length=200)
-    website = models.CharField(max_length=50)
+    website = models.TextField(null=True)
     OSM_ID = models.BigIntegerField(unique=True)
     OSM_storetype = models.ForeignKey(StoreType, null=True, on_delete=models.SET_NULL)
     likes = models.ManyToManyField(get_user_model(), blank=True, related_name='store_likes')
@@ -51,6 +52,9 @@ class Store(models.Model):
 
     def get_absolute_url(self):
         return reverse('store:store_profile', kwargs={'store_id': self.pk})
+
+    def search_url(self):
+        return  'https://www.google.com/maps/search/?api=1&query=' + escape_uri_path(self.name) + '@' + str(self.lat) + ',' + str(self.lon)
 
 
 class StoreComment(models.Model):

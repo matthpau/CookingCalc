@@ -16,9 +16,11 @@ from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.db.models import Count
 
 def store_profile(request, store_id):
     store = get_object_or_404(Store, pk=store_id)
+
     is_liked = False
     if store.likes.filter(id=request.user.id).exists():
         is_liked = True
@@ -29,7 +31,6 @@ def store_profile(request, store_id):
         }
 
     return render(request, 'stores/profile.html', context)
-
 
 
 def store_search(request):
@@ -55,7 +56,6 @@ def store_search(request):
     # Get location from IP address
     g = GeoIP2()
     city = g.city(found_ip)
-    print(city)
     lat, lon = g.lat_lon(found_ip)
 
     # Have a bit of fun
@@ -88,6 +88,10 @@ def process_loc(request):
     lat = float(request.GET.get('lat'))
     lon = float(request.GET.get('lon'))
     search_dis = request.GET.get('search_distance')
+    sort_order = int(request.GET.get('sort_order'))
+    store_filter = request.GET.get('store_filter')
+
+    print('store_filter', store_filter)
 
     user_location = Point(lon, lat, srid=4326)
 
@@ -96,13 +100,24 @@ def process_loc(request):
     #Filter stores by distance
     store_results = Store.objects.filter(location__distance_lte=(user_location, D(km=search_dis))) \
                     .annotate(distance=Distance('location', user_location)) \
-                    .order_by('distance').values()
+                    .annotate(likes_total=Count('likes', distinct=True)) \
+                    
+    if sort_order == 1: #Distance
+        store_results = store_results.order_by('distance')
+    elif sort_order == 2: #Likes
+       store_results = store_results.order_by('-likes_total')
+
+    if store_filter:
+
+        store_results = store_results.filter(OSM_storetype_id=store_filter)
+  
+    store_results = store_results.values()
 
     # since this is a dictionary with location (non serializable) and a calculated Distance, I
     # need to convert it the long way to a dictionary
     return_data = []
     for store in store_results:
-        #print(store)
+
         ww_dict = {}
         for key, val in store.items():
             if key == 'distance':
@@ -113,6 +128,7 @@ def process_loc(request):
                 ww_dict['icon_text'] = StoreType.objects.values().get(pk=val)['icon_text']
             else:
                 ww_dict[key] = val
+
         # Create a google maps friendly search
         search_url = '&query=' + escape_uri_path(store['name']) + '@' + str(store['lat']) + ',' + str(store['lon'])
         ww_dict['search_url'] = search_url
@@ -121,8 +137,9 @@ def process_loc(request):
         result = store['add_house_number'] + ' ' + store['add_street'] + ' ' + store['add_city'] + ' ' + store['add_country']
         result = result.replace('unknown', '')
         result = result.lstrip().rstrip()
-        
+            
         ww_dict['friendly_address'] = result
+        
         return_data.append(ww_dict)
 
     return JsonResponse(return_data, safe=False)

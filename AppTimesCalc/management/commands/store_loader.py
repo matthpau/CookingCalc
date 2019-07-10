@@ -22,10 +22,10 @@ class Command(BaseCommand):
         import_folder = 'dumps/store_import'
 
         def delete_data():
+            print('clearing all records')
             Store.objects.all().delete()
-            print('All records have been deleted')
+            print('all records have been deleted')
             print()
-
 
         #https://wiki.openstreetmap.org/wiki/Overpass_API/Language_Guide
         def get_data_from_OSM(country_name, country_code, osm_shops, fresh=False):
@@ -88,12 +88,24 @@ class Command(BaseCommand):
             print()
             return was_replaced
 
+        def make_website(url_text):
+            result = ''
+            if url_text:
+                if url_text[:4] != 'http':
+                    result = 'http://' + url_text
+                else:
+                    result = url_text
+            else:
+                result = ''
+
+            return result
+
         def load_data(country_name, country_code):
             nice_name = country_name
             country_name = country_name.replace(' ', '_').lower()
 
             #Add country to list of countries if not there
-            c, created = Country.objects.get_or_create(
+            country, created = Country.objects.get_or_create(
                 pk=country_code,
                 defaults={'name':nice_name}
                 )
@@ -125,7 +137,7 @@ class Command(BaseCommand):
                             obj_type = obj['type']
                             if obj_type == 'node':
                                 tags = obj['tags']
-                                store_name = tags.get('name', 'no-name')
+                                store_name = tags.get('name', tags.get('shop') + ', name unknown')
                                 longitude = obj.get('lon', 0)
                                 latitude = obj.get('lat', 0)
                                 location = fromstr(f'POINT({longitude} {latitude})', srid=4326)
@@ -157,13 +169,14 @@ class Command(BaseCommand):
                                     s = shop(name=store_name,
                                              my_name=store_name,
                                              my_address=address,
-                                             my_country=c,
+                                             my_country=country,
                                              location=location,
                                              add_house_number=tags.get('addr:housenumber', ''),
                                              add_street=tags.get('addr:street', ''),
                                              add_postcode=tags.get('addr:postcode', ''),
                                              add_city=tags.get('addr:city', ''),
                                              add_country=tags.get('addr:country', ''),
+                                             website=make_website(tags.get('website', '')),
                                              OSM_ID=osmid,
                                              OSM_storetype=o,
                                              lat=latitude,
@@ -172,11 +185,11 @@ class Command(BaseCommand):
                                     s.save()
                                     i += 1
 
-
                                 except IntegrityError:
                                     s = Store.objects.get(OSM_ID=osmid)
                                     s.name = store_name
                                     s.location = location
+                                    s.website = make_website(tags.get('website', ''))
                                     s.add_house_number = tags.get('addr:housenumber', '')
                                     s.add_street = tags.get('addr:street', '')
                                     s.add_postcode = tags.get('addr:postcode', '')
@@ -194,8 +207,8 @@ class Command(BaseCommand):
                                     
                                     skipped += 1
                                 except DataError:
-                                    print('Problem with', obj)
-                                    print()
+                                    if osmid in (4460930566, 5639587561):
+                                        print('Problem with', obj)
 
                         except KeyError:
                             pass
@@ -204,24 +217,23 @@ class Command(BaseCommand):
 
         # https://www.nationsonline.org/oneworld/country_code_list.htm
         country_list = {
-            'Croatia': 'HR',
-            'Great Britain': 'GB',
-            'New Zealand': 'NZ',
-            'Ireland': 'IE',
-            'South Africa': 'ZA',
-            'Canada': 'CA',
-            'Jamaica': 'JM',
+            #'Croatia': 'HR',
+            #'Great Britain': 'GB',
+            #'New Zealand': 'NZ',
+            #'Ireland': 'IE',
+            #'South Africa': 'ZA',
+            #'Canada': 'CA',
+            #'Jamaica': 'JM',
             'Germany': 'DE',
-            'United States': 'US',
-            'Norway': 'NO',
-            'Sweden': 'SE',
-            'Finland': 'FI',
-            'Australia': 'AU',
-            'Pakistan': 'PK',
-            'Spain': 'ES'
+            #'United States': 'US',
+            #'Norway': 'NO',
+            #'Sweden': 'SE',
+            #'Finland': 'FI',
+            #'Australia': 'AU',
+            #'Pakistan': 'PK',
+            #'Spain': 'ES'
         }
 
-        
         #get latest from OSM
         #https://wiki.openstreetmap.org/wiki/Map_Features#Shop
         

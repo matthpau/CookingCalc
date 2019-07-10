@@ -56,6 +56,14 @@ $(document).ready(function(){
         populateList()
     })
 
+    $('#id_sort_order').on('change', function(){
+        populateList()
+    })
+
+    $('#id_store_type').on('change', function(){
+        populateList()
+    })
+
     function successCallback(position) {
         lat = position.coords.latitude;
         lon = position.coords.longitude;
@@ -78,25 +86,28 @@ $(document).ready(function(){
                 'lat': lat,
                 'lon': lon,
                 'search_distance': $('#id_search_distance').val(),
+                'sort_order': $('#id_sort_order').val(),
+                'store_filter': $('#id_store_type').val()
             },
             dataType : "json",
             success: function(stores) {
                 $my_list.empty()
                 $.each(stores, function(i, store){
-                    console.log(store.OSM_storetype)
                     var list_start = '<li class="list-group-item">'
-
-                    var new_row_text = store.name + ', ' + 
-                    store.distance + ' km<br><small>'  +
-                    store.friendly_address + '</small> ' +
+                    var new_row_text = store.name + ' | ' + 
+                    store.distance + ' km '  +
+                    
                     '<a class="badge badge-primary" href='+ store.id + '/profile>store profile</a> ' +
                     '<a class="badge badge-secondary" href=https://www.google.com/maps/search/?api=1' +
-                    store.search_url + '>find on map</a>'
-
-
-                    var new_row_final = list_start.concat(store.icon_text, ' ', new_row_text, '</li>')
-                    console.log(new_row_final)
-
+                    store.search_url + '>find on map</a><br>' +
+                    '<small>' + store.friendly_address + '</small><br>' +
+                    
+                    '<button type="submit" class="btn btn-light">Likes <span class="badge badge-dark">' +
+                    store.likes_total + '</span></button><br>' +
+    
+                    '</li>'
+                    
+                    var new_row_final = list_start.concat(store.icon_text, ' ', new_row_text)
                     $my_list.append(new_row_final)
                 })
             },
