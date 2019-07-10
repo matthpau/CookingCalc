@@ -81,7 +81,6 @@ INSTALLED_APPS = [
     'taggit',
     
     #https://pypi.org/project/django-bootstrap4/
-    'bootstrap4',
 
 ]
 

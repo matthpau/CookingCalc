@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/AppTimesCalc/businessLogic.py" line="76" mnemonic="8" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +57,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="238">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -479,14 +480,7 @@
       <workItem from="1562223881576" duration="9355000" />
       <workItem from="1562256380465" duration="2485000" />
       <workItem from="1562327602990" duration="11000" />
-      <workItem from="1562759986837" duration="689000" />
-    </task>
-    <task id="LOCAL-00070" summary="A good days work">
-      <created>1561121673080</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1561121673081</updated>
+      <workItem from="1562759986837" duration="730000" />
     </task>
     <task id="LOCAL-00071" summary="A good days work">
       <created>1561124828300</created>
@@ -824,7 +818,14 @@
       <option name="project" value="LOCAL" />
       <updated>1562760660888</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="A good days work">
+      <created>1562760685676</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1562760685676</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -839,7 +840,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223425000" />
+    <option name="totallyTimeSpent" value="223466000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -852,7 +853,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48031497" visible="true" weight="0.26466382" />
       <window_info id="Structure" order="1" sideWeight="0.51968503" side_tool="true" weight="0.2353362" />
@@ -1367,8 +1367,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
