@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="A good days work">
+    <list default="true" id="3531f458-bf8c-4ad8-9dc0-7954d83986c7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +52,17 @@
     <favorites_list name="CookingBase" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -216,19 +225,19 @@
     <property name="settings.editor.splitter.proportion" value="0.27569443" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/scripts" />
-      <recent name="$PROJECT_DIR$/dumps/store_import" />
-      <recent name="$PROJECT_DIR$/dumps" />
-      <recent name="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter" />
-      <recent name="$PROJECT_DIR$/AppTimesCalc/management/commands" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/stores/templates/stores" />
       <recent name="$PROJECT_DIR$/AppTimesCalc/management/commands" />
       <recent name="$PROJECT_DIR$/dumps/store_import" />
       <recent name="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter" />
       <recent name="$PROJECT_DIR$/AppTimesCalc/templates/AppTimesCalc" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/scripts" />
+      <recent name="$PROJECT_DIR$/dumps/store_import" />
+      <recent name="$PROJECT_DIR$/dumps" />
+      <recent name="$PROJECT_DIR$/RecipeConverter/templates/RecipeConverter" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -470,28 +479,7 @@
       <workItem from="1562223881576" duration="9355000" />
       <workItem from="1562256380465" duration="2485000" />
       <workItem from="1562327602990" duration="11000" />
-      <workItem from="1562759986837" duration="512000" />
-    </task>
-    <task id="LOCAL-00067" summary="A good days work">
-      <created>1560962678077</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1560962678078</updated>
-    </task>
-    <task id="LOCAL-00068" summary="A good days work">
-      <created>1560983974904</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1560983974905</updated>
-    </task>
-    <task id="LOCAL-00069" summary="A good days work">
-      <created>1561056072829</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1561056072829</updated>
+      <workItem from="1562759986837" duration="689000" />
     </task>
     <task id="LOCAL-00070" summary="A good days work">
       <created>1561121673080</created>
@@ -815,7 +803,28 @@
       <option name="project" value="LOCAL" />
       <updated>1562760220471</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="A good days work">
+      <created>1562760555182</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1562760555183</updated>
+    </task>
+    <task id="LOCAL-00117" summary="A good days work">
+      <created>1562760626713</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1562760626713</updated>
+    </task>
+    <task id="LOCAL-00118" summary="A good days work">
+      <created>1562760660887</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1562760660888</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -830,7 +839,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223248000" />
+    <option name="totallyTimeSpent" value="223425000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -843,6 +852,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48031497" visible="true" weight="0.26466382" />
       <window_info id="Structure" order="1" sideWeight="0.51968503" side_tool="true" weight="0.2353362" />
@@ -1057,13 +1067,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="db://cbe00abd-04bf-42e2-bbe4-56b12bbeaa66/consoles/CookingCalc">
-      <provider selected="true" editor-type-id="0.CONSOLE">
-        <state line="0" column="0" selection-start="0" selection-end="24" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stores/migrations/0002_auto_20190701_1348.py" />
     <entry file="file://$PROJECT_DIR$/dumps/store_import/export.json" />
     <entry file="file://$PROJECT_DIR$/scripts/deploy_prep.py">
@@ -1359,10 +1362,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
