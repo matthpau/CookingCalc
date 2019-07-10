@@ -2,7 +2,6 @@
 *~
 __pycache__
 CookingEnv
-db.sqlite3
 /static
 .DS_Store
 MediaManagement
