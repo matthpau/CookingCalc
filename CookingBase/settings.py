@@ -79,9 +79,6 @@ INSTALLED_APPS = [
 
     #https://django-taggit.readthedocs.io/en/stable/index.html
     'taggit',
-    
-    #https://pypi.org/project/django-bootstrap4/
-
 ]
 
 MIDDLEWARE = [
@@ -118,50 +115,6 @@ WSGI_APPLICATION = 'CookingBase.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 #forproduction
-"""
-DATABASES = {
-     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'matthpau$CookingCalc',
-        'USER': 'matthpau',
-        'PASSWORD': my_secrets.PDN_DB_PASSWORD,
-        'HOST': 'matthpau.mysql.pythonanywhere-services.com',
-        'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-                    },
-                }
-            }
-"""
-
-# About Strict Trans Tables mode
-# https://django-mysql.readthedocs.io/en/latest/checks.html
-# for local SQL
-"""
-DATABASES = {
-     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cooking_calc',
-        'USER': 'root',
-        'PASSWORD': my_secrets.LOC_DB_PASSWORD,
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-                    },
-                }
-            }
-"""
-
-"""
-for local original mysql
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-"""
 #For Local PostGres SQL
 #https://postgresapp.com/
 DATABASES = {
@@ -175,10 +128,19 @@ DATABASES = {
     }
 }
 
-#For production PostGres SQL
-# https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-14-04
-
-
+"""
+LIVE VERSION ON PYTHON ANYWHERE
+DATABASES = {
+    "default": {
+        "ENGINE": "django.contrib.gis.db.backends.postgis",
+        "NAME": "cookingcalc",
+        "USER": "super",
+        "PASSWORD": "5UHZ#t2%m!Tw",
+        "HOST": "matthpau-1212.postgres.pythonanywhere-services.com",
+        "PORT": "11212",
+    }
+}
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

@@ -4,6 +4,7 @@ import time
 from django.core.management.base import BaseCommand
 from django.conf import settings
 import requests
+from stores.models import Store
 
 # https://docs.djangoproject.com/en/2.2/howto/custom-management-commands/
 # https://towardsdatascience.com/loading-data-from-openstreetmap-with-python-and-the-overpass-api-513882a27fd0
@@ -245,13 +246,24 @@ class Command(BaseCommand):
 
         #delete_data()
 
+        #Check number of records in store table - is this a first time load?
+        #if yes, then force a load from any existing tables
+        existing_count = Store.objects.count()
+
+        print('existing records', existing_count)
+    
         country_count = len(country_list)
         i = 0
         for k, v in country_list.items():
             i += 1
             was_updated = get_data_from_OSM(k, v, osm_shops, fresh=False, max_days=2)
-            if was_updated:
-               load_data(k, v)
+            
+            if existing_count > 1: # already records exist
+                if was_updated: # and we got new data
+                   load_data(k, v)
+            else:   # no records exist
+                load_data(k, v) # do a load regardless
+
             if was_updated and i != country_count:
                 print('Waiting a bit before I do the next one...')
                 time.sleep(40)
