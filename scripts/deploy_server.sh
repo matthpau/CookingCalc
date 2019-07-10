@@ -15,7 +15,7 @@
 
 #!/usr/bin/env bash
 python manage.py collectstatic
-python manage.py makemigrations
+#python manage.py makemigrations
 python manage.py migrate
 python manage.py loaddata dumps/MeatType.json
 python manage.py loaddata dumps/CookingLevel.json
