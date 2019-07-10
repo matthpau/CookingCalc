@@ -6,5 +6,4 @@ db.sqlite3
 /static
 .DS_Store
 /MediaManagement
-./dumps/store_import
-my_secrets.py
+/CookingBase/my_secrets.py
