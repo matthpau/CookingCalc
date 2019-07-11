@@ -16,7 +16,7 @@
 <a class="badge badge-secondary" href="{{ store.search_url }}">find on map</a>
 
 <br><br>
-<form action="{% url 'store:store_like' store.id %}" method="POST">
+<form action="{% url 'store:store_like' store.id 1 %}" method="POST">
     {% csrf_token %}
     {% if is_liked %}
         <button type="submit" class="btn btn-info">

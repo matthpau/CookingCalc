@@ -129,7 +129,7 @@ def process_loc(request):
                 ww_dict[key] = val
 
         # Create a google maps friendly search
-        search_url = '&query=' + escape_uri_path(store['name']) + '@' + str(store['lat']) + ',' + str(store['lon'])
+        search_url = '&query=' + str(store['lat']) + ',' + str(store['lon'])
         ww_dict['search_url'] = search_url
 
         # Create a friendly address
@@ -144,7 +144,8 @@ def process_loc(request):
     return JsonResponse(return_data, safe=False)
 
 @login_required
-def store_like(request, store_id):
+def store_like(request, store_id, source):
+    print(source)
     my_store = get_object_or_404(Store, id=store_id)
 
     if my_store.likes.filter(id=request.user.id).exists():
