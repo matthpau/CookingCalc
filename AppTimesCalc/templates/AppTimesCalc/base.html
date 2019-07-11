@@ -99,11 +99,14 @@
 <br>
 
 {% if messages %}
-<div class="alert alert-info" role="alert">
     {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
         {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
     {% endfor %}
-</div>
 {% endif %}
 
 {% block content %}
@@ -113,11 +116,13 @@
 {% endif %}
 </div>
 
+
 <script>
 $(document).ready(function() {
-    $(".alert").delay(5000).slideUp(500)
+    $(".alert").delay(10000).slideUp(500)
 })
 </script>
+
 
 </body>
 </html>
