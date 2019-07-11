@@ -20,5 +20,6 @@ urlpatterns = [
     path('', include('AppTimesCalc.urls')),
     path('converter/', include('RecipeConverter.urls')),
     path('stores/', include('stores.urls')),
+    path('users/', include('users.urls')),
     path('admin/', admin.site.urls),
 ]
