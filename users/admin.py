@@ -9,14 +9,13 @@ class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = CustomUser
-    list_display = ['email', 'username', ]
+    list_display = ['id', 'email', 'username', ]
 
-
-#class ProfileAdmin(UserAdmin):
-#   model = Profile
-    #list_display = ['email', 'username', ]
-
+class ProfileAdmin(admin.ModelAdmin):
+    model = Profile
+    list_display = ['id', 'user']
+    readonly_fields = ['auto_address']
 
 admin.site.register(CustomUser, CustomUserAdmin)
-admin.site.register(Profile)
+admin.site.register(Profile, ProfileAdmin)
 admin.site.register(Country)

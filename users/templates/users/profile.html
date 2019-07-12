@@ -1,14 +1,78 @@
 {% extends 'AppTimesCalc/base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
-
 {% block content %}
 
-<form method="post">
-    {% csrf_token %}
-    {{ user_form|crispy }}
-    {{ profile_form|crispy }}
-    <button class="btn btn-primary" type="submit">Save changes</button>
-  </form>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    
+    <div class="col-sm-6">
+      <form method="post">
+        {% csrf_token %}
+        {{ user_form|crispy }}
+        {{ profile_form|crispy}}
+        <!---{{ profile_form.add_1|as_crispy_field}}
+        {{ profile_form.add_2|as_crispy_field}}
+        {{ profile_form.add_city|as_crispy_field}}
+        {{ profile_form.add_postcode|as_crispy_field}}
+        {{ profile_form.add_country|as_crispy_field}}
+
+        {{ profile_form.found_address|as_crispy_field}}
+        {{ profile_form.temp_address|as_crispy_field}}
+        {{ profile_form.local_offer_receive|as_crispy_field}}
+        {{ profile_form.local_offer_radius|as_crispy_field}}
+        -->
+  
+        <button id="btn_find_address" type="button" class="btn btn-secondary">Find Address</button>
+        <p id="found_address"></p>
+        <button class="btn btn-primary" type="submit">Save changes</button>
+        <a href="/">Home</a>
+      </form>
+    </div>
+
+    <div class="col-sm">
+    </div>
+
+  </div>
+</div>
+
+<script>
+  $(function (){
+  
+  $('#btn_find_address').on('click', function(){
+    console.log('clicked')
+    var my_addr = {
+      'csrfmiddlewaretoken': '{{ csrf_token }}',
+      email: $('#id_email').val(),
+      add_1: $('#id_add_1').val(),
+      add_2: $('#id_add_2').val(),
+      city: $('#id_add_city').val(),
+      postcode: $('#id_add_postcode').val(),
+      country: $('#id_add_country').val(),
+    }
+    console.log(my_addr)
+
+
+    $.ajax({
+      type: 'POST',
+      url: "/users/check_address",
+      data: my_addr,
+      success: function(data){
+        console.log(data)
+        console.log(data.found_address)
+
+        $('#found_address').html(data.found_address)
+        }
+    })
+  })
+  })
+
+
+</script>
+
+
 
 {% endblock %}

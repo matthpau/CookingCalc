@@ -27,6 +27,15 @@ class UserForm(forms.ModelForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('add_1', 'add_2', 'add_city', 
-        'add_country', 
-        'add_postcode','local_offer_receive', 'local_offer_radius')
+        fields = ['add_1', 'add_2', 'add_city', 'add_postcode', 'add_country', 'found_address',
+        'local_offer_receive', 'local_offer_radius', 'temp_address']
+        #widgets = {'found_address': forms.TextInput(attrs={'disabled': True})}
+        
+    def clean(self):
+        cleaned_data = super().clean()
+        get_offers = cleaned_data.get('local_offer_receive') 
+        offers_radius = cleaned_data.get('local_offer_radius')
+
+        if get_offers and offers_radius <= 0:
+            raise forms.ValidationError("If you'd like to receive offers, please enter a valid radius")
+

@@ -69,7 +69,7 @@ def get_temp_str(conv_type, match):
     old_temp = int(match.group(1))
     given_type = match.group(2).lower()
 
-    #TODO can put pretty_weight in here instead
+    
     if conv_type == 'met' and given_type == 'c':  # from c to f
         new_temp = int((old_temp * 9 / 5) + 32)
         new_temp -= (new_temp % -10)  # round up to nearest 10
@@ -156,8 +156,7 @@ def converter(inputs):
     conv_msg = 'Converting to ' + conv_names[conv_lookup]
     if conv_auto:
         conv_msg = conv_msg + ' (auto-detected)'
-
-    #TODO need to convert 'a stick' 'a cup' into '1 stick'
+    
 
 
     # MAKE IMPERIAL OR METRIC CUPS AND SPOONS

@@ -133,8 +133,6 @@ class MealPlanList(LoginRequiredMixin, ListView):
         #  https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#dynamic-filtering
         return MealPlan.objects.filter(User=self.request.user).order_by('-created_at')  # [:5]
 
-#TODO can delete?
-
 
 class MealPlanDetail(DetailView):
     queryset = MealPlan.objects.all()
@@ -151,7 +149,6 @@ class MealPlanUpdate(UpdateView):
         return get_object_or_404(MealPlan, id=id_)
 
     def form_valid(self, form):
-        print(form.cleaned_data)
         return super().form_valid(form)
 
 
