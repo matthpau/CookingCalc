@@ -31,23 +31,20 @@ class CustomUser(AbstractUser):
 class Profile(models.Model):
     user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, blank=True)
+    
     found_location = models.PointField(null=True, blank=True)
     found_address = models.CharField(max_length=500, null=True, blank=True)
 
-    temp_location = models.PointField(null=True, blank=True)    # used during profile if user enters / changes address
-    temp_address = models.CharField(max_length=500, null=True, blank=True)  # used during profile if user enters / changes address
-    temp2 = models.CharField(max_length=500, null=True, blank=True)
-
     birth_date = models.DateField(null=True, blank=True)
-    add_1 = models.CharField(max_length=100, default='', verbose_name='Address 1')
+    add_1 = models.CharField(max_length=100, default='', verbose_name='Address 1', blank=True)
     add_2 = models.CharField(max_length=100, default='', verbose_name='Address 2', blank=True)
     add_3 = models.CharField(max_length=100, default='', verbose_name='Address 3', blank=True)
     add_postcode = models.CharField(max_length=20, default='', blank=True, verbose_name='Postcode')
-    add_city = models.CharField(max_length=100, default='', verbose_name='City')
-    add_country = models.ForeignKey(Country, null=True, on_delete=models.SET_NULL, verbose_name='Country')
+    add_city = models.CharField(max_length=100, default='', verbose_name='City', blank=True)
+    add_country = models.ForeignKey(Country, null=True, on_delete=models.SET_NULL, verbose_name='Country', blank=True)
 
     local_offer_receive = models.BooleanField(default=False, verbose_name="I would like to receive newsletters with local offers")
-    local_offer_radius = models.FloatField(default=5, verbose_name="Search radius for local offers (km)")
+    local_offer_radius = models.FloatField(default=5, blank=True, verbose_name="Search radius for local offers (km)")
 
     def __str__(self):
         return str(self.user)

@@ -4,8 +4,6 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 from .models import Profile
-from .models import CustomUser
-from django.contrib import messages
 
 
 @receiver(post_save, sender=get_user_model())
@@ -14,21 +12,13 @@ def create_user_profile(sender, instance, created, **kwargs):
         Profile.objects.create(user=instance)
         #equivalent to a = Profile(user=instance), a.save()
 
-"""
-NOT NEEDED
-@receiver(post_save, sender=get_user_model())
-def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
-
-"""
 # Prevent recursion
 # https://stackoverflow.com/questions/10840030/django-post-save-preventing-recursion-without-overriding-model-save
 
-"""
-moved from signals to jquery in profile.html
+
 @receiver(post_save, sender=Profile)
 def update_geo_info(sender, instance, created, **kwargs):
-
+    print("GEO", instance.found_address)
     if not instance:
         return
 
@@ -39,23 +29,21 @@ def update_geo_info(sender, instance, created, **kwargs):
     from geopy.geocoders import Nominatim
 
     geolocator = Nominatim(user_agent="CookingCalc")
-    my_addr = geolocator.geocode(instance.auto_address)
-    if my_addr:
+    my_loc = geolocator.geocode(instance.found_address)
+    if my_loc:
         
-        lat, lon = (my_addr.latitude, my_addr.longitude)
+        lat, lon = (my_loc.latitude, my_loc.longitude)
         location = fromstr(f'POINT({lon} {lat})', srid=4326)
-        
-        instance.found_address = my_addr.address
-        instance.found_location = location
 
-    else:
-        instance.found_address = ''
-        return
+        print(lat, lon, location)
+        
+        instance.lat = lat
+        instance.lon = lon
+        instance.found_location = location
 
     try:
         instance._dirty = True
         instance.save()
     finally:
         del instance._dirty
-
-"""
+    

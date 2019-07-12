@@ -83,12 +83,14 @@ class Command(BaseCommand):
                 if r.status_code == 200:
                     with open(save_file, 'w') as f:
                         json.dump(r.json(), f)
-                        print('File write complete')
+                        print('Local save complete')
                         was_replaced = True
                 else:
                     print('failed', r.status_code)
-                    print('url', r.url)
-                    print('query', overpass_query)
+                    if r.status_code == 429:
+                        print('Code 429: too much work for OpenStreetMap')
+                    #print('url', r.url)
+                    #print('query', overpass_query)
 
             print()
             return was_replaced
@@ -212,12 +214,11 @@ class Command(BaseCommand):
                                     
                                     skipped += 1
                                 except DataError:
-                                    if osmid in (4460930566, 5639587561):
-                                        print('Problem with', obj)
+                                    print('Problem with', obj)
 
                         except KeyError:
                             pass
-                print('    ', i, 'stores loaded, ', skipped, 'stores updated')
+                print('    ', i, 'new stores loaded, ', skipped, 'stores updated')
                 print()
 
         # https://www.nationsonline.org/oneworld/country_code_list.htm
@@ -236,20 +237,29 @@ class Command(BaseCommand):
             'Finland': 'FI',
             'Australia': 'AU',
             'Pakistan': 'PK',
-            'Spain': 'ES'
+            'Spain': 'ES',
+            'France': 'FR', 
+            'Switzerland': 'CH',
+            'Denmark': 'DK',
+            'Latvia': 'LV',
+            'Lithuania': 'LT',
+            'Estonia': 'EE',
+            'Greece': 'GR'
+
+
+
         }
 
         #get latest from OSM
         #https://wiki.openstreetmap.org/wiki/Map_Features#Shop
         
-        osm_shops = ['butcher', 'deli', 'cheese', 'dairy', 'farm', 'coffee', 'greengrocer']
+        osm_shops = ['butcher', 'deli', 'cheese', 'dairy', 'farm', 'coffee', 'greengrocer', 'tea', 'spices']
 
         #delete_data()
 
         #Check number of records in store table - is this a first time load?
         #if yes, then force a load from any existing tables
         existing_count = Store.objects.count()
-
         print('existing records', existing_count)
     
         country_count = len(country_list)
@@ -265,5 +275,6 @@ class Command(BaseCommand):
                 load_data(k, v) # do a load regardless
 
             if was_updated and i != country_count:
-                print('Waiting a bit before I do the next one...')
-                time.sleep(40)
+                print('    Waiting a bit before I do the next one...')
+                print()
+                time.sleep(60)

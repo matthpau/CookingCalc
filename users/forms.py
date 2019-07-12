@@ -22,14 +22,24 @@ class CustomUserChangeForm(UserChangeForm):
 class UserForm(forms.ModelForm):
     class Meta:
         model = CustomUser
-        fields = ('first_name', 'last_name', 'email')
+        fields = ('first_name', 'last_name')
+
 
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['add_1', 'add_2', 'add_city', 'add_postcode', 'add_country', 'found_address',
-        'local_offer_receive', 'local_offer_radius', 'temp_address']
-        #widgets = {'found_address': forms.TextInput(attrs={'disabled': True})}
+        fields = [
+            'add_1',
+            'add_2',
+            'add_city',
+            'add_postcode',
+            'add_country',
+            'found_address',
+            'local_offer_receive',
+            'local_offer_radius']
+        widgets = {'found_address': forms.TextInput(attrs={
+            'readonly': True,
+            })}
         
     def clean(self):
         cleaned_data = super().clean()

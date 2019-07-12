@@ -10,10 +10,10 @@ class StoreSearch(forms.Form):
                 ]
 
     SORT_CHOICES = [
-                (1,'Distance'),
-                (2,'Likes')
-    ]
+                (1, 'Distance'),
+                (2, 'Likes')
+                ]
 
-    search_distance = forms.ChoiceField(choices=DIST_CHOICES, initial='10')
-    sort_order = forms.ChoiceField(choices=SORT_CHOICES, initial='Distance')
+    search_distance = forms.ChoiceField(choices=DIST_CHOICES, initial='5')
+    sort_order = forms.ChoiceField(choices=SORT_CHOICES, label='Sort by', initial='Distance')
     store_type = forms.ModelChoiceField(StoreType.objects.all(), empty_label="All stores")
