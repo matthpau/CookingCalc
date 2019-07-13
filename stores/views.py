@@ -1,7 +1,5 @@
 import json
 from django.shortcuts import get_object_or_404, render
-from django.views.generic import CreateView, ListView
-from geopy.geocoders import Nominatim
 from ipware import get_client_ip
 from django.contrib.gis.geoip2 import GeoIP2
 from django.contrib.gis.db.models.functions import Distance
@@ -9,24 +7,23 @@ from django.contrib.gis.geos import Point
 from django.contrib.gis.measure import D
 from .forms import StoreSearch
 from .models import Store, StoreType
-from django.utils.encoding import escape_uri_path
-from django.views.generic import RedirectView
-from django.urls import reverse
-from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-from django.contrib.auth.models import User
+from django.http import HttpResponseRedirect, JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.db.models import Count
+from django.template.loader import render_to_string
 
 def store_profile(request, store_id):
-    store = get_object_or_404(Store, pk=store_id)
+    my_store = get_object_or_404(Store, pk=store_id)
 
     is_liked = False
-    if store.likes.filter(id=request.user.id).exists():
+    if my_store.likes.filter(id=request.user.id).exists():
         is_liked = True
 
     context = {
-        'store': store,
-        'is_liked': is_liked
+        'store': my_store,
+        'is_liked': is_liked,
+        'store_id': store_id,
+        'total_likes': my_store.total_likes(),
         }
 
     return render(request, 'stores/profile.html', context)
@@ -144,13 +141,30 @@ def process_loc(request):
     return JsonResponse(return_data, safe=False)
 
 @login_required
-def store_like(request, store_id, source):
-    print(source)
+def store_like(request):
+    print(request.POST)
+    store_id = int(request.POST.get('id_like'))
     my_store = get_object_or_404(Store, id=store_id)
+    print(my_store)
+    print('total_lkes', my_store.total_likes())
 
     if my_store.likes.filter(id=request.user.id).exists():
         my_store.likes.remove(request.user)
+        is_liked = False
     else:
         my_store.likes.add(request.user)
+        is_liked = True
 
-    return HttpResponseRedirect(my_store.get_absolute_url())
+    context = {
+        'is_liked': is_liked,
+        'total_likes': my_store.total_likes(),
+        'store_id': store_id
+        }
+
+    print('ajax', request.is_ajax())
+
+    if request.is_ajax():
+        print('you made it this far')
+        html = render_to_string('stores/like_section.html', context, request=request)
+        print(html)
+        return JsonResponse({'form': html})

@@ -1,0 +1,7 @@
+{% if is_liked %}
+<button id="id_like" name="id_like" value="{{ store_id }}" class="btn btn-info">
+    Unlike <span class="badge badge-light">{{ total_likes }}</span></button>
+{% else %}
+<button id="id_like" name="id_like" value="{{ store_id }}" class="btn btn-primary">
+    Like <span class="badge badge-light">{{ total_likes }}</span></button>
+{% endif %}

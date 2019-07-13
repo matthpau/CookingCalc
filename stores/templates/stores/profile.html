@@ -16,23 +16,41 @@
 <a class="badge badge-secondary" href="{{ store.search_url }}">find on map</a>
 
 <br><br>
-<form action="{% url 'store:store_like' store.id 1 %}" method="POST">
-    {% csrf_token %}
-    {% if is_liked %}
-        <button type="submit" class="btn btn-info">
-        Unlike <span class="badge badge-light">{{ store.likes.count }}</span>
-        </button>
-    {% else %}
-        <button type="submit" class="btn btn-primary">
-        Like <span class="badge badge-light">{{ store.likes.count }}</span>
-        </button>
-    {% endif %}
-</form>
+<div id="like-section">
+    {% include 'stores/like_section.html' %}
+</div>
 
 <small>
     <a href="https://www.openstreetmap.org/node/{{ store.OSM_ID }}">Edit on OpenStreetmap (requires account)</a>
 </small>
 <br><br>
 
+<script>
+$(function (){
+    $(document).on('click', '#id_like', function(){
+        console.log('hello')
+        var store_id = $(this).val()
+        console.log(store_id) 
 
+        $.ajax({
+            type: 'POST',
+            url: "{% url 'store:store_like' %}",
+            data: {
+                'csrfmiddlewaretoken': '{{ csrf_token }}',
+                'id_like': store_id
+                },
+            dataType: 'json',
+            success: function(newHTML){
+                console.log('success')
+                console.log(newHTML.form)
+                $('#like-section').html(newHTML.form)
+            },
+            error: function(rs, e){
+                console.log('fail')
+                console.log(rs.responseText);
+            }
+        })
+    })
+})
+</script>
 {% endblock %}

@@ -37,7 +37,6 @@
   $(function (){
   
   $('#btn_find_address').on('click', function(){
-    console.log('clicked')
     var my_addr = {
       'csrfmiddlewaretoken': '{{ csrf_token }}',
       email: $('#id_email').val(),
@@ -56,8 +55,6 @@
         if (data.success == true) {
           $('#found_address').html('found your address')
           $('#id_found_address').val(data.found_address).slideDown(200)
-
-          
         } else {
           $('#found_address').html('Could not find your address, please try again')
           $('#id_found_address').val('Unknown')
