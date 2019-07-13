@@ -142,11 +142,8 @@ def process_loc(request):
 
 @login_required
 def store_like(request):
-    print(request.POST)
     store_id = int(request.POST.get('id_like'))
     my_store = get_object_or_404(Store, id=store_id)
-    print(my_store)
-    print('total_lkes', my_store.total_likes())
 
     if my_store.likes.filter(id=request.user.id).exists():
         my_store.likes.remove(request.user)
@@ -164,7 +161,5 @@ def store_like(request):
     print('ajax', request.is_ajax())
 
     if request.is_ajax():
-        print('you made it this far')
         html = render_to_string('stores/like_section.html', context, request=request)
-        print(html)
         return JsonResponse({'form': html})

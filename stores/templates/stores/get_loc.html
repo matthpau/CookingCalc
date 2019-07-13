@@ -98,16 +98,19 @@ $(document).ready(function(){
                         '<a class="badge badge-secondary" href=https://www.google.com/maps/search/?api=1' +
                         store.search_url + '>find on map</a><br>'
 
-                        
                     var new_row_2 = ''
                     if(store.friendly_address.length!=0){
                         new_row_2 = '<small>' + store.friendly_address + '</small><br>'
                     }
 
-                    var new_row_3 = '<button type="submit" class="btn btn-light">Likes <span class="badge badge-dark">' +
-                    store.likes_total + '</span></button><br></li>'
+                    var new_row_3 = store.likes_total + ' like'
+
+                    var new_row_4 = ''
+                    if(store.likes_total!=1){
+                        new_row_4 = 's'
+                    }
                     
-                    var new_row_final = new_row_1.concat(new_row_2, new_row_3)
+                    var new_row_final = new_row_1.concat(new_row_2, new_row_3, new_row_4)
                     $my_list.append(new_row_final)
                 })
             },

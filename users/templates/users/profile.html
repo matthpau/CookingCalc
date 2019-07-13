@@ -26,7 +26,6 @@
         {{ profile_form.add_postcode|as_crispy_field}}
         {{ profile_form.add_country|as_crispy_field}}
         <button id="btn_find_address" type="button" class="btn btn-secondary">Find Address</button>
-        <p id="found_address"></p>
         {{ profile_form.found_address|as_crispy_field }}
 
 
@@ -53,11 +52,9 @@
       data: my_addr,
       success: function(data){
         if (data.success == true) {
-          $('#found_address').html('found your address')
           $('#id_found_address').val(data.found_address).slideDown(200)
         } else {
-          $('#found_address').html('Could not find your address, please try again')
-          $('#id_found_address').val('Unknown')
+          $('#id_found_address').val('Unknown address, please try again')
         }
         }
     })
