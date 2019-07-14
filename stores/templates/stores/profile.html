@@ -15,10 +15,15 @@
 
 <a class="badge badge-secondary" href="{{ store.search_url }}">find on map</a>
 
-<br><br>
-<div id="like-section">
-    {% include 'stores/like_section.html' %}
-</div>
+
+{% if user.is_authenticated %}
+    <br><br>
+    <div id="like-section">
+        {% include 'stores/like_section.html' %}
+    </div>
+{% else %}
+    <p>Please <a href="{% url 'account_login' %}">login </a>to like this store</p>
+{% endif %}
 
 <small>
     <a href="https://www.openstreetmap.org/node/{{ store.OSM_ID }}">Edit on OpenStreetmap (requires account)</a>
