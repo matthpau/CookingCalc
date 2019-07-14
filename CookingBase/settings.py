@@ -220,7 +220,7 @@ GEOIP_PATH = os.path.join(BASE_DIR, 'geo_data')
 
 #https://stackoverflow.com/questions/49139044/geodjango-on-windows-could-not-find-the-gdal-library-oserror-winerror-12
 #this for my windows setup only
-import os
+
 if os.name == 'nt':
     import platform
     OSGEO4W = r"C:\OSGeo4W"
