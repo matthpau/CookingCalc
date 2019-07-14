@@ -18,7 +18,6 @@ def create_user_profile(sender, instance, created, **kwargs):
 
 @receiver(post_save, sender=Profile)
 def update_geo_info(sender, instance, created, **kwargs):
-    print("GEO", instance.found_address)
     if not instance:
         return
 
@@ -34,8 +33,6 @@ def update_geo_info(sender, instance, created, **kwargs):
         
         lat, lon = (my_loc.latitude, my_loc.longitude)
         location = fromstr(f'POINT({lon} {lat})', srid=4326)
-
-        print(lat, lon, location)
         
         instance.lat = lat
         instance.lon = lon

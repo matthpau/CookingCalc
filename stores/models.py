@@ -28,7 +28,7 @@ class Store(models.Model):
     lon = models.FloatField()
     add_house_number = models.CharField(max_length=100)
     add_street = models.CharField(max_length=100)
-    add_postcode = models.CharField(max_length=20)
+    add_postcode = models.CharField(max_length=100)
     add_city = models.CharField(max_length=100)
     add_country = models.CharField(max_length=20)
     email = models.EmailField()

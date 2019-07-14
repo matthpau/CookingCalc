@@ -22,6 +22,7 @@ class Command(BaseCommand):
         from stores.models import Store, StoreType, Country
         import_folder = 'dumps/store_import'
 
+
         def delete_data():
             print('clearing all records')
             Store.objects.all().delete()
@@ -260,19 +261,22 @@ class Command(BaseCommand):
         #Check number of records in store table - is this a first time load?
         #if yes, then force a load from any existing tables
         existing_count = Store.objects.count()
-        print('existing records', existing_count)
     
         country_count = len(country_list)
         i = 0
+
         for k, v in country_list.items():
             i += 1
             was_updated = get_data_from_OSM(k, v, osm_shops, fresh=False, max_days=2)
-            
             if existing_count > 1: # already records exist
                 if was_updated: # and we got new data
                    load_data(k, v)
             else:   # no records exist
                 load_data(k, v) # do a load regardless
+
+            #Uncomment to force a load during testing
+            #load_data(k, v)
+            
 
             if was_updated and i != country_count:
                 print('    Waiting a bit before I do the next one...')
