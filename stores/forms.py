@@ -1,5 +1,6 @@
 from django import forms
-from .models import StoreType
+from .models import StoreType, AuthorisedEventEditors
+from users.models import CustomUser
 
 class StoreSearch(forms.Form):
     DIST_CHOICES = [

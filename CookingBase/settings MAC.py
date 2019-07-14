@@ -212,3 +212,7 @@ ARCHIVE_USER_EMAIL = 'archive_user@cooking-helpers.com'
 
 #GeoIP settings
 GEOIP_PATH = os.path.join(BASE_DIR, 'geo_data')
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)

@@ -2,8 +2,9 @@
 from django.contrib.gis.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse
+from django.utils.translation import gettext as _
 from taggit.managers import TaggableManager
-from django.utils.encoding import escape_uri_path
+
 
 # https://realpython.com/location-based-app-with-geodjango-tutorial/
 
@@ -22,16 +23,21 @@ class StoreType(models.Model):
         return self.type_text
 
 class Store(models.Model):
+    """
+    basic store model
+    """
     name = models.CharField(max_length=100)
     location = models.PointField()
     lat = models.FloatField()
     lon = models.FloatField()
-    add_house_number = models.CharField(max_length=100)
-    add_street = models.CharField(max_length=100)
-    add_postcode = models.CharField(max_length=100)
-    add_city = models.CharField(max_length=100)
-    add_country = models.CharField(max_length=20)
+    add_house_number = models.CharField(_('House Number'), max_length=100)
+    add_street = models.CharField(_('Street'), max_length=100)
+    add_postcode = models.CharField(_('Postcode'), max_length=100)
+    add_city = models.CharField(_('City'), max_length=100)
+    add_country = models.CharField(_('Country'), max_length=20)
     email = models.EmailField()
+
+    authorised_editors = models.ManyToManyField(get_user_model(), through='AuthorisedEventEditors', related_name="authorised_editors")
 
     my_name = models.CharField(max_length=100)
     my_address = models.CharField(max_length=300)
@@ -58,7 +64,19 @@ class Store(models.Model):
 
     def search_url(self):
         return  'https://www.google.com/maps/search/?api=1&query=' + str(self.lat) + ',' + str(self.lon)
-        #return  'https://www.google.com/maps/search/?api=1&query=' + escape_uri_path(self.name) + '@' + str(self.lat) + ',' + str(self.lon)
+
+
+class AuthorisedEventEditors(models.Model):
+    """
+    List of users who can edit events for this store
+    """
+    store = models.ForeignKey(Store, on_delete=models.CASCADE)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return str(self.store) + ' // ' + str(self.user)
 
 
 class StoreComment(models.Model):
@@ -69,3 +87,21 @@ class StoreComment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+
+class Event(models.Model):
+    """
+    Events (promotions etc per store)
+    """
+    created_by_user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    store = models.ForeignKey(Store, on_delete=models.CASCADE)
+    title = models.CharField(_('Title'), max_length=100)
+    comment = models.TextField(_('Event description'))
+    start_date = models.DateTimeField(_('Event start date and time'))
+    end_date = models.DateTimeField(_('Event end date and time'))
+    includes_offers = models.BooleanField(_('Includes offers'), default=False)
+    archived = models.BooleanField(_('Archived'), default=False)
+    created_at = models.DateTimeField(_('Created'), auto_now_add=True)
+    updated_at = models.DateTimeField(_('Updated'), auto_now=True)
+
+    def __str__(self):
+        return self.title + ' ' + str(self.store) + ' ' +str(self.start_date)

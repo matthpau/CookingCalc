@@ -213,10 +213,7 @@ ARCHIVE_USER_EMAIL = 'archive_user@cooking-helpers.com'
 #GeoIP settings
 GEOIP_PATH = os.path.join(BASE_DIR, 'geo_data')
 
-#GEOS_LIBRARY_PATH = r'C:\Users\Paul\Anaconda3\envs\Cooking\Lib\site-packages\osgeo'
-#GDAL_LIBRARY_PATH = r'C:\Users\Paul\Anaconda3\envs\Cooking\Lib\site-packages\osgeo'
-#os.environ["PATH"] += os.pathsep + BASE_DIR + '\\venv\\Lib\\site-packages\\osgeo'
-#GDAL_DATA = 'C:\Program Files\PostgreSQL\11\gdal-data'
+
 
 #https://stackoverflow.com/questions/49139044/geodjango-on-windows-could-not-find-the-gdal-library-oserror-winerror-12
 #this for my windows setup only
@@ -231,3 +228,9 @@ if os.name == 'nt':
     os.environ['GDAL_DATA'] = OSGEO4W + r"\share\gdal"
     os.environ['PROJ_LIB'] = OSGEO4W + r"\share\proj"
     os.environ['PATH'] = OSGEO4W + r"\bin;" + os.environ['PATH']
+
+#https://blog.braham.biz/getting-started-with-translating-a-django-application-d85ec34e505
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)

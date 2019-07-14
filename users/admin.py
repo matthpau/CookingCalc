@@ -7,7 +7,13 @@ from .models import CustomUser, Profile, Country
 
 class CustomUserAdmin(admin.ModelAdmin):
     add_form = CustomUserCreationForm
-    form = CustomUserChangeForm
+    """
+    I thought I was being clever here but this doesn't work cause the form doesnt save the store in order to select the user first
+    #but there was a nice query there so I'll save it...
+    e = Events.objects.first()
+    my_queryset = CustomUser.objects.filter(authorisedeventeditors__store__event=e)
+    """
+    #form = CustomUserChangeForm
     model = CustomUser
     list_display = ['id', 'email', 'username', ]
 

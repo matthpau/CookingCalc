@@ -7,6 +7,7 @@ from django.contrib.gis.geos import Point
 from django.contrib.gis.measure import D
 from .forms import StoreSearch
 from .models import Store, StoreType
+from users.models import CustomUser
 from django.http import HttpResponseRedirect, JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.db.models import Count
@@ -19,11 +20,15 @@ def store_profile(request, store_id):
     if my_store.likes.filter(id=request.user.id).exists():
         is_liked = True
 
+    #Get list of authorised event editors for this store
+    editors = CustomUser.objects.filter(authorisedeventeditors__store__id=7377)
+
     context = {
         'store': my_store,
         'is_liked': is_liked,
         'store_id': store_id,
         'total_likes': my_store.total_likes(),
+        'editors': editors
         }
 
     return render(request, 'stores/profile.html', context)
