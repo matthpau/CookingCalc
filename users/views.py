@@ -27,13 +27,15 @@ def update_profile(request):
     })
 
 def check_address(request):
-
+    print(request.POST)
     from geopy.geocoders import Nominatim
     from .businessLogic import nice_address
 
     input_addr = (
-        request.POST.get('add_1'),
+        request.POST.get('house_number'),
+        request.POST.get('street'),
         request.POST.get('add_2'),
+        request.POST.get('add_3'),
         request.POST.get('city'),
         request.POST.get('postcode'),
         request.POST.get('country'),

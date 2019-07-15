@@ -12,6 +12,8 @@ from django.http import HttpResponseRedirect, JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.db.models import Count
 from django.template.loader import render_to_string
+from django.views.generic.list import ListView
+from stores.models import Event
 
 def store_profile(request, store_id):
     my_store = get_object_or_404(Store, pk=store_id)
@@ -21,7 +23,7 @@ def store_profile(request, store_id):
         is_liked = True
 
     #Get list of authorised event editors for this store
-    editors = CustomUser.objects.filter(authorisedeventeditors__store__id=7377)
+    editors = CustomUser.objects.filter(authorisedeventeditors__store__id=store_id)
 
     context = {
         'store': my_store,
@@ -168,3 +170,21 @@ def store_like(request):
     if request.is_ajax():
         html = render_to_string('stores/like_section.html', context, request=request)
         return JsonResponse({'form': html})
+
+
+class EventsList(ListView):
+    # template is automatically calculated as event_list.html
+    context_object_name = 'events'
+
+    def get_queryset(self):
+        print(Event.objects.filter(id=self.kwargs['store_id']))
+        return Event.objects.filter(id=self.kwargs['store_id'])
+
+    #https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#adding-extra-context
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        # include context showing allowed editors, needs to be checked in order to show the view
+        context['editors'] = CustomUser.objects.filter(authorisedeventeditors__store__id=self.kwargs['store_id'])
+        return context
+

@@ -4,6 +4,7 @@ from django.contrib.gis.db import models
 from django.contrib.auth import get_user_model
 #from stores.models import Country
 from .businessLogic import nice_address
+from django.utils.translation import gettext as _
 
 # https://wsvincent.com/django-custom-user-model-tutorial/
 # https://docs.djangoproject.com/en/2.2/topics/auth/customizing/#substituting-a-custom-user-model
@@ -15,7 +16,7 @@ class CustomUserManager(UserManager):
 
 class Country(models.Model):
     code=models.CharField(max_length=3, primary_key=True)
-    name=models.CharField(max_length=50)
+    name=models.CharField(_('Country'), max_length=50)
 
     def __str__(self):
         return self.name
@@ -31,24 +32,24 @@ class CustomUser(AbstractUser):
 class Profile(models.Model):
     user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, blank=True)
-    
+
     found_location = models.PointField(null=True, blank=True)
     found_address = models.CharField(max_length=500, null=True, blank=True)
 
     birth_date = models.DateField(null=True, blank=True)
-    add_1 = models.CharField(max_length=100, default='', verbose_name='Address 1', blank=True)
-    add_2 = models.CharField(max_length=100, default='', verbose_name='Address 2', blank=True)
-    add_3 = models.CharField(max_length=100, default='', verbose_name='Address 3', blank=True)
-    add_postcode = models.CharField(max_length=20, default='', blank=True, verbose_name='Postcode')
-    add_city = models.CharField(max_length=100, default='', verbose_name='City', blank=True)
-    add_country = models.ForeignKey(Country, null=True, on_delete=models.SET_NULL, verbose_name='Country', blank=True)
-
-    local_offer_receive = models.BooleanField(default=False, verbose_name="I would like to receive newsletters with local offers")
-    local_offer_radius = models.FloatField(default=5, blank=True, verbose_name="Search radius for local offers (km)")
+    house_number = models.CharField(_('House Number'), max_length=10, default='', blank=True)
+    street = models.CharField(_('Street'), max_length=100, default='', blank=True)
+    add_2 = models.CharField(_('Address 2'), max_length=100, default='', blank=True)
+    add_3 = models.CharField(_('Address 3'), max_length=100, default='', blank=True)
+    add_postcode = models.CharField(_('Postcode'), max_length=20, default='', blank=True)
+    add_city = models.CharField(max_length=100, default='', verbose_name=_('City'), blank=True)
+    add_country = models.ForeignKey(Country, null=True, on_delete=models.SET_NULL, blank=True)
+    local_offer_receive = models.BooleanField(_("I would like to receive newsletters with local offers"), default=False)
+    local_offer_radius = models.FloatField(_("Search radius for local offers (km)"), default=5, blank=True)
 
     def __str__(self):
         return str(self.user)
-    
+
     @property
     def auto_address(self):
         return nice_address(self.add_1, self.add_2, self.add_3, self.add_city, str(self.add_country))

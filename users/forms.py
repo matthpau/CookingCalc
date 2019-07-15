@@ -29,8 +29,10 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = [
-            'add_1',
+            'house_number',
+            'street',
             'add_2',
+            'add_3',
             'add_city',
             'add_postcode',
             'add_country',
@@ -48,4 +50,3 @@ class ProfileForm(forms.ModelForm):
 
         if get_offers and offers_radius <= 0:
             raise forms.ValidationError("If you'd like to receive offers, please enter a valid radius")
-

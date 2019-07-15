@@ -6,7 +6,7 @@
 
 
 
-<h1>{{ store.name }}</h1>
+<h1>{{ store.name }} {{store.name}}</h1>
 <h5>{{ store.OSM_storetype.icon_text|safe }} <span class="badge badge-light">{{ store.OSM_storetype.type_text|capfirst }}</span></h5>
 
 {% if store.my_address %}
@@ -33,11 +33,15 @@
 </small>
 <br><br>
 
+{% for editor in editors%}
+    {{ editor }}
+{% endfor %}
+
 {% if user in editors %}
 <h3>{% trans "Owner Section" %}</h3>
 <p>{% blocktrans %} Welcome, {{user}}. You have the following options: {% endblocktrans %}<p>
-<p><a href='#'>{% trans "List or edit your associated acconts" %}</a></p>
-<p><a href='#'>{% trans "List or edit your events" %}</a></p>
+<p><a href='#'>{% trans "List or edit your associated accounts" %}</a></p>
+<p><a href='{{ store.events_url }}'>{% trans "List or edit your events" %}</a></p>
 {% endif %}
 
 <script>

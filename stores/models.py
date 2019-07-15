@@ -65,6 +65,9 @@ class Store(models.Model):
     def search_url(self):
         return  'https://www.google.com/maps/search/?api=1&query=' + str(self.lat) + ',' + str(self.lon)
 
+    def events_url(self):
+        return  reverse('store:eventslist', kwargs={'store_id': self.pk})
+
 
 class AuthorisedEventEditors(models.Model):
     """

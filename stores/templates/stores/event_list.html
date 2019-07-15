@@ -1,0 +1,15 @@
+{% extends 'AppTimesCalc/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h5>This is the events page</h5>
+<p>Events</p>
+{% for events in events%}
+    {{ event }}
+{% endfor %}
+
+<p>Editors</p>
+{% for editor in editors%}
+    {{ editor }}
+{% endfor %}
+{% endblock %}

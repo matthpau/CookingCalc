@@ -20,8 +20,10 @@
     
     <div class="col-sm">
 
-        {{ profile_form.add_1|as_crispy_field}}
+        {{ profile_form.house_number|as_crispy_field}}
+        {{ profile_form.street|as_crispy_field}}
         {{ profile_form.add_2|as_crispy_field}}
+        {{ profile_form.add_3|as_crispy_field}}
         {{ profile_form.add_city|as_crispy_field}}
         {{ profile_form.add_postcode|as_crispy_field}}
         {{ profile_form.add_country|as_crispy_field}}
@@ -38,9 +40,10 @@
   $('#btn_find_address').on('click', function(){
     var my_addr = {
       'csrfmiddlewaretoken': '{{ csrf_token }}',
-      email: $('#id_email').val(),
-      add_1: $('#id_add_1').val(),
+      house_number: $('#id_house_number').val(),
+      street: $('#id_street').val(),
       add_2: $('#id_add_2').val(),
+      add_3: $('#id_add_3').val(),
       city: $('#id_add_city').val(),
       postcode: $('#id_add_postcode').val(),
       country: $('#id_add_country').val(),
