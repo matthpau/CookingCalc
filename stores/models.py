@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 from django.utils.translation import gettext as _
 from taggit.managers import TaggableManager
+from bootstrap_datepicker_plus import DateTimePickerInput
 
 
 # https://realpython.com/location-based-app-with-geodjango-tutorial/
@@ -95,6 +96,9 @@ class Event(models.Model):
     """
     Events (promotions etc per store)
     """
+
+    datetime_format = "%d / %m / %Y %H:%M"
+
     created_by_user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     store = models.ForeignKey(Store, on_delete=models.CASCADE)
     title = models.CharField(_('Title'), max_length=100)
@@ -107,4 +111,4 @@ class Event(models.Model):
     updated_at = models.DateTimeField(_('Updated'), auto_now=True)
 
     def __str__(self):
-        return self.title + ' ' + str(self.store) + ' ' +str(self.start_date)
+        return self.title + ' | ' + str(self.start_date) + ' ' + str(self.start_date)

@@ -1,0 +1,16 @@
+{% extends 'AppTimesCalc/base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+{% load i18n %}
+<!--- required for datepicker plus-->
+{{ form.media }}
+
+<h5>This is the CREATE events page</h5>
+<form method="post">{% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" value="Save">
+    <a href="#" onclick="history.go(-1)">Go Back</a
+</form>
+{% endblock %}

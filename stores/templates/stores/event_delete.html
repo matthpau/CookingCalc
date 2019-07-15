@@ -1,0 +1,18 @@
+{% extends 'AppTimesCalc/base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+{% load i18n %}
+<!--- required for datepicker plus-->
+{{ form.media }}
+
+<h5>This is the DELETE events page</h5>
+<form method="post">{% csrf_token %}
+    <p>{% trans 'Do you want to delete the event' %}</p>
+    <p>{{ event.title }} | {{ event.start_date }} - {{ event.end_date }}</p>
+    <button class="btn btn-danger" type="submit">{% trans 'Delete' %}</button>
+    <a href="#" onclick="history.go(-1)">{% trans 'Go Back' %}</a>
+</form>
+
+{% endblock %}

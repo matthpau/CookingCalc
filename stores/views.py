@@ -8,12 +8,15 @@ from django.contrib.gis.measure import D
 from .forms import StoreSearch
 from .models import Store, StoreType
 from users.models import CustomUser
-from django.http import HttpResponseRedirect, JsonResponse
+from django.http import HttpResponseRedirect, JsonResponse, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.db.models import Count
 from django.template.loader import render_to_string
 from django.views.generic.list import ListView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from stores.models import Event
+from django.urls import reverse
+from .forms import EventAddCreate
 
 def store_profile(request, store_id):
     my_store = get_object_or_404(Store, pk=store_id)
@@ -171,14 +174,14 @@ def store_like(request):
         html = render_to_string('stores/like_section.html', context, request=request)
         return JsonResponse({'form': html})
 
-
+#https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Generic_views
 class EventsList(ListView):
     # template is automatically calculated as event_list.html
+    model = Event
     context_object_name = 'events'
-
     def get_queryset(self):
-        print(Event.objects.filter(id=self.kwargs['store_id']))
-        return Event.objects.filter(id=self.kwargs['store_id'])
+
+        return Event.objects.filter(store__id=self.kwargs['store_id'])
 
     #https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#adding-extra-context
     def get_context_data(self, **kwargs):
@@ -186,5 +189,58 @@ class EventsList(ListView):
         context = super().get_context_data(**kwargs)
         # include context showing allowed editors, needs to be checked in order to show the view
         context['editors'] = CustomUser.objects.filter(authorisedeventeditors__store__id=self.kwargs['store_id'])
+        context['store'] = Store.objects.get(pk=self.kwargs['store_id'])
         return context
 
+#http://melardev.com/blog/2017/11/04/createview-django-4-examples/
+#shows how to do extra processing before save
+class CreateEvent(CreateView):
+
+    model = Event
+    # don't use BOTH fields and form_class, choose one or the other. Fields are specified in the form_class
+    #fields = ('title', 'comment', 'start_date', 'end_date', 'includes_offers')
+    form_class = EventAddCreate
+
+    #template_name  automatically is stores/event_form.html but we want to overwrite
+    template_name = 'stores/event_create.html'
+
+    def form_valid(self, form):
+        
+        model = form.save(commit=False)
+        model.created_by_user = self.request.user
+        model.store = Store.objects.get(id=self.kwargs['store_id'])
+
+        model.save()
+        return HttpResponseRedirect(self.get_success_url())
+
+    def get_success_url(self):
+        return reverse('store:eventslist', kwargs={'store_id': self.kwargs['store_id']})
+
+class UpdateEvent(UpdateView):
+    form_class = EventAddCreate
+    template_name = 'stores/event_update.html'
+    
+    def get_object(self):
+        print(self.kwargs)
+        return get_object_or_404(Event, pk = self.kwargs['event_id'])
+
+    def form_valid(self, form):
+        return super().form_valid(form)
+        
+    def get_success_url(self):
+        event_id = self.kwargs['event_id']
+        store_id = Store.objects.values().get(event__id=event_id)['id']
+        return reverse('store:eventslist', kwargs={'store_id':store_id})
+
+class DeleteEvent(DeleteView):
+    template_name = 'stores/event_delete.html'
+
+    def get_object(self):
+        event_id = self.kwargs.get('event_id')
+        return get_object_or_404(Event, pk=event_id)
+
+    def get_success_url(self):
+        event_id = self.kwargs['event_id']
+        store_id = Store.objects.values().get(event__id=event_id)['id']
+        return reverse('store:eventslist', kwargs={'store_id':store_id})
+    

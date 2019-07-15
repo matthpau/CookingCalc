@@ -8,13 +8,6 @@ from .models import MeatType, CookingLevel, MealPlan
 
 
 class CalcFormGen(forms.Form):
-    """
-    option 1
-    # MeatType = forms.ModelChoiceField(MeatType.objects.filter(cookinginfo__MeatType__isnull=False).
-    # distinct(),
-    #label="Meat Type ", required=True, empty_label='Please select')
-    # option 2
-    """
     MeatType = forms.ModelChoiceField(MeatType.objects.exclude(cookinginfo=None),
                                       label="What kind of meat?", required=True, empty_label='Please select')
     CookingLevel = forms.ModelChoiceField(CookingLevel.objects.none(), label="How well done?",
