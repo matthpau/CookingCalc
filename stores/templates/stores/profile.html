@@ -6,7 +6,7 @@
 
 
 
-<h1>{{ store.name }} {{store.name}}</h1>
+<h1>{% trans 'Profile for '%}{{ store.name }}</h1>
 <h5>{{ store.OSM_storetype.icon_text|safe }} <span class="badge badge-light">{{ store.OSM_storetype.type_text|capfirst }}</span></h5>
 
 {% if store.my_address %}
@@ -27,27 +27,23 @@
 {% else %}
     <p>Please <a href="{% url 'account_login' %}">login </a>to like this store</p>
 {% endif %}
-
-<small>
-    <a href="https://www.openstreetmap.org/node/{{ store.OSM_ID }}">Edit on OpenStreetmap (requires account)</a>
-</small>
 <br><br>
 
-{% for editor in editors%}
-    {{ editor }}
-{% endfor %}
-
 {% if user in editors %}
-<h3>{% trans "Owner Section" %}</h3>
-<p>{% blocktrans %} Welcome, {{user}}. You have the following options: {% endblocktrans %}<p>
-<p><a href='#'>{% trans "List or edit your associated accounts" %}</a></p>
-<p><a href='{{ store.events_url }}'>{% trans "List or edit your events" %}</a></p>
+    <h3>{% trans "Owner Section" %}</h3>
+    <p>{% blocktrans %} Welcome, {{user}}. You have the following options: {% endblocktrans %}<p>
+    <p><a href="https://www.openstreetmap.org/node/{{ store.OSM_ID }}">{% trans 'Edit on OpenStreetmap (requires account) '%}</a><br>
+    <small>{% trans 'Changes will appear the next day' %}</small>
+    <p><a href='{% url 'store:editors' store.id %}'>{% trans "List or edit your associated accounts" %}</a><br>
+    <small>{{ editors_count }} {% trans "authorised editors" %} </small>
+    </p>
+    <p><a href='{{ store.events_url }}'>{% trans "List or edit your events" %}</a><br>
+    <small>{{ upcoming_count }} {% trans "event(s) upcoming" %} </small></p>
 {% endif %}
 
 <script>
 $(function (){
     $(document).on('click', '#id_like', function(){
-        console.log('hello')
         var store_id = $(this).val()
         console.log(store_id) 
 

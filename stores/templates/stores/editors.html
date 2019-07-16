@@ -1,0 +1,33 @@
+{% extends 'AppTimesCalc/base.html' %}
+{% block content %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+<!--- required urls---->
+<span hidden id=editor_urls
+data_current_user="{{user.email}}"
+data_current_store_id="{{store_id}}"
+data_get_list_url="{% url 'store:editors_list' store_id %}" 
+data_add_url="#" 
+data_delete_url="#" 
+></span>
+
+<p>You are {{user.email}}</p>
+<h5>{% trans 'People who can add events to your store' %} {{store_id }}</h5>
+
+<ul id='editors'>
+    <!---Editors list goes here-->
+</ul>
+
+<form>
+     <div class="form-group">
+        <input type="email" class="form-control" id="add_editor_email" aria-describedby="emailHelp" placeholder="{% trans 'Enter email' %}">
+        <small id="emailHelp" class="form-text text-muted">{% trans 'This person must already be registered on the site' %}</small>
+        <button type="button" class="btn btn-primary">{% trans 'Add' %}</button>
+    </div>
+</form>
+
+<script src="{% static 'stores/js/manage_editors.js' %}"></script>
+{% endblock %}

@@ -26,7 +26,7 @@ class CustomUser(AbstractUser):
     # add additional fields in here
 
     def __str__(self):
-        return self.email
+        return str(self.id) + ' ' + self.email
 
 
 class Profile(models.Model):
@@ -48,7 +48,7 @@ class Profile(models.Model):
     local_offer_radius = models.FloatField(_("Search radius for local offers (km)"), default=5, blank=True)
 
     def __str__(self):
-        return str(self.user)
+        return str(self.id) + ' ' + str(self.user)
 
     @property
     def auto_address(self):

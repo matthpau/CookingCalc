@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.utils.translation import gettext as _
 from taggit.managers import TaggableManager
 from bootstrap_datepicker_plus import DateTimePickerInput
+from bootstrap_datepicker_plus import DateTimePickerInput
 
 
 # https://realpython.com/location-based-app-with-geodjango-tutorial/
@@ -55,7 +56,7 @@ class Store(models.Model):
     tags = TaggableManager(blank=True)
 
     def __str__(self):
-        return self.name
+        return str(self.id) + ' ' + self.name
 
     def get_absolute_url(self):
         return reverse('store:store_profile', kwargs={'store_id': self.pk})
@@ -80,7 +81,12 @@ class AuthorisedEventEditors(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return str(self.store) + ' // ' + str(self.user)
+        return str(self.id)  + ' / ' + str(self.store) + ' / ' + str(self.user)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['store', 'user'], name='Uniqueperstore'),
+        ]    
 
 
 class StoreComment(models.Model):
@@ -111,4 +117,4 @@ class Event(models.Model):
     updated_at = models.DateTimeField(_('Updated'), auto_now=True)
 
     def __str__(self):
-        return self.title + ' | ' + str(self.start_date) + ' ' + str(self.start_date)
+        return str(self.id) + ' ' + self.title + ' | ' + str(self.start_date) + ' ' + str(self.start_date)

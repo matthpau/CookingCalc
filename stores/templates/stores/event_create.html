@@ -7,10 +7,10 @@
 <!--- required for datepicker plus-->
 {{ form.media }}
 
-<h5>This is the CREATE events page</h5>
+<h5>{% trans 'Create your event' %}</h5>
 <form method="post">{% csrf_token %}
     {{ form|crispy }}
-    <input type="submit" value="Save">
-    <a href="#" onclick="history.go(-1)">Go Back</a
+    <button class="btn btn-primary" type="submit">{% trans 'Save' %}</button>
+    <a href="#" onclick="history.go(-1)">{% trans 'Go Back' %}</a>
 </form>
 {% endblock %}

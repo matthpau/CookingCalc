@@ -5,13 +5,11 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
 
-<h5>{% trans 'This is the events editing page for' %}</h5>
-
 {% if user in editors %}
-
+    <h5>{% trans 'This is the events editing page for' %}</h5>
     <p>{% blocktrans with store_name=store.name %}{{ store_name }} {% endblocktrans %}</p>
     <p><a class="btn btn-primary" href="{% url 'store:create_event' store.id %}">{% trans 'Add new' %}</a>
-    <a href="#" onclick="history.go(-1)">{% trans 'Go Back' %}</a></p>
+    <a href="{% url 'store:store_profile' store.id %}">{% trans 'Go Back' %}</a></p>
 
     <ul class="list-group list-group-flush">
         {% for event in events %}
@@ -19,10 +17,10 @@
         https://reinout.vanrees.org/weblog/2014/05/19/context.html
         -->
             <li class="list-group-item">
-                <p>{{ event.title }} | {{ event.start_date }} - {{ event.end_date }}</p>
+                <p>{{ event.title }} | {{ event.start_date }} - {{ event.end_date }}<br>
                 <a class="badge badge-primary" href="{% url 'store:update_event' event.id %}">{% trans 'Edit' %}</a>
                 <!---https://stackoverflow.com/questions/4591525/is-it-possible-to-pass-query-parameters-via-djangos-url-template-tag---->
-                <a class="badge badge-danger" href="{% url 'store:delete_event' event.id %}">{% trans 'Delete' %}</a>
+                <a class="badge badge-danger" href="{% url 'store:delete_event' event.id %}">{% trans 'Delete' %}</a></p>
             </li>
 
         {% endfor %}

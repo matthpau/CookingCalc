@@ -1,5 +1,4 @@
 {% extends 'AppTimesCalc/base.html' %}
-
 {% block content %}
 
 {% load crispy_forms_tags %}
@@ -7,7 +6,7 @@
 <!--- required for datepicker plus-->
 {{ form.media }}
 
-<h5>This is the EDIT events page</h5>
+<h5>{% trans 'Edit your event' %}</h5>
 <form method="post">{% csrf_token %}
     {{ form|crispy }}
     <button class="btn btn-primary" type="submit">{% trans 'Save' %}</button>

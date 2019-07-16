@@ -1,5 +1,5 @@
 import json
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from ipware import get_client_ip
 from django.contrib.gis.geoip2 import GeoIP2
 from django.contrib.gis.db.models.functions import Distance
@@ -14,9 +14,10 @@ from django.db.models import Count
 from django.template.loader import render_to_string
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from stores.models import Event
+from stores.models import Event, AuthorisedEventEditors as Editors
 from django.urls import reverse
 from .forms import EventAddCreate
+from datetime import datetime as dt
 
 def store_profile(request, store_id):
     my_store = get_object_or_404(Store, pk=store_id)
@@ -28,12 +29,20 @@ def store_profile(request, store_id):
     #Get list of authorised event editors for this store
     editors = CustomUser.objects.filter(authorisedeventeditors__store__id=store_id)
 
+    #Get count of events for display
+    events_upcoming = Event.objects.filter(start_date__gt=dt.now()).count()
+
+    #Get count of editors for display
+    editors_count = Editors.objects.filter(store__id=store_id).count()
+    
     context = {
         'store': my_store,
         'is_liked': is_liked,
         'store_id': store_id,
         'total_likes': my_store.total_likes(),
-        'editors': editors
+        'editors': editors,
+        'editors_count': editors_count,
+        'upcoming_count': events_upcoming
         }
 
     return render(request, 'stores/profile.html', context)
@@ -96,8 +105,6 @@ def process_loc(request):
     search_dis = request.GET.get('search_distance')
     sort_order = int(request.GET.get('sort_order'))
     store_filter = request.GET.get('store_filter')
-
-    print('store_filter', store_filter)
 
     user_location = Point(lon, lat, srid=4326)
 
@@ -168,8 +175,6 @@ def store_like(request):
         'store_id': store_id
         }
 
-    print('ajax', request.is_ajax())
-
     if request.is_ajax():
         html = render_to_string('stores/like_section.html', context, request=request)
         return JsonResponse({'form': html})
@@ -205,7 +210,7 @@ class CreateEvent(CreateView):
     template_name = 'stores/event_create.html'
 
     def form_valid(self, form):
-        
+
         model = form.save(commit=False)
         model.created_by_user = self.request.user
         model.store = Store.objects.get(id=self.kwargs['store_id'])
@@ -219,14 +224,14 @@ class CreateEvent(CreateView):
 class UpdateEvent(UpdateView):
     form_class = EventAddCreate
     template_name = 'stores/event_update.html'
-    
+
     def get_object(self):
         print(self.kwargs)
         return get_object_or_404(Event, pk = self.kwargs['event_id'])
 
     def form_valid(self, form):
         return super().form_valid(form)
-        
+
     def get_success_url(self):
         event_id = self.kwargs['event_id']
         store_id = Store.objects.values().get(event__id=event_id)['id']
@@ -243,4 +248,24 @@ class DeleteEvent(DeleteView):
         event_id = self.kwargs['event_id']
         store_id = Store.objects.values().get(event__id=event_id)['id']
         return reverse('store:eventslist', kwargs={'store_id':store_id})
-    
+
+def editors(request, store_id):
+
+    context = {'store_id': store_id}
+    return render(request, 'stores/editors.html', context=context)
+
+def editors_list(request, store_id):
+
+    #Get list of authorised editors for this store
+    response = CustomUser.objects.filter(authorisedeventeditors__store__id=store_id)
+    print(response)
+    response = list(response.values())
+    return JsonResponse(response, safe=False)
+
+def editor_delete(request, store_id, user_id):
+    #Delete Specified editor. Double check they have not maniuplated the URL to delete themselves
+    print(store_id, user_id)
+    #Editors.objects.filter(store_id=store_id).filter(user_id=user_id).delete()
+
+    return redirect('store:editors', store_id=store_id)
+    #return HttpResponse('hello')
