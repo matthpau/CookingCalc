@@ -15,4 +15,5 @@ urlpatterns = [
     path('<int:store_id>/editors', views.editors, name='editors'),
     path('<int:store_id>/editors_list', views.editors_list, name='editors_list'),
     path('<int:store_id>/<int:user_id>/editor_delete', views.editor_delete, name='editor_delete'),
+    path('editor_create', views.editor_create, name='editor_create'),
     ]

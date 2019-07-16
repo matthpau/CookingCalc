@@ -43,7 +43,8 @@ def check_address(request):
 
     input_addr = nice_address(*input_addr)
     geolocator = Nominatim(user_agent="CookingCalc")
-    found_addr = geolocator.geocode(input_addr)
+    #TODO need to add a try except here for the timeout
+    found_addr = geolocator.geocode(input_addr, timeout=5)
     
     if found_addr:
         lat, lon = (found_addr.latitude, found_addr.longitude)

@@ -51,7 +51,7 @@ $(function (){
             type: 'POST',
             url: "{% url 'store:store_like' %}",
             data: {
-                'csrfmiddlewaretoken': '{{ csrf_token }}',
+                csrfmiddlewaretoken: '{{ csrf_token }}',
                 'id_like': store_id
                 },
             dataType: 'json',

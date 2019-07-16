@@ -18,6 +18,9 @@ from stores.models import Event, AuthorisedEventEditors as Editors
 from django.urls import reverse
 from .forms import EventAddCreate
 from datetime import datetime as dt
+from dal import autocomplete
+from django.views.decorators.csrf import ensure_csrf_cookie
+from django.utils.translation import gettext as _
 
 def store_profile(request, store_id):
     my_store = get_object_or_404(Store, pk=store_id)
@@ -249,6 +252,7 @@ class DeleteEvent(DeleteView):
         store_id = Store.objects.values().get(event__id=event_id)['id']
         return reverse('store:eventslist', kwargs={'store_id':store_id})
 
+@ensure_csrf_cookie
 def editors(request, store_id):
 
     context = {'store_id': store_id}
@@ -257,15 +261,43 @@ def editors(request, store_id):
 def editors_list(request, store_id):
 
     #Get list of authorised editors for this store
+    #No need to check if empty. The users only sees this view if they are already an editor
+    #They must be added manually first
     response = CustomUser.objects.filter(authorisedeventeditors__store__id=store_id)
-    print(response)
     response = list(response.values())
     return JsonResponse(response, safe=False)
 
 def editor_delete(request, store_id, user_id):
     #Delete Specified editor. Double check they have not maniuplated the URL to delete themselves
-    print(store_id, user_id)
-    #Editors.objects.filter(store_id=store_id).filter(user_id=user_id).delete()
-
+    #TODO add a check in here to make sure the current user is in the list of editors for this store
+    Editors.objects.filter(store_id=store_id).filter(user_id=user_id).delete()
     return redirect('store:editors', store_id=store_id)
-    #return HttpResponse('hello')
+
+
+def editor_create(request):
+    email = request.POST.get('email')
+    store_id = request.POST.get('store_id')
+
+    #Add a new user to authorised editors
+    #get user first
+    try:
+        u = CustomUser.objects.get(email=email)
+
+    except CustomUser.DoesNotExist:
+        msg = {} #empty result for no user
+        print(msg)
+        return JsonResponse(msg)
+    
+    s = Store.objects.get(id=store_id)
+  
+    e, created = Editors.objects.get_or_create(
+        store=s,
+        user=u)
+
+    response = {
+        'email': u.email,
+        'id': u.id,
+        'created': created
+        }
+
+    return JsonResponse(response)

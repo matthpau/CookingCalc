@@ -49,6 +49,13 @@ AUTHENTICATION_BACKENDS = (
 )
 
 INSTALLED_APPS = [
+    #Django autocomplete lite
+    #https://django-autocomplete-light.readthedocs.io/en/master/install.html#configuration
+    #needs to go before     django.contrib.admin
+    'dal',
+    'dal_select2',
+
+    #Standard
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

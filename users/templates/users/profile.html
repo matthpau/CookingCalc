@@ -39,7 +39,7 @@
   
   $('#btn_find_address').on('click', function(){
     var my_addr = {
-      'csrfmiddlewaretoken': '{{ csrf_token }}',
+      csrfmiddlewaretoken: '{{ csrf_token }}',
       house_number: $('#id_house_number').val(),
       street: $('#id_street').val(),
       add_2: $('#id_add_2').val(),
@@ -49,6 +49,8 @@
       country: $('#id_add_country').val(),
     }
     
+    console.log(my_addr)
+
     $.ajax({
       type: 'POST',
       url: "/users/check_address",
