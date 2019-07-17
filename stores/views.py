@@ -30,10 +30,10 @@ def store_profile(request, store_id):
         is_liked = True
 
     #Get list of authorised event editors for this store
-    editors = CustomUser.objects.filter(authorisedeventeditors__store__id=store_id)
+    store_editors = CustomUser.objects.filter(authorisedeventeditors__store__id=store_id)
 
     #Get count of events for display
-    events_upcoming = Event.objects.filter(start_date__gt=dt.now()).count()
+    events_upcoming = Event.objects.filter(start_date__gt=dt.now()).filter(store__id=store_id).count()
 
     #Get count of editors for display
     editors_count = Editors.objects.filter(store__id=store_id).count()
@@ -43,7 +43,7 @@ def store_profile(request, store_id):
         'is_liked': is_liked,
         'store_id': store_id,
         'total_likes': my_store.total_likes(),
-        'editors': editors,
+        'editors': store_editors,
         'editors_count': editors_count,
         'upcoming_count': events_upcoming
         }
@@ -252,10 +252,13 @@ class DeleteEvent(DeleteView):
         store_id = Store.objects.values().get(event__id=event_id)['id']
         return reverse('store:eventslist', kwargs={'store_id':store_id})
 
-@ensure_csrf_cookie
 def editors(request, store_id):
+    store_name = Store.objects.get(pk=store_id).name
 
-    context = {'store_id': store_id}
+    context = {
+        'store_id': store_id,
+        'store_name': store_name
+        }
     return render(request, 'stores/editors.html', context=context)
 
 def editors_list(request, store_id):
@@ -267,11 +270,15 @@ def editors_list(request, store_id):
     response = list(response.values())
     return JsonResponse(response, safe=False)
 
-def editor_delete(request, store_id, user_id):
+def editor_delete(request):
+    print(request.POST)
+    store_id = request.POST.get('del_store_id')
+    user_id = request.POST.get('del_user_id')
     #Delete Specified editor. Double check they have not maniuplated the URL to delete themselves
     #TODO add a check in here to make sure the current user is in the list of editors for this store
     Editors.objects.filter(store_id=store_id).filter(user_id=user_id).delete()
-    return redirect('store:editors', store_id=store_id)
+    #return redirect('store:editors', store_id=store_id)
+    return JsonResponse({'response_text': _('Editor has been removed')})
 
 
 def editor_create(request):
@@ -284,20 +291,27 @@ def editor_create(request):
         u = CustomUser.objects.get(email=email)
 
     except CustomUser.DoesNotExist:
-        msg = {} #empty result for no user
-        print(msg)
+        msg = {
+            'status' : 'not_found',
+            'response_text' : _('User not found, please ensure they create an account, or check your spelling')
+        } 
+
         return JsonResponse(msg)
     
     s = Store.objects.get(id=store_id)
-  
     e, created = Editors.objects.get_or_create(
         store=s,
         user=u)
-
-    response = {
+    msg = {
         'email': u.email,
         'id': u.id,
-        'created': created
         }
 
-    return JsonResponse(response)
+    if created:
+        msg['status'] = 'created'
+        msg['response_text'] = _('User has been added to the list of editors')
+    else:
+        msg['status'] = 'exists'
+        msg['response_text'] = _('User is already in the list of editors, please check and try again')
+
+    return JsonResponse(msg)

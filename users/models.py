@@ -26,7 +26,7 @@ class CustomUser(AbstractUser):
     # add additional fields in here
 
     def __str__(self):
-        return str(self.id) + ' ' + self.email
+        return self.email
 
 
 class Profile(models.Model):

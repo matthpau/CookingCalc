@@ -112,6 +112,7 @@
 
 {% block content %}
 {% endblock %}
+<hr>
 {% if user.is_authenticated %}
     <small>Logged in as {{ user.username }} | <a href="{% url 'account_logout' %}">logout</a></small>
 {% endif %}

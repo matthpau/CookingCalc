@@ -1,5 +1,6 @@
 {
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
-    "python.pythonPath": "C:\\Users\\Paul\\Anaconda3\\envs\\Cooking\\python.exe"
+    "python.pythonPath": "C:\\Users\\Paul\\Anaconda3\\envs\\Cooking\\python.exe",
+    "emmet.includeLanguages": {"django-html": "html"},
 }
