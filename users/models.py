@@ -17,6 +17,7 @@ class CustomUserManager(UserManager):
 class Country(models.Model):
     code=models.CharField(max_length=3, primary_key=True)
     name=models.CharField(_('Country'), max_length=50)
+    run_newsletter=models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
@@ -44,8 +45,8 @@ class Profile(models.Model):
     add_postcode = models.CharField(_('Postcode'), max_length=20, default='', blank=True)
     add_city = models.CharField(max_length=100, default='', verbose_name=_('City'), blank=True)
     add_country = models.ForeignKey(Country, null=True, on_delete=models.SET_NULL, blank=True)
-    local_offer_receive = models.BooleanField(_("I would like to receive newsletters with local offers"), default=False)
-    local_offer_radius = models.FloatField(_("Search radius for local offers (km)"), default=5, blank=True)
+    local_offer_receive = models.BooleanField(_("I would like to receive newsletters with local offers"), default=True)
+    local_offer_radius = models.FloatField(_("Search radius for local offers (km)"), default=10, blank=True)
 
     def __str__(self):
         return str(self.id) + ' ' + str(self.user)

@@ -1,7 +1,7 @@
 from django import forms
 from .models import StoreType, AuthorisedEventEditors, Event
 from users.models import CustomUser
-from bootstrap_datepicker_plus import DateTimePickerInput
+from bootstrap_datepicker_plus import DatePickerInput
 from django.utils.translation import gettext as _
 
 class StoreSearch(forms.Form):
@@ -26,18 +26,18 @@ class StoreSearch(forms.Form):
 
 class EventAddCreate(forms.ModelForm):
     #DateTimeFormat = "%d/%m/%Y %H:%M"
-    DateTimeFormat = "%d %B %Y %H:%M"
+    DateTimeFormat = "%d %B %Y"
 
     start_date = forms.DateTimeField(
         label=_('Event start'),
         input_formats=[DateTimeFormat],
-        widget=DateTimePickerInput(format=DateTimeFormat).start_of('app')
+        widget=DatePickerInput(format=DateTimeFormat).start_of('app')
         )
 
     end_date = forms.DateTimeField(
         label=_('Event finish:'),
         input_formats=[DateTimeFormat],
-        widget=DateTimePickerInput(format=DateTimeFormat).start_of('app'))
+        widget=DatePickerInput(format=DateTimeFormat).start_of('app'))
 
     class Meta:
         model = Event

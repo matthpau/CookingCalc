@@ -188,7 +188,6 @@ class EventsList(ListView):
     model = Event
     context_object_name = 'events'
     def get_queryset(self):
-
         return Event.objects.filter(store__id=self.kwargs['store_id'])
 
     #https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#adding-extra-context
@@ -279,7 +278,6 @@ def editor_delete(request):
     Editors.objects.filter(store_id=store_id).filter(user_id=user_id).delete()
     #return redirect('store:editors', store_id=store_id)
     return JsonResponse({'response_text': _('Editor has been removed')})
-
 
 def editor_create(request):
     email = request.POST.get('email')

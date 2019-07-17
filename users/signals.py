@@ -28,7 +28,7 @@ def update_geo_info(sender, instance, created, **kwargs):
     from geopy.geocoders import Nominatim
 
     geolocator = Nominatim(user_agent="CookingCalc")
-    my_loc = geolocator.geocode(instance.found_address)
+    my_loc = geolocator.geocode(instance.found_address, timeout=5)
     if my_loc:
         
         lat, lon = (my_loc.latitude, my_loc.longitude)
