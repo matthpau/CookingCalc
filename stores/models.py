@@ -117,4 +117,4 @@ class Event(models.Model):
     updated_at = models.DateTimeField(_('Updated'), auto_now=True)
 
     def __str__(self):
-        return str(self.id) + ' ' + self.title + ' | ' + str(self.start_date) + ' ' + str(self.start_date)
+        return str(self.id) + ' ' + str(self.store) + ' // ' + self.title + ' | ' + str(self.start_date)

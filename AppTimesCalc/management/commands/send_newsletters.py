@@ -13,6 +13,12 @@ from django.contrib.gis.measure import D
 from django.contrib.gis.db.models.functions import Distance
 import datetime
 
+from django.core.mail import send_mail, EmailMessage, EmailMultiAlternatives
+from django.template.loader import render_to_string
+
+from django.core import mail
+
+
 # https://docs.djangoproject.com/en/2.2/howto/custom-management-commands/
 # https://towardsdatascience.com/loading-data-from-openstreetmap-with-python-and-the-overpass-api-513882a27fd0
 
@@ -21,15 +27,14 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
          
+        messages = []
+
         #Calculate action start date, assumed next Wednesday
         date = datetime.date.today()
         day = 2 #Wednesday (Monday is 0)
 
-        
-        
         #https://stackoverflow.com/questions/6558535/find-the-date-for-the-first-monday-after-a-given-a-date
         onDay = lambda date, day: date + datetime.timedelta(days=(day-date.weekday()+7)%7)
-        
         next_newsletter_date = onDay(date, day)
 
         if next_newsletter_date == date:
@@ -47,26 +52,55 @@ class Command(BaseCommand):
 
         #for testing 
         #TODO remove this if still here
-        profiles = profiles.filter(id=5)
+        #profiles = profiles.filter(id=4)
 
-        #print(profiles.values())
+        print('XXX', profiles.values())
         
         for profile in profiles:
+            #print('YYY', profile)
             user_location = profile.found_location
             search_dis = profile.local_offer_radius
-            #print(profile.user_id, user_location)
-            print()
+            print(profile.user_id, user_location, profile.user.email)
+            #print()
 
             stores = Store.objects.filter(location__distance_lte=(user_location, D(km=search_dis))) \
                     .annotate(num_events=Count('event')) \
                     .annotate(distance=Distance('location', user_location))
 
             stores = stores.filter(num_events__gt=0)
-            #print(stores)
-            print()
+
             
-            events = Event.objects.filter(store__in=stores)
-            print(events)
+            #TODO is there a way to calculate it more efficiently and pick up distance from the stores query?
+            events = Event.objects.filter(store__in=stores).annotate(distance=Distance('store__location', user_location)).order_by('-distance')
+
+            context = {
+                'profile': profile,
+                'events': events,
+                'search_dis': str(round(search_dis, 1)) + ' km'
+                }
+
+            msg_html = render_to_string('newsletters/weekly_general.html', context)
+
+            #Writing to file for testing
+            write_file = f'newsletters/testing/test-{str(profile.id)}.html' 
+            with open(write_file, 'w') as f:
+                f.write(msg_html)
+            
+            
+            subject, from_email, to = 'your weekly cooking-helpers.com events', settings.DEFAULT_FROM_EMAIL, 'matthpau@gmail.com'
+            text_content = 'This is an important message.'
+            html_content = msg_html
+            msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+            msg.attach_alternative(html_content, "text/html")
+
+            messages.append(msg)
+
+        connection = mail.get_connection()
+        #connection.send_messages(messages) 
+            
+
+
+
         
 
      

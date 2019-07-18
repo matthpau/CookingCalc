@@ -1,0 +1,26 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cooking Helpers Weekly Newsletter</title>
+</head>
+
+<body>
+
+<p>{% trans 'Your weekly local info from '%}<a href='https://www.cooking-helpers.com/'>Cooking Helpers</a></p>
+
+<h2>Dear {{profile.user.email}}, your events for this week</h2>
+
+{% for event in events %}
+    {% ifchanged %} <h3>{{ event.store}} {% endifchanged %} </h3>
+    <p>{{ event.title }} - {{ event.comment }} </p>
+    <p><small></small>{{ event.start_date }} - {{ event.end_date }}</small></p>
+{% endfor %}
+
+<p>{% trans 'Your search radius '%}{{ search_dis }}</p>
+<p><a href='#'>{% trans 'Change your preferences'%}</a></p>
+<p>{% trans 'Thankyou for visiting '%}<a href='https://www.cooking-helpers.com/'>Cooking Helpers</a></p>
+<p><a href='#'>{% trans 'Unsubscribe '%}</a></p>
+
+</body>
+</html>
