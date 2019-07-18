@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Cooking Helpers Weekly Newsletter</title>
+
 </head>
 
 <body>
@@ -13,8 +14,12 @@
 
 {% for event in events %}
     {% ifchanged %} <h3>{{ event.store}} {% endifchanged %} </h3>
-    <p>{{ event.title }} - {{ event.comment }} </p>
-    <p><small></small>{{ event.start_date }} - {{ event.end_date }}</small></p>
+    <p>{{ event.title }} - {{ event.comment }} {% trans 'Runs'%} {{ event.start_date }} {% trans ' to '%} {{ event.end_date }}</p>
+    
+    {% if event.includes_offers %}
+        <p style="color:MediumPurple;margin-left:40px"><strong>{% trans 'Includes an offer'%}</strong></p>
+    {% endif %}   
+
 {% endfor %}
 
 <p>{% trans 'Your search radius '%}{{ search_dis }}</p>

@@ -11,7 +11,7 @@ from stores.models import Store, Event
 
 from django.contrib.gis.measure import D
 from django.contrib.gis.db.models.functions import Distance
-import datetime
+import datetime as dt
 
 from django.core.mail import send_mail, EmailMessage, EmailMultiAlternatives
 from django.template.loader import render_to_string
@@ -26,24 +26,23 @@ from django.core import mail
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
-         
+
         messages = []
 
         #Calculate action start date, assumed next Wednesday
-        date = datetime.date.today()
+        date = dt.date.today()
         day = 2 #Wednesday (Monday is 0)
 
         #https://stackoverflow.com/questions/6558535/find-the-date-for-the-first-monday-after-a-given-a-date
-        onDay = lambda date, day: date + datetime.timedelta(days=(day-date.weekday()+7)%7)
+        onDay = lambda date, day: date + dt.timedelta(days=(day-date.weekday()+7)%7)
         next_newsletter_date = onDay(date, day)
 
         if next_newsletter_date == date:
-            next_newsletter_date += datetime.timedelta(days=7)
+            next_newsletter_date += dt.timedelta(days=7)
+        
+        next1_newsletter_date = next_newsletter_date + dt.timedelta(days=7)
 
-        print(next_newsletter_date)
-        #TODO YOU ARE HERE
-
-
+        print(next_newsletter_date, next1_newsletter_date)
         #All users who want to get a newsletter in countries where we have a newsletter
         profiles = Profile.objects.filter(local_offer_receive=True).filter(add_country__run_newsletter=True)
       
@@ -54,7 +53,7 @@ class Command(BaseCommand):
         #TODO remove this if still here
         #profiles = profiles.filter(id=4)
 
-        print('XXX', profiles.values())
+        #print('XXX', profiles.values())
         
         for profile in profiles:
             #print('YYY', profile)
@@ -71,7 +70,20 @@ class Command(BaseCommand):
 
             
             #TODO is there a way to calculate it more efficiently and pick up distance from the stores query?
-            events = Event.objects.filter(store__in=stores).annotate(distance=Distance('store__location', user_location)).order_by('-distance')
+            events = Event.objects.all()
+            events = events.filter(store__in=stores).annotate(distance=Distance('store__location', user_location)).order_by('-distance')
+
+            #Only get those events that start or end in the period
+            #Those that start in the period
+            # Those that end in the period
+            # Those that span the period
+            events = events.filter(start_date__gte=next_newsletter_date, start_date__lte=next1_newsletter_date) | \
+                events.filter(end_date__gte=next_newsletter_date, end_date__lte=next1_newsletter_date) | \
+                events.filter(start_date__lte=next_newsletter_date, end_date__gte=next1_newsletter_date) 
+
+            #For testing
+            #for e in events:
+            #    print(e.id, e.store, e.start_date, e.end_date, e.includes_offers)
 
             context = {
                 'profile': profile,
@@ -86,7 +98,6 @@ class Command(BaseCommand):
             with open(write_file, 'w') as f:
                 f.write(msg_html)
             
-            
             subject, from_email, to = 'your weekly cooking-helpers.com events', settings.DEFAULT_FROM_EMAIL, 'matthpau@gmail.com'
             text_content = 'This is an important message.'
             html_content = msg_html
@@ -96,11 +107,4 @@ class Command(BaseCommand):
             messages.append(msg)
 
         connection = mail.get_connection()
-        #connection.send_messages(messages) 
-            
-
-
-
-        
-
-     
+        connection.send_messages(messages) 

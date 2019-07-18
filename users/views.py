@@ -27,7 +27,6 @@ def update_profile(request):
     })
 
 def check_address(request):
-    print(request.POST)
     from geopy.geocoders import Nominatim
     from .businessLogic import nice_address
 

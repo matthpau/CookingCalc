@@ -228,7 +228,6 @@ class UpdateEvent(UpdateView):
     template_name = 'stores/event_update.html'
 
     def get_object(self):
-        print(self.kwargs)
         return get_object_or_404(Event, pk = self.kwargs['event_id'])
 
     def form_valid(self, form):
@@ -270,7 +269,6 @@ def editors_list(request, store_id):
     return JsonResponse(response, safe=False)
 
 def editor_delete(request):
-    print(request.POST)
     store_id = request.POST.get('del_store_id')
     user_id = request.POST.get('del_user_id')
     #Delete Specified editor. Double check they have not maniuplated the URL to delete themselves
