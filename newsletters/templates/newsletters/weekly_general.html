@@ -13,8 +13,10 @@
 <h2>Dear {{profile.user.email}}, your events for this week</h2>
 
 {% for event in events %}
-    {% ifchanged %} <h3>{{ event.store}} {% endifchanged %} </h3>
-    <p>{{ event.title }} - {{ event.comment }} {% trans 'Runs'%} {{ event.start_date }} {% trans ' to '%} {{ event.end_date }}</p>
+    {% ifchanged %}
+        <h3>{{ event.store.store_name}}</h3>
+    {% endifchanged %} 
+    <p style="color:Black";>{{ event.title }} - {{ event.comment }} {% trans 'Runs'%} {{ event.start_date }} {% trans ' to '%} {{ event.end_date }}</p>
     
     {% if event.includes_offers %}
         <p style="color:MediumPurple;margin-left:40px"><strong>{% trans 'Includes an offer'%}</strong></p>
@@ -28,4 +30,4 @@
 <p><a href='#'>{% trans 'Unsubscribe '%}</a></p>
 
 </body>
-</html>
+</html> 

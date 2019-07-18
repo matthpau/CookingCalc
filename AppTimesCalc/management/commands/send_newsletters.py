@@ -51,7 +51,7 @@ class Command(BaseCommand):
 
         #for testing 
         #TODO remove this if still here
-        #profiles = profiles.filter(id=4)
+        profiles = profiles.filter(id=4)
 
         #print('XXX', profiles.values())
         
