@@ -1,6 +1,6 @@
 # this is run to provide some initial values for which the database works
 
-import time
+
 from django.core.management.base import BaseCommand
 from django.conf import settings
 import requests
@@ -14,13 +14,16 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         import json
-        from os.path import expanduser, isfile
+        from os.path import expanduser, isfile, join
         import os
+        import datetime as dt
+        import time
         from django.contrib.gis.geos import fromstr
         from django.apps import apps
         from django.db.utils import IntegrityError, DataError
         from stores.models import Store, StoreType, Country
-        import_folder = 'dumps/store_import'
+        IMPORT_FOLDER = 'dumps/store_import'
+        LOGS_FOLDER = 'logs/store_load'
 
 
         def delete_data():
@@ -42,8 +45,8 @@ class Command(BaseCommand):
             else:   
                 max_file_age = max_days * 24 * 60 * 60  #how old a file needs to be before it is replace, secs
             country_name = country_name.replace(' ', '_').lower()
-            save_file = os.path.join(settings.BASE_DIR, import_folder, country_name + '.json')
-            print('downloading', country_name, 'to', save_file)
+            save_file = join(settings.BASE_DIR, IMPORT_FOLDER, country_name + '.json')
+            logfile.write('getting data for ' + country_name + ' using savefile: ' + save_file + '\n')
 
             overpass_url = "http://overpass-api.de/api/interpreter"
             overpass_query = f"""
@@ -72,28 +75,30 @@ class Command(BaseCommand):
                 if file_age > max_file_age:
                     replace_flag = True
                     os.remove(save_file)
-                    print('Old file expired, has been removed')
+                    logfile.write('Old file expired, has been removed\n')
                 else:
-                    print('File still up to date, keeping existing')
+                    logfile.write('File still up to date, keeping existing\n')
             else:
                 replace_flag = True
 
             if replace_flag:
-                print('getting update')
+                logfile.write('File out of date, getting update from OSM\n')
                 r = requests.get(overpass_url, params={'data': overpass_query})
                 if r.status_code == 200:
                     with open(save_file, 'w') as f:
                         json.dump(r.json(), f)
-                        print('Local save complete')
+                        logfile.write('Local save complete\n')
                         was_replaced = True
                 else:
-                    print('failed', r.status_code)
+                    logfile.write('failed, code: ' + str(r.status_code) + '\n')
                     if r.status_code == 429:
-                        print('Code 429: too much work for OpenStreetMap')
-                    #print('url', r.url)
-                    #print('query', overpass_query)
+                        logfile.write('Code 429 means: too much work for OpenStreetMap\n')
+                    else:
+                        logfile.write('Some other streetmap error. Details:\n')
+                        logfile.write('url:' + r.url+ '\n')
+                        logfile.write('query:' + overpass_query+ '\n')
 
-            print()
+            logfile.write('\n')
             return was_replaced
 
         def make_website(url_text):
@@ -108,7 +113,11 @@ class Command(BaseCommand):
 
             return result
 
-        def load_data(country_name, country_code):
+        def load_data(country_name, country_code, logfile):
+            """
+            logfile is unique per overall run
+            """
+
             nice_name = country_name
             country_name = country_name.replace(' ', '_').lower()
 
@@ -118,17 +127,17 @@ class Command(BaseCommand):
                 defaults={'name':nice_name}
                 )
 
-            import_file_prod = expanduser(os.path.join('~/matthpau.pythonanywhere.com/CookingCalc/', import_folder, country_name + '.json'))
-            import_file_dev = os.path.join(settings.BASE_DIR, import_folder, country_name + '.json')
+            import_file_prod = expanduser(join('~/matthpau.pythonanywhere.com/CookingCalc/', IMPORT_FOLDER, country_name + '.json'))
+            import_file_dev = join(settings.BASE_DIR, IMPORT_FOLDER, country_name + '.json')
 
             if isfile(import_file_prod):   # this is valid for prod linux
                 import_file = import_file_prod
-                print('    found data file for linux/python anywhere, loading')
+                logfile.write('    found data file for linux/python anywhere, loading\n')
             elif isfile(import_file_dev):   # valid for local mac
                 import_file = import_file_dev
-                print('    found data file for mac, loading', country_name)
+                logfile.write('    found data file for mac, loading ' + country_name + '\n')
             else:
-                print('    no file found, skipping')
+                logfile.write('    no file found, skipping\n')
                 import_file = None
 
             if import_file:
@@ -215,12 +224,13 @@ class Command(BaseCommand):
                                     
                                     skipped += 1
                                 except DataError:
-                                    print('Problem with', obj)
+                                    logfile.write('Problem with', obj + '\n')
 
                         except KeyError:
                             pass
-                print('    ', i, 'new stores loaded, ', skipped, 'stores updated')
-                print()
+                logfile.write('    ' + str(i) + ' new stores loaded, ' + str(skipped) + ' stores updated\n')
+                logfile.write('\n')
+
 
         # https://www.nationsonline.org/oneworld/country_code_list.htm
         country_list = {
@@ -245,10 +255,8 @@ class Command(BaseCommand):
             'Latvia': 'LV',
             'Lithuania': 'LT',
             'Estonia': 'EE',
-            'Greece': 'GR'
-
-
-
+            'Greece': 'GR',
+            'Italy': 'IT'
         }
 
         #get latest from OSM
@@ -257,6 +265,22 @@ class Command(BaseCommand):
         osm_shops = ['butcher', 'deli', 'cheese', 'dairy', 'farm', 'coffee', 'greengrocer', 'tea', 'spices']
 
         #delete_data()
+
+        #MAIN PART OF ROUTINE
+
+        #Delete all logfiles older than x days
+        now = time.time()
+        for old_logfile in os.listdir(LOGS_FOLDER):
+            old_logfile = join(LOGS_FOLDER, old_logfile)
+            days = 7
+            
+            if os.stat(old_logfile).st_mtime < now - days * 24 * 60 * 60:
+                os.remove(old_logfile)
+
+        #create new logfile and name
+        load_start_time = dt.datetime.now()
+        logfile_path = join(LOGS_FOLDER, load_start_time.strftime("%Y-%m-%d_%H-%M-%S"))
+        logfile = open(logfile_path, "w")
 
         #Check number of records in store table - is this a first time load?
         #if yes, then force a load from any existing tables
@@ -270,15 +294,26 @@ class Command(BaseCommand):
             was_updated = get_data_from_OSM(k, v, osm_shops, fresh=False, max_days=2)
             if existing_count > 1: # already records exist
                 if was_updated: # and we got new data
-                   load_data(k, v)
+                   load_data(k, v, logfile)
             else:   # no records exist
-                load_data(k, v) # do a load regardless
+                load_data(k, v, logfile) # do a load regardless
 
             #Uncomment to force a load during testing
             #load_data(k, v)
-            
 
             if was_updated and i != country_count:
-                print('    Waiting a bit before I do the next one...')
-                print()
+                logfile.write('    Waiting a bit before I do the next one...\n')
+                logfile.write('\n')
                 time.sleep(60)
+
+        load_end_time = dt.datetime.now()
+        logfile.write('Load start    ' + str(load_start_time) + '\n')
+        logfile.write('Load end      ' + str(load_end_time) + '\n') 
+        logfile.write('Load duration ' + str(load_end_time-load_start_time) + '\n')    
+
+        logfile.close()
+
+        print('Loading finished, check log to see results in:', logfile_path)
+
+
+
