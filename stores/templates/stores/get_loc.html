@@ -78,6 +78,7 @@ $(document).ready(function(){
     function populateList(){
         var $my_list = $('#store_list')
         var icon_text
+
         $.ajax({
             type: "GET",
             url: success_url,
@@ -90,6 +91,7 @@ $(document).ready(function(){
             },
             dataType : "json",
             success: function(stores) {
+                console.log(stores)
                 $my_list.empty()
                 $.each(stores, function(i, store){
                     var new_row_1 = '<li class="list-group-item">' + store.icon_text +' '+

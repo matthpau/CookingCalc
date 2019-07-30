@@ -11,7 +11,7 @@ from stores.models import Store, Event
 
 from django.contrib.gis.measure import D
 from django.contrib.gis.db.models.functions import Distance
-import datetime as dt
+    import datetime as dt
 
 from django.core.mail import send_mail, EmailMessage, EmailMultiAlternatives
 from django.template.loader import render_to_string
@@ -49,10 +49,6 @@ class Command(BaseCommand):
       
         #Ignore those with invalid addresses
         profiles = profiles.filter(found_location__isnull=False)
-        
-        #for testing 
-        #TODO remove this if still here
-        #profiles = profiles.filter(id=4)
 
         #print('XXX', profiles.values())
         

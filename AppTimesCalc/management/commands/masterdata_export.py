@@ -42,4 +42,5 @@ class Command(BaseCommand):
         call_command('dumpdata', 'RecipeConverter.Converter', f'--output={dumps_folder}/Converter.json')
         call_command('dumpdata', 'stores.StoreType', f'--output={dumps_folder}/store_type.json')
         call_command('dumpdata', 'users.Country', f'--output={dumps_folder}/user_country.json')
+        call_command('dumpdata', 'users.Country', f'--output={dumps_folder}/user_country.json')
         

@@ -126,12 +126,26 @@ def process_loc(request):
     if store_filter:
 
         store_results = store_results.filter(OSM_storetype_id=store_filter)
-  
-    store_results = store_results.values()
 
+    print(store_results)
+    # get any related events to show in the search screen
+    live_events = Event.objects.filter(store__in=store_results)
+    
+    #show only events that are live right now
+    today = dt.today()
+    live_events = live_events.filter(start_date__lte=today, end_date__gte=today)
+
+    live_events_count = live_events.count()
+
+    print(live_events, live_events_count)
+
+    #TODO here you are
+
+    store_results = store_results.values()
     # since this is a dictionary with location (non serializable) and a calculated Distance, I
     # need to convert it the long way to a dictionary
     return_data = []
+    store_results = store_results.values()
     for store in store_results:
 
         ww_dict = {}
