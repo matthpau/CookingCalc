@@ -1,0 +1,178 @@
+[
+    {
+        "model": "AppTimesCalc.cookinginfo",
+        "pk": 1,
+        "fields": {
+            "MeatType": 1,
+            "CookingLevel": 1,
+            "NotRecommended": false,
+            "BrowningMins": 0,
+            "BrowningTempC": 0,
+            "OvenTempC": 160,
+            "InternalTempC": 60,
+            "MinsPerKg": 50,
+            "MinsFixed": 0,
+            "RestTimeMins": 10
+        }
+    },
+    {
+        "model": "AppTimesCalc.cookinginfo",
+        "pk": 2,
+        "fields": {
+            "MeatType": 1,
+            "CookingLevel": 2,
+            "NotRecommended": false,
+            "BrowningMins": 0,
+            "BrowningTempC": 0,
+            "OvenTempC": 160,
+            "InternalTempC": 75,
+            "MinsPerKg": 90,
+            "MinsFixed": 0,
+            "RestTimeMins": 10
+        }
+    },
+    {
+        "model": "AppTimesCalc.cookinginfo",
+        "pk": 3,
+        "fields": {
+            "MeatType": 2,
+            "CookingLevel": 4,
+            "NotRecommended": false,
+            "BrowningMins": 0,
+            "BrowningTempC": 0,
+            "OvenTempC": 160,
+            "InternalTempC": 71,
+            "MinsPerKg": 60,
+            "MinsFixed": 0,
+            "RestTimeMins": 10
+        }
+    },
+    {
+        "model": "AppTimesCalc.cookinginfo",
+        "pk": 4,
+        "fields": {
+            "MeatType": 2,
+            "CookingLevel": 2,
+            "NotRecommended": false,
+            "BrowningMins": 0,
+            "BrowningTempC": 0,
+            "OvenTempC": 160,
+            "InternalTempC": 76,
+            "MinsPerKg": 85,
+            "MinsFixed": 0,
+            "RestTimeMins": 10
+        }
+    },
+    {
+        "model": "AppTimesCalc.cookinginfo",
+        "pk": 5,
+        "fields": {
+            "MeatType": 1,
+            "CookingLevel": 4,
+            "NotRecommended": false,
+            "BrowningMins": 0,
+            "BrowningTempC": 0,
+            "OvenTempC": 160,
+            "InternalTempC": 70,
+            "MinsPerKg": 60,
+            "MinsFixed": 0,
+            "RestTimeMins": 10
+        }
+    },
+    {
+        "model": "AppTimesCalc.cookinginfo",
+        "pk": 6,
+        "fields": {
+            "MeatType": 3,
+            "CookingLevel": 3,
+            "NotRecommended": false,
+            "BrowningMins": 0,
+            "BrowningTempC": 0,
+            "OvenTempC": 160,
+            "InternalTempC": 70,
+            "MinsPerKg": 50,
+            "MinsFixed": 0,
+            "RestTimeMins": 10
+        }
+    },
+    {
+        "model": "AppTimesCalc.cookinginfo",
+        "pk": 7,
+        "fields": {
+            "MeatType": 3,
+            "CookingLevel": 4,
+            "NotRecommended": false,
+            "BrowningMins": 0,
+            "BrowningTempC": 0,
+            "OvenTempC": 160,
+            "InternalTempC": 75,
+            "MinsPerKg": 55,
+            "MinsFixed": 0,
+            "RestTimeMins": 10
+        }
+    },
+    {
+        "model": "AppTimesCalc.cookinginfo",
+        "pk": 8,
+        "fields": {
+            "MeatType": 3,
+            "CookingLevel": 2,
+            "NotRecommended": false,
+            "BrowningMins": 0,
+            "BrowningTempC": 0,
+            "OvenTempC": 160,
+            "InternalTempC": 79,
+            "MinsPerKg": 75,
+            "MinsFixed": 0,
+            "RestTimeMins": 10
+        }
+    },
+    {
+        "model": "AppTimesCalc.cookinginfo",
+        "pk": 9,
+        "fields": {
+            "MeatType": 5,
+            "CookingLevel": 6,
+            "NotRecommended": false,
+            "BrowningMins": 0,
+            "BrowningTempC": 0,
+            "OvenTempC": 180,
+            "InternalTempC": 75,
+            "MinsPerKg": 50,
+            "MinsFixed": 20,
+            "RestTimeMins": 10
+        }
+    },
+    {
+        "model": "AppTimesCalc.cookinginfo",
+        "pk": 10,
+        "fields": {
+            "MeatType": 6,
+            "CookingLevel": 6,
+            "NotRecommended": false,
+            "BrowningMins": 0,
+            "BrowningTempC": 0,
+            "OvenTempC": 160,
+            "InternalTempC": 75,
+            "MinsPerKg": 50,
+            "MinsFixed": 20,
+            "RestTimeMins": 10
+        }
+    },
+    {
+        "model": "AppTimesCalc.cookinginfo",
+        "pk": 11,
+        "fields": {
+            "MeatType": 7,
+            "CookingLevel": 6,
+            "NotRecommended": false,
+            "BrowningMins": 0,
+            "BrowningTempC": 0,
+            "OvenTempC": 180,
+            "InternalTempC": 75,
+            "MinsPerKg": 50,
+            "MinsFixed": 20,
+            "RestTimeMins": 10
+        }
+    }
+]
