@@ -267,13 +267,14 @@ class Command(BaseCommand):
         #delete_data()
 
         #MAIN PART OF ROUTINE
+        print('Running the store loader')
 
         #Delete all logfiles older than x days
         now = time.time()
         for old_logfile in os.listdir(LOGS_FOLDER):
             old_logfile = join(LOGS_FOLDER, old_logfile)
             days = 7
-            
+
             if os.stat(old_logfile).st_mtime < now - days * 24 * 60 * 60:
                 os.remove(old_logfile)
 
