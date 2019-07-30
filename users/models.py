@@ -17,7 +17,7 @@ class CustomUserManager(UserManager):
 class Country(models.Model):
     code=models.CharField(max_length=3, primary_key=True)
     name=models.CharField(_('Country'), max_length=50)
-    run_newsletter=models.BooleanField(default=False)
+    run_newsletter=models.BooleanField(default=True)
 
     def __str__(self):
         return self.name

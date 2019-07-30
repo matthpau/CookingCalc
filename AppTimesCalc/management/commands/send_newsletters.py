@@ -31,7 +31,7 @@ class Command(BaseCommand):
 
         #Calculate action start date, assumed next Wednesday
         date = dt.date.today()
-        day = 2 #Wednesday (Monday is 0)
+        day = 2 # Issue Day Wednesday (Monday is 0)
 
         #https://stackoverflow.com/questions/6558535/find-the-date-for-the-first-monday-after-a-given-a-date
         onDay = lambda date, day: date + dt.timedelta(days=(day-date.weekday()+7)%7)
@@ -45,13 +45,14 @@ class Command(BaseCommand):
         print(next_newsletter_date, next1_newsletter_date)
         #All users who want to get a newsletter in countries where we have a newsletter
         profiles = Profile.objects.filter(local_offer_receive=True).filter(add_country__run_newsletter=True)
+        print(profiles)
       
         #Ignore those with invalid addresses
         profiles = profiles.filter(found_location__isnull=False)
-
+        
         #for testing 
         #TODO remove this if still here
-        profiles = profiles.filter(id=4)
+        #profiles = profiles.filter(id=4)
 
         #print('XXX', profiles.values())
         
@@ -74,7 +75,7 @@ class Command(BaseCommand):
             events = events.filter(store__in=stores).annotate(distance=Distance('store__location', user_location)).order_by('-distance')
 
             #Only get those events that start or end in the period
-            #Those that start in the period
+            # Those that start in the period
             # Those that end in the period
             # Those that span the period
             events = events.filter(start_date__gte=next_newsletter_date, start_date__lte=next1_newsletter_date) | \
@@ -82,8 +83,8 @@ class Command(BaseCommand):
                 events.filter(start_date__lte=next_newsletter_date, end_date__gte=next1_newsletter_date) 
 
             #For testing
-            #for e in events:
-            #    print(e.id, e.store, e.start_date, e.end_date, e.includes_offers)
+            for e in events:
+                print(e.id, e.store, e.start_date, e.end_date, e.includes_offers)
 
             context = {
                 'profile': profile,

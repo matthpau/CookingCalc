@@ -49,13 +49,6 @@ AUTHENTICATION_BACKENDS = (
 )
 
 INSTALLED_APPS = [
-    #Django autocomplete lite
-    #https://django-autocomplete-light.readthedocs.io/en/master/install.html#configuration
-    #needs to go before     django.contrib.admin
-    'dal',
-    'dal_select2',
-
-    #Standard
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -130,10 +123,10 @@ DATABASES = {
     "default": {
         "ENGINE": "django.contrib.gis.db.backends.postgis",
         "NAME": "paulmatthews",
-        "USER": "postgres",
-        "PASSWORD": "tupaki123",
+        "USER": "paulmatthews",
+        "PASSWORD": "",
         "HOST": "localhost",
-        "PORT": '5432'
+        "PORT": "",
     }
 }
 
@@ -220,24 +213,6 @@ ARCHIVE_USER_EMAIL = 'archive_user@cooking-helpers.com'
 
 #GeoIP settings
 GEOIP_PATH = os.path.join(BASE_DIR, 'geo_data')
-
-
-
-#https://stackoverflow.com/questions/49139044/geodjango-on-windows-could-not-find-the-gdal-library-oserror-winerror-12
-#this for my windows setup only
-
-if os.name == 'nt':
-    import platform
-    OSGEO4W = r"C:\OSGeo4W"
-    if '64' in platform.architecture()[0]:
-        OSGEO4W += "64"
-    assert os.path.isdir(OSGEO4W), "Directory does not exist: " + OSGEO4W
-    os.environ['OSGEO4W_ROOT'] = OSGEO4W
-    os.environ['GDAL_DATA'] = OSGEO4W + r"\share\gdal"
-    os.environ['PROJ_LIB'] = OSGEO4W + r"\share\proj"
-    os.environ['PATH'] = OSGEO4W + r"\bin;" + os.environ['PATH']
-
-#https://blog.braham.biz/getting-started-with-translating-a-django-application-d85ec34e505
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),

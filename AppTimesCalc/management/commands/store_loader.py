@@ -269,6 +269,10 @@ class Command(BaseCommand):
         #MAIN PART OF ROUTINE
         print('Running the store loader')
 
+        #Make sure Logs Folder is there
+        if not os.path.exists(LOGS_FOLDER):
+            os.makedirs(LOGS_FOLDER)
+
         #Delete all logfiles older than x days
         now = time.time()
         for old_logfile in os.listdir(LOGS_FOLDER):
