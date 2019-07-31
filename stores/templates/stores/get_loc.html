@@ -3,11 +3,11 @@
 
 {% block content %}
 
-<!---- adapted from
+<!-- adapted from
 https://www.tutorialrepublic.com/html-tutorial/html5-geolocation.php
 https://simpleisbetterthancomplex.com/tutorial/2016/08/29/how-to-work-with-ajax-request-with-django.html
 https://www.youtube.com/watch?v=fEYx8dQr_cQ for the tutorial
---->
+-->
 
 <div class="container">
     <div class="row">
@@ -67,8 +67,9 @@ $(document).ready(function(){
         result.innerHTML = '<div class="alert alert-success" role="alert">' +
                             'Found your location' +
                             '</div>'
-        $(result).delay(3000).hide(500);
         populateList()
+        $(result).delay(6000).hide(500);
+        
     }
 
     function errorCallback(){

@@ -2,32 +2,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cooking Helpers Weekly Newsletter</title>
-
+    <title>{% trans 'Cooking Helpers Weekly Newsletter'%}</title>
 </head>
 
 <body>
 
 <p>{% trans 'Your weekly local info from '%}<a href='https://www.cooking-helpers.com/'>Cooking Helpers</a></p>
 
-<h2>Dear {{profile.user.email}}, your events for this week</h2>
-
 {% for event in events %}
     {% ifchanged %}
-        <h3>{{ event.store.store_name}}</h3>
+        <h3>{{ event.store.name}} - <a href="{{ event.store.search_url}}"> {{ event.store.my_address}}</a></h3>
+
     {% endifchanged %} 
-    <p style="color:Black";>{{ event.title }} - {{ event.comment }} {% trans 'Runs'%} {{ event.start_date }} {% trans ' to '%} {{ event.end_date }}</p>
-    
+    <p style="color:Black;margin-left:40px;">{{ event.title }} {% trans 'effective'%}
+    {{ event.start_date }} {% trans ' to '%} {{ event.end_date }}
     {% if event.includes_offers %}
-        <p style="color:MediumPurple;margin-left:40px"><strong>{% trans 'Includes an offer'%}</strong></p>
-    {% endif %}   
+        <span style="color:MediumPurple;"><strong>{% trans '(includes an offer)'%}</strong></span>
+    {% endif %}  
+    
+    <br>
+    <small>{{ event.comment }} </small>
+    
+    </p>
 
 {% endfor %}
 
-<p>{% trans 'Your search radius '%}{{ search_dis }}</p>
-<p><a href='#'>{% trans 'Change your preferences'%}</a></p>
+<p>{% trans 'Your search radius '%}{{ search_dis }} <br>
+<a href="{{ profile_url }} ">{% trans 'Change your preferences or unsubscribe'%}</a></p>
 <p>{% trans 'Thankyou for visiting '%}<a href='https://www.cooking-helpers.com/'>Cooking Helpers</a></p>
-<p><a href='#'>{% trans 'Unsubscribe '%}</a></p>
 
 </body>
 </html> 

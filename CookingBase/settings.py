@@ -93,6 +93,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
+
+
+
 ROOT_URLCONF = 'CookingBase.urls'
 
 TEMPLATES = [
@@ -184,6 +188,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = "/home/matthpau/matthpau.pythonanywhere.com/CookingCalc/pa_static"
 
 AUTH_USER_MODEL = 'users.CustomUser'
+
 SITE_ID = 1
 
 

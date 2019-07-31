@@ -11,6 +11,17 @@
             <h1>{{ store.name }}</h1>
             <h5>{{ store.OSM_storetype.icon_text|safe }} <span class="badge badge-light">{{ store.OSM_storetype.type_text|capfirst }}</span></h5>
 
+            {% if store.website %}
+                <a href="{{ store.website }}">{{ store.website }}</a><br>
+            {% endif %}
+
+            {% if store.my_address %}
+                {{ store.my_address}}<br>
+            {% endif %}
+
+            <a class="badge badge-secondary" href="{{ store.search_url }}">MAP</a>
+            <br><br>
+
             {% if user.is_authenticated %}
                 <div id="like-section">
                     {% include 'stores/like_section.html' %}
@@ -19,16 +30,16 @@
                 <p>Please <a href="{% url 'account_login' %}">login </a>to like this store</p>
             {% endif %}
 
-            {% if store.my_address %}
-                {{ store.my_address}}<br>
-            {% endif %}
+            
 
-            <a class="badge badge-secondary" href="{{ store.search_url }}">MAP</a>
             <br>
+            <p>{% trans 'Please help our local stores by updating their information on OpenStreetMap (requires account)'%}<br>
+            <a href="https://www.openstreetmap.org/node/{{ store.OSM_ID }}">{% trans 'Edit on OpenStreetmap'%}</a></p>
+            <small>{% trans 'Changes will appear here within 48 hours' %}</small>
+            
 
-            {% if store.website %}
-                <a href="{{ store.website }}">{{ store.website }}</a><br>
-            {% endif %}
+            
+            <br>
 
         </div>
 
@@ -66,14 +77,16 @@
 {% if user in editors %}
     <br><br>
     <h3>{% trans "Owner Section" %}</h3>
-    <p>{% blocktrans %} Welcome, {{user}}. You have the following options: {% endblocktrans %}<p>
-    <p><a href="https://www.openstreetmap.org/node/{{ store.OSM_ID }}">{% trans 'Edit on OpenStreetmap (requires account) '%}</a><br>
-    <small>{% trans 'Changes will appear the next day' %}</small>
-    <p><a href='{% url 'store:editors' store.id %}'>{% trans "List or edit your associated users" %}</a><br>
-    <small>{{ editors_count }} {% trans "authorised editors" %} </small>
+    <p>{% blocktrans %} Welcome, {{user}}. You have the following options: {% endblocktrans %}</p>
+    <p>
+        <a href='{% url 'store:editors' store.id %}'>{% trans "List or edit your associated users" %}</a><br>
+        <small>{{ editors_count }} {% trans "authorised editors" %} </small>
     </p>
-    <p><a href='{{ store.events_url }}'>{% trans "List or edit your events" %}</a><br>
-    <small>{{ upcoming_count }} {% trans "event(s) upcoming" %}, {{ all_count }} {% trans "total" %}</small></p>
+
+    <p>
+    <a href='{{ store.events_url }}'>{% trans "List or edit your events" %}</a><br>
+    <small>{{ upcoming_count }} {% trans "event(s) upcoming" %}, {{ all_count }} {% trans "total" %}</small>
+    </p>
 {% endif %}
 
 <script>

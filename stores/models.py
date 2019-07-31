@@ -5,8 +5,8 @@ from django.urls import reverse
 from django.utils.translation import gettext as _
 from taggit.managers import TaggableManager
 from bootstrap_datepicker_plus import DateTimePickerInput
-from bootstrap_datepicker_plus import DateTimePickerInput
 
+from users.businessLogic import nice_address
 
 # https://realpython.com/location-based-app-with-geodjango-tutorial/
 
@@ -41,7 +41,6 @@ class Store(models.Model):
 
     authorised_editors = models.ManyToManyField(get_user_model(), through='AuthorisedEventEditors', related_name="authorised_editors")
 
-    my_name = models.CharField(max_length=100)
     my_address = models.CharField(max_length=300)
     my_country = models.ForeignKey(Country, null=True, on_delete=models.SET_NULL)
 

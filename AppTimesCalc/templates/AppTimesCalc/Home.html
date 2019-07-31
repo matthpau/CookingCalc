@@ -1,12 +1,12 @@
 {% extends 'AppTimesCalc/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 
 <div class="container">
     <div class="row justify-content-center">
-        <p>Welcome! I plan to release a bunch of helpful tools for passionate home cooks.
-            You can start by checking out the recipe converter.</p>
+        <p>Welcome, please try the new <a href="{% url 'store:get_loc' %}">{% trans 'Local Store Search'%}</a></p>
     </div>
 
     <div class="card-deck">

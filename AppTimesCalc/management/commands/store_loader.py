@@ -180,11 +180,10 @@ class Command(BaseCommand):
                                 if not address:
                                     address = ''
 
-                                o = StoreType.objects.get(pk=tags.get('shop', ''))
+                                store_type = StoreType.objects.get(pk=tags.get('shop', ''))
 
                                 try:
                                     s = shop(name=store_name,
-                                             my_name=store_name,
                                              my_address=address,
                                              my_country=country,
                                              location=location,
@@ -195,7 +194,7 @@ class Command(BaseCommand):
                                              add_country=tags.get('addr:country', ''),
                                              website=make_website(tags.get('website', '')),
                                              OSM_ID=osmid,
-                                             OSM_storetype=o,
+                                             OSM_storetype=store_type,
                                              lat=latitude,
                                              lon=longitude,
                                              )
@@ -212,7 +211,7 @@ class Command(BaseCommand):
                                     s.add_postcode = tags.get('addr:postcode', '')
                                     s.add_city = tags.get('addr:city', '')
                                     s.add_country = tags.get('addr:country', '')
-                                    s.OSM_storetype = o
+                                    s.OSM_storetype = store_type
                                     
                                     if not s.my_address:
                                         s.my_address = address
@@ -262,7 +261,7 @@ class Command(BaseCommand):
         #get latest from OSM
         #https://wiki.openstreetmap.org/wiki/Map_Features#Shop
         
-        osm_shops = ['butcher', 'deli', 'cheese', 'dairy', 'farm', 'coffee', 'greengrocer', 'tea', 'spices']
+        osm_shops = ['butcher', 'deli', 'cheese', 'dairy', 'farm', 'coffee', 'greengrocer', 'tea', 'spices', 'seafood', 'fishmonger']
 
         #delete_data()
 
