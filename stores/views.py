@@ -1,5 +1,4 @@
-import json
-from django.shortcuts import get_object_or_404, render, redirect
+from django.shortcuts import get_object_or_404, render
 from ipware import get_client_ip
 from django.contrib.gis.geoip2 import GeoIP2
 from django.contrib.gis.db.models.functions import Distance
@@ -8,18 +7,16 @@ from django.contrib.gis.measure import D
 from .forms import StoreSearch
 from .models import Store, StoreType
 from users.models import CustomUser
-from django.http import HttpResponseRedirect, JsonResponse, HttpResponse
+from django.http import HttpResponseRedirect, JsonResponse
 from django.contrib.auth.decorators import login_required
-from django.db.models import Count
+from django.db.models import Count, When, Value, BooleanField, Case
 from django.template.loader import render_to_string
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from stores.models import Event, AuthorisedEventEditors as Editors
 from django.urls import reverse
 from .forms import EventAddCreate
-from datetime import datetime as dt
-from dal import autocomplete
-from django.views.decorators.csrf import ensure_csrf_cookie
+from datetime import datetime as dt, date
 from django.utils.translation import gettext as _
 
 def store_profile(request, store_id):
@@ -33,7 +30,13 @@ def store_profile(request, store_id):
     store_editors = CustomUser.objects.filter(authorisedeventeditors__store__id=store_id)
 
     #Get count of events for display
-    events_upcoming = Event.objects.filter(start_date__gt=dt.now()).filter(store__id=store_id).count()
+    events_store = Event.objects.filter(store__id=store_id)
+    events_all_count = events_store.count()
+
+    now = dt.now()
+
+    events_live = events_store.filter(start_date__lt=now, end_date__gt=now)
+    events_upcoming_count = events_store.filter(end_date__gt=now).count()
 
     #Get count of editors for display
     editors_count = Editors.objects.filter(store__id=store_id).count()
@@ -45,7 +48,9 @@ def store_profile(request, store_id):
         'total_likes': my_store.total_likes(),
         'editors': store_editors,
         'editors_count': editors_count,
-        'upcoming_count': events_upcoming
+        'all_count': events_all_count,
+        'upcoming_count': events_upcoming_count,
+        'events': events_live
         }
 
     return render(request, 'stores/profile.html', context)
@@ -101,7 +106,6 @@ def get_loc(request):
     context = {'form': form}
     return render(request, 'stores/get_loc.html', context)
 
-
 def process_loc(request):
     lat = float(request.GET.get('lat'))
     lon = float(request.GET.get('lon'))
@@ -127,19 +131,12 @@ def process_loc(request):
 
         store_results = store_results.filter(OSM_storetype_id=store_filter)
 
-    print(store_results)
-    # get any related events to show in the search screen
-    live_events = Event.objects.filter(store__in=store_results)
+    # get any related events to show in the search screen. Do this for all stores shown, we will subfilter later
+    live_events_all = Event.objects.filter(store__in=store_results)
     
     #show only events that are live right now
     today = dt.today()
-    live_events = live_events.filter(start_date__lte=today, end_date__gte=today)
-
-    live_events_count = live_events.count()
-
-    print(live_events, live_events_count)
-
-    #TODO here you are
+    live_events_all = live_events_all.filter(start_date__lte=today, end_date__gte=today)
 
     store_results = store_results.values()
     # since this is a dictionary with location (non serializable) and a calculated Distance, I
@@ -169,6 +166,27 @@ def process_loc(request):
         result = result.lstrip().rstrip()
             
         ww_dict['friendly_address'] = result
+
+        #Append Event Information
+        live_events_store = live_events_all.filter(store__id=ww_dict['id'])
+
+
+        if live_events_store.exists():
+            
+            events_dict = {}
+            for event in live_events_store:
+                event_detail = [
+                    event.title,
+                    event.comment,
+                    str(event.end_date),
+                    event.includes_offers
+                ]
+                events_dict[event.id] = event_detail
+            ww_dict['events_count'] = live_events_store.count()
+            ww_dict['events'] = events_dict
+        else:
+            ww_dict['events_count'] = 0
+            ww_dict['events'] = {}
         
         return_data.append(ww_dict)
 
@@ -202,7 +220,20 @@ class EventsList(ListView):
     model = Event
     context_object_name = 'events'
     def get_queryset(self):
-        return Event.objects.filter(store__id=self.kwargs['store_id'])
+        today = date.today()
+        events_qs = Event.objects.filter(store__id=self.kwargs['store_id']).order_by('start_date')
+
+        #https://docs.djangoproject.com/en/2.2/ref/models/conditional-expressions/
+        #Add in a flag if the event is old
+        events_qs = events_qs.annotate(
+            old_event=Case(
+                When(end_date__lt=today, then=Value(True)),
+                default=Value(False),
+                output_field=BooleanField()
+                )
+            )
+
+        return events_qs
 
     #https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#adding-extra-context
     def get_context_data(self, **kwargs):

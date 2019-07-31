@@ -91,28 +91,42 @@ $(document).ready(function(){
             },
             dataType : "json",
             success: function(stores) {
-                console.log(stores)
                 $my_list.empty()
                 $.each(stores, function(i, store){
                     var new_row_1 = '<li class="list-group-item">' + store.icon_text +' '+
-                        store.name + ' | ' + store.distance + ' km '  +
-                        '<a class="badge badge-primary" href='+ store.id + '/profile>store profile</a> ' +
+                        '<a href='+ store.id + '/profile>' +
+                        store.name + '</a> | ' + store.distance + ' km '  +
                         '<a class="badge badge-secondary" href=https://www.google.com/maps/search/?api=1' +
-                        store.search_url + '>find on map</a><br>'
+                        store.search_url + '>MAP</a> '
 
                     var new_row_2 = ''
+
                     if(store.friendly_address.length!=0){
                         new_row_2 = '<small>' + store.friendly_address + '</small><br>'
                     }
 
-                    var new_row_3 = store.likes_total + ' like'
+                    var new_row_3 = ''
+                    var event_row = ''
+                    if(store.events_count>0){
+                        new_row_3 = '<div class="alert alert-info"><a href='+ store.id + '/profile>'
 
-                    var new_row_4 = ''
-                    if(store.likes_total!=1){
-                        new_row_4 = 's'
+                        $.each(store.events, function(i, event){
+                            new_row_3 += event[0] + '<br>'
+                        })
+
+                        new_row_3 += '</a></div>'
+
                     }
+
+                    var new_row_4 = store.likes_total + ' like'
+
+                    var new_row_5 = ''
+                    if(store.likes_total!=1){
+                        new_row_5 = 's'
+                    }
+                    new_row_5 += '<br>'
                     
-                    var new_row_final = new_row_1.concat(new_row_2, new_row_3, new_row_4)
+                    var new_row_final = new_row_1.concat(new_row_4, new_row_5, new_row_2, new_row_3)
                     $my_list.append(new_row_final)
                 })
             },

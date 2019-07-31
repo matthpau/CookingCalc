@@ -6,8 +6,8 @@
 {% load i18n %}
 
 {% if user in editors %}
-    <h5>{% trans 'This is the events editing page for' %}</h5>
-    <p>{% blocktrans with store_name=store.name %}{{ store_name }} {% endblocktrans %}</p>
+    <h5>{% trans 'Events for:' %} {{ store.name }}</h5>
+
     <p><a class="btn btn-primary" href="{% url 'store:create_event' store.id %}">{% trans 'Add new' %}</a>
     <a href="{% url 'store:store_profile' store.id %}">{% trans 'Go Back' %}</a></p>
 
@@ -17,19 +17,32 @@
         https://reinout.vanrees.org/weblog/2014/05/19/context.html
         -->
             <li class="list-group-item">
-                <p>{{ event.title }} | {{ event.start_date }} - {{ event.end_date }}<br>
+                <p>
+                {% if event.old_event %}
+                <span class="text-info strong">
+                    {% trans 'FINISHED |' %}
+                </span>
+                {% endif %}
+
+                {{ event.title }} | {{ event.start_date }} - {{ event.end_date }}
+                
+                <br>
                 <a class="badge badge-primary" href="{% url 'store:update_event' event.id %}">{% trans 'Edit' %}</a>
                 <!---https://stackoverflow.com/questions/4591525/is-it-possible-to-pass-query-parameters-via-djangos-url-template-tag---->
-                <a class="badge badge-danger" href="{% url 'store:delete_event' event.id %}">{% trans 'Delete' %}</a></p>
+                <a class="badge badge-danger" href="{% url 'store:delete_event' event.id %}">{% trans 'Delete' %}</a>
+                
+                </p>
+
             </li>
 
         {% endfor %}
     </ul>
     <p>Editors</p>
-    {% for editor in editors%}
-        <p>{{ editor }}</p>
-    {% endfor %}
-
+    <p>
+        {% for editor in editors%}
+            {{ editor }} |
+        {% endfor %}
+    </p>
 
 {% else %}
     <p>Sorry, you don't get to see this page for this store</p>
