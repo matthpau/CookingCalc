@@ -16,7 +16,6 @@ class CustomUserChangeForm(UserChangeForm):
         model = CustomUser
         fields = UserChangeForm.Meta.fields
 
-
 #https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html#onetoone
 # general use
 class UserForm(forms.ModelForm):
@@ -32,7 +31,6 @@ class ProfileForm(forms.ModelForm):
             'house_number',
             'street',
             'add_2',
-            'add_3',
             'add_city',
             'add_postcode',
             'add_country',

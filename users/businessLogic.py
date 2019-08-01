@@ -11,5 +11,5 @@ def nice_address(*args):
     char = ", "
     pattern = '(' + char + '){2,}'
     result = re.sub(pattern, char, result)
-    
+
     return result

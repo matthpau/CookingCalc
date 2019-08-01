@@ -34,7 +34,6 @@ def check_address(request):
         request.POST.get('house_number'),
         request.POST.get('street'),
         request.POST.get('add_2'),
-        request.POST.get('add_3'),
         request.POST.get('city'),
         request.POST.get('postcode'),
         request.POST.get('country'),
@@ -46,7 +45,6 @@ def check_address(request):
     found_addr = geolocator.geocode(input_addr, timeout=5)
     
     if found_addr:
-        lat, lon = (found_addr.latitude, found_addr.longitude)
         data = {
             "success": True,
             "found_address": found_addr.address
