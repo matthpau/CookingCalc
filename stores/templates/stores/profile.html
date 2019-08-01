@@ -50,7 +50,7 @@
                 </p>
 
             {% else %}
-                <a href="#">{% trans "Claim this store"%}</a>
+                <a href="{% url 'store:store_launch_info'%}">{% trans "How to claim this store"%}</a>
             {% endif %}
         </div>
 

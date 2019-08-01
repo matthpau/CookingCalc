@@ -11,11 +11,24 @@
 
     <div class="card-deck">
 
+
+
+        <div class="card text-center">
+         <a href="{% url 'users:profile' %}">
+            <img class="card-img-top" src="{% static 'AppTimesCalc/markus_wink.jpg' %}" alt="Card image cap"></a>
+            <div class="card-body">
+                <p class="card-text">Support your local stores - sign up for our newsletter to get information from stores nearby (requires account)<br>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'users:profile' %}" class="btn btn-primary">Newsletter</a><br>
+            </div>
+        </div>
+
         <div class="card text-center">
          <a href="{% url 'converter:recipe_converter' %}">
             <img class="card-img-top" src="{% static 'AppTimesCalc/recipebook.jpg' %}" alt="Card image cap"></a>
             <div class="card-body">
-                <p class="card-text">Convert any recipe or ingredients list from metric to imperial and vice verse (requires login)<br>
+                <p class="card-text">Convert any recipe or ingredients list from metric to imperial and vice verse (requires account)<br>
                 <a href="{% url 'converter:ConverterAbout' %}" class=class="card-link">How it works</a></p>
             </div>
             <div class="card-footer">

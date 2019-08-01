@@ -6,10 +6,10 @@ from django.utils.translation import gettext as _
 
 class StoreSearch(forms.Form):
     DIST_CHOICES = [
-                (1, '1km'),
+                (2, '2km'),
                 (5, '5km'),
                 (10, '10km'),
-                (100, '100km')
+                (50, '50km')
                 ]
 
     SORT_CHOICES = [

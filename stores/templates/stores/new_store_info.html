@@ -1,21 +1,46 @@
 {% extends 'AppTimesCalc/base.html' %}
+{% block content %}
+
 {% load static %}
 {% load i18n %}
 
-{% block content %}
-<h1>{% trans 'Information for stores' %}</h1>
-
-<h2>{% trans 'How to claim your store' %}</h2>
-<p>{% trans 'Send me an email' %}</p>
-
 <h2>{% trans 'About the cooking-helpers.com local marketing programme' %}</h2>
+
 <h3>{% trans 'What it is and how it works' %}</h3>
-<p>{% trans 'About the program' %}</p>
-<h3>{% trans 'Creating or updating your store on OpenStreetMap' %}</h3>
-<p>{% trans 'How to use OSM' %}</p>
-<h3>{% trans 'Newsletter' %}</h3>
-<p>{% trans 'About the newsletter' %}</p>
+<p>{% trans "We support local stores by providing a simple way to share marketing Information with your customers. This could be something like 'Honey back in stock', or 'We are having a family BBQ this weekend for the cycling event'. Users who do a" %}
+ <a href="{% url 'store:get_loc' %}">{% trans "store search" %}</a>
+ {% trans " from their location will see your store listing, and also any marketing messages that you have set up. Each message has a start and end date, and users will only see them when active." %}</p>
+ <p>{% trans "User can also signup to receive a weekly newsletter. After they enter their address, they also define a search radius. Each week they get current information only from stores nearby their address." %}</p>
+
+
+<h3>{% trans 'The cooking-helpers.com newsletter' %}</h3>
+<p>{% trans "In their profile, users are asked to enable the newsletter, then confirm their address and a search radius. That's all they need to do. After that they will start getting a weekly email with information from local stores, incuding the messages and events you have prepared." %}</p>
+
+
 <h3>{% trans 'Inviting your customers to join up' %}</h3>
-<p>{% trans 'About signing up customers' %}</p>
+<p>{% trans "You can print out flyers and give them to your customers, maybe by putting a single flyer in the bag for each purchase and by leaving them on your counter where customers can see them." %}</p>
+<p>
+<a href="">Flyer - English</a> |
+<a href="">Flyer - Deutsch</a>
+</p>
+
+<h3>{% trans 'Creating or updating your store on OpenStreetMap' %}</h3>
+<p>{% trans "We don't maintain an original store database. The wonderful OpenStreetMap is place where you can enter and maintain your store details (Name, address and other information). Once per day we grab that information and update your entry on cooking-helpers.com. At the moment we are grabbing the following kinds of stores from OpenStreetMap: 'butcher', 'deli', 'cheese', 'dairy', 'farm', 'coffee', 'greengrocer', 'tea', 'spices', 'seafood', 'fishmonger'." %}</p>
+<p>{% trans "To add or edit your store, go to " %}<a href="https://www.openstreetmap.org/edit">OpenStreetMap.</a>
+{% trans "You will need to use or create an OpenStreetMap account. If your store does not exist, add it as a 'point'. Make sure you tag your store with one of the tags listed above. If your store is already there, please check your details." %}
+</p>
+
+<h3>{% trans 'How to claim your store' %}</h3>
+<p>{% trans "If you are the store owner or manager, please first make sure your store is our database. Find your store with a" %}
+<a href="{% url 'store:get_loc' %}">{% trans "store search" %}</a>
+{% trans ", then copy the store URL, for example:" %}</p>
+<p>{% trans "www.cooking-helpers.com/stores/7638/profile" %}</p>
+<p><a href="mailto:matthpau@gmail.com?subject=New Store Cooking Helpers">and send it to me in an email</a>
+{% trans "with a short note. I'll add you as an editor to your store. Once that's done, you will see an 'Owners Section' on your store profile. This will allow you to add further editors and create your own events."%}</p>
+
+<h3>{% trans 'Your store profile' %}</h3>
+<p>{% trans "You can find your store by doing a " %}
+<a href="{% url 'store:get_loc' %}">{% trans "store search" %}</a>
+{% trans "to locate your store in our database. Once you have found your store, you can bookmark your profile for quick recall later. If I have set you up as an owner, you can add more people who can create events, and also manage your events directly from this page." %}</p>
 
 {% endblock %}

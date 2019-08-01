@@ -2,6 +2,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+{% load i18n %}
 
 <!-- adapted from
 https://www.tutorialrepublic.com/html-tutorial/html5-geolocation.php
@@ -22,6 +23,8 @@ https://www.youtube.com/watch?v=fEYx8dQr_cQ for the tutorial
             <form>
                 {{ form|crispy}}
             </form>
+            <i class="far fa-newspaper"></i>
+            <a href="{% url 'users:profile' %}"> {% trans 'Sign up for the newsletter to support your local stores.' %}</a><br>
             <small>Data provided by <a href="https://www.openstreetmap.org">OpenStreetMap</a></small>
         </div>
         
