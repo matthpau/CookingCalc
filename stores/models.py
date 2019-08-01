@@ -107,7 +107,7 @@ class Event(models.Model):
     created_by_user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     store = models.ForeignKey(Store, on_delete=models.CASCADE)
     title = models.CharField(_('Title'), max_length=100)
-    comment = models.TextField(_('Event description'))
+    comment = models.TextField(_('Event description'), blank=True)
     start_date = models.DateField(_('Event start date'))
     end_date = models.DateField(_('Event end date'))
     includes_offers = models.BooleanField(_('Includes offers'), default=False)

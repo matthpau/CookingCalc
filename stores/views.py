@@ -138,7 +138,7 @@ def process_loc(request):
 
     # get any related events to show in the search screen. Do this for all stores shown, we will subfilter later
     live_events_all = Event.objects.filter(store__in=store_results)
-    
+
     #show only events that are live right now
     today = dt.today()
     live_events_all = live_events_all.filter(start_date__lte=today, end_date__gte=today)
@@ -174,7 +174,6 @@ def process_loc(request):
 
         #Append Event Information
         live_events_store = live_events_all.filter(store__id=ww_dict['id'])
-
 
         if live_events_store.exists():
             
@@ -266,7 +265,6 @@ class CreateEvent(UserPassesTestMixin, CreateView):
     template_name = 'stores/event_create.html'
 
     def test_func(self):
-        #TODO You are here
         #returns true or false, depending if person is authorised editor for this store
         store_id = self.kwargs['store_id']
         store_editors = CustomUser.objects.filter(authorisedeventeditors__store__id=store_id)
@@ -283,9 +281,16 @@ class CreateEvent(UserPassesTestMixin, CreateView):
     def get_success_url(self):
         return reverse('store:eventslist', kwargs={'store_id': self.kwargs['store_id']})
 
-class UpdateEvent(UpdateView):
+class UpdateEvent(UserPassesTestMixin, UpdateView):
     form_class = EventAddCreate
     template_name = 'stores/event_update.html'
+
+    def test_func(self):
+        #returns true or false, depending if person is authorised editor for this event - store
+        event_id = self.kwargs['event_id']
+        event_editors = CustomUser.objects.filter(authorisedeventeditors__store__event__id=event_id)
+        print(event_editors)
+        return self.request.user in event_editors
 
     def get_object(self):
         return get_object_or_404(Event, pk = self.kwargs['event_id'])
