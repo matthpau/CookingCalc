@@ -47,7 +47,7 @@ class Command(BaseCommand):
             
             country_name = country_name.replace(' ', '_').lower()
             save_file = join(settings.BASE_DIR, IMPORT_FOLDER, country_name + '.json')
-            logfile.write('Getting data for ' + country_name + ' using savefile: ' + save_file + '\n')
+            logfile.write('getting data for ' + country_name + ' using savefile: ' + save_file + '\n')
 
             overpass_url = "http://overpass-api.de/api/interpreter"
             overpass_query = f"""
@@ -78,7 +78,7 @@ class Command(BaseCommand):
                     os.remove(save_file)
                     logfile.write('Old file expired, has been removed\n')
                 else:
-                    logfile.write('File still up to date, keeping existing, no update this run\n')
+                    logfile.write('File still up to date, keeping existing\n')
             else:
                 replace_flag = True
 
@@ -145,8 +145,8 @@ class Command(BaseCommand):
                 import_file = None
 
             if import_file:
-                new_count = 0
-                updated_count = 0
+                i = 0
+                skipped = 0
 
                 shop = apps.get_model('stores', 'Store')
 
@@ -154,12 +154,8 @@ class Command(BaseCommand):
                 with open(str(import_file)) as datafile:
                     objects = json.load(datafile)
                     for obj in objects['elements']:
-                        obj_type = obj['type']
-                        if obj_type == 'node':
-                            osmid = obj.get('id', 0)
-
-                            #Prepare the data for loading or updating
-                            
+                        try:
+                            obj_type = obj['type']
                             if obj_type == 'node':
                                 tags = obj['tags']
                                 store_name = tags.get('name', tags.get('shop') + ', name unknown')
@@ -190,31 +186,8 @@ class Command(BaseCommand):
 
                                 store_type = StoreType.objects.get(pk=tags.get('shop', ''))
 
-                                #Check if OSMID exists already in database
-                                search_store = Store.objects.filter(OSM_ID=osmid)
-
-                                if search_store.exists():
-                                    #Store exists in database, do the update routine
-                                    found_store = search_store.first()
-
-                                    found_store.name = store_name
-                                    found_store.location = location
-                                    found_store.website = make_website(tags.get('website', ''))
-                                    found_store.add_house_number = tags.get('addr:housenumber', '')
-                                    found_store.add_street = tags.get('addr:street', '')
-                                    found_store.add_postcode = tags.get('addr:postcode', '')
-                                    found_store.add_city = tags.get('addr:city', '')
-                                    found_store.add_country = tags.get('addr:country', '')
-                                    found_store.OSM_storetype = store_type
-                                    found_store.lat = latitude
-                                    found_store.lon = longitude
-                                    
-                                    found_store.save()
-                                    updated_count += 1
-                                
-                                else:
-                                    #New store
-                                    new_store = shop(name=store_name,
+                                try:
+                                    s = shop(name=store_name,
                                              my_address=address,
                                              my_country=country,
                                              location=location,
@@ -229,10 +202,37 @@ class Command(BaseCommand):
                                              lat=latitude,
                                              lon=longitude,
                                              )
-                                    new_store.save()
-                                    new_count += 1
+                                    s.save()
+                                    i += 1
 
-                logfile.write('    ' + str(new_count) + ' new stores, ' + str(updated_count) + ' stores updated\n')
+                                except IntegrityError:
+                                    s = Store.objects.get(OSM_ID=osmid)
+                                    s.name = store_name
+                                    s.location = location
+                                    s.website = make_website(tags.get('website', ''))
+                                    s.add_house_number = tags.get('addr:housenumber', '')
+                                    s.add_street = tags.get('addr:street', '')
+                                    s.add_postcode = tags.get('addr:postcode', '')
+                                    s.add_city = tags.get('addr:city', '')
+                                    s.add_country = tags.get('addr:country', '')
+                                    s.OSM_storetype = store_type
+                                    
+                                    if not s.my_address:
+                                        s.my_address = address
+
+                                    s.lat = latitude
+                                    s.lon = longitude
+
+                                    s.save()
+                                    
+                                    skipped += 1
+                                except DataError:
+                                    logfile.write('Problem with', obj + '\n')
+
+                        except KeyError:
+                            pass
+                logfile.write('    ' + str(i) + ' new stores loaded, ' + str(skipped) + ' stores updated\n')
+                logfile.write('\n')
 
 
         # https://www.nationsonline.org/oneworld/country_code_list.htm
@@ -259,9 +259,7 @@ class Command(BaseCommand):
             'Lithuania': 'LT',
             'Estonia': 'EE',
             'Greece': 'GR',
-            'Italy': 'IT',
-            'Argentina': 'AR',
-            'Brazil': 'BR'
+            'Italy': 'IT'
         }
 
         #get latest from OSM
@@ -282,7 +280,7 @@ class Command(BaseCommand):
         now = time.time()
         for old_logfile in os.listdir(LOGS_FOLDER):
             old_logfile = join(LOGS_FOLDER, old_logfile)
-            days = 2
+            days = 7
 
             if os.stat(old_logfile).st_mtime < now - days * 24 * 60 * 60:
                 os.remove(old_logfile)
@@ -295,21 +293,21 @@ class Command(BaseCommand):
         #Check number of records in store table - is this a first time load?
         #if yes, then force a load from any existing tables
         existing_count = Store.objects.count()
-
+    
         country_count = len(country_list)
         i = 0
 
         for k, v in country_list.items():
             i += 1
             was_updated = get_data_from_OSM(k, v, osm_shops, fresh=False, max_days=1)
-            
-            #If data not updated, no need to upload it
-
             if existing_count > 1: # already records exist
                 if was_updated: # and we got new data
                    load_data(k, v, logfile)
             else:   # no records exist
                 load_data(k, v, logfile) # do a load regardless
+
+            #Uncomment to force a load during testing
+            #load_data(k, v)
 
             if was_updated and i != country_count:
                 logfile.write('    Waiting a bit before I do the next one...\n')
@@ -324,3 +322,6 @@ class Command(BaseCommand):
         logfile.close()
 
         print('Loading finished, check log to see results in:', logfile_path)
+
+
+

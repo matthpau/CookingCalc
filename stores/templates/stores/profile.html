@@ -30,17 +30,26 @@
                 <p>Please <a href="{% url 'account_login' %}">login </a>to like this store</p>
             {% endif %}
 
-            
+            {% if user in editors %}
+                <br>
+                <h5>{% trans "Owner Section" %}</h5>
+                <p>{% blocktrans %} Welcome, {{user}}. You have the following options: {% endblocktrans %}</p>
+                <p>
+                    <a href='{% url 'store:editors' store.id %}'>{% trans "List or change your authorised users" %}</a><br>
+                    <small>{{ editors_count }} {% trans "authorised user" %} </small>
+                </p>
 
-            <br>
-            <p>{% trans 'Please help our local stores by updating their information on OpenStreetMap (requires account)'%}<br>
-            <a href="https://www.openstreetmap.org/node/{{ store.OSM_ID }}">{% trans 'Edit on OpenStreetmap'%}</a></p>
-            <small>{% trans 'Changes will appear here within 48 hours' %}</small>
-            
+                <p>
+                <a href='{{ store.events_url }}'>{% trans "List or edit your events" %}</a><br>
+                <small>{{ upcoming_count }} {% trans "live or future events" %}, {{ all_count }} {% trans "total" %}</small>
+                </p>
 
-            
-            <br>
+                <p>
+                <a href="https://www.openstreetmap.org/node/{{ store.OSM_ID }}">{% trans 'Edit on OpenStreetmap'%}</a><br>
+                <small>{% trans 'Requires OpenStreetMap account. Changes will appear here within 48 hours'%}</small>
+                </p>
 
+            {% endif %}
         </div>
 
         <div class="col-sm">
@@ -48,7 +57,7 @@
 
                 <div class="card">
 
-                    <div class="card-header">{% trans 'Current Information' %}</div>
+                    <div class="card-header">{% trans 'Current Events' %}</div>
 
                     <div class="card-body">
                     
@@ -67,35 +76,19 @@
                         </ul>
                     </div> 
                 </div> 
-
             {% endif %}
         </div>
     </div>
 </div>
 
 
-{% if user in editors %}
-    <br><br>
-    <h3>{% trans "Owner Section" %}</h3>
-    <p>{% blocktrans %} Welcome, {{user}}. You have the following options: {% endblocktrans %}</p>
-    <p>
-        <a href='{% url 'store:editors' store.id %}'>{% trans "List or edit your associated users" %}</a><br>
-        <small>{{ editors_count }} {% trans "authorised editors" %} </small>
-    </p>
 
-    <p>
-    <a href='{{ store.events_url }}'>{% trans "List or edit your events" %}</a><br>
-    <small>{{ upcoming_count }} {% trans "event(s) upcoming" %}, {{ all_count }} {% trans "total" %}</small>
-    </p>
-{% endif %}
 
 <script>
 $(function (){
     $(document).on('click', '#id_like', function(){
         var store_id = $(this).val()
-        console.log(store_id) 
-
-        $.ajax({
+                $.ajax({
             type: 'POST',
             url: "{% url 'store:store_like' %}",
             data: {
@@ -104,12 +97,9 @@ $(function (){
                 },
             dataType: 'json',
             success: function(newHTML){
-                console.log('success')
-                console.log(newHTML.form)
                 $('#like-section').html(newHTML.form)
             },
             error: function(rs, e){
-                console.log('fail')
                 console.log(rs.responseText);
             }
         })

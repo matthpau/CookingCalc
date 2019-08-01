@@ -9,13 +9,12 @@
   <div class="row">
 
     <div class="col-sm">
-        <button class="btn btn-primary" type="submit">Save all changes and close</button><br>
-        <a href="/">Close without saving</a>
-        <br><br>
         {{ user_form|crispy }}
         {{ profile_form.local_offer_receive|as_crispy_field}}
         {{ profile_form.local_offer_radius|as_crispy_field}}
-        If you would like to get the offers newsletter, please make sure we can find your address.
+        <p>If you would like to get the offers newsletter, please make sure we can find your address.</p>
+        <button class="btn btn-primary" type="submit">Save all changes and close</button><br>
+        <a href="/">Close without saving</a>
     </div>
     
     <div class="col-sm">
@@ -49,8 +48,6 @@
       country: $('#id_add_country').val(),
     }
     
-    console.log(my_addr)
-
     $.ajax({
       type: 'POST',
       url: "/users/check_address",

@@ -1,23 +1,28 @@
 from django.shortcuts import get_object_or_404, render
-from ipware import get_client_ip
+
 from django.contrib.gis.geoip2 import GeoIP2
 from django.contrib.gis.db.models.functions import Distance
 from django.contrib.gis.geos import Point
 from django.contrib.gis.measure import D
-from .forms import StoreSearch
-from .models import Store, StoreType
-from users.models import CustomUser
 from django.http import HttpResponseRedirect, JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.db.models import Count, When, Value, BooleanField, Case
 from django.template.loader import render_to_string
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from stores.models import Event, AuthorisedEventEditors as Editors
 from django.urls import reverse
-from .forms import EventAddCreate
-from datetime import datetime as dt, date
 from django.utils.translation import gettext as _
+from django.contrib.auth.mixins import UserPassesTestMixin
+
+from datetime import datetime as dt, date
+
+from .forms import StoreSearch
+from .models import Store, StoreType
+from users.models import CustomUser
+from stores.models import Event, AuthorisedEventEditors as Editors
+from .forms import EventAddCreate
+
+from ipware import get_client_ip
 
 def store_profile(request, store_id):
     my_store = get_object_or_404(Store, pk=store_id)
@@ -121,7 +126,7 @@ def process_loc(request):
     store_results = Store.objects.filter(location__distance_lte=(user_location, D(km=search_dis))) \
                     .annotate(distance=Distance('location', user_location)) \
                     .annotate(likes_total=Count('likes', distinct=True)) \
-                    
+      
     if sort_order == 1: #Distance
         store_results = store_results.order_by('distance')
     elif sort_order == 2: #Likes
@@ -246,23 +251,33 @@ class EventsList(ListView):
 
 #http://melardev.com/blog/2017/11/04/createview-django-4-examples/
 #shows how to do extra processing before save
-class CreateEvent(CreateView):
+
+#https://docs.djangoproject.com/en/2.2/topics/auth/default/#limiting-access-to-logged-in-users-that-pass-a-test
+#shows how to do a test on user before allowing permission (e.g. onlyusers from this store are allowed to create events)
+class CreateEvent(UserPassesTestMixin, CreateView):
 
     model = Event
-    # don't use BOTH fields and form_class, choose one or the other. Fields are specified in the form_class
-    #fields = ('title', 'comment', 'start_date', 'end_date', 'includes_offers')
+    # don't use BOTH fields and form_class, choose one or the other. 
+    # Fields are specified in the form_class
+    # fields = ('title', 'comment', 'start_date', 'end_date', 'includes_offers')
     form_class = EventAddCreate
 
     #template_name  automatically is stores/event_form.html but we want to overwrite
     template_name = 'stores/event_create.html'
 
-    def form_valid(self, form):
+    def test_func(self):
+        #TODO You are here
+        #returns true or false, depending if person is authorised editor for this store
+        store_id = self.kwargs['store_id']
+        store_editors = CustomUser.objects.filter(authorisedeventeditors__store__id=store_id)
+        return self.request.user in store_editors
 
+    def form_valid(self, form):
         model = form.save(commit=False)
         model.created_by_user = self.request.user
         model.store = Store.objects.get(id=self.kwargs['store_id'])
-
         model.save()
+
         return HttpResponseRedirect(self.get_success_url())
 
     def get_success_url(self):
