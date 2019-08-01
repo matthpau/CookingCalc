@@ -289,7 +289,7 @@ class Command(BaseCommand):
 
         #create new logfile and name
         load_start_time = dt.datetime.now()
-        logfile_path = join(LOGS_FOLDER, load_start_time.strftime("%Y-%m-%d_%H-%M-%S"))
+        logfile_path = join(LOGS_FOLDER, load_start_time.strftime("%Y-%m-%d--%H-%M-%S"))
         logfile = open(logfile_path, "w")
 
         #Check number of records in store table - is this a first time load?

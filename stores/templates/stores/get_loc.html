@@ -109,25 +109,16 @@ $(document).ready(function(){
                     var new_row_3 = ''
                     var event_row = ''
                     if(store.events_count>0){
-                        new_row_3 = '<div class="alert alert-info"><a href='+ store.id + '/profile>'
-
+                        new_row_3 = '<div class="alert alert-info">'
                         $.each(store.events, function(i, event){
                             new_row_3 += event[0] + '<br>'
                         })
-
-                        new_row_3 += '</a></div>'
-
+                        new_row_3 += '</div>'
                     }
 
-                    var new_row_4 = store.likes_total + ' like'
-
-                    var new_row_5 = ''
-                    if(store.likes_total!=1){
-                        new_row_5 = 's'
-                    }
-                    new_row_5 += '<br>'
+                    var new_row_4 = store.likes_total + ' <i class="fas fa-thumbs-up"></i><br>'
                     
-                    var new_row_final = new_row_1.concat(new_row_4, new_row_5, new_row_2, new_row_3)
+                    var new_row_final = new_row_1.concat(new_row_4,  new_row_2, new_row_3)
                     $my_list.append(new_row_final)
                 })
             },

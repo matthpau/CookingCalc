@@ -1,0 +1,21 @@
+{% extends 'AppTimesCalc/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<h1>{% trans 'Information for stores' %}</h1>
+
+<h2>{% trans 'How to claim your store' %}</h2>
+<p>{% trans 'Send me an email' %}</p>
+
+<h2>{% trans 'About the cooking-helpers.com local marketing programme' %}</h2>
+<h3>{% trans 'What it is and how it works' %}</h3>
+<p>{% trans 'About the program' %}</p>
+<h3>{% trans 'Creating or updating your store on OpenStreetMap' %}</h3>
+<p>{% trans 'How to use OSM' %}</p>
+<h3>{% trans 'Newsletter' %}</h3>
+<p>{% trans 'About the newsletter' %}</p>
+<h3>{% trans 'Inviting your customers to join up' %}</h3>
+<p>{% trans 'About signing up customers' %}</p>
+
+{% endblock %}

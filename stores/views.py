@@ -236,7 +236,6 @@ class EventsList(ListView):
                 output_field=BooleanField()
                 )
             )
-
         return events_qs
 
     #https://docs.djangoproject.com/en/2.2/topics/class-based-views/generic-display/#adding-extra-context
@@ -303,8 +302,15 @@ class UpdateEvent(UserPassesTestMixin, UpdateView):
         store_id = Store.objects.values().get(event__id=event_id)['id']
         return reverse('store:eventslist', kwargs={'store_id':store_id})
 
-class DeleteEvent(DeleteView):
+class DeleteEvent(UserPassesTestMixin, DeleteView):
     template_name = 'stores/event_delete.html'
+
+    def test_func(self):
+        #returns true or false, depending if person is authorised editor for this event - store
+        event_id = self.kwargs['event_id']
+        event_editors = CustomUser.objects.filter(authorisedeventeditors__store__event__id=event_id)
+        print(event_editors)
+        return self.request.user in event_editors
 
     def get_object(self):
         event_id = self.kwargs.get('event_id')
@@ -333,14 +339,29 @@ def editors_list(request, store_id):
     response = list(response.values())
     return JsonResponse(response, safe=False)
 
+def store_launch_info(request):
+    return render(request, 'stores/new_store_info.html')
+
 def editor_delete(request):
     store_id = request.POST.get('del_store_id')
     user_id = request.POST.get('del_user_id')
-    #Delete Specified editor. Double check they have not maniuplated the URL to delete themselves
-    #TODO add a check in here to make sure the current user is in the list of editors for this store
-    Editors.objects.filter(store_id=store_id).filter(user_id=user_id).delete()
-    #return redirect('store:editors', store_id=store_id)
-    return JsonResponse({'response_text': _('Editor has been removed')})
+
+    store_editors = CustomUser.objects.filter(authorisedeventeditors__store__id=store_id)
+
+    if request.user in store_editors:
+        delete_user = Editors.objects.filter(store_id = store_id, user_id=user_id)
+        print(delete_user)
+        delete_user.delete()
+
+        return JsonResponse({
+            'authorised': True,
+            'response_text': _('User has been removed')
+        })
+    else: 
+        return JsonResponse({
+            'authorised': False,
+            'response_text': _('Not permitted')
+        })
 
 def editor_create(request):
     email = request.POST.get('email')

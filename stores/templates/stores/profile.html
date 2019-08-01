@@ -30,8 +30,8 @@
                 <p>Please <a href="{% url 'account_login' %}">login </a>to like this store</p>
             {% endif %}
 
+            <br>
             {% if user in editors %}
-                <br>
                 <h5>{% trans "Owner Section" %}</h5>
                 <p>{% blocktrans %} Welcome, {{user}}. You have the following options: {% endblocktrans %}</p>
                 <p>
@@ -49,6 +49,8 @@
                 <small>{% trans 'Requires OpenStreetMap account. Changes will appear here within 48 hours'%}</small>
                 </p>
 
+            {% else %}
+                <a href="#">{% trans "Claim this store"%}</a>
             {% endif %}
         </div>
 

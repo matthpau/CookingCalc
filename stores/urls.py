@@ -16,4 +16,5 @@ urlpatterns = [
     path('<int:store_id>/editors_list', views.editors_list, name='editors_list'),
     path('editor_delete', views.editor_delete, name='editor_delete'),
     path('editor_create', views.editor_create, name='editor_create'),
+    path('store_launch_info', views.store_launch_info, name='store_launch_info')
     ]
