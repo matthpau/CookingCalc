@@ -5,22 +5,23 @@
 {% block content %}
 
 <div class="container">
+
+    <a href="{% url 'store:get_loc' %}">
     <div class="row justify-content-center">
-        <p>Welcome, please try the new <a href="{% url 'store:get_loc' %}">{% trans 'Local Store Search'%}</a></p>
+        <p>{% trans 'Welcome - try out the store search to support your local stores'%}</p>
     </div>
+    </a>
 
     <div class="card-deck">
-
-
 
         <div class="card text-center">
          <a href="{% url 'users:profile' %}">
             <img class="card-img-top" src="{% static 'AppTimesCalc/markus_wink.jpg' %}" alt="Card image cap"></a>
             <div class="card-body">
-                <p class="card-text">Support your local stores - sign up for our newsletter to get information from stores nearby (requires account)<br>
+                <p class="card-text">{% trans 'Support your local stores - sign up for our newsletter to get information from stores nearby (requires account)' %}<br>
             </div>
             <div class="card-footer">
-                <a href="{% url 'users:profile' %}" class="btn btn-primary">Newsletter</a><br>
+                <a href="{% url 'users:profile' %}" class="btn btn-primary">{% trans 'Newsletter' %}</a><br>
             </div>
         </div>
 
@@ -28,11 +29,11 @@
          <a href="{% url 'converter:recipe_converter' %}">
             <img class="card-img-top" src="{% static 'AppTimesCalc/recipebook.jpg' %}" alt="Card image cap"></a>
             <div class="card-body">
-                <p class="card-text">Convert any recipe or ingredients list from metric to imperial and vice verse (requires account)<br>
-                <a href="{% url 'converter:ConverterAbout' %}" class=class="card-link">How it works</a></p>
+                <p class="card-text">{% trans 'Convert any recipe or ingredients list from metric to imperial and vice verse (requires account)' %} <br>
+                <a href="{% url 'converter:ConverterAbout' %}" class=class="card-link">{% trans 'How it works' %}</a></p>
             </div>
             <div class="card-footer">
-                <a href="{% url 'converter:recipe_converter' %}" class="btn btn-primary">Do a conversion</a><br>
+                <a href="{% url 'converter:recipe_converter' %}" class="btn btn-primary">{% trans 'Do a conversion' %}</a><br>
             </div>
         </div>
 
@@ -41,10 +42,10 @@
             <a href="{% url 'Calculator_w' %}">
                 <img class="card-img-top" src="{% static 'AppTimesCalc/roastpork.jpg' %}" alt="Card image cap"></a>
             <div class="card-body">
-                <p class="card-text">Meat cooking calculator, if you already know how much meat you plan to prepare.</p>
+                <p class="card-text">{% trans 'Meat cooking calculator, if you already know how much meat you plan to prepare.' %}</p>
             </div>
             <div class="card-footer">
-                <a href="{% url 'Calculator_w' %}" class="btn btn-primary">Calculate</a>
+                <a href="{% url 'Calculator_w' %}" class="btn btn-primary">{% trans 'Calculate' %}</a>
             </div>
         </div>
 
@@ -52,10 +53,10 @@
             <a href="{% url 'Calculator_p' %}">
                 <img class="card-img-top" src="{% static 'AppTimesCalc/dinnerparty.jpg' %}" alt="Card image cap"></a>
             <div class="card-body">
-                <p class="card-text">Meat cooking calculator, if you know how many guests you have.</p>
+                <p class="card-text">{% trans 'Meat cooking calculator, if you know how many guests you have.' %}</p>
             </div>
             <div class="card-footer">
-                <a href="{% url 'Calculator_p' %}" class="btn btn-primary">Calculate</a>
+                <a href="{% url 'Calculator_p' %}" class="btn btn-primary">{% trans 'Calculate' %}</a>
             </div>
         </div>
 

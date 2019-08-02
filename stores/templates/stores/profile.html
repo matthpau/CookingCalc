@@ -33,7 +33,7 @@
             <br>
             {% if user in editors %}
                 <h5>{% trans "Owner Section" %}</h5>
-                <p>{% blocktrans %} Welcome, {{user}}. You have the following options: {% endblocktrans %}</p>
+                <p>{% blocktrans %}Welcome, {{user}}. You have the following options: {% endblocktrans %}</p>
                 <p>
                     <a href='{% url 'store:editors' store.id %}'>{% trans "List or change your authorised users" %}</a><br>
                     <small>{{ editors_count }} {% trans "authorised user" %} </small>
@@ -59,7 +59,7 @@
 
                 <div class="card">
 
-                    <div class="card-header">{% trans 'Current Events' %}</div>
+                    <div class="card-header">{% trans 'Current Events (as seen in the newsletter)' %}</div>
 
                     <div class="card-body">
                     
@@ -70,8 +70,15 @@
                                     {{ event.title }}<br>
                                     </span>
                                     <small>
+
                                     {{ event.comment }} <br>
+
+                                    {% if event.includes_offers %}
+                                        <span class="text-info">Includes Offers</span><br>
+                                    {% endif%}
+
                                     {{ event.start_date }} - {{ event.end_date}}
+
                                     </small>
                                 </li>
                             {% endfor %}

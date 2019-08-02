@@ -3,24 +3,29 @@
 
 {% block content %}
 
+{% load i18n %}
+
     <div class="container">
         <div class="row">
             <div class="col-sm col-md-6">
 
                 {%if calc_outputs.CalcType == 'byPerson' %}
+                {% blocktrans trimmed %}
                     <h5>Your {{calc_inputs.MeatType|lower}} needs to weigh about {{calc_outputs.InputWeight}} or
                         {{calc_outputs.WeightStandardlb}}</h5>
                     <p>For {{calc_inputs.CountAdults}} adults and {{calc_inputs.CountChildren}} children,
                         based on portion sizes of {{calc_outputs.Portion_gPerAdult}} per adult and
                         {{calc_outputs.Portion_gPerChild}} per child.</p>
+                {% endblocktrans %}
                 {% else %}
+
                         <h5>Your {{calc_outputs.InputWeight}} of {{calc_inputs.MeatType|lower}} should feed about
                             {{calc_outputs.calcAdults}} adults.</h5>
                     <p>This is based on portion sizes of around {{calc_outputs.Portion_gPerAdult}} per adult.</p>
 
                 {% endif %}
 
-                 <h5>For your {{calc_inputs.MeatType|lower}} done
+                <h5>For your {{calc_inputs.MeatType|lower}} done
                 {{calc_inputs.CookingLevel|lower}}, here's how to cook it:</h5>
                 <p><strong>You will need a total of {{calc_outputs.TotalTime}} to fully cook and serve your meat.</strong></p>
                 <p>Make sure you let the meat come to room temperature before starting. Turn the oven on to {{calc_outputs.OvenTemp}}
@@ -33,7 +38,7 @@
 
             <div class="col">
                 <div class="alert alert-primary" role="alert">
-                    Please be sure to save this meal and rate it afterwards so we can improve our suggestions.
+                    {% trans 'Please be sure to save this meal and rate it afterwards so we can improve our suggestions.' %}
                 </div>
 
                     <form method="POST" action = "/MealPlannerSaved">

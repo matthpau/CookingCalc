@@ -1,5 +1,6 @@
 from django.db import models
 from users.models import Country
+from django.utils.translation import gettext_lazy as _
 
 class SendHistory(models.Model):
     date = models.DateTimeField()

@@ -1,9 +1,8 @@
 {% extends 'AppTimesCalc/base.html' %}
 
 {% block content %}
-
-<h3>Please check...</h3>
-<p>It looks like might like to check your input?</p>
-<a href="javascript:history.back()">Go back</a> | <a href="/Calculator_w"> Start again</a>
+{% load i18n %}
+<p>{% trans 'It looks like might like to check your input' %}<p>
+<a href="javascript:history.back()">{% trans 'Go back' %}</a> | <a href="/Calculator_w">{% trans ' Start again' %}</a>
 
 {% endblock %}

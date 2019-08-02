@@ -2,7 +2,7 @@
 from django.contrib.gis.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 from taggit.managers import TaggableManager
 from bootstrap_datepicker_plus import DateTimePickerInput
 

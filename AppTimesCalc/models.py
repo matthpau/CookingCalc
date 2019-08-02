@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 import datetime as dt
 from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
 
 """
 https://docs.djangoproject.com/en/2.2/ref/models/options/
@@ -62,47 +63,51 @@ class CookingInfo(models.Model):
 
 class MealPlan(models.Model):
 
-    CookingOutcomes = [(1, 'Very undercooked'),
-                       (2, 'Undercooked'),
-                       (3, 'Just right'),
-                       (4, 'Overcooked'),
-                       (5, 'Very overcooked')]
+    CookingOutcomes = (
+        (1, _('Very undercooked')),
+        (2, _('Undercooked')),
+        (3, _('Just right')),
+        (4, _('Overcooked')),
+        (5, _('Very overcooked'))
+    )
 
-    Ratings = [(0, 'Not rated'),
-               (1, 'One star'),
-               (2, 'Two stars'),
-               (3, 'Three stars')]
+    Ratings = (
+        (0, _('Not rated')),
+        (1, _('One star')),
+        (2, _('Two stars')),
+        (3, _('Three stars'))
+        )
 
     User = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
 
-    PlanName = models.CharField(max_length=100, verbose_name="Plan Name")
-    PlanDesc = models.TextField(blank=True)
+    PlanName = models.CharField(max_length=100, verbose_name=_("Plan Name"))
+    PlanDesc = models.TextField(blank=True, verbose_name=_("Plan Description"))
     MeatType = models.ForeignKey(MeatType, on_delete=models.CASCADE)  # MeatType
     CookingLevel = models.ForeignKey(CookingLevel, on_delete=models.CASCADE)  # CookingLevel
 
-    StartTime = models.TimeField(default=dt.time(0, 0))  # StartTime
-    MeatInTime = models.TimeField(default=dt.time(0, 0))  # MeatInTime
-    RemoveTime = models.TimeField(default=dt.time(0, 0))   # RemoveTime
-    EatingTime = models.TimeField(default=dt.time(0, 0))  # EatingTime
+    StartTime = models.TimeField(default=dt.time(0, 0), verbose_name=_("Start Time"))  # StartTime
+    MeatInTime = models.TimeField(default=dt.time(0, 0), verbose_name=_("Meat In Time"))  # MeatInTime
+    RemoveTime = models.TimeField(default=dt.time(0, 0), verbose_name=_("Meat Out Time"))   # RemoveTime
+    EatingTime = models.TimeField(default=dt.time(0, 0), verbose_name=_("Eating Time"))  # EatingTime
 
-    WarmupTime = models.DurationField(default=dt.timedelta(0))  # WarmupTimeDT
-    CookingTime = models.DurationField(default=dt.timedelta(0))  # CookingTimeDT
-    RestTime = models.DurationField(default=dt.timedelta(0))  # RestTimeDT
-    TotalTime = models.DurationField(default=dt.timedelta(0))   # TotalTimeDT
+    WarmupTime = models.DurationField(default=dt.timedelta(0), verbose_name=_("Warmup Time"))  # WarmupTimeDT
+    CookingTime = models.DurationField(default=dt.timedelta(0), verbose_name=_("Cooking Time"))  # CookingTimeDT
+    RestTime = models.DurationField(default=dt.timedelta(0), verbose_name=_("Resting Time"))  # RestTimeDT
+    TotalTime = models.DurationField(default=dt.timedelta(0), verbose_name=_("Total Time"))   # TotalTimeDT
 
-    GivenWeightKg = models.FloatField(default=0.0)  # GivenWeightKg
-    InputWeight = models.CharField(default="", max_length=50)  # Weight as given by the user
-    OvenTempStandardC = models.IntegerField(default=0)  # OvenTempStandardC
-    InternalTempStandardC = models.IntegerField(default=0)  # InternalTempStandardC
-    CountAdults = models.IntegerField(default=0)  # CountAdults
-    CountChildren = models.IntegerField(default=0)  # CountChildren
-    CalcType = models.CharField(max_length=20, default="")  # CalcType, byWeight or byPerson
+    GivenWeightKg = models.FloatField(default=0.0, verbose_name=_("Given Weight kg"))  # GivenWeightKg
+    InputWeight = models.CharField(default="", max_length=50, verbose_name=_("Input Weight"))  # Weight as given by the user
+    OvenTempStandardC = models.IntegerField(default=0, verbose_name=_("Oven Temperature"))  # OvenTempStandardC
+    InternalTempStandardC = models.IntegerField(default=0, verbose_name=_("Internal Temperature"))  # InternalTempStandardC
+    CountAdults = models.IntegerField(default=0, verbose_name=_("Number of Adults"))  # CountAdults
+    CountChildren = models.IntegerField(default=0, verbose_name=_("Number of Children"))  # CountChildren
+    CalcType = models.CharField(max_length=20, default="", verbose_name=_("CalcType"))  # CalcType, byWeight or byPerson
 
     RatingStars = models.IntegerField(blank=True, null=True, default=0,
-                                      verbose_name="How would you rate our instructions?", choices=Ratings)
+                                      verbose_name=_("How would you rate our instructions?"), choices=Ratings)
     RatingComment = models.TextField(max_length=1000, blank=True, verbose_name="Tell us how it went...")
     RatingResult = models.IntegerField(choices=CookingOutcomes, blank=True, null=True, default=0,
-                                       verbose_name="How well was it cooked compared to what you had in mind?")
+                                       verbose_name=_("How well was it cooked compared to what you had in mind?"))
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

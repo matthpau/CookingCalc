@@ -1,5 +1,6 @@
 {% load static %}
 {% load humanize %}
+{% load i18n %}
 
 <!doctype html>
 <html lang="en">
@@ -50,49 +51,49 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Calculators</a>
+                        {% trans 'Cooking Calculators' %}</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{% url 'Calculator_w' %}">By weight</a>
-                    <a class="dropdown-item" href="{% url 'Calculator_p' %}">By number of people</a>
-                    <a class="dropdown-item" href="{% url 'MealPlanList' %}">My saved meal plans</a>
+                    <a class="dropdown-item" href="{% url 'Calculator_w' %}">{% trans 'Meat by weight' %}</a>
+                    <a class="dropdown-item" href="{% url 'Calculator_p' %}">{% trans 'Meat by number of people' %}</a>
+                    <a class="dropdown-item" href="{% url 'MealPlanList' %}">{% trans 'My saved plans' %}</a>
                 </div>
                 </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Recipe Converter</a>
+                        {% trans 'Recipe Conversions' %}</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{% url 'converter:recipe_converter' %}">Converter</a>
-                    <a class="dropdown-item" href="{% url 'converter:saved_conversions' %}">My saved conversions</a>
-                    <a class="dropdown-item" href="{% url 'converter:ConverterAbout' %}">How it works</a>
+                    <a class="dropdown-item" href="{% url 'converter:recipe_converter' %}">{% trans 'Converter' %}</a>
+                    <a class="dropdown-item" href="{% url 'converter:saved_conversions' %}">{% trans 'My saved conversions' %}</a>
+                    <a class="dropdown-item" href="{% url 'converter:ConverterAbout' %}">{% trans 'How it works' %}</a>
                 </div>
                 </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Store Directory</a>
+                        {% trans 'Store directory' %}</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'store:get_loc' %}">Find stores near me</a>
-                        <a class="dropdown-item" href="{% url 'store:store_launch_info' %}">For store owners</a>
+                        <a class="dropdown-item" href="{% url 'store:get_loc' %}">{% trans 'Find local stores near me' %}</a>
+                        <a class="dropdown-item" href="{% url 'store:store_launch_info' %}">{% trans 'For store owners' %}</a>
                 </div>
                 </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Account</a>
+                        {% trans 'Account' %}</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     {% if user.is_authenticated %}
-                        <a class="dropdown-item" href="{% url 'users:profile' %}">My profile</a>
-                        <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="dropdown-item" href="{% url 'users:profile' %}">{% trans 'Profile / newsletter' %}</a>
+                        <a class="dropdown-item" href="{% url 'account_logout' %}">{% trans 'Logout' %}</a>
                     {% else %}
-                        <a class="dropdown-item" href="{% url 'account_signup' %}">Signup</a>
-                        <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+                        <a class="dropdown-item" href="{% url 'account_signup' %}">{% trans 'Register' %}</a>
+                        <a class="dropdown-item" href="{% url 'account_login' %}">{% trans 'Login' %}</a>
                     {% endif %}
                 </div>
                 </li>
 
                 <li>
-                    <a class="nav-link" href="{% url 'About' %}">About</a>
+                    <a class="nav-link" href="{% url 'About' %}">{% trans 'About' %}</a>
                 </li>
 
             </ul>
@@ -115,7 +116,7 @@
 {% endblock %}
 <hr>
 {% if user.is_authenticated %}
-    <small>Logged in as {{ user.username }} | <a href="{% url 'account_logout' %}">logout</a></small>
+    <small>{% trans 'Logged in as ' %} {{ user.username }} | <a href="{% url 'account_logout' %}">{% trans 'Logout' %}</a></small>
 {% endif %}
 
 </div>

@@ -1,6 +1,7 @@
 from django import forms
 from .models import Conversion
 import datetime
+from django.utils.translation import gettext_lazy as _
 
 
 test_text = """one partridge in a pear tree
@@ -31,28 +32,28 @@ Cooked jasmine rice, for serving
 
 class RecipeConverter(forms.Form):
 
-    choices = [
-        (1, "Automatic"),
-        (2, "To metric"),
-        (3, "To imperial"),
-    ]
+    choices = (
+        (1, _("Automatic")),
+        (2, _("To metric")),
+        (3, _("To imperial")),
+    )
 
     currentDT = datetime.datetime.now()
-    name_initial = 'My recipe ' + currentDT.strftime("%Y-%m-%d %H:%M")
+    name_initial = _('My recipe ' + currentDT.strftime("%Y-%m-%d %H:%M"))
 
     url_placeholder = "www.my-favourite-recipe-site.com/this-recipe.html"
 
-    recipe_text = forms.CharField(max_length=5000, label='Paste or type your recipe and conversions here:',
+    recipe_text = forms.CharField(max_length=5000, label=_('Paste or type your recipe and conversions here:'),
                                   #initial=inital_text,
                                   widget=forms.Textarea(attrs={'placeholder': test_text})
                                   )
-    name = forms.CharField(max_length=200, label='Give your recipe a name:', required=True,
+    name = forms.CharField(max_length=200, label=_('Give your recipe a name:'), required=True,
                            initial=name_initial,
-                           widget=forms.TextInput(attrs={'placeholder': "My favourite recipe"}))
+                           widget=forms.TextInput(attrs={'placeholder': _("My favourite recipe")}))
     conversion_type = forms.ChoiceField(choices=choices, initial=1)
-    spoons_bool = forms.BooleanField(label="Don't convert spoons", initial=True, required=False)
-    cups_bool = forms.BooleanField(label="Don't convert cups", initial=True, required=False)
-    source_url = forms.URLField(required=False, label='Let us know where you got it:',
+    spoons_bool = forms.BooleanField(label=_("Don't convert spoons"), initial=True, required=False)
+    cups_bool = forms.BooleanField(label=_("Don't convert cups"), initial=True, required=False)
+    source_url = forms.URLField(required=False, label=_('Let us know where you got it:'),
                                 widget=forms.TextInput(attrs={'placeholder': url_placeholder}))
 
 

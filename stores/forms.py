@@ -2,24 +2,24 @@ from django import forms
 from .models import StoreType, AuthorisedEventEditors, Event
 from users.models import CustomUser
 from bootstrap_datepicker_plus import DatePickerInput
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 
 class StoreSearch(forms.Form):
-    DIST_CHOICES = [
+    DIST_CHOICES = (
                 (2, '2km'),
                 (5, '5km'),
                 (10, '10km'),
                 (50, '50km')
-                ]
+                )
 
-    SORT_CHOICES = [
-                (1, 'Distance'),
-                (2, 'Likes')
-                ]
+    SORT_CHOICES = (
+                (1, _('Distance')),
+                (2, _('Likes'))
+                )
 
-    search_distance = forms.ChoiceField(choices=DIST_CHOICES, initial='5')
-    sort_order = forms.ChoiceField(choices=SORT_CHOICES, label='Sort by', initial='Distance')
-    store_type = forms.ModelChoiceField(StoreType.objects.all(), empty_label="All stores")
+    search_distance = forms.ChoiceField(choices=DIST_CHOICES, label=_('Search Distance'), initial='5')
+    sort_order = forms.ChoiceField(choices=SORT_CHOICES, label=_('Sort by'), initial=_('Distance'))
+    store_type = forms.ModelChoiceField(StoreType.objects.all(), label=_('Store Type'), empty_label=_("All stores"))
 
 #https://github.com/monim67/django-bootstrap-datepicker-plus/issues/15
 #start = forms.DateTimeField(input_formats=["%d/%m/%Y %H:%M"], widget=DatePickerInput(format="%d/%m/%Y %H:%M").start_of('app'))

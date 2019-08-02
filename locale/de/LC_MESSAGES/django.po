@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-15 00:40+0200\n"
+"POT-Creation-Date: 2019-08-02 13:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,316 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\AppTimesCalc\templates\account\login.html:18
-msgid "Login"
+#: AppTimesCalc/forms.py:14
+msgid "What kind of meat?"
+msgstr "Was für Fleisch?"
+
+#: AppTimesCalc/forms.py:14
+msgid "Please select"
+msgstr "Auswählen"
+
+#: AppTimesCalc/forms.py:15
+msgid "How well done?"
+msgstr "Wie gut gekocht?"
+
+#: AppTimesCalc/forms.py:17
+msgid "When do you want to eat? HH:MM (24hr clock)"
+msgstr "Wann möchten sie essen? HH:MM (24St Uhr)"
+
+#: AppTimesCalc/forms.py:23
+msgid "Weight of meat (kg) "
+msgstr "Gewicht (kg)"
+
+#: AppTimesCalc/forms.py:24
+msgid "or, weight of meat (lb) "
+msgstr "oder Gewicht (lb)"
+
+#: AppTimesCalc/forms.py:25
+msgid "or, weight of meat (gr) "
+msgstr "oder, Gewicht (gr)"
+
+#: AppTimesCalc/forms.py:26
+msgid "Number of adults?"
+msgstr "Anzahl Erwachsene?"
+
+#: AppTimesCalc/forms.py:27
+msgid "Number of children?"
+msgstr "Anzahl Kinder?"
+
+#: AppTimesCalc/forms.py:56
+msgid "Please put a weight in one and only one box"
+msgstr "Bitte legen Sie ein Gewicht in eine und nur eine Box."
+
+#: AppTimesCalc/models.py:67
+msgid "Very undercooked"
+msgstr "Sehr wenig gekocht"
+
+#: AppTimesCalc/models.py:68
+msgid "Undercooked"
+msgstr "Wenig gekocht"
+
+#: AppTimesCalc/models.py:69
+msgid "Just right"
+msgstr "Perfekt"
+
+#: AppTimesCalc/models.py:70
+msgid "Overcooked"
+msgstr "Verkocht"
+
+#: AppTimesCalc/models.py:71
+msgid "Very overcooked"
+msgstr "Stark verkocht"
+
+#: AppTimesCalc/models.py:75
+msgid "Not rated"
+msgstr "Nicht gestattet"
+
+#: AppTimesCalc/models.py:76
+msgid "One star"
+msgstr "Ein Stern"
+
+#: AppTimesCalc/models.py:77
+msgid "Two stars"
+msgstr "Zwei Sternen"
+
+#: AppTimesCalc/models.py:78
+msgid "Three stars"
+msgstr "Drei Sternen"
+
+#: AppTimesCalc/models.py:83
+msgid "Plan Name"
+msgstr "Plan Name"
+
+#: AppTimesCalc/models.py:84
+msgid "Plan Description"
+msgstr "Beschreibung"
+
+#: AppTimesCalc/models.py:88
+msgid "Start Time"
+msgstr "Startzeit"
+
+#: AppTimesCalc/models.py:89
+msgid "Meat In Time"
+msgstr "Fleisch in Zeit"
+
+#: AppTimesCalc/models.py:90
+msgid "Meat Out Time"
+msgstr "Fleisch aus Zeit"
+
+#: AppTimesCalc/models.py:91
+msgid "Eating Time"
+msgstr "Essenzeit"
+
+#: AppTimesCalc/models.py:93
+msgid "Warmup Time"
+msgstr "Aufwarmenzeit"
+
+#: AppTimesCalc/models.py:94
+msgid "Cooking Time"
+msgstr "Kochzeit"
+
+#: AppTimesCalc/models.py:95
+msgid "Resting Time"
 msgstr ""
 
-#: .\AppTimesCalc\templates\account\login.html:21
+#: AppTimesCalc/models.py:96
+msgid "Total Time"
+msgstr "Ruhezeit"
+
+#: AppTimesCalc/models.py:98
+msgid "Given Weight kg"
+msgstr ""
+
+#: AppTimesCalc/models.py:99
+msgid "Input Weight"
+msgstr ""
+
+#: AppTimesCalc/models.py:100
+msgid "Oven Temperature"
+msgstr ""
+
+#: AppTimesCalc/models.py:101
+msgid "Internal Temperature"
+msgstr ""
+
+#: AppTimesCalc/models.py:102
+msgid "Number of Adults"
+msgstr ""
+
+#: AppTimesCalc/models.py:103
+msgid "Number of Children"
+msgstr ""
+
+#: AppTimesCalc/models.py:104
+msgid "CalcType"
+msgstr ""
+
+#: AppTimesCalc/models.py:107
+msgid "How would you rate our instructions?"
+msgstr "Wie bewerten Sie unsere Anweisungen?"
+
+#: AppTimesCalc/models.py:110
+msgid "How well was it cooked compared to what you had in mind?"
+msgstr ""
+"Wie gut wurde es gekocht im Vergleich zu dem, was Sie sich vorgestellt hast?"
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:13
+#, python-format
+msgid ""
+"<h5>Your %(calc_inputs.MeatType|lower)s needs to weigh about "
+"%(calc_outputs.InputWeight)s or %(calc_outputs.WeightStandardlb)s</h5> "
+"<p>For %(calc_inputs.CountAdults)s adults and %(calc_inputs.CountChildren)s "
+"children, based on portion sizes of %(calc_outputs.Portion_gPerAdult)s per "
+"adult and %(calc_outputs.Portion_gPerChild)s per child.</p>"
+msgstr ""
+"<h5>Ihr %(calc_inputs.MeatType|lower)s needs to weigh about "
+"%(calc_outputs.InputWeight)s or %(calc_outputs.WeightStandardlb)s</h5> "
+"<p>For %(calc_inputs.CountAdults)s adults and %(calc_inputs.CountChildren)s "
+"children, based on portion sizes of %(calc_outputs.Portion_gPerAdult)s per "
+"adult and %(calc_outputs.Portion_gPerChild)s per child.</p>"
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:41
+msgid ""
+"Please be sure to save this meal and rate it afterwards so we can improve "
+"our suggestions."
+msgstr ""
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcResError.html:5
+msgid "It looks like might like to check your input"
+msgstr "Bitte, prüfen Sie Ihre Angaben"
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcResError.html:6
+msgid "Go back"
+msgstr "Zurück"
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcResError.html:6
+msgid " Start again"
+msgstr "Neustarten"
+
+#: AppTimesCalc/templates/AppTimesCalc/Home.html:11
+msgid "Welcome - try out the store search to support your local stores"
+msgstr ""
+"Willkommen - probieren Sie die Filialsuche aus, um Ihre lokalen Geschäfte zu "
+"unterstützen."
+
+#: AppTimesCalc/templates/AppTimesCalc/Home.html:21
+msgid ""
+"Support your local stores - sign up for our newsletter to get information "
+"from stores nearby (requires account)"
+msgstr ""
+"Unterstützen Sie Ihre lokalen Geschäfte - melden Sie sich für unseren "
+"Newsletter an, um Informationen aus Geschäften in Ihrer Nähe zu erhalten "
+"(erfordert Konto)."
+
+#: AppTimesCalc/templates/AppTimesCalc/Home.html:24
+msgid "Newsletter"
+msgstr "Newsletter"
+
+#: AppTimesCalc/templates/AppTimesCalc/Home.html:32
+msgid ""
+"Convert any recipe or ingredients list from metric to imperial and vice "
+"verse (requires account)"
+msgstr ""
+"Konvertieren Sie alle Rezepte oder Zutatenlisten von metrisch nach imperial "
+"und umgekehrt (erfordert Konto)."
+
+#: AppTimesCalc/templates/AppTimesCalc/Home.html:33
+#: AppTimesCalc/templates/AppTimesCalc/base.html:68
+msgid "How it works"
+msgstr "So funktionert es"
+
+#: AppTimesCalc/templates/AppTimesCalc/Home.html:36
+msgid "Do a conversion"
+msgstr "Konverten"
+
+#: AppTimesCalc/templates/AppTimesCalc/Home.html:45
+msgid ""
+"Meat cooking calculator, if you already know how much meat you plan to "
+"prepare."
+msgstr ""
+"Fleischkochrechner, wenn Sie bereits wissen, wie viel Fleisch Sie zubereiten "
+"wollen."
+
+#: AppTimesCalc/templates/AppTimesCalc/Home.html:48
+#: AppTimesCalc/templates/AppTimesCalc/Home.html:59
+msgid "Calculate"
+msgstr "Berechnen"
+
+#: AppTimesCalc/templates/AppTimesCalc/Home.html:56
+msgid "Meat cooking calculator, if you know how many guests you have."
+msgstr "Fleischkoch-Rechner, wenn Sie wissen, wie viele Gäste Sie haben."
+
+#: AppTimesCalc/templates/AppTimesCalc/base.html:54
+msgid "Cooking Calculators"
+msgstr "Koch-Rechner"
+
+#: AppTimesCalc/templates/AppTimesCalc/base.html:56
+msgid "Meat by weight"
+msgstr "Fleisch nach Gewicht"
+
+#: AppTimesCalc/templates/AppTimesCalc/base.html:57
+msgid "Meat by number of people"
+msgstr "Fleisch nach Personenzahl"
+
+#: AppTimesCalc/templates/AppTimesCalc/base.html:58
+msgid "My saved plans"
+msgstr "Meine gespeicherten Pläne"
+
+#: AppTimesCalc/templates/AppTimesCalc/base.html:64
+msgid "Recipe Conversions"
+msgstr "Konvertierung von Rezepten"
+
+#: AppTimesCalc/templates/AppTimesCalc/base.html:66
+msgid "Converter"
+msgstr "Konvertor"
+
+#: AppTimesCalc/templates/AppTimesCalc/base.html:67
+msgid "My saved conversions"
+msgstr "Meine gespeicherten Konvertierungen"
+
+#: AppTimesCalc/templates/AppTimesCalc/base.html:74
+msgid "Store directory"
+msgstr "Storeverzeichnis"
+
+#: AppTimesCalc/templates/AppTimesCalc/base.html:76
+msgid "Find local stores near me"
+msgstr "Lokale Geschäfte finden"
+
+#: AppTimesCalc/templates/AppTimesCalc/base.html:77
+msgid "For store owners"
+msgstr "Für Eigentümer"
+
+#: AppTimesCalc/templates/AppTimesCalc/base.html:83
+msgid "Account"
+msgstr "Konto"
+
+#: AppTimesCalc/templates/AppTimesCalc/base.html:86
+msgid "Profile / newsletter"
+msgstr "Profil/newsletter"
+
+#: AppTimesCalc/templates/AppTimesCalc/base.html:87
+#: AppTimesCalc/templates/AppTimesCalc/base.html:119
+msgid "Logout"
+msgstr "Abmelden"
+
+#: AppTimesCalc/templates/AppTimesCalc/base.html:89
+msgid "Register"
+msgstr "Registrieren"
+
+#: AppTimesCalc/templates/AppTimesCalc/base.html:90
+#: AppTimesCalc/templates/account/login.html:18
+msgid "Login"
+msgstr "Anmelden"
+
+#: AppTimesCalc/templates/AppTimesCalc/base.html:96
+msgid "About"
+msgstr "Uber uns"
+
+#: AppTimesCalc/templates/AppTimesCalc/base.html:119
+msgid "Logged in as "
+msgstr "Angemeldet als"
+
+#: AppTimesCalc/templates/account/login.html:21
 #, python-format
 msgid ""
 "Please sign in with one\n"
@@ -31,75 +336,81 @@ msgid ""
 "                for a %(site_name)s account and sign in below:"
 msgstr ""
 
-#: .\AppTimesCalc\templates\account\login.html:29
+#: AppTimesCalc/templates/account/login.html:29
 msgid "or"
-msgstr ""
+msgstr "oder"
 
-#: .\AppTimesCalc\templates\account\login.html:35
+#: AppTimesCalc/templates/account/login.html:35
 #, python-format
 msgid ""
 "If you have not created an account yet, then please\n"
 "                <a href=\"%(signup_url)s\">sign up</a> first."
 msgstr ""
 
-#: .\AppTimesCalc\templates\account\login.html:45
+#: AppTimesCalc/templates/account/login.html:45
 msgid "Sign In"
-msgstr ""
+msgstr "Anmelden"
 
-#: .\AppTimesCalc\templates\account\login.html:46
+#: AppTimesCalc/templates/account/login.html:46
 msgid "Forgot Password?"
-msgstr ""
+msgstr "Passwort vergessen?"
 
-#: .\AppTimesCalc\templates\account\logout.html:4
+#: AppTimesCalc/templates/account/logout.html:4
 msgid "Sign Out"
-msgstr ""
+msgstr "Abmelden"
 
-#: .\AppTimesCalc\templates\account\logout.html:7
+#: AppTimesCalc/templates/account/logout.html:7
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "Sind Sie sicher, dass Sie sich abmelden möchten"
 
-#: .\AppTimesCalc\templates\account\logout.html:14
+#: AppTimesCalc/templates/account/logout.html:14
 msgid "Log Out"
-msgstr ""
+msgstr "Abmelden"
 
-#: .\AppTimesCalc\templates\account\password_reset.html:6
-#: .\AppTimesCalc\templates\account\password_reset.html:10
-#: .\AppTimesCalc\templates\account\password_reset_done.html:5
-#: .\AppTimesCalc\templates\account\password_reset_done.html:8
+#: AppTimesCalc/templates/account/password_reset.html:6
+#: AppTimesCalc/templates/account/password_reset.html:10
+#: AppTimesCalc/templates/account/password_reset_done.html:5
+#: AppTimesCalc/templates/account/password_reset_done.html:8
 msgid "Password Reset"
-msgstr ""
+msgstr "Passwort zurücksetzen"
 
-#: .\AppTimesCalc\templates\account\password_reset.html:15
+#: AppTimesCalc/templates/account/password_reset.html:15
 msgid ""
 "Forgotten your password? Enter your e-mail address below, and we'll send you "
 "an e-mail allowing you to reset it."
 msgstr ""
+"Haben Sie Ihr Passwort vergessen? Gib unten deine E-Mail-Adresse ein, und "
+"wir senden dir eine E-Mail, mit der du sie zurücksetzen kannst."
 
-#: .\AppTimesCalc\templates\account\password_reset.html:20
+#: AppTimesCalc/templates/account/password_reset.html:20
 msgid "Reset My Password"
-msgstr ""
+msgstr "Mein Passwort zurücksetzen"
 
-#: .\AppTimesCalc\templates\account\password_reset.html:24
+#: AppTimesCalc/templates/account/password_reset.html:24
 msgid "Please contact us if you have any trouble resetting your password."
 msgstr ""
+"Bitte kontaktieren Sie uns, wenn Sie Probleme beim Zurücksetzen Ihres "
+"Passworts haben."
 
-#: .\AppTimesCalc\templates\account\password_reset_done.html:14
+#: AppTimesCalc/templates/account/password_reset_done.html:14
 msgid ""
 "We have sent you an e-mail. Please contact us if you do not receive it "
 "within a few minutes."
 msgstr ""
+"Wir haben Ihnen eine E-Mail geschickt. Bitte kontaktieren Sie uns, wenn Sie "
+"es nicht innerhalb weniger Minuten erhalten."
 
-#: .\AppTimesCalc\templates\account\password_reset_from_key.html:19
+#: AppTimesCalc/templates/account/password_reset_from_key.html:19
 msgid "Bad Token"
 msgstr ""
 
-#: .\AppTimesCalc\templates\account\password_reset_from_key.html:19
-#: .\AppTimesCalc\templates\account\password_reset_from_key_done.html:4
-#: .\AppTimesCalc\templates\account\password_reset_from_key_done.html:14
+#: AppTimesCalc/templates/account/password_reset_from_key.html:19
+#: AppTimesCalc/templates/account/password_reset_from_key_done.html:4
+#: AppTimesCalc/templates/account/password_reset_from_key_done.html:14
 msgid "Change Password"
-msgstr ""
+msgstr "Passwort ändern"
 
-#: .\AppTimesCalc\templates\account\password_reset_from_key.html:23
+#: AppTimesCalc/templates/account/password_reset_from_key.html:23
 #, python-format
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
@@ -107,107 +418,615 @@ msgid ""
 "a>."
 msgstr ""
 
-#: .\AppTimesCalc\templates\account\password_reset_from_key.html:30
+#: AppTimesCalc/templates/account/password_reset_from_key.html:30
 msgid "Change password"
 msgstr ""
 
-#: .\AppTimesCalc\templates\account\password_reset_from_key.html:33
-#: .\AppTimesCalc\templates\account\password_reset_from_key_done.html:15
+#: AppTimesCalc/templates/account/password_reset_from_key.html:33
+#: AppTimesCalc/templates/account/password_reset_from_key_done.html:15
 msgid "Your password is now changed."
 msgstr ""
 
-#: .\AppTimesCalc\templates\account\signup.html:7
+#: AppTimesCalc/templates/account/signup.html:7
 msgid "Signup"
 msgstr ""
 
-#: .\AppTimesCalc\templates\account\signup.html:18
+#: AppTimesCalc/templates/account/signup.html:18
 msgid "Sign-up"
 msgstr ""
 
-#: .\AppTimesCalc\templates\account\signup.html:19
+#: AppTimesCalc/templates/account/signup.html:19
 #, python-format
 msgid ""
 "Already have an account? Then please <a href=\"%(login_url)s\">log in</a>."
 msgstr ""
 
-#: .\AppTimesCalc\templates\account\signup.html:27
+#: AppTimesCalc/templates/account/signup.html:27
 msgid "Sign Up"
 msgstr ""
 
-#: .\AppTimesCalc\templates\account\snippets\already_logged_in.html:5
+#: AppTimesCalc/templates/account/snippets/already_logged_in.html:5
 msgid "Note"
 msgstr ""
 
-#: .\AppTimesCalc\templates\account\snippets\already_logged_in.html:5
+#: AppTimesCalc/templates/account/snippets/already_logged_in.html:5
 #, python-format
 msgid "you are already logged in as %(user_display)s."
 msgstr ""
 
-#: .\stores\models.py:33
+#: RecipeConverter/forms.py:36
+msgid "Automatic"
+msgstr "Automatisch"
+
+#: RecipeConverter/forms.py:37
+msgid "To metric"
+msgstr "Nach metrisch"
+
+#: RecipeConverter/forms.py:38
+msgid "To imperial"
+msgstr "Nach Imperial/USA"
+
+#: RecipeConverter/forms.py:42
+msgid "My recipe "
+msgstr "Mein Rezept"
+
+#: RecipeConverter/forms.py:46
+msgid "Paste or type your recipe and conversions here:"
+msgstr ""
+"Fügen Sie hier Ihr Rezept und Ihre Konvertierungen ein oder geben Sie es ein"
+
+#: RecipeConverter/forms.py:50
+msgid "Give your recipe a name:"
+msgstr "Ihr rezept nennen"
+
+#: RecipeConverter/forms.py:52
+msgid "My favourite recipe"
+msgstr "Mein lieblings rezept"
+
+#: RecipeConverter/forms.py:54
+msgid "Don't convert spoons"
+msgstr "Löffel nicht konvertieren"
+
+#: RecipeConverter/forms.py:55
+msgid "Don't convert cups"
+msgstr "Tassen nicht konvertieren"
+
+#: RecipeConverter/forms.py:56
+msgid "Let us know where you got it:"
+msgstr "Woher kam das Rezept?"
+
+#: RecipeConverter/models.py:8
+msgid "Imperial"
+msgstr "Imperial"
+
+#: RecipeConverter/models.py:9
+msgid "Metric"
+msgstr "Metrisch"
+
+#: RecipeConverter/models.py:10
+msgid "None"
+msgstr "Nichts"
+
+#: RecipeConverter/models.py:30
+msgid "No name given"
+msgstr "Keinen Namen gegeben"
+
+#: RecipeConverter/models.py:30
+msgid "Recipe name"
+msgstr "Rezept Name"
+
+#: RecipeConverter/models.py:33
+msgid "Original Recipe"
+msgstr "Ursprungliches Rezept"
+
+#: RecipeConverter/models.py:34
+msgid "Converted Recipe"
+msgstr "Konvertiertes Rezept"
+
+#: RecipeConverter/templates/RecipeConverter/recipe_converter.html:7
+msgid ""
+"Paste a recipe in metric or imperial and it will be converted in the other "
+"direction."
+msgstr ""
+"Fügen Sie ein Rezept in metrisch oder imperial ein und es wird in die andere "
+"Richtung konvertiert."
+
+#: RecipeConverter/templates/RecipeConverter/recipe_converter.html:8
+msgid ""
+"Use this to take recipes you have found on the web and convert to units "
+"familiar to you. Tips to help the converter work better: put ingredients on "
+"separate lines, one ingredient per line, leave a single space between the "
+"ingredients and the method."
+msgstr ""
+"Benutzen Sie dies, um Rezepte, die Sie im Internet gefunden haben, in die "
+"Ihnen vertrauten Einheiten zu konvertieren. Tipps, die dem Konverter helfen, "
+"besser zu arbeiten: Zutaten auf separate Linien legen, eine Zutat pro Linie, "
+"einen einzigen Zwischenraum zwischen den Zutaten und der Methode lassen."
+
+#: newsletters/templates/newsletters/weekly_general.html:5
+msgid "Cooking Helpers Weekly Newsletter"
+msgstr ""
+
+#: newsletters/templates/newsletters/weekly_general.html:10
+msgid "Your weekly local info from "
+msgstr ""
+
+#: newsletters/templates/newsletters/weekly_general.html:17
+msgid "effective"
+msgstr ""
+
+#: newsletters/templates/newsletters/weekly_general.html:18
+msgid " to "
+msgstr ""
+
+#: newsletters/templates/newsletters/weekly_general.html:20
+msgid "(includes an offer)"
+msgstr ""
+
+#: newsletters/templates/newsletters/weekly_general.html:30
+msgid "Your search radius "
+msgstr ""
+
+#: newsletters/templates/newsletters/weekly_general.html:31
+msgid "Change your preferences or unsubscribe"
+msgstr ""
+
+#: newsletters/templates/newsletters/weekly_general.html:32
+msgid "Thankyou for visiting "
+msgstr ""
+
+#: stores/forms.py:16 stores/forms.py:21
+msgid "Distance"
+msgstr "Radius"
+
+#: stores/forms.py:17
+msgid "Likes"
+msgstr ""
+
+#: stores/forms.py:20
+msgid "Search Distance"
+msgstr "Suchradius"
+
+#: stores/forms.py:21
+msgid "Sort by"
+msgstr "Sortieren nach"
+
+#: stores/forms.py:22
+msgid "Store Type"
+msgstr "Geschäftyp "
+
+#: stores/forms.py:22
+msgid "All stores"
+msgstr "Alle"
+
+#: stores/forms.py:32
+msgid "Event start"
+msgstr "Startdatum"
+
+#: stores/forms.py:38
+msgid "Event finish:"
+msgstr "Enddatum"
+
+#: stores/models.py:35 users/models.py:45
 msgid "House Number"
-msgstr ""
+msgstr "Hausnummer"
 
-#: .\stores\models.py:34
+#: stores/models.py:36 users/models.py:46
 msgid "Street"
-msgstr ""
+msgstr "Straße"
 
-#: .\stores\models.py:35
+#: stores/models.py:37 users/models.py:49
 msgid "Postcode"
-msgstr ""
+msgstr "Postleitzahl"
 
-#: .\stores\models.py:36
+#: stores/models.py:38 users/models.py:50
 msgid "City"
-msgstr ""
+msgstr "Stadt"
 
-#: .\stores\models.py:37
+#: stores/models.py:39 users/models.py:19
 msgid "Country"
-msgstr ""
+msgstr "Land"
 
-#: .\stores\models.py:97
+#: stores/models.py:109
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
-#: .\stores\models.py:98
+#: stores/models.py:110
 msgid "Event description"
-msgstr ""
+msgstr "Beschribung"
 
-#: .\stores\models.py:99
-msgid "Event start date and time"
-msgstr ""
+#: stores/models.py:111
+msgid "Event start date"
+msgstr "Startdatum"
 
-#: .\stores\models.py:100
-msgid "Event end date and time"
-msgstr ""
+#: stores/models.py:112
+msgid "Event end date"
+msgstr "Enddatum"
 
-#: .\stores\models.py:101
+#: stores/models.py:113
 msgid "Includes offers"
-msgstr ""
+msgstr "Enthält Angebote"
 
-#: .\stores\models.py:102
+#: stores/models.py:114
 msgid "Archived"
 msgstr ""
 
-#: .\stores\models.py:103
+#: stores/models.py:115
 msgid "Created"
 msgstr ""
 
-#: .\stores\models.py:104
+#: stores/models.py:116
 msgid "Updated"
 msgstr ""
 
-#: .\stores\templates\stores\profile.html:37
+#: stores/templates/stores/editors.html:17
+msgid "Editors for"
+msgstr "Erlaubte Benutzer für"
+
+#: stores/templates/stores/editors.html:18
+msgid "You are"
+msgstr "Sie sind"
+
+#: stores/templates/stores/editors.html:19
+msgid "People who can add events to your store"
+msgstr "Personen, die Ereignisse zu Ihrem Shop hinzufügen können"
+
+#: stores/templates/stores/editors.html:29
+msgid "Add a new editor"
+msgstr "Einen neuen erlaubten Benutzer hinzufügen"
+
+#: stores/templates/stores/editors.html:34
+msgid "Enter email"
+msgstr "Email"
+
+#: stores/templates/stores/editors.html:35
+msgid "This person must already be registered on the site"
+msgstr "Diese Person muss bereits auf der Website registriert sein."
+
+#: stores/templates/stores/editors.html:36
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: stores/templates/stores/editors.html:40
+#: stores/templates/stores/event_create.html:14
+#: stores/templates/stores/event_delete.html:15
+#: stores/templates/stores/event_list.html:12
+#: stores/templates/stores/event_update.html:13
+msgid "Go Back"
+msgstr "Zurück"
+
+#: stores/templates/stores/event_create.html:10
+msgid "Create your event"
+msgstr "Ereignis Erstellen"
+
+#: stores/templates/stores/event_create.html:13
+#: stores/templates/stores/event_update.html:12
+msgid "Save"
+msgstr "Speichern"
+
+#: stores/templates/stores/event_delete.html:12
+msgid "Do you want to delete the event?"
+msgstr "Möchten Sie das Ereignis löschen?"
+
+#: stores/templates/stores/event_delete.html:14
+#: stores/templates/stores/event_list.html:32
+msgid "Delete"
+msgstr "Löschen"
+
+#: stores/templates/stores/event_list.html:9
+msgid "Events for:"
+msgstr ""
+
+#: stores/templates/stores/event_list.html:11
+msgid "Add new"
+msgstr "Neues hinzufügen"
+
+#: stores/templates/stores/event_list.html:23
+msgid "FINISHED |"
+msgstr ""
+
+#: stores/templates/stores/event_list.html:30
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: stores/templates/stores/event_update.html:9
+msgid "Edit your event"
+msgstr "Ereignis bearbeiten"
+
+#: stores/templates/stores/get_loc.html:27
+msgid "Sign up for the newsletter to support your local stores."
+msgstr ""
+"Melden Sie sich für den Newsletter an, um Ihre lokalen Geschäfte zu "
+"unterstützen."
+
+#: stores/templates/stores/new_store_info.html:7
+msgid "About the cooking-helpers.com local marketing programme"
+msgstr "Über das cooking-helpers.com Lokal Markeingkonzept"
+
+#: stores/templates/stores/new_store_info.html:9
+msgid "What it is and how it works"
+msgstr "Was, und wie es funktioniert"
+
+#: stores/templates/stores/new_store_info.html:10
+msgid ""
+"We support local stores by providing a simple way to share marketing "
+"information with your customers. This could be something like 'Honey back in "
+"stock', or 'We are having a family BBQ this weekend for the cycling event'. "
+"Users who do a store seaerch from their location will see your store "
+"listing, and also any marketing messages that you have set up. Each message "
+"has a start and end date, and users will only see them when active."
+msgstr ""
+"Wir unterstützen lokale Geschäfte, indem wir eine einfache Möglichkeit "
+"bieten, Marketinginformationen mit Ihren Kunden zu teilen. Dies könnte so "
+"etwas wie 'Honig wieder da!' oder 'Wir haben dieses Wochenende ein "
+"Familiengrill für das Radsportereignis' sein. Benutzer, die einen Shop von "
+"ihrem Standort aus suchen, sehen Ihren Shop-Listing und auch alle "
+"Marketingnachrichten, die Sie eingerichtet haben. Jede Nachricht hat ein "
+"Start- und Enddatum, und die Benutzer sehen sie nur, wenn sie aktiv sind."
+
+#: stores/templates/stores/new_store_info.html:11
+msgid ""
+"Users can also subscribe to the weekly cooking-helpers.com local stores "
+"newsletter. After they enter their address, they define a search radius. "
+"Each week they get current information only from stores nearby their address."
+msgstr ""
+"Benutzer können auch den wöchentlichen cooking-helpers.com Newsletter für "
+"lokale Geschäfte abonnieren. Nachdem sie ihre Adresse eingegeben haben, "
+"definieren sie einen Suchradius. Jede Woche erhalten sie aktuelle "
+"Informationen nur aus Geschäften in der Nähe ihrer Adresse."
+
+#: stores/templates/stores/new_store_info.html:12
+msgid "Try a store search"
+msgstr "Storesuche ausprobieren"
+
+#: stores/templates/stores/new_store_info.html:14
+msgid "The cooking-helpers.com newsletter"
+msgstr "Der cooking-helpers.com Newsletter"
+
+#: stores/templates/stores/new_store_info.html:15
+msgid ""
+"In their profile, users are asked to enable the newsletter, then confirm "
+"their address and a search radius. That's all they need to do. After that "
+"they will start getting a weekly email with information from local stores, "
+"including the messages and events you have prepared."
+msgstr ""
+"In ihrem Profil werden die Nutzer gebeten, den Newsletter zu aktivieren, "
+"dann ihre Adresse und einen Suchradius zu bestätigen. Das ist alles, was sie "
+"tun müssen. Danach werden sie anfangen, eine wöchentliche E-Mail mit "
+"Informationen aus lokalen Geschäften zu erhalten, einschließlich der "
+"Nachrichten und Ereignisse, die Sie vorbereitet haben."
+
+#: stores/templates/stores/new_store_info.html:18
+msgid "Ask your customers to join up"
+msgstr "Laden Sie Ihre Kunden zur Registrierung ein."
+
+#: stores/templates/stores/new_store_info.html:19
+msgid ""
+"You can print out flyers and give them to your customers, maybe by putting a "
+"single flyer in the bag for each purchase and by leaving them on your "
+"counter where customers can see them."
+msgstr ""
+"Sie können Flyer ausdrucken und an Ihre Kunden weitergeben, indem Sie "
+"vielleicht einen einzigen Flyer für jeden Einkauf in die Tasche legen und "
+"ihn auf Ihrem Tresen lassen, wo er vom Kunden gesehen werden kann."
+
+#: stores/templates/stores/new_store_info.html:25
+msgid "Creating or updating your store on OpenStreetMap"
+msgstr "Wie kann ich mein Laden in OpenStreetMap eintragen oder bearbeiten"
+
+#: stores/templates/stores/new_store_info.html:26
+msgid ""
+"We don't maintain an original store database. The wonderful OpenStreetMap is "
+"place where you can enter and maintain your store details (Name, address and "
+"other information). Once per day we grab that information and update your "
+"entry on cooking-helpers.com. At the moment we are grabbing the following "
+"kinds of stores from OpenStreetMap: butcher, deli, cheese, dairy, farm, "
+"coffee, greengrocer, tea, spices, seafood, fishmonger."
+msgstr ""
+"Wir führen keine Original-Shop-Datenbank. Die wunderbare OpenStreetMap ist "
+"ein Ort, an dem Sie Ihre Shopdaten (Name, Adresse und andere Informationen) "
+"eingeben und pflegen können. Einmal täglich erfassen wir diese Informationen "
+"und aktualisieren Ihren Eintrag auf cooking-helpers.com. Im Moment greifen "
+"wir auf die folgenden Arten von Shops von OpenStreetMap zurück: butcher "
+"(Metzger), deli (Feinkost/Delikatessen), cheese (Käse), dairy (Molkerei), "
+"farm (Bauernhof), coffee (Kaffee/Cafe), greengrocer (Gemüsehändler), tea "
+"(Tee), Gewürze, seafood (Meeresfrüchte), fishmonger (Fischhändler)."
+
+#: stores/templates/stores/new_store_info.html:27
+msgid "To add or edit your store, visit "
+msgstr "Um Ihren Shop hinzuzufügen oder zu bearbeiten, besuchen Sie "
+
+#: stores/templates/stores/new_store_info.html:28
+msgid ""
+"You will need to use or create an OpenStreetMap account. If your store does "
+"not exist, add it as a 'point'. Make sure you tag your store with one of the "
+"tags listed above. If your store is already there, please check your details."
+msgstr ""
+"Sie müssen ein OpenStreetMap-Konto verwenden oder erstellen. Wenn Ihr Shop "
+"nicht existiert, fügen Sie ihn als 'Punkt' hinzu. Stellen Sie sicher, dass "
+"Sie Ihren Shop mit einem der oben aufgeführten Tags versehen. Wenn Ihr "
+"Geschäft bereits dort ist, überprüfen Sie bitte Ihre Daten."
+
+#: stores/templates/stores/new_store_info.html:31
+msgid "How to claim your store"
+msgstr "Wie sie Ihr Laden behaupten können"
+
+#: stores/templates/stores/new_store_info.html:32
+msgid ""
+"If you are the store owner or manager, please first make sure your store is "
+"our database. "
+msgstr ""
+"Wenn Sie der Ladenbesitzer oder Manager sind, stellen Sie bitte zuerst "
+"sicher, dass Ihr Laden unsere Datenbank ist."
+
+#: stores/templates/stores/new_store_info.html:33
+msgid "First do a store search to find your store, "
+msgstr "Führen Sie zunächst eine Filialsuche durch, um Ihren Shop zu finden, "
+
+#: stores/templates/stores/new_store_info.html:34
+msgid ""
+"then copy the store URL, for example: www.cooking-helpers.com/stores/7638/"
+"profile. "
+msgstr "und kopieren Sie die URL des Stores, z.B.:"
+
+#: stores/templates/stores/new_store_info.html:35
+msgid ""
+"Then send me an email and paste it into the email text with a short note. "
+"I'll add you as an editor to your store. Once that's done, you will see an "
+"'Owners Section' on your store profile. This will allow you to add further "
+"editors and create your own events."
+msgstr ""
+"Dann schicken Sie mir eine E-Mail und füge sie mit einer kurzen Notiz in den "
+"E-Mail-Text ein. Ich werde Sie als Redakteurin in deinen Shop aufnehmen. "
+"Sobald dies erledigt ist, sehen Sie in Ihrem Shop-Profil einen "
+"'Eigentümerbereich'. Auf diese Weise können Sie weitere Editoren hinzufügen "
+"und eigene Veranstaltungen erstellen."
+
+#: stores/templates/stores/new_store_info.html:36
+msgid "Send email request to claim your store"
+msgstr "Senden Sie eine E-Mail-Anfrage, um Ihren Shop in Anspruch zu nehmen."
+
+#: stores/templates/stores/new_store_info.html:39
+msgid "Your store profile"
+msgstr "Dein Storeprofil"
+
+#: stores/templates/stores/new_store_info.html:40
+msgid ""
+"You can find your store by doing a store search to locate your store in our "
+"database. If your store is not in our database, you should check to see if "
+"it exists in OpenStreeMap (see above). Once you have found your store, you "
+"can bookmark your profile for quick recall later. If I have set you up as an "
+"owner, you can add more people who can create events, and also manage your "
+"events directly from this page."
+msgstr ""
+"Sie können Ihren Shop finden, indem Sie eine Filialsuche durchführen, um "
+"Ihren Shop in unserer Datenbank zu finden. Wenn sich Ihr Shop nicht in "
+"unserer Datenbank befindet, sollten Sie überprüfen, ob er in OpenStreeMap "
+"existiert (siehe oben). Sobald Sie Ihren Shop gefunden haben, können Sie Ihr "
+"Profil mit einem Lesezeichen versehen und später schnell wieder aufrufen. "
+"Wenn ich dich als Besitzer eingerichtet habe, kannst du weitere Personen "
+"hinzufügen, die Events erstellen und auch deine Events direkt von dieser "
+"Seite aus verwalten können."
+
+#: stores/templates/stores/new_store_info.html:41
+msgid "store search"
+msgstr "Storesuche"
+
+#: stores/templates/stores/profile.html:35
 msgid "Owner Section"
-msgstr ""
+msgstr "Eigentümerbereich"
 
-#: .\stores\templates\stores\profile.html:38
+#: stores/templates/stores/profile.html:36
 #, python-format
-msgid " Welcome, %(user)s. You have the following options: "
-msgstr ""
+msgid "Welcome, %(user)s. You have the following options: "
+msgstr "Wilkommen, %(user)s. Sie haben die folgenden Möglichkeiten:"
 
-#: .\stores\templates\stores\profile.html:39
-msgid "List or edit your associated acconts"
-msgstr ""
+#: stores/templates/stores/profile.html:38
+msgid "List or change your authorised users"
+msgstr "Ihre autorisierten Benutzer auflisten oder ändern"
 
-#: .\stores\templates\stores\profile.html:40
+#: stores/templates/stores/profile.html:39
+msgid "authorised user"
+msgstr "autorisierter Benutzer"
+
+#: stores/templates/stores/profile.html:43
 msgid "List or edit your events"
+msgstr "Ihre Ereignisse auflisten oder bearbeiten"
+
+#: stores/templates/stores/profile.html:44
+msgid "live or future events"
+msgstr "Live- oder zukünftige Ereignisse"
+
+#: stores/templates/stores/profile.html:44
+msgid "total"
+msgstr "insgesamt"
+
+#: stores/templates/stores/profile.html:48
+msgid "Edit on OpenStreetmap"
+msgstr "Bearbeiten auf OpenStreetmap"
+
+#: stores/templates/stores/profile.html:49
+msgid ""
+"Requires OpenStreetMap account. Changes will appear here within 48 hours."
 msgstr ""
+"Erfordert OpenStreetMap-Konto. Änderungen werden hier innerhalb von 48 "
+"Stunden bekannt gegeben."
+
+#: stores/templates/stores/profile.html:53
+msgid "How to claim this store"
+msgstr "So behaupten Sie diesen Shop"
+
+#: stores/templates/stores/profile.html:62
+msgid "Current Events (as seen in the newsletter)"
+msgstr "Aktuelle Ereignisse (wie im Newsletter)"
+
+#: stores/views.py:358
+msgid "User has been removed"
+msgstr "Benutzer wurde entfernt"
+
+#: stores/views.py:363
+msgid "Not permitted"
+msgstr "Nicht gestattet"
+
+#: stores/views.py:378
+msgid ""
+"User not found, please ensure they create an account, or check your spelling"
+msgstr ""
+"Benutzer nicht gefunden, bitte stellen Sie sicher, dass er ein Konto "
+"erstellt oder Ihre Rechtschreibung überprüft."
+
+#: stores/views.py:394
+msgid "User has been added to the list of editors"
+msgstr "Der Benutzer wurde zur Liste der erlabten Benutzer hinzugefügt."
+
+#: stores/views.py:397
+msgid "User is already in the list of editors, please check and try again"
+msgstr ""
+"Benutzer ist bereits in der Liste der erlabten Benutzer, bitte überprüfen "
+"und erneut versuchen."
+
+#: users/models.py:47
+msgid "Address 2"
+msgstr "Adresse 2"
+
+#: users/models.py:48
+msgid "Address 3"
+msgstr "Adresse 3"
+
+#: users/models.py:52
+msgid "I would like to receive the weekly local offers newsletter"
+msgstr ""
+"Ich möchte den wöchentlichen Newsletter mit lokalen Angeboten erhalten."
+
+#: users/models.py:53
+msgid "Search radius for local offers (km)"
+msgstr "Suchradius für lokale Angebote (km)"
+
+#~ msgid ""
+#~ "<h5>For your %(calc_inputs.MeatType|lower)s done %(calc_inputs."
+#~ "CookingLevel|lower)s, here's how to cook it:</h5> <p><strong>You will "
+#~ "need a total of %(calc_outputs.TotalTime)s to fully cook and serve your "
+#~ "meat.</strong></p> <p>Make sure you let the meat come to room temperature "
+#~ "before starting. Turn the oven on to %(calc_outputs.OvenTemp)s at "
+#~ "%(calc_outputs.StartTime)s and let it warm up for about %(calc_outputs."
+#~ "WarmupTime)s.</p> <p>Then, put the meat in at %(calc_outputs.MeatInTime)s "
+#~ "and let it cook for %(calc_outputs.CookingTime)s. Take it out of the oven "
+#~ "at %(calc_outputs.RemoveTime)s. The internal temperature should be about "
+#~ "%(calc_outputs.InternalTemp)s.</p> <p>The meat will continue to cook "
+#~ "during resting, but if you need to, put it in a little longer. Let it "
+#~ "rest for %(calc_outputs.RestTime)s, then carve the meat and serve to your "
+#~ "guests at %(calc_outputs.EatingTime)s.</p>"
+#~ msgstr ""
+#~ "<h5>For your %(calc_inputs.MeatType|lower)s done %(calc_inputs."
+#~ "CookingLevel|lower)s, here's how to cook it:</h5> <p><strong>You will "
+#~ "need a total of %(calc_outputs.TotalTime)s to fully cook and serve your "
+#~ "meat.</strong></p> <p>Make sure you let the meat come to room temperature "
+#~ "before starting. Turn the oven on to %(calc_outputs.OvenTemp)s at "
+#~ "%(calc_outputs.StartTime)s and let it warm up for about %(calc_outputs."
+#~ "WarmupTime)s.</p> <p>Then, put the meat in at %(calc_outputs.MeatInTime)s "
+#~ "and let it cook for %(calc_outputs.CookingTime)s. Take it out of the oven "
+#~ "at %(calc_outputs.RemoveTime)s. The internal temperature should be about "
+#~ "%(calc_outputs.InternalTemp)s.</p> <p>The meat will continue to cook "
+#~ "during resting, but if you need to, put it in a little longer. Let it "
+#~ "rest for %(calc_outputs.RestTime)s, then carve the meat and serve to your "
+#~ "guests at %(calc_outputs.EatingTime)s.</p>"

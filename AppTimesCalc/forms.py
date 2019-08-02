@@ -2,27 +2,29 @@
 #https://docs.djangoproject.com/en/2.2/topics/forms/
 #https://github.com/monim67/django-bootstrap-datepicker-plus
 
+from django.utils.translation import gettext_lazy as _
 from bootstrap_datepicker_plus import TimePickerInput
 from django import forms
 from .models import MeatType, CookingLevel, MealPlan
 
 
+
 class CalcFormGen(forms.Form):
     MeatType = forms.ModelChoiceField(MeatType.objects.exclude(cookinginfo=None),
-                                      label="What kind of meat?", required=True, empty_label='Please select')
-    CookingLevel = forms.ModelChoiceField(CookingLevel.objects.none(), label="How well done?",
+                                      label=_("What kind of meat?"), required=True, empty_label=_('Please select'))
+    CookingLevel = forms.ModelChoiceField(CookingLevel.objects.none(), label=_("How well done?"),
                                           required=True)
-    EatingTime = forms.TimeField(label="When do you want to eat? HH:MM (24hr clock)",
+    EatingTime = forms.TimeField(label=_("When do you want to eat? HH:MM (24hr clock)"),
                                  required=True, initial="14:00",
                                  widget=TimePickerInput(format='%H:%M', attrs={"class": "w-40"})
                                  )
     # w-10 needed to get the clock widget showing at 40% of width
 
-    Weight_kg = forms.DecimalField(label="Weight of meat (kg) ", initial=0, required=False)
-    Weight_lb = forms.DecimalField(label="or, weight of meat (lb) ", initial=0, required=False)
-    Weight_g = forms.DecimalField(label="or, weight of meat (gr) ", initial=0, required=False)
-    CountAdults = forms.IntegerField(label='Number of adults?', initial=1, required=False, min_value=0)
-    CountChildren = forms.IntegerField(label='Number of children?', initial=0, required=False, min_value=0)
+    Weight_kg = forms.DecimalField(label=_("Weight of meat (kg) "), initial=0, required=False)
+    Weight_lb = forms.DecimalField(label=_("or, weight of meat (lb) "), initial=0, required=False)
+    Weight_g = forms.DecimalField(label=_("or, weight of meat (gr) "), initial=0, required=False)
+    CountAdults = forms.IntegerField(label=_('Number of adults?'), initial=1, required=False, min_value=0)
+    CountChildren = forms.IntegerField(label=_('Number of children?'), initial=0, required=False, min_value=0)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -51,7 +53,7 @@ class CalcFormGen(forms.Form):
 
         a = len([num for num in weights if int(num or 0) > 0])
         if a > 1:
-            raise forms.ValidationError("Please put a weight in one and only one box")
+            raise forms.ValidationError(_("Please put a weight in one and only one box"))
 
 
 class CalcFormPerson(CalcFormGen):

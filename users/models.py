@@ -4,7 +4,7 @@ from django.contrib.gis.db import models
 from django.contrib.auth import get_user_model
 #from stores.models import Country
 from .businessLogic import nice_address
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 
 # https://wsvincent.com/django-custom-user-model-tutorial/
 # https://docs.djangoproject.com/en/2.2/topics/auth/customizing/#substituting-a-custom-user-model
