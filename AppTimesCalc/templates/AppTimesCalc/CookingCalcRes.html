@@ -5,53 +5,57 @@
 
 {% load i18n %}
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm col-md-6">
+<div class="container">
+  <div class="row">
+        <div class="col-sm col-md-8">
+            <h3>{% trans 'Selections and quantity' %}</h3>
+            <ul class="list-unstyled">
+                <li>{% trans 'Meat type: ' %} {{calc_inputs.MeatType|lower}}</li>
+                <li>{% trans 'Cooking level: ' %} {{calc_inputs.CookingLevel|lower}}</li>
+                <li>{% trans 'Standard portion size adult: ' %}{{calc_outputs.Portion_gPerAdult}}</li>
+                <li>{% trans 'Standard portion size child: '  %}{{calc_outputs.Portion_gPerChild}}</li>
 
-                {%if calc_outputs.CalcType == 'byPerson' %}
-                {% blocktrans trimmed %}
-                    <h5>Your {{calc_inputs.MeatType|lower}} needs to weigh about {{calc_outputs.InputWeight}} or
-                        {{calc_outputs.WeightStandardlb}}</h5>
-                    <p>For {{calc_inputs.CountAdults}} adults and {{calc_inputs.CountChildren}} children,
-                        based on portion sizes of {{calc_outputs.Portion_gPerAdult}} per adult and
-                        {{calc_outputs.Portion_gPerChild}} per child.</p>
-                {% endblocktrans %}
+                {% if calc_outputs.CalcType == 'byPerson' %}
+                    <li>{% trans 'Given number of adults: ' %}{{calc_inputs.CountAdults}}</li>
+                    <li>{% trans 'Given number of children: ' %}{{calc_inputs.CountChildren}}</li>
+                    <li class="p-2 mb-2 bg-info text-white">{% trans 'Required quantity of meat (kg): ' %}{{calc_outputs.InputWeight}} </li>
+                    <li class="p-2 mb-2 bg-info text-white">{% trans 'Required quantity of meat (lb): ' %}{{calc_outputs.WeightStandardlb}} </li>
+
                 {% else %}
-
-                        <h5>Your {{calc_outputs.InputWeight}} of {{calc_inputs.MeatType|lower}} should feed about
-                            {{calc_outputs.calcAdults}} adults.</h5>
-                    <p>This is based on portion sizes of around {{calc_outputs.Portion_gPerAdult}} per adult.</p>
+                    <li class="p-2 mb-2 bg-info text-white">{% trans 'Estimated number of adults this will feed: ' %}{{calc_outputs.calcAdults}}</li>
 
                 {% endif %}
+            </ul>
 
-                <h5>For your {{calc_inputs.MeatType|lower}} done
-                {{calc_inputs.CookingLevel|lower}}, here's how to cook it:</h5>
-                <p><strong>You will need a total of {{calc_outputs.TotalTime}} to fully cook and serve your meat.</strong></p>
-                <p>Make sure you let the meat come to room temperature before starting. Turn the oven on to {{calc_outputs.OvenTemp}}
-                    at {{calc_outputs.StartTime}} and let it warm up for about {{calc_outputs.WarmupTime}}.</p>
-                <p>Then, put the meat in at {{calc_outputs.MeatInTime}} and let it cook for {{calc_outputs.CookingTime}}.
-                    Take it out of the oven at {{calc_outputs.RemoveTime}}. The internal temperature should be about {{calc_outputs.InternalTemp}}.</p>
-                <p>The meat will continue to cook during resting, but if you need to, put it in a little longer.
-                    Let it rest for {{calc_outputs.RestTime}}, then carve the meat and serve to your guests at {{calc_outputs.EatingTime}}.</p>
+            <h3>{% trans 'How to cook it' %}</h3>
+            
+            <ul class="list-unstyled">
+                <li>{% trans 'Total cooking and preparation time: ' %}{{calc_outputs.TotalTime}}</li>
+                <li class="p-2 mb-2 bg-info text-white">{% trans 'Turn the oven on at: ' %}{{calc_outputs.StartTime}}</li>
+                <li>{% trans 'Oven temperature: ' %}{{calc_outputs.OvenTemp}}</li>
+                <li>{% trans 'Let the oven warm up for: ' %}{{calc_outputs.WarmupTime}}</li>
+                <li>{% trans 'Put the meat in the oven at: ' %}{{calc_outputs.MeatInTime}}</li>
+                <li>{% trans 'Let the meat cook for: ' %}{{calc_outputs.CookingTime}}</li>
+                <li>{% trans 'Take the meat out at: ' %}{{calc_outputs.RemoveTime}}</li>
+                <li>{% trans 'The internal temperature of the meat should be: ' %}{{calc_outputs.InternalTemp}}</li>
+                <li>{% trans 'The meat will continue to cook during resting, but if you need to, put it in the oven a little longer.' %}</li>
+                <li>{% trans 'Let the meat rest for: ' %}{{calc_outputs.RestTime}}</li>
+                <li class="p-2 mb-2 bg-info text-white">{% trans 'Serve it to your guests at: ' %}{{calc_outputs.EatingTime}}</li>
+            </ul>
+         </div>
+
+        <div class="col">
+            <div class="alert alert-primary" role="alert">
+                {% trans 'Please be sure to save this meal and rate it afterwards so we can improve our suggestions.' %}
             </div>
 
-            <div class="col">
-                <div class="alert alert-primary" role="alert">
-                    {% trans 'Please be sure to save this meal and rate it afterwards so we can improve our suggestions.' %}
-                </div>
-
-                    <form method="POST" action = "/MealPlannerSaved">
-                        {% csrf_token %}
-                            <p>{{form.MealComment}}</p>
-                        <button type="submit" class="btn btn-primary">Save this meal</button>
-
-                    </form>
-            </div>
-
+                <form method="POST" action = "/MealPlannerSaved">
+                    {% csrf_token %}
+                        <p>{{form.MealComment}}</p>
+                    <button type="submit" class="btn btn-primary">{% trans 'Save this meal' %}</button>
+                </form>
         </div>
     </div>
-
+</div>
 
 {% endblock %}
-

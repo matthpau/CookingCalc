@@ -74,7 +74,7 @@ class CalcFormWeight(CalcFormGen):
 
 class mealPlanComment(forms.Form):
     MealComment = forms.CharField(max_length=200, required=False,
-                                  widget=forms.TextInput(attrs={'placeholder': 'My plan name (optional)',
+                                  widget=forms.TextInput(attrs={'placeholder': _('My plan name (optional)'),
                                                                 "class": "w-100", }))
 
 class MealPlanForm(forms.ModelForm):

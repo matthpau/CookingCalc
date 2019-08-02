@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-02 13:10+0200\n"
+"POT-Creation-Date: 2019-08-02 17:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,6 +57,10 @@ msgstr "Anzahl Kinder?"
 #: AppTimesCalc/forms.py:56
 msgid "Please put a weight in one and only one box"
 msgstr "Bitte legen Sie ein Gewicht in eine und nur eine Box."
+
+#: AppTimesCalc/forms.py:77
+msgid "My plan name (optional)"
+msgstr "Plan Name (optional)"
 
 #: AppTimesCalc/models.py:67
 msgid "Very undercooked"
@@ -136,27 +140,27 @@ msgstr "Ruhezeit"
 
 #: AppTimesCalc/models.py:98
 msgid "Given Weight kg"
-msgstr ""
+msgstr "Angegebenes Gewicht (kg)"
 
 #: AppTimesCalc/models.py:99
 msgid "Input Weight"
-msgstr ""
+msgstr "Angegebenes Gewicht"
 
 #: AppTimesCalc/models.py:100
 msgid "Oven Temperature"
-msgstr ""
+msgstr "Ofentemperatur"
 
 #: AppTimesCalc/models.py:101
 msgid "Internal Temperature"
-msgstr ""
+msgstr "Innentemperatur"
 
 #: AppTimesCalc/models.py:102
 msgid "Number of Adults"
-msgstr ""
+msgstr "Anzahl Erwachsene"
 
 #: AppTimesCalc/models.py:103
 msgid "Number of Children"
-msgstr ""
+msgstr "Anzahl Kinder"
 
 #: AppTimesCalc/models.py:104
 msgid "CalcType"
@@ -171,26 +175,111 @@ msgid "How well was it cooked compared to what you had in mind?"
 msgstr ""
 "Wie gut wurde es gekocht im Vergleich zu dem, was Sie sich vorgestellt hast?"
 
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:11
+msgid "Selections and quantity"
+msgstr "Auswahl und Menge"
+
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:13
-#, python-format
-msgid ""
-"<h5>Your %(calc_inputs.MeatType|lower)s needs to weigh about "
-"%(calc_outputs.InputWeight)s or %(calc_outputs.WeightStandardlb)s</h5> "
-"<p>For %(calc_inputs.CountAdults)s adults and %(calc_inputs.CountChildren)s "
-"children, based on portion sizes of %(calc_outputs.Portion_gPerAdult)s per "
-"adult and %(calc_outputs.Portion_gPerChild)s per child.</p>"
-msgstr ""
-"<h5>Ihr %(calc_inputs.MeatType|lower)s needs to weigh about "
-"%(calc_outputs.InputWeight)s or %(calc_outputs.WeightStandardlb)s</h5> "
-"<p>For %(calc_inputs.CountAdults)s adults and %(calc_inputs.CountChildren)s "
-"children, based on portion sizes of %(calc_outputs.Portion_gPerAdult)s per "
-"adult and %(calc_outputs.Portion_gPerChild)s per child.</p>"
+msgid "Meat type: "
+msgstr "Fleischart: "
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:14
+msgid "Cooking level: "
+msgstr "Wie es zubereite wird: "
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:15
+msgid "Standard portion size adult: "
+msgstr "Standard Portionsgröße Erwachsene"
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:16
+msgid "Standard portion size child: "
+msgstr "Standard Portionsgröße Kind"
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:19
+msgid "Given number of adults: "
+msgstr "Angegebene Anzahl Erwachsene: "
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:20
+msgid "Given number of children: "
+msgstr "Angegebene Anzahl Kinder: "
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:21
+#, fuzzy
+#| msgid "Weight of meat (kg) "
+msgid "Required quantity of meat (kg): "
+msgstr "Erforderliche Fleischmenge (kg)"
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:22
+
+msgid "Required quantity of meat (lb): "
+msgstr "Erforderliche Fleischmenge(lb)"
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:25
+msgid "Estimated number of adults this will feed: "
+msgstr "Geschätzte Anzahl der Erwachsenen, für die das ausreichen wird: "
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:30
+
+msgid "How to cook it"
+msgstr "So funktionert es"
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:33
+msgid "Total cooking and preparation time: "
+msgstr "Gesamtkoch- und Zubereitungszeit: "
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:34
+msgid "Turn the oven on at: "
+msgstr "Schalten Sie den Ofen ein um: "
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:35
+msgid "Oven temperature: "
+msgstr "Backofentemperatur: "
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:36
+msgid "Let the oven warm up for: "
+msgstr "Den Ofen aufwärmen lassen für:"
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:37
+msgid "Put the meat in the oven at: "
+msgstr "Das Fleisch in den Ofen stellen um: "
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:38
+msgid "Let the meat cook for: "
+msgstr "Das Fleisch kochen lassen für: "
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:39
+msgid "Take the meat out at: "
+msgstr "Nehmen Sie das Fleisch heraus um: "
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:40
+msgid "The internal temperature of the meat should be: "
+msgstr "Die Innentemperatur des Fleisches sollte: " 
 
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:41
+msgid ""
+"The meat will continue to cook during resting, but if you need to, put it in "
+"the oven a little longer."
+msgstr "Das Fleisch wird während der Ruhezeit weiter garen, aber wenn nötig, stellen Sie es etwas länger in den Ofen."
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:42
+msgid "Let the meat rest for: "
+msgstr "Das Fleisch ruhen lassen für:"
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:43
+msgid "Serve it to your guests at: "
+msgstr "Servieren Sie es Ihren Gästen um: "
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:49
 msgid ""
 "Please be sure to save this meal and rate it afterwards so we can improve "
 "our suggestions."
 msgstr ""
+"Bitte speichern Sie dieses Gericht und bewerten Sie sie anschließend, damit "
+"wir unsere Vorschläge verbessern können."
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:55
+msgid "Save this meal"
+msgstr "Gericht speichern"
 
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcResError.html:5
 msgid "It looks like might like to check your input"
@@ -202,7 +291,7 @@ msgstr "Zurück"
 
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcResError.html:6
 msgid " Start again"
-msgstr "Neustarten"
+msgstr " Neustarten"
 
 #: AppTimesCalc/templates/AppTimesCalc/Home.html:11
 msgid "Welcome - try out the store search to support your local stores"
@@ -1002,31 +1091,8 @@ msgstr ""
 msgid "Search radius for local offers (km)"
 msgstr "Suchradius für lokale Angebote (km)"
 
-#~ msgid ""
-#~ "<h5>For your %(calc_inputs.MeatType|lower)s done %(calc_inputs."
-#~ "CookingLevel|lower)s, here's how to cook it:</h5> <p><strong>You will "
-#~ "need a total of %(calc_outputs.TotalTime)s to fully cook and serve your "
-#~ "meat.</strong></p> <p>Make sure you let the meat come to room temperature "
-#~ "before starting. Turn the oven on to %(calc_outputs.OvenTemp)s at "
-#~ "%(calc_outputs.StartTime)s and let it warm up for about %(calc_outputs."
-#~ "WarmupTime)s.</p> <p>Then, put the meat in at %(calc_outputs.MeatInTime)s "
-#~ "and let it cook for %(calc_outputs.CookingTime)s. Take it out of the oven "
-#~ "at %(calc_outputs.RemoveTime)s. The internal temperature should be about "
-#~ "%(calc_outputs.InternalTemp)s.</p> <p>The meat will continue to cook "
-#~ "during resting, but if you need to, put it in a little longer. Let it "
-#~ "rest for %(calc_outputs.RestTime)s, then carve the meat and serve to your "
-#~ "guests at %(calc_outputs.EatingTime)s.</p>"
-#~ msgstr ""
-#~ "<h5>For your %(calc_inputs.MeatType|lower)s done %(calc_inputs."
-#~ "CookingLevel|lower)s, here's how to cook it:</h5> <p><strong>You will "
-#~ "need a total of %(calc_outputs.TotalTime)s to fully cook and serve your "
-#~ "meat.</strong></p> <p>Make sure you let the meat come to room temperature "
-#~ "before starting. Turn the oven on to %(calc_outputs.OvenTemp)s at "
-#~ "%(calc_outputs.StartTime)s and let it warm up for about %(calc_outputs."
-#~ "WarmupTime)s.</p> <p>Then, put the meat in at %(calc_outputs.MeatInTime)s "
-#~ "and let it cook for %(calc_outputs.CookingTime)s. Take it out of the oven "
-#~ "at %(calc_outputs.RemoveTime)s. The internal temperature should be about "
-#~ "%(calc_outputs.InternalTemp)s.</p> <p>The meat will continue to cook "
-#~ "during resting, but if you need to, put it in a little longer. Let it "
-#~ "rest for %(calc_outputs.RestTime)s, then carve the meat and serve to your "
-#~ "guests at %(calc_outputs.EatingTime)s.</p>"
+#~ msgid "Your needs to weigh about"
+#~ msgstr "First German Conversion"
+
+#~ msgid "Your %(calc_inputs.MeatType)s needs to weigh about"
+#~ msgstr "Second %(calc_inputs.MeatType)s german conversion"

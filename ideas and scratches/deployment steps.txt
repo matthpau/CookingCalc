@@ -1,0 +1,3 @@
+Python Anywhere:
+Activate virtual env: workon matthpau.pythonanywhere.com
+Navigate to home dir: /matthpau.pythonanywhere.com/CookingCalc
