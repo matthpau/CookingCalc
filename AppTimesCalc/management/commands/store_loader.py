@@ -237,31 +237,31 @@ class Command(BaseCommand):
 
         # https://www.nationsonline.org/oneworld/country_code_list.htm
         country_list = {
-            'Croatia': 'HR',
+            #'Croatia': 'HR',
             'Great Britain': 'GB',
             'New Zealand': 'NZ',
             'Ireland': 'IE',
-            'South Africa': 'ZA',
-            'Canada': 'CA',
-            'Jamaica': 'JM',
+            #'South Africa': 'ZA',
+            #'Canada': 'CA',
+            #'Jamaica': 'JM',
             'Germany': 'DE',
-            'United States': 'US',
-            'Norway': 'NO',
-            'Sweden': 'SE',
-            'Finland': 'FI',
+            #'United States': 'US',
+            #'Norway': 'NO',
+            #'Sweden': 'SE',
+            #'Finland': 'FI',
             'Australia': 'AU',
-            'Pakistan': 'PK',
-            'Spain': 'ES',
-            'France': 'FR', 
+            #'Pakistan': 'PK',
+            #'Spain': 'ES',
+            #'France': 'FR', 
             'Switzerland': 'CH',
-            'Denmark': 'DK',
-            'Latvia': 'LV',
-            'Lithuania': 'LT',
-            'Estonia': 'EE',
-            'Greece': 'GR',
-            'Italy': 'IT',
-            'Argentina': 'AR',
-            'Brazil': 'BR'
+            #'Denmark': 'DK',
+            #'Latvia': 'LV',
+            #'Lithuania': 'LT',
+            #'Estonia': 'EE',
+            #'Greece': 'GR',
+            #'Italy': 'IT',
+            #'Argentina': 'AR',
+            #'Brazil': 'BR'
         }
 
         #get latest from OSM
@@ -282,7 +282,7 @@ class Command(BaseCommand):
         now = time.time()
         for old_logfile in os.listdir(LOGS_FOLDER):
             old_logfile = join(LOGS_FOLDER, old_logfile)
-            days = 2
+            days = 7
 
             if os.stat(old_logfile).st_mtime < now - days * 24 * 60 * 60:
                 os.remove(old_logfile)
