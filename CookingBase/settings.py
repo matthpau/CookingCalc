@@ -49,6 +49,10 @@ AUTHENTICATION_BACKENDS = (
 )
 
 INSTALLED_APPS = [
+
+    #https://django-modeltranslation.readthedocs.io/en/latest/index.html #Needs to go before admin
+    'modeltranslation',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -81,6 +85,8 @@ INSTALLED_APPS = [
 
     #https://django-taggit.readthedocs.io/en/stable/index.html
     'taggit',
+
+
 ]
 
 MIDDLEWARE = [
@@ -93,10 +99,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-
-
-
 
 ROOT_URLCONF = 'CookingBase.urls'
 
@@ -174,6 +176,13 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Europe/Berlin'
 #Note - need to run SET GLOBAL time_zone = '+01:00'; in mySQL to make them compatible
+
+#required for https://django-modeltranslation.readthedocs.io/en/latest/installation.html#setup
+gettext = lambda s: s
+LANGUAGES = (
+    ('en', gettext('English')),
+    ('de', gettext('German')),
+)
 
 
 USE_I18N = True

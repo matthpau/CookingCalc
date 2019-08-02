@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-02 17:54+0200\n"
+"POT-Creation-Date: 2019-08-02 19:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -175,6 +175,10 @@ msgid "How well was it cooked compared to what you had in mind?"
 msgstr ""
 "Wie gut wurde es gekocht im Vergleich zu dem, was Sie sich vorgestellt hast?"
 
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalc.html:21
+msgid "Tell me about your meal"
+msgstr "Beschreiben Sie ihr Gericht"
+
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:11
 msgid "Selections and quantity"
 msgstr "Auswahl und Menge"
@@ -204,22 +208,18 @@ msgid "Given number of children: "
 msgstr "Angegebene Anzahl Kinder: "
 
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:21
-#, fuzzy
-#| msgid "Weight of meat (kg) "
 msgid "Required quantity of meat (kg): "
-msgstr "Erforderliche Fleischmenge (kg)"
+msgstr "Erforderliche Fleischmenge (kg): "
 
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:22
-
 msgid "Required quantity of meat (lb): "
-msgstr "Erforderliche Fleischmenge(lb)"
+msgstr "Erforderliche Fleischmenge (lb): "
 
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:25
 msgid "Estimated number of adults this will feed: "
 msgstr "Geschätzte Anzahl der Erwachsenen, für die das ausreichen wird: "
 
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:30
-
 msgid "How to cook it"
 msgstr "So funktionert es"
 
@@ -253,17 +253,19 @@ msgstr "Nehmen Sie das Fleisch heraus um: "
 
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:40
 msgid "The internal temperature of the meat should be: "
-msgstr "Die Innentemperatur des Fleisches sollte: " 
+msgstr "Die Innentemperatur des Fleisches sollte: "
 
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:41
 msgid ""
 "The meat will continue to cook during resting, but if you need to, put it in "
 "the oven a little longer."
-msgstr "Das Fleisch wird während der Ruhezeit weiter garen, aber wenn nötig, stellen Sie es etwas länger in den Ofen."
+msgstr ""
+"Das Fleisch wird während der Ruhezeit weiter garen, aber wenn nötig, stellen "
+"Sie es etwas länger in den Ofen."
 
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:42
 msgid "Let the meat rest for: "
-msgstr "Das Fleisch ruhen lassen für:"
+msgstr "Das Fleisch ruhen lassen für: "
 
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:43
 msgid "Serve it to your guests at: "
@@ -345,6 +347,18 @@ msgstr "Berechnen"
 #: AppTimesCalc/templates/AppTimesCalc/Home.html:56
 msgid "Meat cooking calculator, if you know how many guests you have."
 msgstr "Fleischkoch-Rechner, wenn Sie wissen, wie viele Gäste Sie haben."
+
+#: AppTimesCalc/templates/AppTimesCalc/about.html:4
+msgid "Contact"
+msgstr ""
+
+#: AppTimesCalc/templates/AppTimesCalc/about.html:8
+msgid "Meat roasting times from"
+msgstr ""
+
+#: AppTimesCalc/templates/AppTimesCalc/about.html:10
+msgid "Images from"
+msgstr ""
 
 #: AppTimesCalc/templates/AppTimesCalc/base.html:54
 msgid "Cooking Calculators"
@@ -541,6 +555,14 @@ msgstr ""
 #: AppTimesCalc/templates/account/snippets/already_logged_in.html:5
 #, python-format
 msgid "you are already logged in as %(user_display)s."
+msgstr ""
+
+#: CookingBase/settings.py:183
+msgid "English"
+msgstr ""
+
+#: CookingBase/settings.py:184
+msgid "German"
 msgstr ""
 
 #: RecipeConverter/forms.py:36

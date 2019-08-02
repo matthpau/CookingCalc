@@ -1,3 +1,16 @@
 Python Anywhere:
 Activate virtual env: workon matthpau.pythonanywhere.com
 Navigate to home dir: /matthpau.pythonanywhere.com/CookingCalc
+
+
+To support model migrations
+ONETIME
+#https://django-modeltranslation.readthedocs.io/en/latest/commands.html
+python manage.py sync_translation_fields for the firsttime
+python manage.py update_translation_fields
+
+UPDATE THE ENGLISH COLUMNS IN PGSQL
+UPDATE "AppTimesCalc_meattype" SET "MeatTypeName_en" = "MeatTypeName";
+UPDATE "AppTimesCalc_cookinglevel" SET "CookingLevel_en" = "CookingLevel";
+
+

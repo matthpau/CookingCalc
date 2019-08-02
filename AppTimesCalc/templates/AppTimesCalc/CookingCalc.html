@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-
+{% load i18n %}
 <!--https://getbootstrap.com/docs/4.3/layout/grid/-->
 
 
@@ -18,7 +18,7 @@
         </div>
 
         <div class="col-sm-6">
-            <h5>Tell me about your meal</h5>
+            <h5>{% trans 'Tell me about your meal' %}</h5>
             {{form1.MeatType|as_crispy_field}}
             {{form1.CookingLevel|as_crispy_field}}
             {{form1.EatingTime|as_crispy_field}}
