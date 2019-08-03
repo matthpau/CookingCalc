@@ -29,7 +29,9 @@
 
       <span class="p-3 text-primary">
       {{ profile_form.local_offer_receive|as_crispy_field}}
-      </span><p>{% trans 'If you would like to get the offers newsletter, please make sure we can find your address.' %}</p>
+      </span>
+      {{ profile_form.newsletter_language|as_crispy_field}}
+      <p>{% trans 'If you would like to get the offers newsletter, please make sure we can find your address.' %}</p>
       {{ profile_form.local_offer_radius|as_crispy_field}}
       <button class="btn btn-primary" type="submit">{% trans 'Save all changes and close' %}</button><br>
       <a href="/">{% trans 'Close without saving' %}</a>

@@ -36,6 +36,7 @@ class ProfileForm(forms.ModelForm):
             'add_country',
             'found_address',
             'local_offer_receive',
+            'newsletter_language',
             'local_offer_radius']
         widgets = {
             'found_address': forms.TextInput(attrs={'readonly': True,}),
@@ -43,8 +44,8 @@ class ProfileForm(forms.ModelForm):
         
     def clean(self):
         cleaned_data = super().clean()
-        get_offers = cleaned_data.get('local_offer_receive') 
-        offers_radius = cleaned_data.get('local_offer_radius')
+        get_offers = cleaned_data.get('local_offer_receive')
+        offers_radius = cleaned_data.get('local_offer_radius') or 0
         found_address = cleaned_data.get('found_address')
 
         if get_offers and offers_radius <= 0:

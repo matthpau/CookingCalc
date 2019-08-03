@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-03 17:11+0200\n"
+"POT-Creation-Date: 2019-08-03 17:53+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -557,7 +557,7 @@ msgstr ""
 msgid "you are already logged in as %(user_display)s."
 msgstr ""
 
-#: CookingBase/settings.py:183
+#: CookingBase/settings.py:183 users/models.py:40
 msgid "English"
 msgstr "Englisch"
 
@@ -661,8 +661,8 @@ msgstr ""
 "und dann konvertieren, um zu sehen, dass dies automatisch in eine Metrik "
 "umgewandelt wird. Du kannst Tassen und Löffel unkonvertiert lassen. Jede "
 "Konvertierung wird gespeichert, damit Sie in Zukunft darauf zurückgreifen "
-"können. Die Umstellung speichert sowohl die Methode als auch die Zutaten.(Im "
-"moment funkionert es nur auf English)"
+"können. Die Umstellung speichert sowohl die Methode als auch die Zutaten. (Im "
+"Moment funkionert es nur auf English)"
 
 #: RecipeConverter/templates/RecipeConverter/converter_about.html:25
 msgid "Give it a go (requires login)"
@@ -693,7 +693,7 @@ msgid "Cooking Helpers Weekly Newsletter"
 msgstr "Cooking Helpers wöchentlicher Newsletter"
 
 #: newsletters/templates/newsletters/weekly_general.html:20
-msgid "Your weekly local info from "
+msgid "Your weekly local info from"
 msgstr "Dein lokal Info von"
 
 #: newsletters/templates/newsletters/weekly_general.html:27
@@ -705,12 +705,16 @@ msgid "offer!"
 msgstr "angebot!"
 
 #: newsletters/templates/newsletters/weekly_general.html:35
-msgid "Your search radius "
+msgid "Your search radius"
 msgstr "Ihr Suchradius"
 
 #: newsletters/templates/newsletters/weekly_general.html:36
 msgid "Change your preferences or unsubscribe"
 msgstr "Preferenzen änderer oder sich abmelden"
+
+#: newsletters/templates/newsletters/weekly_general.html:37
+msgid "Thanks for using cooking-helpers.com"
+msgstr "Danke, dass Du cooking-helpers.com benutzt haben"
 
 #: stores/forms.py:16 stores/forms.py:21
 msgid "Distance"
@@ -744,23 +748,23 @@ msgstr "Startdatum"
 msgid "Event finish:"
 msgstr "Enddatum"
 
-#: stores/models.py:35 users/models.py:44
+#: stores/models.py:35 users/models.py:51
 msgid "House Number"
 msgstr "Hausnummer"
 
-#: stores/models.py:36 users/models.py:45
+#: stores/models.py:36 users/models.py:52
 msgid "Street"
 msgstr "Straße"
 
-#: stores/models.py:37 users/models.py:48
+#: stores/models.py:37 users/models.py:55
 msgid "Postcode"
 msgstr "Postleitzahl"
 
-#: stores/models.py:38 users/models.py:49
+#: stores/models.py:38 users/models.py:56
 msgid "City"
 msgstr "Stadt"
 
-#: stores/models.py:39 users/models.py:18 users/models.py:23 users/models.py:50
+#: stores/models.py:39 users/models.py:18 users/models.py:23 users/models.py:57
 msgid "Country"
 msgstr "Land"
 
@@ -770,15 +774,15 @@ msgstr "Titel"
 
 #: stores/models.py:110
 msgid "Event description"
-msgstr "Beschribung"
+msgstr "Ereignis Beschreibung"
 
 #: stores/models.py:111
 msgid "Event start date"
-msgstr "Startdatum"
+msgstr "Ereignis Startdatum"
 
 #: stores/models.py:112
 msgid "Event end date"
-msgstr "Enddatum"
+msgstr "Ereignis Enddatum"
 
 #: stores/models.py:113
 msgid "Includes offers"
@@ -1130,38 +1134,46 @@ msgstr ""
 "Benutzer ist bereits in der Liste der erlabten Benutzer, bitte überprüfen "
 "und erneut versuchen."
 
-#: users/forms.py:51
+#: users/forms.py:52
 msgid "If you'd like to receive offers, please enter a valid radius"
 msgstr ""
 "Wenn Sie Angebote erhalten möchten, geben Sie bitte einen gültigen Radius "
 "ein."
 
-#: users/forms.py:54
+#: users/forms.py:55
 msgid "Please make sure you have entered and validated your address"
 msgstr ""
 "Bitte stellen Sie sicher, dass Sie Ihre Adresse eingegeben und bestätigt "
 "haben."
 
 #: users/models.py:41
+msgid "Deutsch"
+msgstr ""
+
+#: users/models.py:48
 msgid "Confirmed address"
 msgstr "Bestätigte Adresse"
 
-#: users/models.py:46
+#: users/models.py:53
 msgid "Address 2"
 msgstr "Adresse 2"
 
-#: users/models.py:47
+#: users/models.py:54
 msgid "Address 3"
 msgstr "Adresse 3"
 
-#: users/models.py:51
+#: users/models.py:58
 msgid "I would like to receive the weekly local offers newsletter"
 msgstr ""
 "Ich möchte den wöchentlichen Newsletter mit lokalen Angeboten erhalten."
 
-#: users/models.py:52
+#: users/models.py:59
 msgid "Search radius for local offers (km)"
 msgstr "Suchradius für lokale Angebote (km)"
+
+#: users/models.py:60
+msgid "Newsletter Language"
+msgstr "Newsletter Sprache"
 
 #: users/templates/users/profile.html:7
 msgid "Please complete your profile information"
@@ -1175,7 +1187,7 @@ msgstr ""
 "Geben Sie Ihre Adresse ein und abonnieren Sie den Newsletter, um Angebote "
 "und Informationen von Ihren lokalen Geschäften zu erhalten."
 
-#: users/templates/users/profile.html:32
+#: users/templates/users/profile.html:34
 msgid ""
 "If you would like to get the offers newsletter, please make sure we can find "
 "your address."
@@ -1183,14 +1195,18 @@ msgstr ""
 "Wenn Sie Angebote erhalten möchten, geben Sie bitte einen gültigen Radius "
 "ein."
 
-#: users/templates/users/profile.html:34
+#: users/templates/users/profile.html:36
 msgid "Save all changes and close"
 msgstr "Speichern und schließen"
 
-#: users/templates/users/profile.html:35
+#: users/templates/users/profile.html:37
 msgid "Close without saving"
 msgstr "Schließen ohne speichern"
 
-#: users/templates/users/profile.html:53
+#: users/templates/users/profile.html:55
 msgid "Find Address"
 msgstr "Adresse suchen"
+
+#: users/views.py:14
+msgid "Your profile was successfully updated"
+msgstr "Dein Profil wurde erfolgreich aktualisiert."

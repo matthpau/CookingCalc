@@ -18,6 +18,7 @@ from django.template.loader import render_to_string
 
 from django.core import mail
 from django.contrib.sites.models import Site
+from django.utils import translation
 
 # https://docs.djangoproject.com/en/2.2/howto/custom-management-commands/
 # https://towardsdatascience.com/loading-data-from-openstreetmap-with-python-and-the-overpass-api-513882a27fd0
@@ -51,6 +52,9 @@ class Command(BaseCommand):
 
         def send_newsletters(next_newsletter_date, next1_newsletter_date):
 
+
+            cur_language = translation.get_language()
+
             messages = []
             #All users who want to get a newsletter in countries where we have a newsletter
             profiles = Profile.objects.filter(local_offer_receive=True).filter(add_country__run_newsletter=True)
@@ -62,13 +66,16 @@ class Command(BaseCommand):
                 user_location = profile.found_location
                 search_dis = profile.local_offer_radius
 
+                language = profile.newsletter_language
+                translation.activate(language)
+
                 stores = Store.objects.filter(location__distance_lte=(user_location, D(km=search_dis))) \
                         .annotate(num_events=Count('event')) \
                         .annotate(distance=Distance('location', user_location))
 
                 stores = stores.filter(num_events__gt=0)
 
-                
+
                 #TODO is there a way to calculate it more efficiently and pick up distance from the stores query?
                 events = Event.objects.all()
                 events = events.filter(store__in=stores).annotate(distance=Distance('store__location', user_location)).order_by('-distance')
@@ -109,12 +116,14 @@ class Command(BaseCommand):
             connection = mail.get_connection()
             connection.send_messages(messages) 
 
+            translation.activate(cur_language) #Revert to language before the routine was called
+
         def newsletters_main(desired_send_day):
             #0 is monday
-            send_flag, start_date, start_date = newsletter_prep(desired_send_day)
+            send_flag, start_date, end_date = newsletter_prep(desired_send_day)
 
             if send_flag:
-                send_newsletters(start_date, start_date)
+                send_newsletters(start_date, end_date)
                 return 'Newsletters sent'
             else:
                 return 'Newsletters not sent, wrong day'

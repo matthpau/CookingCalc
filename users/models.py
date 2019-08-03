@@ -34,6 +34,13 @@ class CustomUser(AbstractUser):
 
 
 class Profile(models.Model):
+
+
+    newsletter_language_choices = (
+        ('EN', _("English")),
+        ('DE', _("German")),
+    )
+
     user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, blank=True)
 
@@ -50,6 +57,7 @@ class Profile(models.Model):
     add_country = models.ForeignKey(Country, null=True, on_delete=models.SET_NULL, verbose_name=_('Country'), blank=True)
     local_offer_receive = models.BooleanField(_("I would like to receive the weekly local offers newsletter"), default=False)
     local_offer_radius = models.FloatField(_("Search radius for local offers (km)"), default=5, blank=True)
+    newsletter_language = models.CharField(_("Newsletter Language"), max_length=2, choices=newsletter_language_choices, default='EN')
 
     def __str__(self):
         return str(self.id) + ' ' + str(self.user)

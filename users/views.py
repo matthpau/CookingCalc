@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import UserForm, ProfileForm
 from django.http import JsonResponse, HttpResponseRedirect
 from django.contrib import messages
+from django.utils.translation import gettext_lazy as _
 
 def update_profile(request):
     if request.method == 'POST':
@@ -10,7 +11,7 @@ def update_profile(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.success(request, ('Your profile was successfully updated'))
+            messages.success(request, (_('Your profile was successfully updated')))
             return HttpResponseRedirect ('/')
 
         #else:
