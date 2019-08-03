@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-02 19:06+0200\n"
+"POT-Creation-Date: 2019-08-03 10:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -633,6 +633,38 @@ msgstr "Ursprungliches Rezept"
 #: RecipeConverter/models.py:34
 msgid "Converted Recipe"
 msgstr "Konvertiertes Rezept"
+
+#: RecipeConverter/templates/RecipeConverter/converter_about.html:11
+msgid "How does the recipe converter work?"
+msgstr "So funktioniert das Rezept Converter"
+
+#: RecipeConverter/templates/RecipeConverter/converter_about.html:12
+msgid ""
+"You can copy and paste a recipe here to have each of the ingredients "
+"converted. The converter will automatically detect if you are going from "
+"metric or imperial, although this can be overridden. Or, you can simply "
+"paste your own requirements. For example, try typing something like:"
+msgstr ""
+"Sie können hier ein Rezept kopieren und einfügen, um alle Zutaten konvertieren zu lassen. "
+"Der Konverter erkennt automatisch, ob Sie von metrisch oder imperial gehen, obwohl dies überschrieben werden kann. "
+"Oder Sie können einfach Ihre eigenen Anforderungen einfügen. Versuchen Sie zum Beispiel, so etwas wie dieses zu tippen:"
+
+#: RecipeConverter/templates/RecipeConverter/converter_about.html:24
+msgid ""
+"then convert to see this automatically converted to metric. You can choose "
+"to leave cups and spoons unconverted. Each conversion is saved for you to "
+"refer back to in the future. The conversion saves the recipe method as well "
+"as the ingredients"
+msgstr ""
+"und dann konvertieren, um zu sehen, dass dies automatisch in eine Metrik "
+"umgewandelt wird. Du kannst Tassen und Löffel unkonvertiert lassen. Jede "
+"Konvertierung wird gespeichert, damit Sie in Zukunft darauf zurückgreifen "
+"können. Die Umstellung speichert sowohl die Methode als auch die Zutaten.(Im "
+"moment funkionert es nur auf English)"
+
+#: RecipeConverter/templates/RecipeConverter/converter_about.html:25
+msgid "Give it a go (requires login)"
+msgstr "Los geht's (Anmeldung erforderlich)"
 
 #: RecipeConverter/templates/RecipeConverter/recipe_converter.html:7
 msgid ""

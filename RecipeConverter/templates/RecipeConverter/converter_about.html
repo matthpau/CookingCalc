@@ -2,30 +2,27 @@
 {% load static %}
 
 {% block content %}
-
+{% load i18n %}
 
 <div class="container">
     <div class="row">
         <div class="col-sm-8">
 
-            <h3>How does the recipe converter work?</h3>
-            <p>You can copy and paste a recipe here to have each of the ingredients converted.
-            The converter will automatically detect if you are going from metric or imperial, although this
-            can be overridden. Or, you can simply paste your own requirements. For example, try typing something like:</p>
+            <h3>{% trans 'How does the recipe converter work?' %}</h3>
+            <p>{% trans 'You can copy and paste a recipe here to have each of the ingredients converted. The converter will automatically detect if you are going from metric or imperial, although this can be overridden. Or, you can simply paste your own requirements. For example, try typing something like:' %}</p>
 
                 <strong>
                 <ul class="list-unstyled">
-                <li>1.5 pounds of steak</li>
-                <li>1 teaspoon of oregano</li>
-                <li>1/2 cup olive oil</li>
-                <li>1 stick of butter</li>
-                <li>two quarts of broth</li>
+                    <li>1.5 pounds of steak</li>
+                    <li>1 teaspoon of oregano</li>
+                    <li>1/2 cup olive oil</li>
+                    <li>1 stick of butter</li>
+                    <li>two quarts of broth</li>
                 </ul>
                 </strong>
 
-            <p>then convert to see this automatically converted to metric. You can choose to leave cups and spoons unconverted.
-                Each conversion is saved for you to refer back to in the future. The conversion saves the recipe method as well as the ingredients</p>
-            <p></p><a href="{% url 'converter:recipe_converter' %}" class="btn btn-primary">Give it a go (requires login)</a></p>
+            <p>{% trans 'then convert to see this automatically converted to metric. You can choose to leave cups and spoons unconverted. Each conversion is saved for you to refer back to in the future. The conversion saves the recipe method as well as the ingredients' %}</p>
+            <p></p><a href="{% url 'converter:recipe_converter' %}" class="btn btn-primary">{% trans 'Give it a go (requires login)' %}</a></p>
         </div>
 
         <div class="col d-none d-md-block">
