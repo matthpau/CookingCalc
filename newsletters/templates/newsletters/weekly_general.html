@@ -24,12 +24,12 @@
         <h3><a href="{{ base_url }}{{ event.store.get_absolute_url}}">{{ event.store.name}} - {{ event.store.my_address}}</a></h3>
     {% endifchanged %} 
     
-        <h4 style="color:Black;margin-left:40px;">{{ event.title }}, {% trans 'until'%} {{ event.end_date }}
+        <p style="color:Black;margin-left:40px;">{{ event.title }}, {% trans 'until'%} {{ event.end_date }}. 
     
     {% if event.includes_offers %}
         <span style="color:MediumPurple;"><strong> {% trans 'offer!'%}</strong></span>
     {% endif %}
-    {{ event.comment }} </h4>
+    {{ event.comment }} </p>
 {% endfor %}
 
 <p>{% trans 'Your search radius'%} {{ search_dis }}<p>
