@@ -144,7 +144,7 @@ DATABASES = {
         "ENGINE": "django.contrib.gis.db.backends.postgis",
         "NAME": "cookingcalc",
         "USER": "super",
-        "PASSWORD": "5UHZ#t2%m!Tw",
+        "PASSWORD": my_secrets.POSTGRES_PDN_PWD,
         "HOST": "matthpau-1212.postgres.pythonanywhere-services.com",
         "PORT": "11212",
     }
