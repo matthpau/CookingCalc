@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser, Profile
 from django import forms
+from django.utils.translation import gettext_lazy as _
 
 # used in the admin page
 class CustomUserCreationForm(UserCreationForm):
@@ -23,7 +24,6 @@ class UserForm(forms.ModelForm):
         model = CustomUser
         fields = ('first_name', 'last_name')
 
-
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
@@ -37,14 +37,19 @@ class ProfileForm(forms.ModelForm):
             'found_address',
             'local_offer_receive',
             'local_offer_radius']
-        widgets = {'found_address': forms.TextInput(attrs={
-            'readonly': True,
-            })}
+        widgets = {
+            'found_address': forms.TextInput(attrs={'readonly': True,}),
+            }
         
     def clean(self):
         cleaned_data = super().clean()
         get_offers = cleaned_data.get('local_offer_receive') 
         offers_radius = cleaned_data.get('local_offer_radius')
+        found_address = cleaned_data.get('found_address')
 
         if get_offers and offers_radius <= 0:
-            raise forms.ValidationError("If you'd like to receive offers, please enter a valid radius")
+            raise forms.ValidationError(_("If you'd like to receive offers, please enter a valid radius"), code='invalid')
+
+        if get_offers and not found_address:
+            raise forms.ValidationError(_("Please make sure you have entered and validated your address"), code='invalid')
+

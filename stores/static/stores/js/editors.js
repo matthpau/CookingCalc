@@ -1,7 +1,5 @@
 $(function(){
 
-    alert('you made it')
-    
     // initial population of the list
     var endpoint =          $("#editor_urls").attr("data_get_list_url")
     var current_user =      $("#editor_urls").attr("data_current_user")
@@ -11,7 +9,6 @@ $(function(){
     // input for any new emails
     
     function addEditorLine(email, id, is_new) {
-                console.log(is_new)
                 var hidden_text, inner_text, inner_text1, final_text, show_time
 
                 if (email !=current_user) {
@@ -39,8 +36,7 @@ $(function(){
     $.ajax({
         type: 'GET',
         url: endpoint,
-        success: function(data){
-            // console.log(data)          
+        success: function(data){        
             $.each(data, function(i, editor){
                 addEditorLine(editor.email, editor.id, false)
             })
@@ -52,7 +48,7 @@ $(function(){
 
         var new_email = $("#newEmail")
         var new_data = {
-            csrfmiddlewaretoken: '{{ csrf_token }}',
+            csrfmiddlewaretoken: csrftoken,
             email: new_email.val(),
             store_id: current_store_id
         }
@@ -75,7 +71,7 @@ $(function(){
         del_user_id = $(event.target).data("user-id")
       
         del_data = {
-            csrfmiddlewaretoken: '{{ csrf_token }}',
+            csrfmiddlewaretoken: csrftoken,
             'del_store_id': del_store_id,
             'del_user_id': del_user_id
         }
@@ -91,5 +87,6 @@ $(function(){
         })
         
         $(event.target).parent().hide(300)
+
     })
 })

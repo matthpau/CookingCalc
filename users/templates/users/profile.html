@@ -2,9 +2,20 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
+{% load i18n %}
 
-<h3>Please complete your profile information to receive the newsletter</h3>
+<h3>{% trans 'Please complete your profile information' %}</h3>
+<h5>{% trans 'Enter your address and subscribe to the newsletter to get offers and information from your local stores' %}</h5>
+
 <form method="post">{% csrf_token %}
+
+{% if profile_form.non_field_errors %}
+  <div class="alert alert-danger" role="alert">
+    {% for error in profile_form.non_field_errors %}
+        {{error}}
+    {% endfor %}
+    </div>
+{% endif %}
 
 <div class="container">
   <div class="row">
@@ -16,11 +27,12 @@
         <div class="col-sm">{{ user_form.last_name|as_crispy_field }} </div>     
       </div>
 
+      <span class="p-3 text-primary">
       {{ profile_form.local_offer_receive|as_crispy_field}}
+      </span><p>{% trans 'If you would like to get the offers newsletter, please make sure we can find your address.' %}</p>
       {{ profile_form.local_offer_radius|as_crispy_field}}
-      <p>If you would like to get the offers newsletter, please make sure we can find your address.</p>
-      <button class="btn btn-primary" type="submit">Save all changes and close</button><br>
-      <a href="/">Close without saving</a>
+      <button class="btn btn-primary" type="submit">{% trans 'Save all changes and close' %}</button><br>
+      <a href="/">{% trans 'Close without saving' %}</a>
     </div>
     
     <div class="col-sm">
@@ -37,46 +49,19 @@
       <div class="col-sm">{{ profile_form.add_postcode|as_crispy_field}}</div>
     </div>
 
-
-
-
       {{ profile_form.add_country|as_crispy_field}}
-      <button id="btn_find_address" type="button" class="btn btn-secondary">Find Address</button>
+      <button id="btn_find_address" type="button" class="btn btn-secondary">{% trans 'Find Address' %}</button>
       {{ profile_form.found_address|as_crispy_field }}
-
 
     </div>
 </div>
 </form>
 
 <script>
-  $(function (){
-  
-  $('#btn_find_address').on('click', function(){
-    var my_addr = {
-      csrfmiddlewaretoken: '{{ csrf_token }}',
-      house_number: $('#id_house_number').val(),
-      street: $('#id_street').val(),
-      add_2: $('#id_add_2').val(),
-      add_3: $('#id_add_3').val(),
-      city: $('#id_add_city').val(),
-      postcode: $('#id_add_postcode').val(),
-      country: $('#id_add_country').val(),
-    }
-    
-    $.ajax({
-      type: 'POST',
-      url: "/users/check_address",
-      data: my_addr,
-      success: function(data){
-        if (data.success == true) {
-          $('#id_found_address').val(data.found_address).slideDown(200)
-        } else {
-          $('#id_found_address').val('Unknown address, please try again')
-        }
-        }
-    })
-  })
-})
+    var csrftoken = '{{ csrf_token }}';
 </script>
+
+<script src="{% static 'users/js/profile.js' %}">
+</script>
+
 {% endblock %}

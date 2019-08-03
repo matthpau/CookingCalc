@@ -13,8 +13,8 @@ def update_profile(request):
             messages.success(request, ('Your profile was successfully updated'))
             return HttpResponseRedirect ('/')
 
-        else:
-            messages.error(request, ('Please correct the error.'))
+        #else:
+        #    messages.error(request, ('Please correct the error.'))
     
     else: # GET
         user_form = UserForm(instance=request.user)

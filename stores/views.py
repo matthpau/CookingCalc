@@ -288,7 +288,6 @@ class UpdateEvent(UserPassesTestMixin, UpdateView):
         #returns true or false, depending if person is authorised editor for this event - store
         event_id = self.kwargs['event_id']
         event_editors = CustomUser.objects.filter(authorisedeventeditors__store__event__id=event_id)
-        print(event_editors)
         return self.request.user in event_editors
 
     def get_object(self):
@@ -309,7 +308,6 @@ class DeleteEvent(UserPassesTestMixin, DeleteView):
         #returns true or false, depending if person is authorised editor for this event - store
         event_id = self.kwargs['event_id']
         event_editors = CustomUser.objects.filter(authorisedeventeditors__store__event__id=event_id)
-        print(event_editors)
         return self.request.user in event_editors
 
     def get_object(self):

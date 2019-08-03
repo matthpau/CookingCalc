@@ -1,6 +1,8 @@
 {% extends 'AppTimesCalc/base.html' %}
 {% load crispy_forms_tags %}
 {% load i18n %}
+{% load static %}
+
 
 {% block content %}
 
@@ -36,7 +38,7 @@
                 <p>{% blocktrans %}Welcome, {{user}}. You have the following options: {% endblocktrans %}</p>
                 <p>
                     <a href='{% url 'store:editors' store.id %}'>{% trans "List or change your authorised users" %}</a><br>
-                    <small>{{ editors_count }} {% trans "authorised user" %} </small>
+                    <small>{{ editors_count }} {% trans "authorised user(s)" %} </small>
                 </p>
 
                 <p>
@@ -89,30 +91,14 @@
         </div>
     </div>
 </div>
-
-
-
+<!--src="{% static 'stores/js/profile.js' %}"-->
 
 <script>
-$(function (){
-    $(document).on('click', '#id_like', function(){
-        var store_id = $(this).val()
-                $.ajax({
-            type: 'POST',
-            url: "{% url 'store:store_like' %}",
-            data: {
-                csrfmiddlewaretoken: '{{ csrf_token }}',
-                'id_like': store_id
-                },
-            dataType: 'json',
-            success: function(newHTML){
-                $('#like-section').html(newHTML.form)
-            },
-            error: function(rs, e){
-                console.log(rs.responseText);
-            }
-        })
-    })
-})
+    var csrftoken = '{{ csrf_token }}';
+    var store_like_url = "{% url 'store:store_like' %}"
 </script>
+
+<script src="{% static 'stores/js/profile.js' %}">
+</script>
+
 {% endblock %}

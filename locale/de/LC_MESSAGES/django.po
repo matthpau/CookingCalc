@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-03 10:17+0200\n"
+"POT-Creation-Date: 2019-08-03 17:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -175,7 +175,7 @@ msgid "How well was it cooked compared to what you had in mind?"
 msgstr ""
 "Wie gut wurde es gekocht im Vergleich zu dem, was Sie sich vorgestellt hast?"
 
-#: AppTimesCalc/templates/AppTimesCalc/CookingCalc.html:21
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalc.html:22
 msgid "Tell me about your meal"
 msgstr "Beschreiben Sie ihr Gericht"
 
@@ -528,7 +528,7 @@ msgstr ""
 #: AppTimesCalc/templates/account/password_reset_from_key.html:33
 #: AppTimesCalc/templates/account/password_reset_from_key_done.html:15
 msgid "Your password is now changed."
-msgstr ""
+msgstr "Dass Password wurde geändert"
 
 #: AppTimesCalc/templates/account/signup.html:7
 msgid "Signup"
@@ -559,11 +559,11 @@ msgstr ""
 
 #: CookingBase/settings.py:183
 msgid "English"
-msgstr ""
+msgstr "Englisch"
 
 #: CookingBase/settings.py:184
 msgid "German"
-msgstr ""
+msgstr "Deutsch"
 
 #: RecipeConverter/forms.py:36
 msgid "Automatic"
@@ -645,9 +645,11 @@ msgid ""
 "metric or imperial, although this can be overridden. Or, you can simply "
 "paste your own requirements. For example, try typing something like:"
 msgstr ""
-"Sie können hier ein Rezept kopieren und einfügen, um alle Zutaten konvertieren zu lassen. "
-"Der Konverter erkennt automatisch, ob Sie von metrisch oder imperial gehen, obwohl dies überschrieben werden kann. "
-"Oder Sie können einfach Ihre eigenen Anforderungen einfügen. Versuchen Sie zum Beispiel, so etwas wie dieses zu tippen:"
+"Sie können hier ein Rezept kopieren und einfügen, um alle Zutaten "
+"konvertieren zu lassen. Der Konverter erkennt automatisch, ob Sie von "
+"metrisch oder imperial gehen, obwohl dies überschrieben werden kann. Oder "
+"Sie können einfach Ihre eigenen Anforderungen einfügen. Versuchen Sie zum "
+"Beispiel, so etwas wie dieses zu tippen:"
 
 #: RecipeConverter/templates/RecipeConverter/converter_about.html:24
 msgid ""
@@ -686,37 +688,29 @@ msgstr ""
 "besser zu arbeiten: Zutaten auf separate Linien legen, eine Zutat pro Linie, "
 "einen einzigen Zwischenraum zwischen den Zutaten und der Methode lassen."
 
-#: newsletters/templates/newsletters/weekly_general.html:5
+#: newsletters/templates/newsletters/weekly_general.html:14
 msgid "Cooking Helpers Weekly Newsletter"
-msgstr ""
-
-#: newsletters/templates/newsletters/weekly_general.html:10
-msgid "Your weekly local info from "
-msgstr ""
-
-#: newsletters/templates/newsletters/weekly_general.html:17
-msgid "effective"
-msgstr ""
-
-#: newsletters/templates/newsletters/weekly_general.html:18
-msgid " to "
-msgstr ""
+msgstr "Cooking Helpers wöchentlicher Newsletter"
 
 #: newsletters/templates/newsletters/weekly_general.html:20
-msgid "(includes an offer)"
-msgstr ""
+msgid "Your weekly local info from "
+msgstr "Dein lokal Info von"
+
+#: newsletters/templates/newsletters/weekly_general.html:27
+msgid "until"
+msgstr "bis"
 
 #: newsletters/templates/newsletters/weekly_general.html:30
+msgid "offer!"
+msgstr "angebot!"
+
+#: newsletters/templates/newsletters/weekly_general.html:35
 msgid "Your search radius "
-msgstr ""
+msgstr "Ihr Suchradius"
 
-#: newsletters/templates/newsletters/weekly_general.html:31
+#: newsletters/templates/newsletters/weekly_general.html:36
 msgid "Change your preferences or unsubscribe"
-msgstr ""
-
-#: newsletters/templates/newsletters/weekly_general.html:32
-msgid "Thankyou for visiting "
-msgstr ""
+msgstr "Preferenzen änderer oder sich abmelden"
 
 #: stores/forms.py:16 stores/forms.py:21
 msgid "Distance"
@@ -724,7 +718,7 @@ msgstr "Radius"
 
 #: stores/forms.py:17
 msgid "Likes"
-msgstr ""
+msgstr "Likes"
 
 #: stores/forms.py:20
 msgid "Search Distance"
@@ -750,23 +744,23 @@ msgstr "Startdatum"
 msgid "Event finish:"
 msgstr "Enddatum"
 
-#: stores/models.py:35 users/models.py:45
+#: stores/models.py:35 users/models.py:44
 msgid "House Number"
 msgstr "Hausnummer"
 
-#: stores/models.py:36 users/models.py:46
+#: stores/models.py:36 users/models.py:45
 msgid "Street"
 msgstr "Straße"
 
-#: stores/models.py:37 users/models.py:49
+#: stores/models.py:37 users/models.py:48
 msgid "Postcode"
 msgstr "Postleitzahl"
 
-#: stores/models.py:38 users/models.py:50
+#: stores/models.py:38 users/models.py:49
 msgid "City"
 msgstr "Stadt"
 
-#: stores/models.py:39 users/models.py:19
+#: stores/models.py:39 users/models.py:18 users/models.py:23 users/models.py:50
 msgid "Country"
 msgstr "Land"
 
@@ -802,41 +796,41 @@ msgstr ""
 msgid "Updated"
 msgstr ""
 
-#: stores/templates/stores/editors.html:17
+#: stores/templates/stores/editors.html:21
 msgid "Editors for"
 msgstr "Erlaubte Benutzer für"
 
-#: stores/templates/stores/editors.html:18
-msgid "You are"
-msgstr "Sie sind"
-
-#: stores/templates/stores/editors.html:19
-msgid "People who can add events to your store"
-msgstr "Personen, die Ereignisse zu Ihrem Shop hinzufügen können"
-
-#: stores/templates/stores/editors.html:29
+#: stores/templates/stores/editors.html:22
 msgid "Add a new editor"
 msgstr "Einen neuen erlaubten Benutzer hinzufügen"
 
-#: stores/templates/stores/editors.html:34
+#: stores/templates/stores/editors.html:27
 msgid "Enter email"
 msgstr "Email"
 
-#: stores/templates/stores/editors.html:35
+#: stores/templates/stores/editors.html:28
 msgid "This person must already be registered on the site"
 msgstr "Diese Person muss bereits auf der Website registriert sein."
 
-#: stores/templates/stores/editors.html:36
+#: stores/templates/stores/editors.html:29
 msgid "Add"
 msgstr "Hinzufügen"
 
-#: stores/templates/stores/editors.html:40
+#: stores/templates/stores/editors.html:32
 #: stores/templates/stores/event_create.html:14
 #: stores/templates/stores/event_delete.html:15
 #: stores/templates/stores/event_list.html:12
 #: stores/templates/stores/event_update.html:13
 msgid "Go Back"
 msgstr "Zurück"
+
+#: stores/templates/stores/editors.html:38
+msgid "You are"
+msgstr "Sie sind"
+
+#: stores/templates/stores/editors.html:39
+msgid "People who can add events to your store"
+msgstr "Personen, die Ereignisse zu Ihrem Shop hinzufügen können"
 
 #: stores/templates/stores/event_create.html:10
 msgid "Create your event"
@@ -858,7 +852,7 @@ msgstr "Löschen"
 
 #: stores/templates/stores/event_list.html:9
 msgid "Events for:"
-msgstr ""
+msgstr "Ereigniesse für:"
 
 #: stores/templates/stores/event_list.html:11
 msgid "Add new"
@@ -866,7 +860,7 @@ msgstr "Neues hinzufügen"
 
 #: stores/templates/stores/event_list.html:23
 msgid "FINISHED |"
-msgstr ""
+msgstr "FERTIG |"
 
 #: stores/templates/stores/event_list.html:30
 msgid "Edit"
@@ -876,7 +870,15 @@ msgstr "Bearbeiten"
 msgid "Edit your event"
 msgstr "Ereignis bearbeiten"
 
-#: stores/templates/stores/get_loc.html:27
+#: stores/templates/stores/get_loc.html:19
+msgid "Loading..."
+msgstr ""
+
+#: stores/templates/stores/get_loc.html:21
+msgid "Finding your position..."
+msgstr "Finden Ihr Position"
+
+#: stores/templates/stores/get_loc.html:28
 msgid "Sign up for the newsletter to support your local stores."
 msgstr ""
 "Melden Sie sich für den Newsletter an, um Ihre lokalen Geschäfte zu "
@@ -1055,98 +1057,140 @@ msgstr ""
 msgid "store search"
 msgstr "Storesuche"
 
-#: stores/templates/stores/profile.html:35
+#: stores/templates/stores/profile.html:37
 msgid "Owner Section"
 msgstr "Eigentümerbereich"
 
-#: stores/templates/stores/profile.html:36
+#: stores/templates/stores/profile.html:38
 #, python-format
 msgid "Welcome, %(user)s. You have the following options: "
 msgstr "Wilkommen, %(user)s. Sie haben die folgenden Möglichkeiten:"
 
-#: stores/templates/stores/profile.html:38
+#: stores/templates/stores/profile.html:40
 msgid "List or change your authorised users"
 msgstr "Ihre autorisierten Benutzer auflisten oder ändern"
 
-#: stores/templates/stores/profile.html:39
-msgid "authorised user"
+#: stores/templates/stores/profile.html:41
+msgid "authorised user(s)"
 msgstr "autorisierter Benutzer"
 
-#: stores/templates/stores/profile.html:43
+#: stores/templates/stores/profile.html:45
 msgid "List or edit your events"
 msgstr "Ihre Ereignisse auflisten oder bearbeiten"
 
-#: stores/templates/stores/profile.html:44
+#: stores/templates/stores/profile.html:46
 msgid "live or future events"
 msgstr "Live- oder zukünftige Ereignisse"
 
-#: stores/templates/stores/profile.html:44
+#: stores/templates/stores/profile.html:46
 msgid "total"
 msgstr "insgesamt"
 
-#: stores/templates/stores/profile.html:48
+#: stores/templates/stores/profile.html:50
 msgid "Edit on OpenStreetmap"
 msgstr "Bearbeiten auf OpenStreetmap"
 
-#: stores/templates/stores/profile.html:49
+#: stores/templates/stores/profile.html:51
 msgid ""
 "Requires OpenStreetMap account. Changes will appear here within 48 hours."
 msgstr ""
 "Erfordert OpenStreetMap-Konto. Änderungen werden hier innerhalb von 48 "
 "Stunden bekannt gegeben."
 
-#: stores/templates/stores/profile.html:53
+#: stores/templates/stores/profile.html:55
 msgid "How to claim this store"
 msgstr "So behaupten Sie diesen Shop"
 
-#: stores/templates/stores/profile.html:62
+#: stores/templates/stores/profile.html:64
 msgid "Current Events (as seen in the newsletter)"
 msgstr "Aktuelle Ereignisse (wie im Newsletter)"
 
-#: stores/views.py:358
+#: stores/views.py:356
 msgid "User has been removed"
 msgstr "Benutzer wurde entfernt"
 
-#: stores/views.py:363
+#: stores/views.py:361
 msgid "Not permitted"
 msgstr "Nicht gestattet"
 
-#: stores/views.py:378
+#: stores/views.py:376
 msgid ""
 "User not found, please ensure they create an account, or check your spelling"
 msgstr ""
 "Benutzer nicht gefunden, bitte stellen Sie sicher, dass er ein Konto "
 "erstellt oder Ihre Rechtschreibung überprüft."
 
-#: stores/views.py:394
+#: stores/views.py:392
 msgid "User has been added to the list of editors"
 msgstr "Der Benutzer wurde zur Liste der erlabten Benutzer hinzugefügt."
 
-#: stores/views.py:397
+#: stores/views.py:395
 msgid "User is already in the list of editors, please check and try again"
 msgstr ""
 "Benutzer ist bereits in der Liste der erlabten Benutzer, bitte überprüfen "
 "und erneut versuchen."
 
-#: users/models.py:47
+#: users/forms.py:51
+msgid "If you'd like to receive offers, please enter a valid radius"
+msgstr ""
+"Wenn Sie Angebote erhalten möchten, geben Sie bitte einen gültigen Radius "
+"ein."
+
+#: users/forms.py:54
+msgid "Please make sure you have entered and validated your address"
+msgstr ""
+"Bitte stellen Sie sicher, dass Sie Ihre Adresse eingegeben und bestätigt "
+"haben."
+
+#: users/models.py:41
+msgid "Confirmed address"
+msgstr "Bestätigte Adresse"
+
+#: users/models.py:46
 msgid "Address 2"
 msgstr "Adresse 2"
 
-#: users/models.py:48
+#: users/models.py:47
 msgid "Address 3"
 msgstr "Adresse 3"
 
-#: users/models.py:52
+#: users/models.py:51
 msgid "I would like to receive the weekly local offers newsletter"
 msgstr ""
 "Ich möchte den wöchentlichen Newsletter mit lokalen Angeboten erhalten."
 
-#: users/models.py:53
+#: users/models.py:52
 msgid "Search radius for local offers (km)"
 msgstr "Suchradius für lokale Angebote (km)"
 
-#~ msgid "Your needs to weigh about"
-#~ msgstr "First German Conversion"
+#: users/templates/users/profile.html:7
+msgid "Please complete your profile information"
+msgstr "Bitte vervollständigen Sie Ihre Profilinformationen"
 
-#~ msgid "Your %(calc_inputs.MeatType)s needs to weigh about"
-#~ msgstr "Second %(calc_inputs.MeatType)s german conversion"
+#: users/templates/users/profile.html:8
+msgid ""
+"Enter your address and subscribe to the newsletter to get offers and "
+"information from your local stores"
+msgstr ""
+"Geben Sie Ihre Adresse ein und abonnieren Sie den Newsletter, um Angebote "
+"und Informationen von Ihren lokalen Geschäften zu erhalten."
+
+#: users/templates/users/profile.html:32
+msgid ""
+"If you would like to get the offers newsletter, please make sure we can find "
+"your address."
+msgstr ""
+"Wenn Sie Angebote erhalten möchten, geben Sie bitte einen gültigen Radius "
+"ein."
+
+#: users/templates/users/profile.html:34
+msgid "Save all changes and close"
+msgstr "Speichern und schließen"
+
+#: users/templates/users/profile.html:35
+msgid "Close without saving"
+msgstr "Schließen ohne speichern"
+
+#: users/templates/users/profile.html:53
+msgid "Find Address"
+msgstr "Adresse suchen"
