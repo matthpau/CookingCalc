@@ -8,7 +8,6 @@
 <h5>{% trans 'Enter your address and subscribe to the newsletter to get offers and information from your local stores' %}</h5>
 
 <form method="post">{% csrf_token %}
-
 {% if profile_form.non_field_errors %}
   <div class="alert alert-danger" role="alert">
     {% for error in profile_form.non_field_errors %}
@@ -19,9 +18,7 @@
 
 <div class="container">
   <div class="row">
-
     <div class="col-sm">
-
       <div class="row">
         <div><button class="btn btn-primary" type="submit">{% trans 'Save all changes and close' %}</button>
         <a href="/">{% trans 'Close without saving' %}</a>
@@ -32,31 +29,23 @@
         <div class="col-sm">{{ user_form.last_name|as_crispy_field }} </div>     
       </div>
 
-      <span class="p-3 text-primary">
-      {{ profile_form.local_offer_receive|as_crispy_field}}
-      </span>
+      <span class="text-primary">{{ profile_form.local_offer_receive|as_crispy_field}}</span>
       {{ profile_form.newsletter_language|as_crispy_field}}
-      <p>{% trans 'If you would like to get the offers newsletter, please make sure we can find your address.' %}</p>
       {{ profile_form.local_offer_radius|as_crispy_field}}
-
     </div>
-    
     <div class="col-sm">
-
       <div class="row">
         <div class="col-sm-4">{{ profile_form.house_number|as_crispy_field}}</div>
         <div class="col-sm">{{ profile_form.street|as_crispy_field}}</div>
       </div>
-
       {{ profile_form.add_2|as_crispy_field}}
-
     <div class="row">
       <div class="col-sm-8">{{ profile_form.add_city|as_crispy_field}}</div>
       <div class="col-sm">{{ profile_form.add_postcode|as_crispy_field}}</div>
     </div>
 
       {{ profile_form.add_country|as_crispy_field}}
-      <button id="btn_find_address" type="button" class="btn btn-secondary">{% trans 'Find Address' %}</button>
+      <button id="btn_find_address" type="button" class="btn btn-info">{% trans 'Find Address, required for the newsletter' %}</button>
       {{ profile_form.found_address|as_crispy_field }}
 
     </div>
