@@ -9,3 +9,4 @@ test.txt
 db.sqlite3
 CookingBase/my_secrets.py
 logs/
+store_import/
