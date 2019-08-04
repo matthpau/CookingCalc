@@ -9,4 +9,6 @@ test.txt
 db.sqlite3
 CookingBase/my_secrets.py
 logs/
+geo_data/
+scripts/
 dumps/store_import/
