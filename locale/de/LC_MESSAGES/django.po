@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-04 14:32+0200\n"
+"POT-Creation-Date: 2019-08-04 14:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -457,6 +457,8 @@ msgid ""
 "If you have not created an account yet, then please\n"
 "                <a href=\"%(signup_url)s\">sign up</a> first."
 msgstr ""
+"Wenn noch nicht ein Konto erstellet haben, bitte zuerst\n"
+"                <a href=\"%(signup_url)s\">registrieren</a>."
 
 #: AppTimesCalc/templates/account/login.html:45
 msgid "Sign In"
@@ -539,18 +541,16 @@ msgid "Your password is now changed."
 msgstr "Dass Password wurde geändert"
 
 #: AppTimesCalc/templates/account/signup.html:7
-msgid "Signup"
-msgstr ""
-
 #: AppTimesCalc/templates/account/signup.html:18
 msgid "Sign-up"
-msgstr ""
+msgstr "Registrieren"
 
 #: AppTimesCalc/templates/account/signup.html:19
 #, python-format
 msgid ""
 "Already have an account? Then please <a href=\"%(login_url)s\">log in</a>."
 msgstr ""
+"Sie sind schon registriert? Bitte <a href=\"%(login_url)s\">sich anmelden.</a>."
 
 #: AppTimesCalc/templates/account/signup.html:27
 msgid "Sign Up"
@@ -742,7 +742,7 @@ msgstr "Sortieren nach"
 
 #: stores/forms.py:22
 msgid "Store Type"
-msgstr "Geschäftyp "
+msgstr "Ladentyp"
 
 #: stores/forms.py:22
 msgid "All stores"
@@ -1068,6 +1068,12 @@ msgstr ""
 #: stores/templates/stores/new_store_info.html:41
 msgid "store search"
 msgstr "Storesuche"
+
+#: stores/templates/stores/profile.html:32
+#, fuzzy
+#| msgid "How to claim this store"
+msgid "Please login to like this store"
+msgstr "So behaupten Sie diesen Shop"
 
 #: stores/templates/stores/profile.html:37
 msgid "Owner Section"
