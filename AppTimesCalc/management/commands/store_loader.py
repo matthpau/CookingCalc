@@ -32,7 +32,7 @@ class Command(BaseCommand):
             print()
 
         #https://wiki.openstreetmap.org/wiki/Overpass_API/Language_Guide
-        def get_data_from_OSM(country_code, country_name_no_sp, osm_shops, logfile, save_file, fresh=False, max_days=2):
+        def get_data_from_OSM(country_name_no_sp, country_code, osm_shops, logfile, save_file, fresh=False, max_days=2):
 
             """
             fresh True forces a download regardless of file age
@@ -115,12 +115,8 @@ class Command(BaseCommand):
 
             return result
 
-        def load_data(country_name, country_code, logfile, save_file):
-            """
-            logfile is unique per overall run
-            """
-            nice_name = country_name
-            country_name_nospaces = country_name.replace(' ', '_').lower()
+        def load_data(country_name_no_sp, country_code, logfile, save_file):
+            nice_name = country_name_no_sp.replace('_', ' ')
 
             #Add country to list of countries if not there
             country, created = Country.objects.get_or_create(
@@ -254,15 +250,19 @@ class Command(BaseCommand):
                 i += 1
                 country_name_no_sp = country_name.replace(' ', '_').lower()
                 save_file = join(dump_folder, country_name_no_sp + '.json')
-                was_updated = get_data_from_OSM(country_code, country_name_no_sp, osm_shops, logfile, save_file, fresh=fresh, max_days=1)
+                was_updated = get_data_from_OSM(country_name_no_sp, country_code, osm_shops, logfile, save_file, fresh=fresh, max_days=1)
                 
                 #If data not updated, no need to upload it
 
+                to_load_flag = False
                 if existing_count > 1: # already records exist
                     if was_updated: # and we got new data
-                        load_data(country_code, country_name_no_sp, logfile, save_file)
+                        to_load_flag = True
                 else:   # no records exist
-                    load_data(country_code, country_name_no_sp, logfile, save_file) # do a load regardless
+                    to_load_flag = True
+
+                if to_load_flag:
+                    load_data(country_name_no_sp, country_code, logfile, save_file)
 
                 if was_updated and i != country_count:
                     logfile.write('    Waiting a bit before I do the next one...\n')
