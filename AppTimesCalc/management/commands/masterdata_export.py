@@ -28,6 +28,7 @@ class Command(BaseCommand):
         
         os.mkdir(new_folder_path)
         files = os.listdir(dumps_folder)
+        
         for file in files:
             if file.endswith('.json'):
                 source = os.path.join(dumps_folder, file)
@@ -43,4 +44,6 @@ class Command(BaseCommand):
         call_command('dumpdata', 'stores.StoreType', f'--output={dumps_folder}/store_type.json')
         call_command('dumpdata', 'users.Country', f'--output={dumps_folder}/user_country.json')
         call_command('dumpdata', 'users.Country', f'--output={dumps_folder}/user_country.json')
+        call_command('dumpdata', 'sites.Site', f'--output={dumps_folder}/sites.json')
+
         

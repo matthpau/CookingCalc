@@ -23,6 +23,11 @@
     <div class="col-sm">
 
       <div class="row">
+        <div><button class="btn btn-primary" type="submit">{% trans 'Save all changes and close' %}</button>
+        <a href="/">{% trans 'Close without saving' %}</a>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-sm">{{ user_form.first_name|as_crispy_field }}</div>
         <div class="col-sm">{{ user_form.last_name|as_crispy_field }} </div>     
       </div>
@@ -33,8 +38,7 @@
       {{ profile_form.newsletter_language|as_crispy_field}}
       <p>{% trans 'If you would like to get the offers newsletter, please make sure we can find your address.' %}</p>
       {{ profile_form.local_offer_radius|as_crispy_field}}
-      <button class="btn btn-primary" type="submit">{% trans 'Save all changes and close' %}</button><br>
-      <a href="/">{% trans 'Close without saving' %}</a>
+
     </div>
     
     <div class="col-sm">

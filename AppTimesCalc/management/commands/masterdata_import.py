@@ -17,3 +17,4 @@ class Command(BaseCommand):
         call_command('loaddata', 'dumps/Converter.json')
         call_command('loaddata', 'dumps/store_type.json')
         call_command('loaddata', 'dumps/user_country.json')
+        call_command('loaddata', 'dumps/sites.json')
