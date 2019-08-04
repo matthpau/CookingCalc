@@ -52,7 +52,6 @@ class Command(BaseCommand):
 
         def send_newsletters(next_newsletter_date, next1_newsletter_date):
 
-
             cur_language = translation.get_language()
 
             messages = []

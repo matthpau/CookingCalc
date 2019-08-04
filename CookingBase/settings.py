@@ -16,6 +16,9 @@ from . import my_secrets
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+#My Production Base Dir, used in a few places for checking if we are on the pdn server
+BASE_DIR_PDN = os.path.expanduser('~/matthpau.pythonanywhere.com/CookingCalc/')
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -126,30 +129,32 @@ WSGI_APPLICATION = 'CookingBase.wsgi.application'
 #forproduction
 #For Local PostGres SQL
 #https://postgresapp.com/
-DATABASES = {
-    "default": {
-        "ENGINE": "django.contrib.gis.db.backends.postgis",
-        "NAME": "paulmatthews",
-        "USER": "paulmatthews",
-        "PASSWORD": "",
-        "HOST": "localhost",
-        "PORT": "",
-    }
-}
 
-"""
-LIVE VERSION ON PYTHON ANYWHERE
-DATABASES = {
-    "default": {
-        "ENGINE": "django.contrib.gis.db.backends.postgis",
-        "NAME": "cookingcalc",
-        "USER": "super",
-        "PASSWORD": my_secrets.POSTGRES_PDN_PWD,
-        "HOST": "matthpau-1212.postgres.pythonanywhere-services.com",
-        "PORT": "11212",
+if os.path.exists(BASE_DIR_PDN):            #We are on the production server
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.contrib.gis.db.backends.postgis",
+            "NAME": "cookingcalc",
+            "USER": "super",
+            "PASSWORD": my_secrets.POSTGRES_PDN_PWD,
+            "HOST": "matthpau-1212.postgres.pythonanywhere-services.com",
+            "PORT": "11212",
+        }
     }
-}
-"""
+
+else:           
+    print('Using the local dev DB', os.getpid())   # we are on the dev machine
+    #Why runs twice? https://stackoverflow.com/questions/16546652/why-does-django-run-everything-twice
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.contrib.gis.db.backends.postgis",
+            "NAME": "paulmatthews",
+            "USER": "paulmatthews",
+            "PASSWORD": "",
+            "HOST": "localhost",
+            "PORT": "",
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
