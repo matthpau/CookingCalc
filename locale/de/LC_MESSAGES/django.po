@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-03 17:53+0200\n"
+"POT-Creation-Date: 2019-08-04 14:32+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -348,17 +348,25 @@ msgstr "Berechnen"
 msgid "Meat cooking calculator, if you know how many guests you have."
 msgstr "Fleischkoch-Rechner, wenn Sie wissen, wie viele Gäste Sie haben."
 
+#: AppTimesCalc/templates/AppTimesCalc/MealPlannerSaved.html:5
+msgid "Thankyou, your meal plan has been saved"
+msgstr "Danke, Ihr Plan wurde gespeichert"
+
+#: AppTimesCalc/templates/AppTimesCalc/MealPlannerSaved.html:6
+msgid "See your meal plans"
+msgstr "Pläne anschauen"
+
 #: AppTimesCalc/templates/AppTimesCalc/about.html:4
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #: AppTimesCalc/templates/AppTimesCalc/about.html:8
 msgid "Meat roasting times from"
-msgstr ""
+msgstr "Fleischkochzeiten von"
 
 #: AppTimesCalc/templates/AppTimesCalc/about.html:10
 msgid "Images from"
-msgstr ""
+msgstr "Bilder von"
 
 #: AppTimesCalc/templates/AppTimesCalc/base.html:54
 msgid "Cooking Calculators"
@@ -464,7 +472,7 @@ msgstr "Abmelden"
 
 #: AppTimesCalc/templates/account/logout.html:7
 msgid "Are you sure you want to log out?"
-msgstr "Sind Sie sicher, dass Sie sich abmelden möchten"
+msgstr "Sind Sie sicher, dass Sie sich abmelden möchten?"
 
 #: AppTimesCalc/templates/account/logout.html:14
 msgid "Log Out"
@@ -557,11 +565,11 @@ msgstr ""
 msgid "you are already logged in as %(user_display)s."
 msgstr ""
 
-#: CookingBase/settings.py:183 users/models.py:40
+#: CookingBase/settings.py:188 users/models.py:40
 msgid "English"
 msgstr "Englisch"
 
-#: CookingBase/settings.py:184
+#: CookingBase/settings.py:189 users/models.py:41
 msgid "German"
 msgstr "Deutsch"
 
@@ -661,8 +669,8 @@ msgstr ""
 "und dann konvertieren, um zu sehen, dass dies automatisch in eine Metrik "
 "umgewandelt wird. Du kannst Tassen und Löffel unkonvertiert lassen. Jede "
 "Konvertierung wird gespeichert, damit Sie in Zukunft darauf zurückgreifen "
-"können. Die Umstellung speichert sowohl die Methode als auch die Zutaten. (Im "
-"Moment funkionert es nur auf English)"
+"können. Die Umstellung speichert sowohl die Methode als auch die Zutaten. "
+"(Im Moment funkionert es nur auf English)"
 
 #: RecipeConverter/templates/RecipeConverter/converter_about.html:25
 msgid "Give it a go (requires login)"
@@ -1146,10 +1154,6 @@ msgstr ""
 "Bitte stellen Sie sicher, dass Sie Ihre Adresse eingegeben und bestätigt "
 "haben."
 
-#: users/models.py:41
-msgid "Deutsch"
-msgstr ""
-
 #: users/models.py:48
 msgid "Confirmed address"
 msgstr "Bestätigte Adresse"
@@ -1207,6 +1211,6 @@ msgstr "Schließen ohne speichern"
 msgid "Find Address"
 msgstr "Adresse suchen"
 
-#: users/views.py:14
+#: users/views.py:18
 msgid "Your profile was successfully updated"
 msgstr "Dein Profil wurde erfolgreich aktualisiert."

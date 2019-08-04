@@ -1,1 +1,62 @@
-[{"model": "AppTimesCalc.cookinglevel", "pk": 1, "fields": {"CookingLevel": "Rare", "CookingLevel_en": "Rare", "CookingLevel_de": null, "CookingLevelSort": 10}}, {"model": "AppTimesCalc.cookinglevel", "pk": 2, "fields": {"CookingLevel": "Well done", "CookingLevel_en": "Well done", "CookingLevel_de": null, "CookingLevelSort": 100}}, {"model": "AppTimesCalc.cookinglevel", "pk": 3, "fields": {"CookingLevel": "Medium rare", "CookingLevel_en": "Medium rare", "CookingLevel_de": null, "CookingLevelSort": 20}}, {"model": "AppTimesCalc.cookinglevel", "pk": 4, "fields": {"CookingLevel": "Medium", "CookingLevel_en": "Medium", "CookingLevel_de": null, "CookingLevelSort": 30}}, {"model": "AppTimesCalc.cookinglevel", "pk": 5, "fields": {"CookingLevel": "Medium well", "CookingLevel_en": "Medium well", "CookingLevel_de": null, "CookingLevelSort": 40}}, {"model": "AppTimesCalc.cookinglevel", "pk": 6, "fields": {"CookingLevel": "Safely", "CookingLevel_en": "Safely", "CookingLevel_de": null, "CookingLevelSort": 200}}]
+[
+    {
+        "model": "AppTimesCalc.cookinglevel",
+        "pk": 1,
+        "fields": {
+            "CookingLevel": "Rare",
+            "CookingLevel_en": "Rare",
+            "CookingLevel_de": "Blutig",
+            "CookingLevelSort": 10
+        }
+    },
+    {
+        "model": "AppTimesCalc.cookinglevel",
+        "pk": 2,
+        "fields": {
+            "CookingLevel": "Well done",
+            "CookingLevel_en": "Well done",
+            "CookingLevel_de": "Durch",
+            "CookingLevelSort": 100
+        }
+    },
+    {
+        "model": "AppTimesCalc.cookinglevel",
+        "pk": 3,
+        "fields": {
+            "CookingLevel": "Medium rare",
+            "CookingLevel_en": "Medium rare",
+            "CookingLevel_de": "Blutig Medium",
+            "CookingLevelSort": 20
+        }
+    },
+    {
+        "model": "AppTimesCalc.cookinglevel",
+        "pk": 4,
+        "fields": {
+            "CookingLevel": "Medium",
+            "CookingLevel_en": "Medium",
+            "CookingLevel_de": "Medium",
+            "CookingLevelSort": 30
+        }
+    },
+    {
+        "model": "AppTimesCalc.cookinglevel",
+        "pk": 5,
+        "fields": {
+            "CookingLevel": "Medium well",
+            "CookingLevel_en": "Medium well",
+            "CookingLevel_de": "Medium durch",
+            "CookingLevelSort": 40
+        }
+    },
+    {
+        "model": "AppTimesCalc.cookinglevel",
+        "pk": 6,
+        "fields": {
+            "CookingLevel": "Safely",
+            "CookingLevel_en": "Safely",
+            "CookingLevel_de": "sicher",
+            "CookingLevelSort": 200
+        }
+    }
+]

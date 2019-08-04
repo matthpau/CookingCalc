@@ -270,6 +270,8 @@ class Command(BaseCommand):
                     time.sleep(60)
 
             load_end_time = dt.datetime.now()
+
+            logfile.write('\n')
             logfile.write('Load start    ' + str(load_start_time) + '\n')
             logfile.write('Load end      ' + str(load_end_time) + '\n') 
             logfile.write('Load duration ' + str(load_end_time-load_start_time) + '\n')    

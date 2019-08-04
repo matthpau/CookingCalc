@@ -3,7 +3,11 @@ from .forms import UserForm, ProfileForm
 from django.http import JsonResponse, HttpResponseRedirect
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.decorators import login_required
 
+
+
+@login_required()
 def update_profile(request):
     if request.method == 'POST':
         user_form = UserForm(request.POST, instance=request.user)
