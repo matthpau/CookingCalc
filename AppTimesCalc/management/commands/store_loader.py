@@ -224,7 +224,7 @@ class Command(BaseCommand):
             for old_logfile in os.listdir(log_folder):
                 old_logfile = join(log_folder, old_logfile)
                 days = 7
-                
+
                 if os.stat(old_logfile).st_mtime < now - days * 24 * 60 * 60:
                     os.remove(old_logfile)
 
@@ -236,7 +236,8 @@ class Command(BaseCommand):
                 logfile.write('fresh=True option selected, forcing download of all data\n')
             else:
                 logfile.write('fresh=False option selected, existing dumps will be kept\n')
-
+            
+            logfile.write('\n')
 
             #Check number of records in store table - is this a first time load?
             #if yes, then force a load from any existing tables
@@ -342,4 +343,4 @@ class Command(BaseCommand):
             'fishmonger'
             ]
 
-        store_load_main(country_list, osm_shops, log_folder, dump_folder, fresh=True)
+        store_load_main(country_list, osm_shops, log_folder, dump_folder, fresh=False)
