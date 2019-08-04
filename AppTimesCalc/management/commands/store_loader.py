@@ -214,7 +214,6 @@ class Command(BaseCommand):
 
                 logfile.write('    ' + str(new_count) + ' new stores, ' + str(updated_count) + ' stores updated\n')
 
-
         def store_load_main(country_list, osm_shops, log_folder, dump_folder, fresh):
             
             load_start_time = dt.datetime.now()
@@ -225,7 +224,7 @@ class Command(BaseCommand):
             for old_logfile in os.listdir(log_folder):
                 old_logfile = join(log_folder, old_logfile)
                 days = 7
-
+                
                 if os.stat(old_logfile).st_mtime < now - days * 24 * 60 * 60:
                     os.remove(old_logfile)
 
@@ -277,7 +276,6 @@ class Command(BaseCommand):
 
             print('Loading finished, check log to see results in:', log_file_full)
         
-
         print('Running the store loader')
 
         #Check which machine we are on 
