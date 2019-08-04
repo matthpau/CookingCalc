@@ -5,6 +5,9 @@ from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.decorators import login_required
 
+from django.urls import reverse_lazy
+from django.views.generic.edit import DeleteView
+from .models import CustomUser
 
 
 @login_required()
@@ -62,3 +65,8 @@ def check_address(request):
             }
 
     return JsonResponse(data)
+
+class UserDelete(DeleteView):
+    #TODO you are here, figure out how to delete user and log them out
+    model = CustomUser
+    success_url = reverse_lazy('author-list')
