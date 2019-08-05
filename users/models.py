@@ -35,7 +35,6 @@ class CustomUser(AbstractUser):
 
 class Profile(models.Model):
 
-
     newsletter_language_choices = (
         ('EN', _("English")),
         ('DE', _("German")),

@@ -19,8 +19,11 @@ class AuthorisedEventEditorsAdmin(admin.ModelAdmin):
     readonly_fields = ['created_at', 'updated_at']
     autocomplete_fields = ['store']
 
+class StoreTypeAdmin(admin.ModelAdmin):
+    list_display = ['type_text', 'icon_text']
+
 admin.site.register(StoreComment)
 admin.site.register(Country)
-admin.site.register(StoreType)
+admin.site.register(StoreType, StoreTypeAdmin)
 admin.site.register(Event, EventAdmin)
 admin.site.register(AuthorisedEventEditors, AuthorisedEventEditorsAdmin)

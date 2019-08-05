@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import UserForm, ProfileForm
-from django.http import JsonResponse, HttpResponseRedirect
+from django.http import JsonResponse, HttpResponseRedirect, HttpResponse
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.decorators import login_required
@@ -9,6 +9,7 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import DeleteView
 from .models import CustomUser
 
+from django.contrib.auth import logout
 
 @login_required()
 def update_profile(request):
@@ -66,7 +67,13 @@ def check_address(request):
 
     return JsonResponse(data)
 
-class UserDelete(DeleteView):
-    #TODO you are here, figure out how to delete user and log them out
-    model = CustomUser
-    success_url = reverse_lazy('author-list')
+@login_required()
+def delete_confirm(request):
+    return render(request, 'users/delete_confirm.html')
+
+@login_required()
+def delete(request):
+    user_id = request.user.id
+    logout(request)
+    CustomUser.objects.get(id=user_id).delete()
+    return HttpResponseRedirect('/')

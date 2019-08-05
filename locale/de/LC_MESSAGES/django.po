@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-04 14:42+0200\n"
+"POT-Creation-Date: 2019-08-05 11:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -191,71 +191,76 @@ msgstr "Fleischart: "
 msgid "Cooking level: "
 msgstr "Wie es zubereite wird: "
 
-#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:15
-msgid "Standard portion size adult: "
-msgstr "Standard Portionsgröße Erwachsene"
-
-#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:16
-msgid "Standard portion size child: "
-msgstr "Standard Portionsgröße Kind"
-
-#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:19
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:18
 msgid "Given number of adults: "
 msgstr "Angegebene Anzahl Erwachsene: "
 
-#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:20
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:19
 msgid "Given number of children: "
 msgstr "Angegebene Anzahl Kinder: "
 
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:20
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:26
+msgid "Standard portion size adult: "
+msgstr "Standard Portionsgröße Erwachsene"
+
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:21
-msgid "Required quantity of meat (kg): "
-msgstr "Erforderliche Fleischmenge (kg): "
+msgid "Standard portion size child: "
+msgstr "Standard Portionsgröße Kind"
 
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:22
-msgid "Required quantity of meat (lb): "
-msgstr "Erforderliche Fleischmenge (lb): "
+#, fuzzy
+#| msgid "Required quantity of meat (kg): "
+msgid "Required quantity of meat: "
+msgstr "Erforderliche Fleischmenge (kg): "
 
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:25
+#, fuzzy
+#| msgid "Given Weight kg"
+msgid "Given weight: "
+msgstr "Angegebenes Gewicht (kg)"
+
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:27
 msgid "Estimated number of adults this will feed: "
 msgstr "Geschätzte Anzahl der Erwachsenen, für die das ausreichen wird: "
 
-#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:30
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:32
 msgid "How to cook it"
 msgstr "So funktionert es"
 
-#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:33
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:35
 msgid "Total cooking and preparation time: "
 msgstr "Gesamtkoch- und Zubereitungszeit: "
 
-#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:34
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:36
 msgid "Turn the oven on at: "
 msgstr "Schalten Sie den Ofen ein um: "
 
-#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:35
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:37
 msgid "Oven temperature: "
 msgstr "Backofentemperatur: "
 
-#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:36
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:38
 msgid "Let the oven warm up for: "
 msgstr "Den Ofen aufwärmen lassen für:"
 
-#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:37
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:39
 msgid "Put the meat in the oven at: "
 msgstr "Das Fleisch in den Ofen stellen um: "
 
-#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:38
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:40
 msgid "Let the meat cook for: "
 msgstr "Das Fleisch kochen lassen für: "
 
-#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:39
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:41
 msgid "Take the meat out at: "
 msgstr "Nehmen Sie das Fleisch heraus um: "
 
-#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:40
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:42
 msgid "The internal temperature of the meat should be: "
 msgstr "Die Innentemperatur des Fleisches sollte: "
 
-#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:41
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:42
 msgid ""
 "The meat will continue to cook during resting, but if you need to, put it in "
 "the oven a little longer."
@@ -263,15 +268,15 @@ msgstr ""
 "Das Fleisch wird während der Ruhezeit weiter garen, aber wenn nötig, stellen "
 "Sie es etwas länger in den Ofen."
 
-#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:42
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:43
 msgid "Let the meat rest for: "
 msgstr "Das Fleisch ruhen lassen für: "
 
-#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:43
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:44
 msgid "Serve it to your guests at: "
 msgstr "Servieren Sie es Ihren Gästen um: "
 
-#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:49
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:50
 msgid ""
 "Please be sure to save this meal and rate it afterwards so we can improve "
 "our suggestions."
@@ -279,7 +284,7 @@ msgstr ""
 "Bitte speichern Sie dieses Gericht und bewerten Sie sie anschließend, damit "
 "wir unsere Vorschläge verbessern können."
 
-#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:55
+#: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:56
 msgid "Save this meal"
 msgstr "Gericht speichern"
 
@@ -538,7 +543,7 @@ msgstr ""
 #: AppTimesCalc/templates/account/password_reset_from_key.html:33
 #: AppTimesCalc/templates/account/password_reset_from_key_done.html:15
 msgid "Your password is now changed."
-msgstr "Dass Password wurde geändert"
+msgstr "Das Password wurde geändert"
 
 #: AppTimesCalc/templates/account/signup.html:7
 #: AppTimesCalc/templates/account/signup.html:18
@@ -550,7 +555,8 @@ msgstr "Registrieren"
 msgid ""
 "Already have an account? Then please <a href=\"%(login_url)s\">log in</a>."
 msgstr ""
-"Sie sind schon registriert? Bitte <a href=\"%(login_url)s\">sich anmelden.</a>."
+"Sie sind schon registriert? Bitte <a href=\"%(login_url)s\">sich anmelden.</"
+"a>."
 
 #: AppTimesCalc/templates/account/signup.html:27
 msgid "Sign Up"
@@ -565,11 +571,11 @@ msgstr ""
 msgid "you are already logged in as %(user_display)s."
 msgstr ""
 
-#: CookingBase/settings.py:188 users/models.py:40
+#: CookingBase/settings.py:188 users/models.py:39
 msgid "English"
 msgstr "Englisch"
 
-#: CookingBase/settings.py:189 users/models.py:41
+#: CookingBase/settings.py:189 users/models.py:40
 msgid "German"
 msgstr "Deutsch"
 
@@ -756,23 +762,23 @@ msgstr "Startdatum"
 msgid "Event finish:"
 msgstr "Enddatum"
 
-#: stores/models.py:35 users/models.py:51
+#: stores/models.py:35 users/models.py:50
 msgid "House Number"
 msgstr "Hausnummer"
 
-#: stores/models.py:36 users/models.py:52
+#: stores/models.py:36 users/models.py:51
 msgid "Street"
 msgstr "Straße"
 
-#: stores/models.py:37 users/models.py:55
+#: stores/models.py:37 users/models.py:54
 msgid "Postcode"
 msgstr "Postleitzahl"
 
-#: stores/models.py:38 users/models.py:56
+#: stores/models.py:38 users/models.py:55
 msgid "City"
 msgstr "Stadt"
 
-#: stores/models.py:39 users/models.py:18 users/models.py:23 users/models.py:57
+#: stores/models.py:39 users/models.py:18 users/models.py:23 users/models.py:56
 msgid "Country"
 msgstr "Land"
 
@@ -1070,8 +1076,6 @@ msgid "store search"
 msgstr "Storesuche"
 
 #: stores/templates/stores/profile.html:32
-#, fuzzy
-#| msgid "How to claim this store"
 msgid "Please login to like this store"
 msgstr "So behaupten Sie diesen Shop"
 
@@ -1148,75 +1152,74 @@ msgstr ""
 "Benutzer ist bereits in der Liste der erlabten Benutzer, bitte überprüfen "
 "und erneut versuchen."
 
-#: users/forms.py:52
+#: users/forms.py:51
 msgid "If you'd like to receive offers, please enter a valid radius"
 msgstr ""
 "Wenn Sie Angebote erhalten möchten, geben Sie bitte einen gültigen Radius "
 "ein."
 
-#: users/forms.py:55
+#: users/forms.py:54
 msgid "Please make sure you have entered and validated your address"
 msgstr ""
 "Bitte stellen Sie sicher, dass Sie Ihre Adresse eingegeben und bestätigt "
 "haben."
 
-#: users/models.py:48
+#: users/models.py:47
 msgid "Confirmed address"
 msgstr "Bestätigte Adresse"
 
-#: users/models.py:53
+#: users/models.py:52
 msgid "Address 2"
 msgstr "Adresse 2"
 
-#: users/models.py:54
+#: users/models.py:53
 msgid "Address 3"
 msgstr "Adresse 3"
 
-#: users/models.py:58
+#: users/models.py:57
 msgid "I would like to receive the weekly local offers newsletter"
 msgstr ""
 "Ich möchte den wöchentlichen Newsletter mit lokalen Angeboten erhalten."
 
-#: users/models.py:59
+#: users/models.py:58
 msgid "Search radius for local offers (km)"
 msgstr "Suchradius für lokale Angebote (km)"
 
-#: users/models.py:60
+#: users/models.py:59
 msgid "Newsletter Language"
 msgstr "Newsletter Sprache"
+
+#: users/templates/users/delete_confirm.html:7
+msgid "Delete account"
+msgstr "Konto Löschen"
+
+#: users/templates/users/delete_confirm.html:8
+msgid ""
+"This will remove your account, any saved data, and cancel the local stores "
+"newsletter."
+msgstr ""
+"Dadurch werden Ihr Konto, alle gespeicherten Daten und der Local Stores Newsltter gelöscht."
 
 #: users/templates/users/profile.html:7
 msgid "Please complete your profile information"
 msgstr "Bitte vervollständigen Sie Ihre Profilinformationen"
 
-#: users/templates/users/profile.html:8
-msgid ""
-"Enter your address and subscribe to the newsletter to get offers and "
-"information from your local stores"
-msgstr ""
-"Geben Sie Ihre Adresse ein und abonnieren Sie den Newsletter, um Angebote "
-"und Informationen von Ihren lokalen Geschäften zu erhalten."
-
-#: users/templates/users/profile.html:34
-msgid ""
-"If you would like to get the offers newsletter, please make sure we can find "
-"your address."
-msgstr ""
-"Wenn Sie Angebote erhalten möchten, geben Sie bitte einen gültigen Radius "
-"ein."
-
-#: users/templates/users/profile.html:36
+#: users/templates/users/profile.html:22
 msgid "Save all changes and close"
 msgstr "Speichern und schließen"
 
-#: users/templates/users/profile.html:37
+#: users/templates/users/profile.html:23
 msgid "Close without saving"
 msgstr "Schließen ohne speichern"
 
-#: users/templates/users/profile.html:55
-msgid "Find Address"
-msgstr "Adresse suchen"
+#: users/templates/users/profile.html:48
+msgid "Find address, required for the newsletter"
+msgstr "Adresse finden, für den Newsletter nötig"
 
-#: users/views.py:18
+#: users/templates/users/profile.html:55
+msgid "Delete your account"
+msgstr "Konto löschen"
+
+#: users/views.py:22
 msgid "Your profile was successfully updated"
 msgstr "Dein Profil wurde erfolgreich aktualisiert."

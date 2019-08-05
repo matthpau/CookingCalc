@@ -29,7 +29,7 @@
                     {% include 'stores/like_section.html' %}
                 </div>
             {% else %}
-                <p>{% trans 'Please login to like this store' %}<a href="{% url 'account_login' %}">Login </a></p>
+                <p>{% trans 'Please login to like this store' %}<br><a href="{% url 'account_login' %}">Login </a></p>
             {% endif %}
 
             <br>
