@@ -74,7 +74,6 @@ class Command(BaseCommand):
 
                 stores = stores.filter(num_events__gt=0)
 
-
                 #TODO is there a way to calculate it more efficiently and pick up distance from the stores query?
                 events = Event.objects.all()
                 events = events.filter(store__in=stores).annotate(distance=Distance('store__location', user_location)).order_by('-distance')

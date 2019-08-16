@@ -351,7 +351,7 @@ msgstr "Berechnen"
 
 #: AppTimesCalc/templates/AppTimesCalc/Home.html:56
 msgid "Meat cooking calculator, if you know how many guests you have."
-msgstr "Fleischkoch-Rechner, wenn Sie wissen, wie viele Gäste Sie haben."
+msgstr "Fleischkochrechner, wenn Sie wissen, wie viele Gäste Sie haben."
 
 #: AppTimesCalc/templates/AppTimesCalc/MealPlannerSaved.html:5
 msgid "Thankyou, your meal plan has been saved"
