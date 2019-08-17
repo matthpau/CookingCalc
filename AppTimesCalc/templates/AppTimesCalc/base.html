@@ -116,7 +116,7 @@
 {% endblock %}
 <hr>
 {% if user.is_authenticated %}
-    <small>{% trans 'Logged in as ' %} {{ user.username }} | <a href="{% url 'account_logout' %}">{% trans 'Logout' %}</a></small>
+    <small>{% trans 'Logged in as ' %} {{ user.email }} | <a href="{% url 'account_logout' %}">{% trans 'Logout' %}</a></small>
 {% endif %}
 
 </div>

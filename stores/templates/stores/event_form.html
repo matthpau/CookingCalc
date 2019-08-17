@@ -1,0 +1,32 @@
+{% load crispy_forms_tags %}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm">
+            {{form.title|as_crispy_field}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">
+            {{form.includes_offers|as_crispy_field}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">
+            {{form.comment|as_crispy_field}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            {{form.start_date|as_crispy_field}}
+        </div>
+
+        <div class="col-sm-6">
+            {{form.end_date|as_crispy_field}}
+        </div>
+    </div>
+</div>

@@ -88,6 +88,10 @@ class Command(BaseCommand):
 
                 base_url = str(Site.objects.get_current())
 
+                print(Site.objects.get_current())
+                print(Site.objects.get_current().domain)
+
+
                 context = {
                     'profile': profile,
                     'events': events,
@@ -99,7 +103,7 @@ class Command(BaseCommand):
                 msg_html = render_to_string('newsletters/weekly_general.html', context)
 
                 #Writing to file for testing
-                write_file = f'newsletters/testing/test-{str(profile.id)}.html' 
+                write_file = f'newsletters/testing/test-{str(profile.id)}.html'
                 with open(write_file, 'w') as f:
                     f.write(msg_html)
                 
