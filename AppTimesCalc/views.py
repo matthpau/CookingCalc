@@ -11,6 +11,9 @@ from django.conf import settings
 
 from users.models import CustomUser
 
+from allauth.account.views import SignupView
+from django.urls import reverse_lazy
+
 
 # https://docs.djangoproject.com/en/2.2/topics/auth/default/#limiting-access-to-logged-in-users
 
