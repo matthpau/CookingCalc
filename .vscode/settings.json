@@ -1,6 +1,6 @@
 {
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
-    "python.pythonPath": "/anaconda3/envs/CookingHelpers/bin/python",
+    "python.pythonPath": "/Users/paulmatthews/django_projects/CookingCalc/env/bin/python3",
     "emmet.includeLanguages": {"django-html": "html"},
 }

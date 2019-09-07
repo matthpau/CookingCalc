@@ -11,3 +11,4 @@ CookingBase/my_secrets.py
 logs/
 scripts/
 dumps/store_import
+env
