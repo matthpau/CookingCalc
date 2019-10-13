@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect
 #from .models import *
-from .models import MealPlan
+from .models import MealPlan, MeatType, CookingInfo, CookingLevel
 from .forms import CalcFormPerson, CalcFormWeight, mealPlanComment, MealPlanForm
 from .businessLogic import CookCalc, AddMeal
 
@@ -100,7 +100,6 @@ def MealPlannerSaved(request):
     if not request.user.is_authenticated:
         request.session['planName'] = request.POST['MealComment']
         request.session['redirected'] = True
-        # print('Need to login')
         return redirect('accounts/login' '/?next=/MealPlannerSaved')
 
     else:

@@ -8,6 +8,7 @@ import requests
 # https://docs.djangoproject.com/en/2.2/howto/custom-management-commands/
 # https://towardsdatascience.com/loading-data-from-openstreetmap-with-python-and-the-overpass-api-513882a27fd0
 
+#TODO change so that it doesn't crash if old logfile is not there
 
 class Command(BaseCommand):
 

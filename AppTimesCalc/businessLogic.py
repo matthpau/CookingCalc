@@ -88,7 +88,7 @@ def CookCalc(inputVals):
 
     else:
         results['Notice:'] = 'uppsala'
-    print(results)
+
     return results
 
 def AddMeal(saveData):
