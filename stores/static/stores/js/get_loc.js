@@ -1,6 +1,5 @@
 $(document).ready(function() {
   var result, lat, lon;
-  var success_url = "process_loc";
 
   // Store the element where the page displays the result
   result = document.getElementById("result");
@@ -12,7 +11,13 @@ $(document).ready(function() {
     alert("Sorry, your browser does not support HTML5 geolocation.");
   }
 
+  $("#id_search_from").on("change", function() {
+    console.log("searchfrom" + $("#id_search_from").val());
+    populateList();
+  });
+
   $("#id_search_distance").on("change", function() {
+    console.log("distance");
     populateList();
   });
 
@@ -47,10 +52,11 @@ $(document).ready(function() {
 
     $.ajax({
       type: "GET",
-      url: success_url,
+      url: "process_loc",
       data: {
         lat: lat,
         lon: lon,
+        search_from: $("#id_search_from").val(),
         search_distance: $("#id_search_distance").val(),
         sort_order: $("#id_sort_order").val(),
         store_filter: $("#id_store_type").val()
@@ -96,6 +102,7 @@ $(document).ready(function() {
           var new_row_final = new_row_1.concat(new_row_4, new_row_2, new_row_3);
           $my_list.append(new_row_final);
         });
+        // console.log(store.home_loc_fail);
       }
     });
   }

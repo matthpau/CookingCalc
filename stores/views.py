@@ -13,12 +13,13 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse
 from django.utils.translation import gettext as _
 from django.contrib.auth.mixins import UserPassesTestMixin
+from django.contrib import messages
 
 from datetime import datetime as dt, date
 
 from .forms import StoreSearch
 from .models import Store, StoreType
-from users.models import CustomUser
+from users.models import CustomUser, Profile
 from stores.models import Event, AuthorisedEventEditors as Editors
 from .forms import EventAddCreate
 
@@ -117,11 +118,30 @@ def get_loc(request):
 def process_loc(request):
     lat = float(request.GET.get('lat'))
     lon = float(request.GET.get('lon'))
+    search_from = int(request.GET.get('search_from'))
     search_dis = request.GET.get('search_distance')
     sort_order = int(request.GET.get('sort_order'))
     store_filter = request.GET.get('store_filter')
 
-    user_location = Point(lon, lat, srid=4326)
+    home_loc_fail = False
+
+    if search_from == 1:  # selet from current location
+        print('opt1')
+        user_location = Point(lon, lat, srid=4326)
+    elif search_from == 2:  # try and select from registered location, message if fail
+        print('opt2')
+        print(request.user)
+        home_addr = Profile.objects.get(user=request.user).found_address
+        if home_addr:
+            user_location = Profile.objects.get(
+                user=request.user).found_location
+            print("using home location", user_location)
+        else:
+            user_location = Point(lon, lat, srid=4326)
+            home_loc_fail = True
+            print("failed using found location", user_location)
+
+        # replace:
 
     # https://stackoverflow.com/questions/19703975/django-sort-by-distance
     # https://docs.djangoproject.com/en/2.2/ref/contrib/gis/db-api/
@@ -152,6 +172,7 @@ def process_loc(request):
     # need to convert it the long way to a dictionary
     return_data = []
     store_results = store_results.values()
+
     for store in store_results:
 
         ww_dict = {}
