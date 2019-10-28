@@ -7,9 +7,12 @@ from django.contrib.auth.decorators import login_required
 
 from django.urls import reverse_lazy
 from django.views.generic.edit import DeleteView
-from .models import CustomUser
+from .models import CustomUser, Profile
+
+from django.contrib.gis.geos import fromstr
 
 from django.contrib.auth import logout
+
 
 @login_required()
 def update_profile(request):
@@ -19,21 +22,23 @@ def update_profile(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.success(request, (_('Your profile was successfully updated')))
-            return HttpResponseRedirect ('/')
+            messages.success(
+                request, (_('Your profile was successfully updated')))
+            return HttpResponseRedirect('/')
 
-        #else:
+        # else:
         #    messages.error(request, ('Please correct the error.'))
-    
-    else: # GET
+
+    else:  # GET
         user_form = UserForm(instance=request.user)
         profile_form = ProfileForm(instance=request.user.profile)
 
     return render(request, 'users/profile.html',
-    {
-        'user_form': user_form,
-        'profile_form': profile_form
-    })
+                  {
+                      'user_form': user_form,
+                      'profile_form': profile_form
+                  })
+
 
 def check_address(request):
     from geopy.geocoders import Nominatim
@@ -50,26 +55,39 @@ def check_address(request):
 
     input_addr = nice_address(*input_addr)
     geolocator = Nominatim(user_agent="CookingCalc")
-    #TODO need to add a try except here for the timeout
+    # TODO need to add a try except here for the timeout
     found_addr = geolocator.geocode(input_addr, timeout=5)
-    
+
     if found_addr:
+        # Update the location field to the found location, as well as the address
+        # Address will be saved when the user saves the form, but the location needs to be done here
+        # Because it can't be shown as HTML
+
+        lat, lon = (found_addr.latitude, found_addr.longitude)
+        location = fromstr(f'POINT({lon} {lat})', srid=4326)
+
+        current_user = Profile.objects.get(user=request.user)
+        current_user.found_location = location
+        current_user.save()
+
         data = {
             "success": True,
             "found_address": found_addr.address
-            }
+        }
 
-    else: # could not geolocate
+    else:  # could not geolocate
         data = {
             "success": False,
             "found_address": 'Could not find this address'
-            }
+        }
 
     return JsonResponse(data)
+
 
 @login_required()
 def delete_confirm(request):
     return render(request, 'users/delete_confirm.html')
+
 
 @login_required()
 def delete(request):

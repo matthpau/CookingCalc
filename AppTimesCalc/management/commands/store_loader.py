@@ -374,4 +374,4 @@ class Command(BaseCommand):
         ]
 
         store_load_main(country_list, osm_shops, log_folder,
-                        dump_folder, fresh=True)
+                        dump_folder, fresh=False)
