@@ -22,7 +22,12 @@ https://www.youtube.com/watch?v=fEYx8dQr_cQ for the tutorial
                 </div>
 
             <form>
-                {{ form|crispy}}
+
+            
+                {{ form.search_from|as_crispy_field }}
+                {{ form.search_distance|as_crispy_field }}
+                {{ form.sort_order|as_crispy_field }}
+                {{ form.store_type|as_crispy_field }}
             </form>
 
             <i class="far fa-newspaper"></i>
