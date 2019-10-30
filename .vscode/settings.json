@@ -6,4 +6,5 @@
         "django-html": "html"
     },
     "sync.autoUpload": true,
+    "files.autoSave": "afterDelay",
 }

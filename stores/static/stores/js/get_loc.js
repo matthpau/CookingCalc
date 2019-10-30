@@ -12,12 +12,10 @@ $(document).ready(function() {
   }
 
   $("#id_search_from").on("change", function() {
-    console.log("searchfrom" + $("#id_search_from").val());
     populateList();
   });
 
   $("#id_search_distance").on("change", function() {
-    console.log("distance");
     populateList();
   });
 
@@ -102,7 +100,6 @@ $(document).ready(function() {
           var new_row_final = new_row_1.concat(new_row_4, new_row_2, new_row_3);
           $my_list.append(new_row_final);
         });
-        // console.log(store.home_loc_fail);
       }
     });
   }

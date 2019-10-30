@@ -23,7 +23,6 @@ https://www.youtube.com/watch?v=fEYx8dQr_cQ for the tutorial
 
             <form>
 
-                
                 {% if user.is_authenticated %}
                     {% if not user.profile.found_address %}
                         {% url 'users:profile' as profile_url %}
@@ -44,7 +43,6 @@ https://www.youtube.com/watch?v=fEYx8dQr_cQ for the tutorial
             <a href="{% url 'users:profile' %}"> {% trans 'Sign up for the newsletter to support your local stores.' %}</a><br>
         </div>
         
-
         <div class="col-sm">
             <ul id='store_list' class="list-group">
                     <!--Storelist information will be inserted here-->
