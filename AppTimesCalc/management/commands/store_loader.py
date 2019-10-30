@@ -44,7 +44,7 @@ class Command(BaseCommand):
             if fresh:
                 max_file_age = 0
             else:
-                # how old a file needs to be before it is replace, secs
+                # how old a file needs to be before it is replaced, secs
                 max_file_age = max_days * 24 * 60 * 60
 
             logfile.write('Getting data for ' + country_name_no_sp +
@@ -330,23 +330,23 @@ class Command(BaseCommand):
         # https://www.nationsonline.org/oneworld/country_code_list.htm
         country_list = {
             # 'Croatia': 'HR',
-            # 'Great Britain': 'GB',
+            'Great Britain': 'GB',
             'New Zealand': 'NZ',
-            # 'Ireland': 'IE',
+            'Ireland': 'IE',
             # 'South Africa': 'ZA',
             # 'Canada': 'CA',
             # 'Jamaica': 'JM',
             'Germany': 'DE',
             # 'United States': 'US',
-            # 'Norway': 'NO',
+            'Norway': 'NO',
             # 'Sweden': 'SE',
             # 'Finland': 'FI',
             'Australia': 'AU',
             # 'Pakistan': 'PK',
             # 'Spain': 'ES',
             # 'France': 'FR',
-            # 'Switzerland': 'CH',
-            # 'Denmark': 'DK',
+            'Switzerland': 'CH',
+            'Denmark': 'DK',
             # 'Latvia': 'LV',
             # 'Lithuania': 'LT',
             # 'Estonia': 'EE',

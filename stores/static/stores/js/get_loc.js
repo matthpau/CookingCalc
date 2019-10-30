@@ -95,7 +95,7 @@ $(document).ready(function() {
           }
 
           var new_row_4 =
-            store.likes_total + ' <i class="fas fa-thumbs-up"></i><br>';
+            " " + store.likes_total + ' <i class="fas fa-thumbs-up"></i><br>';
 
           var new_row_final = new_row_1.concat(new_row_4, new_row_2, new_row_3);
           $my_list.append(new_row_final);
