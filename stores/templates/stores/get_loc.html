@@ -32,7 +32,7 @@ https://www.youtube.com/watch?v=fEYx8dQr_cQ for the tutorial
                 {% else %}
                     {% url 'account_login' as login_url %} 
                     {% url 'account_signup' as signup_url %}
-                    <p>{% blocktrans %}You are not logged in. <a href="{{ login_url }}">Login</a> or 
+                    <p>{% blocktrans %}<a href="{{ login_url }}">Login</a> or 
                     <a href="{{ signup_url }}">register </a> to enable search around your home{% endblocktrans %}</p>
                 {% endif %}
                 
