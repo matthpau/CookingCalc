@@ -1,1 +1,1 @@
-[{"model": "users.country", "pk": "DE", "fields": {"name": "Germany", "name_en": "Germany", "name_de": null, "run_newsletter": true}}]
+[{"model": "users.country", "pk": "AU", "fields": {"name": "Australia", "name_en": "Australia", "name_de": null, "run_newsletter": true}}, {"model": "users.country", "pk": "DE", "fields": {"name": "Germany", "name_en": "Germany", "name_de": null, "run_newsletter": true}}, {"model": "users.country", "pk": "NZ", "fields": {"name": "New Zealand", "name_en": "New Zealand", "name_de": "Neuseeland", "run_newsletter": true}}]
