@@ -126,20 +126,17 @@ def process_loc(request):
     home_loc_fail = False
 
     if search_from == 1:  # selet from current location
-        print('opt1')
         user_location = Point(lon, lat, srid=4326)
     elif search_from == 2:  # try and select from registered location, message if fail
-        print('opt2')
-        print(request.user)
+
         home_addr = Profile.objects.get(user=request.user).found_address
         if home_addr:
             user_location = Profile.objects.get(
                 user=request.user).found_location
-            print("using home location", user_location)
+
         else:
             user_location = Point(lon, lat, srid=4326)
             home_loc_fail = True
-            print("failed using found location", user_location)
 
         # replace:
 
@@ -156,7 +153,6 @@ def process_loc(request):
         store_results = store_results.order_by('-likes_total')
 
     if store_filter:
-
         store_results = store_results.filter(OSM_storetype_id=store_filter)
 
     # get any related events to show in the search screen. Do this for all stores shown, we will subfilter later

@@ -331,7 +331,7 @@ class Command(BaseCommand):
         country_list = {
             # 'Croatia': 'HR',
             # 'Great Britain': 'GB',
-            # 'New Zealand': 'NZ',
+            'New Zealand': 'NZ',
             # 'Ireland': 'IE',
             # 'South Africa': 'ZA',
             # 'Canada': 'CA',
@@ -341,7 +341,7 @@ class Command(BaseCommand):
             # 'Norway': 'NO',
             # 'Sweden': 'SE',
             # 'Finland': 'FI',
-            # 'Australia': 'AU',
+            'Australia': 'AU',
             # 'Pakistan': 'PK',
             # 'Spain': 'ES',
             # 'France': 'FR',

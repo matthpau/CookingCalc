@@ -23,11 +23,21 @@ https://www.youtube.com/watch?v=fEYx8dQr_cQ for the tutorial
 
             <form>
 
-            
-                {{ form.search_from|as_crispy_field }}
-                {{ form.search_distance|as_crispy_field }}
-                {{ form.sort_order|as_crispy_field }}
-                {{ form.store_type|as_crispy_field }}
+                
+                {% if user.is_authenticated %}
+                    {% if not user.profile.found_address %}
+                        {% url 'users:profile' as profile_url %}
+                        <p>{% blocktrans %}You are logged in, but you have no saved address.
+                        <a href="{{ profile_url }}">Update your profile</a> to search around your house.{% endblocktrans %}</p>
+                     {% endif %}
+                {% else %}
+                    {% url 'account_login' as login_url %} 
+                    {% url 'account_signup' as signup_url %}
+                    <p>{% blocktrans %}You are not logged in. <a href="{{ login_url }}">Login</a> or 
+                    <a href="{{ signup_url }}">register </a> to enable search around your home{% endblocktrans %}</p>
+                {% endif %}
+                
+                {{ form | crispy }}
             </form>
 
             <i class="far fa-newspaper"></i>
