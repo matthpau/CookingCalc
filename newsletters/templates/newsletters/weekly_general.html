@@ -18,10 +18,17 @@
 <body>
 
 <h2>{% trans 'Your weekly local info from'%} <a href='{{ base_url }}'>Cooking Helpers</a></h2>
+<p>Thanks for supporting you local stores! Here are specials and events from stores near you this week.</p>
 
 {% for event in events %}
     {% ifchanged %}
-        <h3><a href="{{ base_url }}{{ event.store.get_absolute_url}}">{{ event.store.name}} - {{ event.store.my_address}}</a></h3>
+        <h3><a href="{{ base_url }}{{ event.store.get_absolute_url}}">{{ event.store.name}} 
+        
+        {% if event.store.my_address %}
+            - {{ event.store.my_address }}
+        {% endif %}
+        
+        </a></h3>
     {% endifchanged %} 
     
         <p style="color:Black;margin-left:40px;">{{ event.title }}, {% trans 'until'%} {{ event.end_date }}. 

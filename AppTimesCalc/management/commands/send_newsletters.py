@@ -1,17 +1,18 @@
 # this is to run daily and calculate and prepare the newsletters and recipients
 
+import datetime as dt
+
 from django.core.management.base import BaseCommand
 from django.conf import settings
-from django.core.management import call_command
-
-from django.db.models import Count
-
-from users.models import CustomUser, Profile, Country
-from stores.models import Store, Event
+#from django.core.management import call_command
 
 from django.contrib.gis.measure import D
 from django.contrib.gis.db.models.functions import Distance
-import datetime as dt
+
+from django.db.models import Count
+
+from users.models import Profile
+from stores.models import Store, Event
 
 from django.core.mail import send_mail, EmailMessage, EmailMultiAlternatives
 from django.template.loader import render_to_string
@@ -36,7 +37,6 @@ class Command(BaseCommand):
             next1_newsletter_date effective end period newsletter
             """
 
-            #Calculate action start date, assumed next Wednesday
             today = dt.date.today()
             today_day_of_week = today.weekday()
 
@@ -62,6 +62,7 @@ class Command(BaseCommand):
             profiles = profiles.filter(found_location__isnull=False)
             
             for profile in profiles:
+                print(profile)
                 user_location = profile.found_location
                 search_dis = profile.local_offer_radius
 
@@ -76,7 +77,7 @@ class Command(BaseCommand):
 
                 #TODO is there a way to calculate it more efficiently and pick up distance from the stores query?
                 events = Event.objects.all()
-                events = events.filter(store__in=stores).annotate(distance=Distance('store__location', user_location)).order_by('-distance')
+                events = events.filter(store__in=stores).annotate(distance=Distance('store__location', user_location)).order_by('distance')
 
                 #Only get those events that start or end in the period
                 # Those that start in the period
@@ -84,13 +85,12 @@ class Command(BaseCommand):
                 # Those that span the period
                 events = events.filter(start_date__gte=next_newsletter_date, start_date__lte=next1_newsletter_date) | \
                     events.filter(end_date__gte=next_newsletter_date, end_date__lte=next1_newsletter_date) | \
-                    events.filter(start_date__lte=next_newsletter_date, end_date__gte=next1_newsletter_date) 
+                    events.filter(start_date__lte=next_newsletter_date, end_date__gte=next1_newsletter_date)
 
                 base_url = str(Site.objects.get_current())
 
-                print(Site.objects.get_current())
-                print(Site.objects.get_current().domain)
-
+                #print(Site.objects.get_current())
+                #print(Site.objects.get_current().domain)
 
                 context = {
                     'profile': profile,
@@ -130,4 +130,4 @@ class Command(BaseCommand):
             else:
                 return 'Newsletters not sent, wrong day'
 
-        print(newsletters_main(5)) #run the whole process
+        print(newsletters_main(4)) #run the whole process
