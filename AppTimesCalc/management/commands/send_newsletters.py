@@ -1,6 +1,7 @@
 # this is to run daily and calculate and prepare the newsletters and recipients
 
 import datetime as dt
+import random
 
 from django.core.management.base import BaseCommand
 from django.conf import settings
@@ -107,7 +108,9 @@ class Command(BaseCommand):
                 with open(write_file, 'w') as f:
                     f.write(msg_html)
                 
-                subject, from_email, to = 'your weekly cooking-helpers.com events', settings.DEFAULT_FROM_EMAIL, 'matthpau@gmail.com'
+                subject = 'your weekly cooking-helpers.com events ' + str(random.randint(0, 10000))
+                from_email = settings.DEFAULT_FROM_EMAIL
+                to = 'matthpau@gmail.com'
                 text_content = 'This is an important message.'
                 html_content = msg_html
                 msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
