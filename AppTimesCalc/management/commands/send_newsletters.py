@@ -70,6 +70,7 @@ class Command(BaseCommand):
                 user_location = profile.found_location
                 search_dis = profile.local_offer_radius
                 dest_email = profile.user.email
+                print(dest_email)
 
                 language = profile.newsletter_language
                 translation.activate(language)
