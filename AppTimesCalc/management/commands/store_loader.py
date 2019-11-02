@@ -351,6 +351,7 @@ class Command(BaseCommand):
             # 'Lithuania': 'LT',
             # 'Estonia': 'EE',
             # 'Greece': 'GR',
+            "Austria": 'AT',
             # 'Italy': 'IT',
             # 'Argentina': 'AR',
             # 'Brazil': 'BR'
@@ -367,6 +368,8 @@ class Command(BaseCommand):
             'farm',
             'coffee',
             'greengrocer',
+            'brewing_supplies',
+            'pasta',
             'tea',
             'spices',
             'seafood',

@@ -1,6 +1,5 @@
-SELECT  c.name, count(id) AS store_count
-FROM stores_store s INNER JOIN stores_country c
-ON s.my_country_id = c.code
-GROUP BY c.name
+SELECT  my_country_id, count(id) AS store_count
+FROM stores_store 
+GROUP BY  my_country_id
 ORDER BY store_count DESC
 ;
