@@ -130,4 +130,4 @@ class Command(BaseCommand):
             else:
                 return 'Newsletters not sent, wrong day'
 
-        print(newsletters_main(4)) #run the whole process
+        print(newsletters_main(5)) #run the whole process
