@@ -12,7 +12,7 @@ from django.contrib.gis.db.models.functions import Distance
 
 from django.db.models import Count
 
-from users.models import Profile
+from users.models import Profile, CustomUser
 from stores.models import Store, Event
 
 from django.core.mail import send_mail, EmailMessage, EmailMultiAlternatives
@@ -63,9 +63,10 @@ class Command(BaseCommand):
             profiles = profiles.filter(found_location__isnull=False)
             
             for profile in profiles:
-                print(profile)
+                
                 user_location = profile.found_location
                 search_dis = profile.local_offer_radius
+                dest_email = profile.user.email
 
                 language = profile.newsletter_language
                 translation.activate(language)
@@ -103,14 +104,19 @@ class Command(BaseCommand):
 
                 msg_html = render_to_string('newsletters/weekly_general.html', context)
 
+                now = dt.datetime.now().strftime('%c')
+                
                 #Writing to file for testing
-                write_file = f'newsletters/testing/test-{str(profile.id)}.html'
+                """
+                print(now)
+                write_file = f'newsletters/testing/test-{dest_email}-{now}.html'
                 with open(write_file, 'w') as f:
                     f.write(msg_html)
+                """
                 
-                subject = 'your weekly cooking-helpers.com events ' + str(random.randint(0, 10000))
+                subject = 'Your weekly cooking-helpers.com news - ' + now
                 from_email = settings.DEFAULT_FROM_EMAIL
-                to = 'matthpau@gmail.com'
+                to = dest_email
                 text_content = 'This is an important message.'
                 html_content = msg_html
                 msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
