@@ -147,4 +147,6 @@ class Command(BaseCommand):
             else:
                 return 'Newsletters not sent, wrong day'
 
+        from django.conf import settings
+        print(settings.EMAIL_HOST_USER, settings.EMAIL_HOST_PASSWORD)
         print(newsletters_main(5))  # run the whole process. 0 is Monday
