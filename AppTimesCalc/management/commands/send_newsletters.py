@@ -111,7 +111,7 @@ class Command(BaseCommand):
                 msg_html = render_to_string(
                     'newsletters/weekly_general.html', context)
 
-                now = dt.datetime.now().strftime('%c')
+                now = dt.datetime.now().strftime('%a, %d %B')
 
                 # Writing to file for testing
                 """
@@ -121,7 +121,7 @@ class Command(BaseCommand):
                     f.write(msg_html)
                 """
 
-                subject = 'Your weekly cooking-helpers.com news - ' + now
+                subject = 'Your weekly cooking-helpers.com news -    ' + now
                 from_email = settings.DEFAULT_FROM_EMAIL
                 to = dest_email
                 text_content = 'This is an important message.'
@@ -149,5 +149,5 @@ class Command(BaseCommand):
                 return 'Newsletters not sent, wrong day'
 
         from django.conf import settings
-        print(settings.EMAIL_HOST_USER, settings.EMAIL_HOST_PASSWORD)
+        #print(settings.EMAIL_HOST_USER, settings.EMAIL_HOST_PASSWORD)
         print(newsletters_main(6))  # run the whole process. 0 is Monday

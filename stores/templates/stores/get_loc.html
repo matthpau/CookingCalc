@@ -20,7 +20,6 @@ https://www.youtube.com/watch?v=fEYx8dQr_cQ for the tutorial
                     </div>    
                     {% trans 'Finding your position...' %}
                 </div>
-
             <form>
 
                 {% if user.is_authenticated %}
@@ -32,15 +31,15 @@ https://www.youtube.com/watch?v=fEYx8dQr_cQ for the tutorial
                 {% else %}
                     {% url 'account_login' as login_url %} 
                     {% url 'account_signup' as signup_url %}
+
                     <p>{% blocktrans %}<a href="{{ login_url }}">Login</a> or 
-                    <a href="{{ signup_url }}">register </a> to enable search around your home{% endblocktrans %}</p>
+                    <a href="{{ signup_url }}">register </a> to enable search around your home.{% endblocktrans %}</p>
+                    <p>Please sign up to our newsletter to receive information from your local stores</p>
                 {% endif %}
                 
                 {{ form | crispy }}
             </form>
 
-            <i class="far fa-newspaper"></i>
-            <a href="{% url 'users:profile' %}"> {% trans 'Sign up for the newsletter to support your local stores.' %}</a><br>
         </div>
         
         <div class="col-sm">

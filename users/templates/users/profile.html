@@ -4,7 +4,7 @@
 {% block content %}
 {% load i18n %}
 
-<h3>{% trans 'Please complete your profile information' %}</h3>
+<h3 class='text-sm-left text-center'>{% trans 'Your profile and newsletter settings' %}</h3>
 
 <form method="post">{% csrf_token %}
 {% if profile_form.non_field_errors %}
@@ -18,20 +18,22 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      <div class="row">
-        <div><button class="btn btn-primary" type="submit">{% trans 'Save all changes and close' %}</button><br>
-        <a href="/">{% trans 'Close without saving' %}</a>
-        </div>
-      </div>
 
       <div class="row">
         <div class="col-sm">{{ user_form.first_name|as_crispy_field }}</div>
         <div class="col-sm">{{ user_form.last_name|as_crispy_field }} </div>     
       </div>
 
-      <span class="text-primary">{{ profile_form.local_offer_receive|as_crispy_field}}</span>
-      {{ profile_form.newsletter_language|as_crispy_field}}
-      {{ profile_form.local_offer_radius|as_crispy_field}}
+      <div class="card bg-light mb-3">
+        <div class="card-header">Newsletter</div>
+        <div class="card-body">
+          {{ profile_form.local_offer_receive|as_crispy_field}}
+          {{ profile_form.newsletter_language|as_crispy_field}}
+          {{ profile_form.local_offer_radius|as_crispy_field}}
+          <p class="card-text">Please make sure you have a validated address to receive the newsletter</p>
+        </div>
+      </div>
+
     </div>
     <div class="col-sm">
       <div class="row">
@@ -53,11 +55,12 @@
       {{ profile_form.found_address|as_crispy_field }}
       <p id="id_address_notice"></p>
 
+        <button class="btn btn-primary" type="submit">{% trans 'Save all changes and close' %}</button><br>
+        <a href="/">{% trans 'Close without saving' %}</a><br><br>
+        <a href={% url 'users:delete_confirm'%} class="btn btn-danger">{% trans 'Delete your account...' %}</a>
     </div>
-    
 </div>
 </form>
-<a href={% url 'users:delete_confirm'%} class="btn btn-warning">{% trans 'Delete your account' %}</a>
 
 <script>
     var csrftoken = '{{ csrf_token }}';

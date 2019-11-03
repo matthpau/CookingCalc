@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-
+            <a href="#" onclick="history.go(-1)">{% trans 'Go Back' %}</a>
             <h1>{{ store.name }}</h1>
             <p>{{ store.id }}</p>
             <h5>{{ store.OSM_storetype.icon_text|safe }} <span class="badge badge-light">{{ store.OSM_storetype.type_text|capfirst }}</span></h5>
@@ -62,8 +62,7 @@
 
                 <div class="card">
 
-                    <div class="card-header">{% trans 'Current Events (as seen in the newsletter)' %}</div>
-
+                    <div class="card-header">{% trans 'News' %}</div>
                     <div class="card-body">
                     
                         <ul>
