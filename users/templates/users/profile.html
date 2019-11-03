@@ -17,25 +17,35 @@
 
 <div class="container">
   <div class="row">
+
     <div class="col-sm">
 
-      <div class="row">
-        <div class="col-sm">{{ user_form.first_name|as_crispy_field }}</div>
-        <div class="col-sm">{{ user_form.last_name|as_crispy_field }} </div>     
-      </div>
-
       <div class="card bg-light mb-3">
-        <div class="card-header">Newsletter</div>
+        <div class="card-header text-center">Local stores newsletter</div>
         <div class="card-body">
+          <p class="card-text">Get news and offers from your local stores in your inbox each Friday.</p>
           {{ profile_form.local_offer_receive|as_crispy_field}}
           {{ profile_form.newsletter_language|as_crispy_field}}
           {{ profile_form.local_offer_radius|as_crispy_field}}
           <p class="card-text">Please make sure you have a validated address to receive the newsletter</p>
         </div>
       </div>
+        
+      <button class="btn btn-primary" type="submit">{% trans 'Save all changes and close' %}</button><br>
+      <a href="/">{% trans 'Close without saving' %}</a><br><br>
+
+      <div class="d-none d-sm-block">
+        <a href={% url 'users:delete_confirm'%} class="btn btn-danger">{% trans 'Delete your account...' %}</a>
+      </div>
 
     </div>
+
     <div class="col-sm">
+      <div class="row">
+        <div class="col-sm">{{ user_form.first_name|as_crispy_field }}</div>
+        <div class="col-sm">{{ user_form.last_name|as_crispy_field }} </div>     
+      </div>
+
       <div class="row">
         <div class="col-sm-4">{{ profile_form.house_number|as_crispy_field}}</div>
         <div class="col-sm">{{ profile_form.street|as_crispy_field}}</div>
@@ -55,9 +65,11 @@
       {{ profile_form.found_address|as_crispy_field }}
       <p id="id_address_notice"></p>
 
+      <div class="d-block d-sm-none">
         <button class="btn btn-primary" type="submit">{% trans 'Save all changes and close' %}</button><br>
-        <a href="/">{% trans 'Close without saving' %}</a><br><br>
+        <div class="mb-3"><a href="/">{% trans 'Close without saving' %}</a></div>
         <a href={% url 'users:delete_confirm'%} class="btn btn-danger">{% trans 'Delete your account...' %}</a>
+      </div>
     </div>
 </div>
 </form>

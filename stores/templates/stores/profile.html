@@ -11,7 +11,6 @@
         <div class="col-sm">
             <a href="#" onclick="history.go(-1)">{% trans 'Go Back' %}</a>
             <h1>{{ store.name }}</h1>
-            <p>{{ store.id }}</p>
             <h5>{{ store.OSM_storetype.icon_text|safe }} <span class="badge badge-light">{{ store.OSM_storetype.type_text|capfirst }}</span></h5>
 
             {% if store.website %}
@@ -33,7 +32,11 @@
                 <p>{% trans 'Please login to like this store' %}<br><a href="{% url 'account_login' %}">Login </a></p>
             {% endif %}
 
-            <br>
+            <div class="my-3">
+            <a href="https://www.openstreetmap.org/node/{{ store.OSM_ID }}" target="_blank">{% trans 'Edit on OpenStreetmap'%}</a><br>
+                <small>{% trans 'Requires OpenStreetMap account. Changes will appear here within 48 hours.'%}</small>
+            </div>
+
             {% if user in editors %}
                 <h5>{% trans "Owner Section" %}</h5>
                 <p>{% blocktrans %}Welcome, {{user}}. You have the following options: {% endblocktrans %}</p>
@@ -47,10 +50,8 @@
                 <small>{{ upcoming_count }} {% trans "live or future events" %}, {{ all_count }} {% trans "total" %}</small>
                 </p>
 
-                <p>
-                <a href="https://www.openstreetmap.org/node/{{ store.OSM_ID }}" target="_blank">{% trans 'Edit on OpenStreetmap'%}</a><br>
-                <small>{% trans 'Requires OpenStreetMap account. Changes will appear here within 48 hours.'%}</small>
-                </p>
+              
+
 
             {% else %}
                 <a href="{% url 'store:store_launch_info'%}">{% trans "How to claim this store"%}</a>
