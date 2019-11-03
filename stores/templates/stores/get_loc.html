@@ -34,7 +34,7 @@ https://www.youtube.com/watch?v=fEYx8dQr_cQ for the tutorial
 
                     <p>{% blocktrans %}<a href="{{ login_url }}">Login</a> or 
                     <a href="{{ signup_url }}">register </a> to enable search around your home.{% endblocktrans %}</p>
-                    <p>Please sign up to our newsletter to receive information from your local stores</p>
+                    <p>{% trans 'Please sign up to our newsletter to receive information from your local stores' %}</p>
                 {% endif %}
                 
                 {{ form | crispy }}

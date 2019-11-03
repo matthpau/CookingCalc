@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-03 19:53+0100\n"
+"POT-Creation-Date: 2019-11-03 22:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -209,16 +209,12 @@ msgid "Standard portion size child: "
 msgstr "Standard Portionsgröße Kind"
 
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:22
-#, fuzzy
-#| msgid "Required quantity of meat (kg): "
 msgid "Required quantity of meat: "
-msgstr "Erforderliche Fleischmenge (kg): "
+msgstr "Erforderliche Fleischmenge: "
 
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:25
-#, fuzzy
-#| msgid "Given Weight kg"
 msgid "Given weight: "
-msgstr "Angegebenes Gewicht (kg)"
+msgstr "Angegebenes Gewicht: "
 
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:27
 msgid "Estimated number of adults this will feed: "
@@ -364,6 +360,10 @@ msgstr "Pläne anschauen"
 #: AppTimesCalc/templates/AppTimesCalc/about.html:4
 msgid "Contact"
 msgstr "Kontakt"
+
+#: AppTimesCalc/templates/AppTimesCalc/about.html:7
+msgid "Credits"
+msgstr "Danksagung"
 
 #: AppTimesCalc/templates/AppTimesCalc/about.html:8
 msgid "Meat roasting times from"
@@ -1010,8 +1010,6 @@ msgid "Duration"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1642
-#, fuzzy
-#| msgid "Confirmed address"
 msgid "Email address"
 msgstr "Bestätigte Adresse"
 
@@ -1033,10 +1031,8 @@ msgid "IPv4 address"
 msgstr ""
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1893
-#, fuzzy
-#| msgid "Address 2"
 msgid "IP address"
-msgstr "Adresse 2"
+msgstr "IP Adresse"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1973
 #: env/lib/python3.7/site-packages/django/db/models/fields/__init__.py:1974
@@ -1954,6 +1950,10 @@ msgstr "Radius"
 msgid "Likes"
 msgstr "Likes"
 
+#: stores/forms.py:27
+msgid "Search From"
+msgstr "Suchen aus"
+
 #: stores/forms.py:29
 msgid "Search Distance"
 msgstr "Suchradius"
@@ -2106,7 +2106,7 @@ msgstr ""
 
 #: stores/templates/stores/get_loc.html:21
 msgid "Finding your position..."
-msgstr "Finden Ihr Position"
+msgstr "Finden eure Position"
 
 #: stores/templates/stores/get_loc.html:28
 #, python-format
@@ -2127,7 +2127,16 @@ msgid ""
 "search around your home."
 msgstr ""
 "<a href=\"%(login_url)s\">Login</a> or \n"
-"                    <a href=\"%(signup_url)s\">registrieren </a> um Suche um deinem Zuhause zu ermöglichen."
+"                    <a href=\"%(signup_url)s\">registrieren </a> um Suche um "
+"deinem Zuhause zu ermöglichen."
+
+#: stores/templates/stores/get_loc.html:37
+msgid ""
+"Please sign up to our newsletter to receive information from your local "
+"stores"
+msgstr ""
+"Meldet euch für unseren Newsletter an, um Informationen von euren lokalen "
+"Geschäften zu erhalten"
 
 #: stores/templates/stores/new_store_info.html:7
 msgid "About the cooking-helpers.com local marketing programme"
@@ -2429,8 +2438,6 @@ msgstr ""
 "Newsltter gelöscht."
 
 #: users/templates/users/profile.html:7
-#, fuzzy
-#| msgid "Profile / newsletter"
 msgid "Your profile and newsletter settings"
 msgstr "Profil/newsletter"
 
@@ -2443,8 +2450,6 @@ msgid "Close without saving"
 msgstr "Schließen ohne speichern"
 
 #: users/templates/users/profile.html:38 users/templates/users/profile.html:71
-#, fuzzy
-#| msgid "Delete your account"
 msgid "Delete your account..."
 msgstr "Konto löschen"
 
@@ -2474,11 +2479,6 @@ msgstr "Dein Profil wurde erfolgreich aktualisiert."
 
 #~ msgid "Thanks for using cooking-helpers.com"
 #~ msgstr "Danke, dass Du cooking-helpers.com benutzt haben"
-
-#~ msgid "Sign up for the newsletter to support your local stores."
-#~ msgstr ""
-#~ "Melden Sie sich für den Newsletter an, um Ihre lokalen Geschäfte zu "
-#~ "unterstützen."
 
 #~ msgid "Current Events (as seen in the newsletter)"
 #~ msgstr "Aktuelle Nachrichten (wie im Newsletter)"

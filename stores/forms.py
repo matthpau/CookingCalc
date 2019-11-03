@@ -24,7 +24,7 @@ class StoreSearch(forms.Form):
     )
 
     search_from = forms.ChoiceField(
-        choices=FROM_CHOICES, label=('Search From'), initial='1')
+        choices=FROM_CHOICES, label=_('Search From'), initial='1')
     search_distance = forms.ChoiceField(
         choices=DIST_CHOICES, label=_('Search Distance'), initial='5')
     sort_order = forms.ChoiceField(
