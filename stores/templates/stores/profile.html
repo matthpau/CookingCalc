@@ -74,11 +74,13 @@
                                     </span>
                                     <small>
 
-                                    {{ event.comment }} <br>
+                                    {% if event.comment %}
+                                        {{ event.comment }} <br>
+                                    {% endif %}
 
                                     {% if event.includes_offers %}
-                                        <span class="text-info">Includes Offers</span><br>
-                                    {% endif%}
+                                        <span class="text-info">{% trans 'Includes offers' %}</span><br>
+                                    {% endif %}
 
                                     {{ event.start_date }} - {{ event.end_date}}
 

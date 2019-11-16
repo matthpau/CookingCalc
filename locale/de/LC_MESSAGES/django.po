@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-03 22:21+0100\n"
+"POT-Creation-Date: 2019-11-16 12:33+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1107,7 +1107,6 @@ msgstr ""
 #: env/lib/python3.7/site-packages/django/db/models/fields/files.py:360
 #, fuzzy
 #| msgid "Images from"
-msgid "Image"
 msgstr "Bilder von"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/related.py:778
@@ -2014,7 +2013,7 @@ msgstr "Nachricht Startdatum"
 msgid "Event end date"
 msgstr "Nachricht Enddatum"
 
-#: stores/models.py:113
+#: stores/models.py:113 stores/templates/stores/profile.html:82
 msgid "Includes offers"
 msgstr "Enthält Angebote"
 
@@ -2086,7 +2085,7 @@ msgstr "Nachrichten für:"
 
 #: stores/templates/stores/event_list.html:11
 msgid "Add new"
-msgstr "Neues hinzufügen"
+msgstr "Neue hinzufügen"
 
 #: stores/templates/stores/event_list.html:23
 msgid "FINISHED |"
@@ -2140,7 +2139,7 @@ msgstr ""
 
 #: stores/templates/stores/new_store_info.html:7
 msgid "About the cooking-helpers.com local marketing programme"
-msgstr "Über das cooking-helpers.com Lokal Markeingkonzept"
+msgstr "Über das cooking-helpers.com Lokal Marketingkonzept"
 
 #: stores/templates/stores/new_store_info.html:9
 msgid "What it is and how it works"
@@ -2248,7 +2247,7 @@ msgstr ""
 
 #: stores/templates/stores/new_store_info.html:31
 msgid "How to claim your store"
-msgstr "Wie sie Ihr Laden behaupten können"
+msgstr "Wie sie Ihr Laden beantragen können"
 
 #: stores/templates/stores/new_store_info.html:32
 msgid ""
@@ -2313,7 +2312,7 @@ msgstr "Storesuche"
 
 #: stores/templates/stores/profile.html:32
 msgid "Please login to like this store"
-msgstr "So behaupten Sie diesen Shop"
+msgstr "Einloggen diesen Laden zu liken"
 
 #: stores/templates/stores/profile.html:36
 msgid "Edit on OpenStreetmap"
