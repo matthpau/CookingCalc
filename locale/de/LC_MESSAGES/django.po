@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-16 12:33+0100\n"
+"POT-Creation-Date: 2019-11-16 12:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -202,11 +202,11 @@ msgstr "Angegebene Anzahl Kinder: "
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:20
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:26
 msgid "Standard portion size adult: "
-msgstr "Standard Portionsgröße Erwachsene"
+msgstr "Standard Portionsgröße Erwachsene: "
 
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:21
 msgid "Standard portion size child: "
-msgstr "Standard Portionsgröße Kind"
+msgstr "Standard Portionsgröße Kind: "
 
 #: AppTimesCalc/templates/AppTimesCalc/CookingCalcRes.html:22
 msgid "Required quantity of meat: "
@@ -1107,6 +1107,7 @@ msgstr ""
 #: env/lib/python3.7/site-packages/django/db/models/fields/files.py:360
 #, fuzzy
 #| msgid "Images from"
+msgid "Image"
 msgstr "Bilder von"
 
 #: env/lib/python3.7/site-packages/django/db/models/fields/related.py:778
@@ -1948,6 +1949,14 @@ msgstr "Radius"
 #: stores/forms.py:18
 msgid "Likes"
 msgstr "Likes"
+
+#: stores/forms.py:22
+msgid "Current Location"
+msgstr "Standort"
+
+#: stores/forms.py:23
+msgid "Profile Address"
+msgstr "Profile Adresse"
 
 #: stores/forms.py:27
 msgid "Search From"

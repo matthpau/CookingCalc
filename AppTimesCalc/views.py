@@ -155,6 +155,9 @@ class MealPlanUpdate(UpdateView):
         return super().form_valid(form)
 
 
+def newsletter(request):
+    return redirect('accounts/signup' '/?next=/users/profile')
+
 def MealPlanDelete(request, pk):
 
     if request.method == 'POST':

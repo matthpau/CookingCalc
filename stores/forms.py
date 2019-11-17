@@ -19,8 +19,8 @@ class StoreSearch(forms.Form):
     )
 
     FROM_CHOICES = (
-        (1, "Current Location"),
-        (2, "Profile Address")
+        (1, _("Current Location")),
+        (2, _("Profile Address"))
     )
 
     search_from = forms.ChoiceField(

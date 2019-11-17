@@ -345,8 +345,8 @@ class Command(BaseCommand):
             # 'Pakistan': 'PK',
             # 'Spain': 'ES',
             # 'France': 'FR',
-            #'Switzerland': 'CH',
-            #'Denmark': 'DK',
+            # 'Switzerland': 'CH',
+            # 'Denmark': 'DK',
             # 'Latvia': 'LV',
             # 'Lithuania': 'LT',
             # 'Estonia': 'EE',
@@ -373,8 +373,10 @@ class Command(BaseCommand):
             'tea',
             'spices',
             'seafood',
-            'fishmonger'
+            'fishmonger',
+            'wine',
+            'alcohol'
         ]
 
         store_load_main(country_list, osm_shops, log_folder,
-                        dump_folder, fresh=False)
+                        dump_folder, fresh=True)
