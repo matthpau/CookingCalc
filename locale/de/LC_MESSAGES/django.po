@@ -2256,7 +2256,7 @@ msgstr ""
 
 #: stores/templates/stores/new_store_info.html:31
 msgid "How to claim your store"
-msgstr "Wie sie Ihr Laden beantragen können"
+msgstr "Wie sie Deinen Laden registrieren können"
 
 #: stores/templates/stores/new_store_info.html:32
 msgid ""

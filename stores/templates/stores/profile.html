@@ -66,7 +66,7 @@
                     <div class="card-header">{% trans 'News' %}</div>
                     <div class="card-body">
                     
-                        <ul>
+                        <ul class="list-group list-group-flush">
                             {% for event in events %}
                                 <li class="list-group-item border-0">
                                     <span class="text-info">
@@ -79,7 +79,7 @@
                                     {% endif %}
 
                                     {% if event.includes_offers %}
-                                        <span class="text-info">{% trans 'Includes offers' %}</span><br>
+                                        <span class="badge badge-primary">{% trans 'Includes offers' %}</span><br>
                                     {% endif %}
 
                                     {{ event.start_date }} - {{ event.end_date}}
