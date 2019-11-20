@@ -26,7 +26,7 @@ BASE_DIR_PDN = os.path.expanduser('~/matthpau.pythonanywhere.com/CookingCalc/')
 SECRET_KEY = my_secrets.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -141,9 +141,9 @@ if os.path.exists(BASE_DIR_PDN):            #We are on the production server
             "PORT": "11212",
         }
     }
-
+    DEBUG = False
 else:           
-    print('Using the local dev DB', os.getpid())   # we are on the dev machine
+    print('Using the local dev DB, debug is TRUE', os.getpid())   # we are on the dev machine
     #Why runs twice? https://stackoverflow.com/questions/16546652/why-does-django-run-everything-twice
     DATABASES = {
         "default": {
@@ -155,6 +155,7 @@ else:
             "PORT": "",
         }
     }
+    DEBUG = True
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
