@@ -14,7 +14,7 @@ django-ipware==2.1.0
 django-modeltranslation==0.13.3
 django-taggit==1.1.0
 django-tinymce==2.8.0
-djangorestframework==3.10.3
+djangorestframework==3.11.2
 docopt==0.6.2
 geographiclib==1.50
 geoip2==2.9.0
